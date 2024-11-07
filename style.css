@@ -126,3 +126,12 @@ footer {
         font-size: 0.9em;
     }
 }
+
+/* Profile Picture Styling */
+img[alt="Profile Picture"] {
+    max-width: 150px; /* Adjust as desired */
+    height: auto;
+    border-radius: 50%; /* Makes the image circular */
+    display: block;
+    margin: 0 auto 20px auto; /* Centers the image and adds some space below */
+}
