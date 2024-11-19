@@ -1,137 +1,61 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
-    padding: 10px;
+    background-color: #f9f9f9;
 }
 
 /* Header */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #444;
-    color: #fff;
+    background-color: #4caf50;
+    color: white;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+    margin: 0;
 }
 
-header p {
-    font-size: 1.2em;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-/* Project Gallery */
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 20px 0;
+nav ul li a {
+    text-decoration: none;
+    color: white;
 }
 
-.project {
-    background-color: #fff;
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 300px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.project:hover {
-    transform: scale(1.05);
-}
-
-.project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.project h2 {
-    font-size: 1.5em;
-    color: #444;
-    margin: 10px 0;
-}
-
-.project p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.project a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project a:hover {
-    text-decoration: underline;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #444;
-    color: #fff;
-    margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* Stack header and projects vertically on tablets and smaller */
-    header h1 {
-        font-size: 2em;
-    }
-
-    .projects {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Adjust text sizes for smaller screens like phones */
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    .project h2 {
-        font-size: 1.2em;
-    }
-
-    .project p {
-        font-size: 0.9em;
-    }
-}
-
-/* Profile Picture Styling */
-img[alt="Profile Picture"] {
-    max-width: 150px; /* Adjust as desired */
-    height: auto;
-    border-radius: 50%; /* Makes the image circular */
-    display: block;
-    margin: 0 auto 20px auto; /* Centers the image and adds some space below */
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
