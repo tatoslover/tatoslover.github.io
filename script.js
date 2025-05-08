@@ -1,14 +1,18 @@
-document.querySelectorAll(".toggle-project").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("data-target");
-    const target = document.getElementById(targetId);
+document.addEventListener("DOMContentLoaded", function () {
+  const collapsibles = document.querySelectorAll(".collapsible");
 
-    // Toggle visibility
-    if (target.style.display === "none" || target.style.display === "") {
-      target.style.display = "block";
-    } else {
-      target.style.display = "none";
-    }
+  collapsibles.forEach((button) => {
+    const content = button.nextElementSibling;
+    const label = button.querySelector(".toggle-label");
+
+    // Start with content hidden
+    content.style.display = "none";
+    label.textContent = "Expand";
+
+    button.addEventListener("click", function () {
+      const isVisible = content.style.display === "block";
+      content.style.display = isVisible ? "none" : "block";
+      label.textContent = isVisible ? "Expand" : "Hide";
+    });
   });
 });

@@ -4,177 +4,358 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Samuel Love – Portfolio</title>
+        <!-- Link to FontAwesome CDN for icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
         <link rel="stylesheet" href="style.css" />
     </head>
+
     <body>
         <main>
-            <!-- Home Section -->
-            <section id="home">
-                <h1>Welcome</h1>
-                <p class="text">
-                    Hello! I’m Samuel Love — welcome to my corner of the
-                    internet. Born in Australia and raised in New Zealand (I'm a
-                    dual citizen), I’m passionate about using my skills and
-                    dedication to create positive change. I hold degrees in
-                    Actuarial Science and Data Science, and I’m currently
-                    training as a software engineer through the Institute of
-                    Data. I thrive on personal growth and overcoming challenges.
-                    In my free time, I enjoy basketball, CrossFit, dog-walking,
-                    gardening, hiking, singing, swimming, and yoga.
-                </p>
+            <header class="header-flex">
+                <!-- Consider different quality images for different sized screens. -->
+                <img
+                    src="extras/pp.jpg"
+                    alt="Samuel Love"
+                    class="header-image"
+                />
+                <div class="header-text">
+                    <h1>Portfolio</h1>
+                    <p>
+                        Hello! I’m Samuel Love — welcome to my corner of the
+                        internet. Born in Australia and raised in New Zealand
+                        (I'm a dual citizen), I’m passionate about using my
+                        skills and dedication to create positive change.
+                    </p>
+                    <p>
+                        I hold degrees in Actuarial Science and Data Science,
+                        and I’m currently training as a software engineer
+                        through the Institute of Data. I thrive on personal
+                        growth and overcoming challenges.
+                    </p>
+                    <p>
+                        In my free time, I enjoy basketball, CrossFit,
+                        dog-walking, gardening, hiking, singing, swimming, and
+                        yoga.
+                    </p>
+                </div>
+            </header>
+
+            <!-- Contact Me Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-icons">
+                    <div class="contact-item">
+                        <a href="mailto:samuelwelove@icloud.com">
+                            <i class="fa fa-envelope"></i>
+                            <p>samuelwelove@icloud.com</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+64273533452">
+                            <i class="fa fa-phone"></i>
+                            <p>+64273533452</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a
+                            href="https://www.linkedin.com/in/samuel-love-profile"
+                            target="_blank"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            <p>LinkedIn</p>
+                        </a>
+                    </div>
+                </div>
             </section>
 
             <!-- Projects Section -->
             <section id="projects">
-                <h2>Projects</h2>
-                <ul>
-                    <li>
-                        <a
-                            href="#"
-                            class="toggle-project"
-                            data-target="project1Frame"
-                            >Project 1: Master's Capstone</a
-                        >
-                        <div
-                            id="project1Frame"
-                            class="iframe-container"
-                            style="display: none"
-                        >
-                            <iframe
-                                src="capstone/index.html"
-                                width="100%"
-                                height="400"
-                                style="border: none"
-                            ></iframe>
+                <!-- MADS Category -->
+                <div class="project-category" id="mads">
+                    <button class="collapsible">
+                        <h3>
+                            MADS Projects
+                            <span class="toggle-label">Expand</span>
+                        </h3>
+                    </button>
+                    <div class="project-grid-content">
+                        <div class="project">
+                            <h4>Capstone: From Bricks to Bucks</h4>
+                            <p>
+                                This project examined sales patterns of LEGO
+                                sets to predict their secondary market prices
+                                using machine learning. It compared licensed vs.
+                                original sets and analyzed trends in quantity,
+                                complexity, and price over time. Key steps
+                                included time-series analysis, clustering, and
+                                predictive modeling using linear regression,
+                                elastic net, random forest, and SVM. Results
+                                showed that historical price data is a strong
+                                predictor of value, though models excluding it
+                                sometimes performed better. <br />
+                                Tools used: R (tidyverse, caret, plotly, shiny,
+                                randomForest, glmnet, DT, e1071), Quarto
+                            </p>
+                            <a href="extras/capstone/index.html"
+                                >View Project</a
+                            >
                         </div>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            class="toggle-project"
-                            data-target="project2Frame"
-                            >Project 2: Dice Generator</a
-                        >
-                        <div
-                            id="project2Frame"
-                            class="iframe-container"
-                            style="display: none"
-                        >
-                            <iframe
-                                src="dice-generator/index.html"
-                                width="100%"
-                                height="400"
-                                style="border: none"
-                            ></iframe>
+                        <div class="project">
+                            <h4>JIFS: Internal Migration</h4>
+                            <p>
+                                Analysed internal migration trends in NZ using
+                                linked Stats NZ data to inform public policy.
+                                Tools used: R, SQL, Power BI.
+                            </p>
+                            <a href="project2.html">View Project</a>
                         </div>
-                    </li>
-                </ul>
-            </section>
+                        <div class="project">
+                            <h4>Big Data</h4>
+                            <p>
+                                Processed and analysed large-scale Twitter data
+                                to uncover sentiment trends. Tools used:
+                                PySpark, AWS EMR, Jupyter.
+                            </p>
+                            <a href="project3.html">View Project</a>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Contact Info Section -->
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <p>
-                    Email:
-                    <a href="mailto:samuelwelove@icloud.com"
-                        >samuelwelove@icloud.com</a
-                    >
-                </p>
-                <p>Phone: +64273533452</p>
-                <p>Location: Rolleston, Christchurch</p>
-                <p>
-                    LinkedIn:
-                    <a
-                        href="https://www.linkedin.com/in/samuel-love-profile"
-                        target="_blank"
-                        >View Profile</a
-                    >
-                </p>
+                <!-- IOD Category -->
+                <div class="project-category" id="iod">
+                    <button class="collapsible">
+                        <h3>
+                            IOD Projects
+                            <span class="toggle-label">Expand</span>
+                        </h3>
+                    </button>
+                    <div class="project-grid-content">
+                        <div class="project">
+                            <h4>Mini-project 1</h4>
+                            <p>TBC</p>
+                            <a href="iod_project1.html">View Project</a>
+                        </div>
+                        <div class="project">
+                            <h4>Mini-project 2</h4>
+                            <p>TBC</p>
+                            <a href="iod_project2.html">View Project</a>
+                        </div>
+                        <div class="project">
+                            <h4>Mini-project 3</h4>
+                            <p>TBC</p>
+                            <a href="iod_project3.html">View Project</a>
+                        </div>
+                        <div class="project">
+                            <h4>Capstone Project</h4>
+                            <p>TBC</p>
+                            <a href="iod_project4.html">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Category -->
+                <div class="project-category" id="personal">
+                    <button class="collapsible">
+                        <h3>
+                            Personal Projects
+                            <span class="toggle-label">Expand</span>
+                        </h3>
+                    </button>
+                    <div class="project-grid-content">
+                        <div class="project">
+                            <h4>Automating Transcription</h4>
+                            <p>
+                                Built a Python workflow to automatically
+                                transcribe audio using Whisper and clean text
+                                for reports. Tools used: Python, OpenAI Whisper,
+                                Bash.
+                            </p>
+                            <a href="personal_project1.html">View Project</a>
+                        </div>
+                        <div class="project">
+                            <h4>Australia Immigration Tool</h4>
+                            <p>
+                                Developed a visual tool to help NZ residents
+                                understand migration patterns to Australia.
+                                Tools used: Tableau, ABS data.
+                            </p>
+                            <a href="personal_project2.html">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fun Category -->
+                <div class="project-category" id="fun">
+                    <button class="collapsible">
+                        <h3>
+                            Fun Projects
+                            <span class="toggle-label">Expand</span>
+                        </h3>
+                    </button>
+                    <div class="project-grid-content">
+                        <div class="project">
+                            <h4>Dice Roll</h4>
+                            <p>
+                                My first use of JavaScript to create a simple
+                                dice roll application for the browser. Tools
+                                used: HTML, CSS, JavaScript.
+                            </p>
+                            <a href="fun_project1.html">View Project</a>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- CV Section -->
             <section id="cv">
-                <h2>Curriculum Vitae</h2>
-
-                <h3>About Me</h3>
-                <p>
-                    I recently completed a Master of Applied Data Science...
-                    (concise blurb here).
-                </p>
-
-                <h3>Qualifications</h3>
-                <ul>
-                    <li>
-                        Master of Applied Data Science, University of Canterbury
-                        (2024)
-                    </li>
-                    <li>
-                        Bachelor of Science in Actuarial Science and Economics,
-                        Victoria University of Wellington (2021)
-                    </li>
-                </ul>
-
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li><strong>Languages:</strong> Python, R, SQL</li>
-                    <li>
-                        <strong>Data Science Tools:</strong> Jupyter, Power BI,
-                        MySQL, Tableau
-                    </li>
-                    <li>
-                        <strong>Python Packages:</strong> Pandas, Matplotlib,
-                        Scikit-learn
-                    </li>
-                </ul>
-
-                <h3>Employment History</h3>
-                <ul>
-                    <li>
-                        <strong
-                            >Transcriptionist @ Aorangi Orthopaedic
-                            Centre:</strong
+                <div class="cv-header">
+                    <h2>Curriculum Vitae</h2>
+                    <div class="cv-links">
+                        <a href="extras/Samuel_Love_CV.pdf" target="_blank"
+                            >View PDF</a
                         >
-                        Enhanced efficiency with AI transcription.
-                    </li>
-                    <li>
-                        <strong>Store Assistant @ Wanaka New World:</strong>
-                        Provided customer service during peak seasons.
-                    </li>
-                    <li>
-                        <strong>Caregiver:</strong> Engaged with neurodiverse
-                        youths, providing tailored care.
-                    </li>
-                </ul>
-
-                <h3>Certifications</h3>
-                <ul>
-                    <li>Data Literacy, Python Data Associate (Datacamp)</li>
-                    <li>NZSL Intermediate (Merge New Zealand Sign Language)</li>
-                </ul>
-
-                <h3>Transferable Skills</h3>
-                <ul>
-                    <li>Attention to Detail</li>
-                    <li>Customer Service</li>
-                    <li>Leadership</li>
-                </ul>
-
-                <h3>Interests</h3>
-                <ul>
-                    <li>CrossFit, Swimming, Yoga</li>
-                    <li>Gardening, Bonsai, Pottery</li>
-                    <li>Singing with Voices Co</li>
-                </ul>
-
-                <h3>Referees</h3>
-                <p>Available upon request.</p>
-
-                <a href="path/to/your-cv.pdf" download
-                    ><button>Download Full CV</button></a
-                >
+                        <a href="extras/Samuel_Love_CV.pdf" download
+                            >Download PDF</a
+                        >
+                    </div>
+                </div>
             </section>
+
+            <details>
+                <summary>About Me</summary>
+                <p>
+                    I recently completed a Master of Applied Data Science from
+                    the University of Canterbury (NZ) and am eager to launch my
+                    career in data science. My experience spans both office and
+                    customer-facing environments, where I developed strong
+                    communication and teamwork skills, further enhanced through
+                    extensive sporting pursuits. A disciplined and engaged
+                    lifelong learner, I bring curiosity, adaptability, and a
+                    data-driven mindset to solving real-world problems.
+                </p>
+            </details>
+
+            <details>
+                <summary>Qualifications</summary>
+                <ul>
+                    <li>
+                        <strong>Master of Applied Data Science</strong> –
+                        University of Canterbury (2021–2024)
+                    </li>
+                    <li>
+                        <strong>BSc in Actuarial Science and Economics</strong>
+                        – Victoria University (2017–2020)
+                    </li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Technical Skills</summary>
+                <p>
+                    <i class="fa fa-code" style="color: #007bff"></i>
+                    Python, R, SQL
+                </p>
+                <p>
+                    <i class="fa fa-laptop-code" style="color: #28a745"></i>
+                    CSS, HTML, JavaScript
+                </p>
+                <p>
+                    <i class="fa fa-cogs" style="color: #ffc107"></i>
+                    Anaconda, Bash, GitHub, Jupyter, MySQL, Power BI,
+                    PostgreSQL, RStudio, Tableau
+                </p>
+                <p>
+                    <i class="fa fa-tools" style="color: #6c757d"></i>
+                    Excel, Incisive, Obsidian, PowerPoint, Quarto, Slack, Word,
+                    Zed, Zoom
+                </p>
+                <p>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                        alt="Python Logo"
+                        width="20"
+                        height="20"
+                        style="vertical-align: middle; margin-right: 8px"
+                        class="tech-icon"
+                    />
+                    BeautifulSoup, Matplotlib, NumPy, Pandas, Plotly,
+                    Scikit-learn
+                </p>
+                <p>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg"
+                        alt="R Logo"
+                        width="20"
+                        height="20"
+                        style="vertical-align: middle; margin-right: 8px"
+                        class="tech-icon"
+                    />
+                    caret, e1071, glmnet, ggplot2, randomForest, shiny,
+                    tidyverse
+                </p>
+            </details>
+
+            <details>
+                <summary>Transferable Skills</summary>
+                <ul>
+                    <li>
+                        <strong>Attention to Detail:</strong> Transcription
+                        accuracy
+                    </li>
+                    <li>
+                        <strong>Communication:</strong> NZSL, Te Reo, Mandarin
+                    </li>
+                    <!-- Add more -->
+                </ul>
+            </details>
+
+            <details>
+                <summary>Employment History</summary>
+                <ul>
+                    <li>
+                        <strong>Transcriptionist</strong> @ Aorangi Orthopaedic
+                        (2021–2024)
+                    </li>
+                    <li>
+                        <strong>Store Assistant</strong> @ Wanaka New World (3
+                        summers)
+                    </li>
+                    <!-- Add more -->
+                </ul>
+            </details>
+
+            <details>
+                <summary>Certifications</summary>
+                <ul>
+                    <li>Datacamp: SQL Associate, Python Data Associate</li>
+                    <li>Everything Dog: Learning & Beyond</li>
+                    <!-- Add more -->
+                </ul>
+            </details>
+
+            <details>
+                <summary>Interests</summary>
+                <ul>
+                    <li>CrossFit, Gardening, Singing, Yoga</li>
+                    <li>Workshops: Bonsai, Sourdough, etc.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Referees</summary>
+                <p>Available on request.</p>
+            </details>
         </main>
 
+        <script>
+            const toggle = document.getElementById("theme-toggle");
+            toggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark");
+            });
+        </script>
         <script src="script.js"></script>
     </body>
 </html>
