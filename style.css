@@ -323,29 +323,10 @@ i {
     color: #6c757d; /* General tools (gray) */
 }
 
-/* Add hover effect */
-i:hover {
-    font-size: 25px; /* Make the icon bigger on hover */
-}
-
-/* Increase size on hover for all icons, including Python and R */
-.skill-icon {
-    font-size: 40px;
-    transition: all 0.3s ease;
-}
-
-.skill-icon:hover {
-    transform: scale(1.2); /* Increase size on hover */
-}
-
 /* Add any specific styling for Python and R images */
 .skill-icon img {
     width: 40px; /* Adjust size of images */
     transition: transform 0.3s ease;
-}
-
-.skill-icon img:hover {
-    transform: scale(1.2); /* Increase size on hover */
 }
 
 /* === Theme Variables === */
