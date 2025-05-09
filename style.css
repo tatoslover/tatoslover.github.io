@@ -36,8 +36,11 @@
 
 .contact-icons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .contact-item {
@@ -181,6 +184,9 @@
 #cv {
     text-align: center;
     padding: 2rem;
+    max-width: 800px; /* Keeps layout tidy */
+    margin: 0 auto; /* Centers the section */
+    width: 100%; /* Responsive width */
 }
 
 #cv ul {
@@ -237,6 +243,25 @@
     background-color: #0056b3;
 }
 
+.cv-section {
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.cv-section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.cv-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 details {
     margin-top: 1.5rem;
     text-align: left;
@@ -254,6 +279,16 @@ details summary {
 
 details[open] summary {
     margin-bottom: 0.5rem;
+}
+
+.uni-logo {
+    width: 60px;
+    height: auto;
+    background-color: white; /* adds white background */
+    padding: 6px;
+    border-radius: 4px; /* optional, softens corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional, for contrast */
+    margin-right: 12px;
 }
 
 /* === Base Styles === */
