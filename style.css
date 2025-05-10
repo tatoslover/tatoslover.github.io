@@ -257,11 +257,6 @@
     margin-bottom: 0.5rem;
 }
 
-.cv-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 details {
     margin-top: 1.5rem;
     text-align: left;
@@ -281,14 +276,37 @@ details[open] summary {
     margin-bottom: 0.5rem;
 }
 
+.cv-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the entire list items */
+}
+
+.cv-section ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    gap: 12px;
+    max-width: 600px; /* Adjust as needed */
+    width: fit-content;
+}
+
 .uni-logo {
-    width: 60px;
-    height: auto;
-    background-color: white; /* adds white background */
-    padding: 6px;
-    border-radius: 4px; /* optional, softens corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional, for contrast */
-    margin-right: 12px;
+    height: 3em;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.degree-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Keep text left-aligned within the centered container */
+}
+
+.degree-info strong {
+    margin-bottom: 0.2em;
 }
 
 /* === Base Styles === */
