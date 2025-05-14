@@ -95,6 +95,11 @@
     color: var(--accent);
 }
 
+.project h5 {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
 .project p {
     font-size: 1rem;
     margin-bottom: 0.5rem;
@@ -157,33 +162,6 @@
     width: 120px; /* Ensure the width matches the height */
     object-fit: cover;
     border-radius: 50%; /* Make it circular */
-}
-
-/* === Theme Variables === */
-:root {
-    --bg: #f9f9f9;
-    --text: #111;
-    --accent: #336699; /* This is your main blue color */
-    --link: #0044cc;
-    --link-hover: #002288;
-    --button-bg: #d3d3d3;
-    --button-text: #111;
-    --header: #222;
-    --card-bg: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #1e1e2f;
-        --text: #e0e0e0;
-        --accent: #607d8b;
-        --link: #99ccff;
-        --link-hover: #cce6ff;
-        --button-bg: #2c3e50;
-        --button-text: silver;
-        --header: palegoldenrod;
-        --card-bg: #2a2a3d;
-    }
 }
 
 /* === CV Section === */
@@ -371,7 +349,7 @@ i {
     :root {
         --bg: #1e1e2f;
         --text: #e0e0e0;
-        --accent: #607d8b;
+        --accent: #4682b4;
         --link: #99ccff;
         --link-hover: #cce6ff;
         --button-bg: #2c3e50;
