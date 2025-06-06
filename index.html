@@ -13,8 +13,102 @@
     </head>
 
     <body>
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>Samuel Love</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cv" class="nav-link">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
         <main>
-            <header class="header-flex">
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img
+                            src="extras/pp.png"
+                            alt="Samuel Love"
+                            class="profile-image"
+                        />
+                    </div>
+                    <div class="hero-text">
+                        <h1>Samuel Love</h1>
+                        <h2 class="hero-subtitle">
+                            Data Scientist & Software Engineer
+                        </h2>
+                        <p class="hero-description">
+                            Passionate about using data science and technology
+                            to create positive change. Currently training as a
+                            software engineer with degrees in Actuarial Science
+                            and Data Science.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary"
+                                >View Projects</a
+                            >
+                            <a href="#contact" class="btn btn-secondary"
+                                >Get In Touch</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="container">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>
+                                Hello! I'm Samuel Love — welcome to my corner of
+                                the internet. Born in Australia and raised in
+                                New Zealand (I'm a dual citizen), I'm passionate
+                                about using my skills and dedication to create
+                                positive change.
+                            </p>
+                            <p>
+                                I hold degrees in Actuarial Science and Data
+                                Science, and I'm currently training as a
+                                software engineer through the Institute of Data.
+                                I thrive on personal growth and overcoming
+                                challenges.
+                            </p>
+                            <p>
+                                In my free time, I enjoy basketball, CrossFit,
+                                dog-walking, gardening, hiking, singing,
+                                swimming, and yoga.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <header class="header-flex" style="display: none">
                 <!-- Consider different quality images for different sized screens. -->
                 <img
                     src="extras/pp.png"
@@ -43,205 +137,527 @@
                 </div>
             </header>
 
-            <!-- Contact Me Section -->
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <div class="contact-icons">
-                    <div class="contact-item">
-                        <a href="mailto:samuelwelove@icloud.com">
-                            <i class="fa fa-envelope"></i>
-                            <p>samuelwelove@icloud.com</p>
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="tel:+64273533452">
-                            <i class="fa fa-phone"></i>
-                            <p>+64273533452</p>
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a
-                            href="https://www.linkedin.com/in/samuel-love-profile"
-                            target="_blank"
-                        >
-                            <i class="fab fa-linkedin"></i>
-                            <p>LinkedIn</p>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
             <!-- Projects Section -->
-            <section id="projects">
-                <!-- MADS Category -->
-                <div class="project-category" id="mads">
-                    <button class="collapsible">
-                        <h3>
-                            Master of Applied Data Science Projects
-                            <span class="toggle-label">Expand</span>
-                        </h3>
-                    </button>
-                    <div class="project-grid-content">
-                        <div class="project">
-                            <h4>Capstone: From Bricks to Bucks</h4>
-                            <h5>
-                                Exploring Influential Variables in Sales
-                                Patterns of LEGO Bricks
-                            </h5>
-                            <img
-                                src="extras/capstone/legoman.png"
-                                alt="LEGO figure"
-                                class="legoman-image"
-                            />
-                            <p>
-                                This project examined sales patterns of LEGO
-                                sets to predict their secondary market prices
-                                using machine learning. It compared licensed vs.
-                                original sets and analyzed trends in quantity,
-                                complexity, and price over time. Key steps
-                                included time-series analysis, clustering, and
-                                predictive modeling using linear regression,
-                                elastic net, random forest, and SVM. Results
-                                showed that historical price data is a strong
-                                predictor of value, though models excluding it
-                                sometimes performed better. <br />
-                                Tools used: R (tidyverse, caret, plotly, shiny,
-                                randomForest, glmnet, DT, e1071), Quarto
-                            </p>
-                            <h2>Files:</h2>
+            <section id="projects" class="projects-section">
+                <div class="container">
+                    <h2 class="section-title">My Projects</h2>
+                    <div class="projects-container">
+                        <!-- MADS Category -->
+                        <div class="project-category" id="mads">
+                            <button class="collapsible">
+                                <h3>
+                                    Master of Applied Data Science Coursework
+                                    <span class="toggle-label">Expand</span>
+                                </h3>
+                            </button>
+                            <div class="project-grid-content">
+                                <!-- 2021 Section -->
+                                <div class="year-section">
+                                    <h3 class="year-header">2021</h3>
+                                    <div class="courses-grid">
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>COSC480</h5>
+                                                <h6>Computer Programming</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Introduction to programming fundamentals and computational thinking for data science applications. Covered Python syntax, data structures, algorithms, and object-oriented programming concepts.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">Algorithms</span>
+                                                    <span class="tech-tag">Data Structures</span>
+                                                    <span class="tech-tag">OOP</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>DIGI405</h5>
+                                                <h6>Texts, Discourses and Data</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Exploring the intersection of humanities and data science through text analysis and digital methods. Applied computational techniques to literary and cultural texts.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Text Mining</span>
+                                                    <span class="tech-tag">NLP</span>
+                                                    <span class="tech-tag">Digital Humanities</span>
+                                                    <span class="tech-tag">Corpus Analysis</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>STAT462</h5>
+                                                <h6>Data Mining</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Fundamental techniques for discovering patterns and extracting insights from large datasets. Covered clustering, classification, and association rule mining methods.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Clustering</span>
+                                                    <span class="tech-tag">Classification</span>
+                                                    <span class="tech-tag">Association Rules</span>
+                                                    <span class="tech-tag">Pattern Recognition</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="buttons">
-                                <a
-                                    href="extras/capstone/Project-Brief.pdf"
-                                    target="_blank"
-                                    >Project Brief</a
-                                >
-                            </div>
-                            <div class="buttons">
-                                <a
-                                    href="https://samsdata601.shinyapps.io/DATA601/"
-                                    target="_blank"
-                                    >Shiny App</a
-                                >
-                            </div>
-                            <div class="buttons">
-                                <a
-                                    href="extras/capstone/Project-Report.pdf"
-                                    target="_blank"
-                                    >Project Report</a
-                                >
-                            </div>
-                            <div class="buttons">
-                                <a
-                                    href="extras/capstone/Slides.pdf"
-                                    target="_blank"
-                                    >Slides</a
-                                >
-                            </div>
-                            <div class="buttons">
-                                <a
-                                    href="extras/capstone/Poster.pdf"
-                                    target="_blank"
-                                    >Poster</a
-                                >
-                            </div>
-                            <div class="buttons">
-                                <a
-                                    href="https://github.com/tatoslover/data601/tree/main"
-                                    target="_blank"
-                                    >GitHub Repo</a
-                                >
-                            </div>
-                        </div>
-                        <div class="project">
-                            <h4>JIFS: Internal Migration</h4>
-                            <p>TBC</p>
-                        </div>
-                        <div class="project">
-                            <h4>Big Data</h4>
-                            <p>TBC</p>
-                        </div>
-                    </div>
-                </div>
+                                <!-- 2022 Section -->
+                                <div class="year-section">
+                                    <h3 class="year-header">2022</h3>
+                                    <div class="courses-grid">
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>DATA422</h5>
+                                                <h6>Data Wrangling for Data Science</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Advanced techniques for cleaning, transforming, and preparing messy real-world data for analysis. Focused on ETL processes and data quality assessment.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Data Cleaning</span>
+                                                    <span class="tech-tag">ETL</span>
+                                                    <span class="tech-tag">Data Quality</span>
+                                                    <span class="tech-tag">Pandas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>DATA423</h5>
+                                                <h6>Data Science in Industry</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Real-world applications of data science methodologies in business and industry contexts. Emphasized project management and stakeholder communication.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Business Analytics</span>
+                                                    <span class="tech-tag">Industry Applications</span>
+                                                    <span class="tech-tag">Project Management</span>
+                                                    <span class="tech-tag">Communication</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>STAT448</h5>
+                                                <h6>Big Data</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Statistical methods and computational techniques for analyzing massive datasets using distributed computing frameworks and cloud platforms.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Hadoop</span>
+                                                    <span class="tech-tag">Spark</span>
+                                                    <span class="tech-tag">Distributed Computing</span>
+                                                    <span class="tech-tag">MapReduce</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- IOD Category -->
-                <div class="project-category" id="iod">
-                    <button class="collapsible">
-                        <h3>
-                            Institute of Data Projects
-                            <span class="toggle-label">Expand</span>
-                        </h3>
-                    </button>
-                    <div class="project-grid-content">
-                        <div class="project">
-                            <h4>Mini-project 1</h4>
-                            <p>TBC</p>
-                        </div>
-                        <div class="project">
-                            <h4>Mini-project 2</h4>
-                            <p>TBC</p>
-                        </div>
-                        <div class="project">
-                            <h4>Mini-project 3</h4>
-                            <p>TBC</p>
-                        </div>
-                        <div class="project">
-                            <h4>Capstone Project</h4>
-                            <p>TBC</p>
-                        </div>
-                    </div>
-                </div>
+                                <!-- 2023 Section -->
+                                <div class="year-section">
+                                    <h3 class="year-header">2023</h3>
+                                    <div class="courses-grid">
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>DATA420</h5>
+                                                <h6>Scalable Data Science</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Advanced methods for building scalable data science solutions using cloud computing and distributed systems. Emphasized MLOps and production deployment.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Cloud Computing</span>
+                                                    <span class="tech-tag">MLOps</span>
+                                                    <span class="tech-tag">Scalability</span>
+                                                    <span class="tech-tag">Docker</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>MBIS623</h5>
+                                                <h6>Data Management</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Database design, data governance, and management strategies for enterprise data systems. Covered relational and NoSQL database technologies.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Database Design</span>
+                                                    <span class="tech-tag">Data Governance</span>
+                                                    <span class="tech-tag">SQL</span>
+                                                    <span class="tech-tag">NoSQL</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-card">
+                                            <div class="course-header">
+                                                <h5>STAT455</h5>
+                                                <h6>Data Collection and Sampling</h6>
+                                            </div>
+                                            <div class="course-content">
+                                                <p class="course-description">
+                                                    Statistical theory and practical methods for designing surveys and collecting representative data samples. Applied sampling techniques to real-world scenarios.
+                                                </p>
+                                                <div class="tech-stack">
+                                                    <span class="tech-tag">Survey Design</span>
+                                                    <span class="tech-tag">Sampling Theory</span>
+                                                    <span class="tech-tag">Statistical Inference</span>
+                                                    <span class="tech-tag">Bias Reduction</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Personal Category -->
-                <div class="project-category" id="personal">
-                    <button class="collapsible">
-                        <h3>
-                            Personal Projects
-                            <span class="toggle-label">Expand</span>
-                        </h3>
-                    </button>
-                    <div class="project-grid-content">
-                        <div class="project">
-                            <h4>Automating Transcription</h4>
-                            <p>
-                                Built a Python workflow to automatically
-                                transcribe audio using Whisper and clean text
-                                for reports. Tools used: Python, OpenAI Whisper,
-                                Bash.
-                            </p>
+                                <!-- 2024 Capstone Section -->
+                                <div class="year-section">
+                                    <h3 class="year-header capstone-header">2024 CAPSTONE</h3>
+                                <div class="project-card capstone-card">
+                                    <div class="project-header">
+                                        <h4>DATA601: From Bricks to Bucks</h4>
+                                        <h5>Exploring Influential Variables in Sales Patterns of LEGO Bricks</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-image">
+                                            <img
+                                                src="extras/capstone/legoman.png"
+                                                alt="LEGO figure"
+                                                class="project-thumbnail"
+                                            />
+                                        </div>
+                                        <div class="project-description">
+                                            <p>
+                                                This capstone project examined sales patterns of LEGO sets to predict their secondary market prices using machine learning. It compared licensed vs. original sets and analyzed trends in quantity, complexity, and price over time. Key steps included time-series analysis, clustering, and predictive modeling using linear regression, elastic net, random forest, and SVM algorithms.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">R</span>
+                                                <span class="tech-tag">tidyverse</span>
+                                                <span class="tech-tag">Shiny</span>
+                                                <span class="tech-tag">Machine Learning</span>
+                                                <span class="tech-tag">Time Series</span>
+                                                <span class="tech-tag">Clustering</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="extras/capstone/Project-Brief.pdf" target="_blank" class="btn-badge btn-document">
+                                            <i class="fas fa-file-pdf" aria-hidden="true"></i> Project Brief
+                                        </a>
+                                        <a href="https://samsdata601.shinyapps.io/DATA601/" target="_blank" class="btn-badge btn-live-demo">
+                                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Shiny App
+                                        </a>
+                                        <a href="extras/capstone/Project-Report.pdf" target="_blank" class="btn-badge btn-document">
+                                            <i class="fas fa-file-pdf" aria-hidden="true"></i> Report
+                                        </a>
+                                        <a href="https://github.com/tatoslover/UCMADS/tree/main/DATA601" target="_blank" class="btn-badge btn-github">
+                                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project">
-                            <h4>Australia Immigration Tool</h4>
-                            <p>
-                                Developed a visual tool to help NZ residents
-                                understand migration patterns to Australia.
-                                Tools used: Tableau, ABS data.
-                            </p>
-                            <a
-                                href="https://public.tableau.com/app/profile/samuel.love4547/viz/MovingDownUnderDataSchool/Main"
-                                target="_blank"
-                                >View Project</a
-                            >
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Fun Category -->
-                <div class="project-category" id="fun">
-                    <button class="collapsible">
-                        <h3>
-                            Fun Projects
-                            <span class="toggle-label">Expand</span>
-                        </h3>
-                    </button>
-                    <div class="project-grid-content">
-                        <div class="project">
-                            <h4>Dice Roll</h4>
-                            <p>
-                                My first use of JavaScript to create a simple
-                                dice roll application for the browser. Tools
-                                used: HTML, CSS, JavaScript.
-                            </p>
+                        <!-- IOD Category -->
+                        <div class="project-category" id="iod">
+                            <button class="collapsible">
+                                <h3>
+                                    Institute of Data Projects
+                                    <span class="toggle-label">Expand</span>
+                                </h3>
+                            </button>
+                            <div class="project-grid-content">
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>🏀 NBA 2K Stat Attack</h4>
+                                        <h5>
+                                            Interactive NBA Player Statistics
+                                            Dashboard
+                                        </h5>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-image">
+                                            <img src="extras/MP1.png" alt="NBA Statistics Dashboard" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);" />
+                                        </div>
+                                        <div class="project-description">
+                                            <p>
+                                                A dynamic web application for
+                                                exploring, filtering, and
+                                                comparing NBA player statistics
+                                                with interactive charts and
+                                                team-themed visuals. Features
+                                                advanced filtering, real-time
+                                                search, and head-to-head player
+                                                comparisons powered by NBA API
+                                                data (~500 players).
+                                            </p>
+                                            <div class="project-highlights">
+                                                <p>
+                                                    <strong
+                                                        >Key Features:</strong
+                                                    >
+                                                </p>
+                                                <ul
+                                                    style="
+                                                        text-align: left;
+                                                        margin: 0.5rem 0;
+                                                    "
+                                                >
+                                                    <li>
+                                                        Interactive Chart.js
+                                                        visualizations
+                                                    </li>
+                                                    <li>
+                                                        Real-time player search
+                                                        & filtering
+                                                    </li>
+                                                    <li>
+                                                        Team-themed UI with all
+                                                        30 NBA teams
+                                                    </li>
+                                                    <li>
+                                                        Head-to-head player
+                                                        comparisons
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag"
+                                                    >JavaScript</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Bootstrap 5</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Chart.js</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >NBA API</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Responsive Design</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-links">
+                                        <a
+                                            href="https://nbaadvancedstatattack.netlify.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Netlify"
+                                        >
+                                            <i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>
+                                            Live Demo
+                                        </a>
+                                        <a
+                                            href="https://github.com/tatoslover/Mini-Project-1"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        >
+                                            <i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>
+                                            GitHub Repo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>⚛️ Interactive React Application</h4>
+                                        <h5>Mini-Project #2</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                Project TBC covering React concepts including interactive elements (forms, links, buttons), routes, data fetching, React hooks, and external libraries like Bootstrap and MUI.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">React</span>
+                                                <span class="tech-tag">React Hooks</span>
+                                                <span class="tech-tag">React Router</span>
+                                                <span class="tech-tag">Bootstrap</span>
+                                                <span class="tech-tag">MUI</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>🗄️ Real-Time Database Application</h4>
+                                        <h5>Mini-Project #3</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                Project TBC covering database concepts including external API data fetching, MVC model implementation, full CRUD operations, and database population. Demonstrated via Postman or Swagger.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Database</span>
+                                                <span class="tech-tag">MVC Pattern</span>
+                                                <span class="tech-tag">API Integration</span>
+                                                <span class="tech-tag">CRUD Operations</span>
+                                                <span class="tech-tag">Postman/Swagger</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>🎓 IOD Capstone Project</h4>
+                                        <h5>Software Engineering Capstone</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                Capstone TBC covering the full course curriculum and demonstrating comprehensive software engineering skills learned throughout the Institute of Data program.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Full-Stack Development</span>
+                                                <span class="tech-tag">Software Engineering</span>
+                                                <span class="tech-tag">Course Integration</span>
+                                                <span class="tech-tag">Professional Practice</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Category -->
+                        <div class="project-category" id="personal">
+                            <button class="collapsible">
+                                <h3>
+                                    Personal Projects
+                                    <span class="toggle-label">Expand</span>
+                                </h3>
+                            </button>
+                            <div class="project-grid-content">
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>Automating Transcription</h4>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                Built a Python workflow to
+                                                automatically transcribe audio
+                                                using Whisper and clean text for
+                                                reports. Streamlined the
+                                                transcription process for
+                                                medical documentation.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag"
+                                                    >Python</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >OpenAI Whisper</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Bash</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>Australia Immigration Tool</h4>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                Developed a visual tool to help
+                                                NZ residents understand
+                                                migration patterns to Australia.
+                                                Interactive dashboard analyzing
+                                                demographic trends and migration
+                                                flows.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag"
+                                                    >Tableau</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Data Visualization</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >ABS Data</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-links">
+                                        <a
+                                            href="https://public.tableau.com/app/profile/samuel.love4547/viz/MovingDownUnderDataSchool/Main"
+                                            target="_blank"
+                                            class="btn btn-small btn-primary"
+                                            >View Dashboard</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fun Category -->
+                        <div class="project-category" id="fun">
+                            <button class="collapsible">
+                                <h3>
+                                    Fun Projects
+                                    <span class="toggle-label">Expand</span>
+                                </h3>
+                            </button>
+                            <div class="project-grid-content">
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>Dice Roll Application</h4>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-description">
+                                            <p>
+                                                My first venture into
+                                                JavaScript! Created a simple
+                                                dice roll application for the
+                                                browser. A fun learning project
+                                                that helped me understand DOM
+                                                manipulation and event handling.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag"
+                                                    >HTML</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >CSS</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >JavaScript</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,50 +673,54 @@
                         >
                     </div>
                 </div>
-            </section>
 
-            <section class="cv-section">
-                <h3>About Me</h3>
-                <p>
-                    I recently completed a Master of Applied Data Science from
-                    the University of Canterbury (NZ) and am eager to launch my
-                    career in data science. My experience spans both office and
-                    customer-facing environments, where I developed strong
-                    communication and teamwork skills, further enhanced through
-                    extensive sporting pursuits. A disciplined and engaged
-                    lifelong learner, I bring curiosity, adaptability, and a
-                    data-driven mindset to solving real-world problems.
-                </p>
-            </section>
+                <div class="cv-section">
+                    <h3>About Me</h3>
+                    <p>
+                        I am currently completing a Software Engineering Programme through the University of Canterbury and the Institute of Data. I hold a Master of Applied Data Science from the University of Canterbury and am eager to launch my career in data science. My experience spans both office and customer-facing environments, where I developed strong communication and teamwork skills, further enhanced through extensive sporting pursuits. A disciplined and engaged lifelong learner, I bring curiosity, adaptability, and a data-driven mindset to solving real-world problems.
+                    </p>
+                </div>
 
-            <section class="cv-section">
-                <h3>Qualifications</h3>
-                <ul>
-                    <li>
-                        <img
-                            src="extras/uc.svg"
-                            alt="University of Canterbury"
-                            class="uni-logo"
-                        />
-                        <div class="degree-info">
-                            <strong>Master of Applied Data Science</strong>
-                            <span>University of Canterbury (2021–2024)</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img
-                            src="extras/vuw.svg"
-                            alt="Victoria University of Wellington"
-                            class="uni-logo"
-                        />
-                        <div class="degree-info">
-                            <strong
-                                >BSc in Actuarial Science and Economics</strong
-                            >
-                            <span>Victoria University (2017–2020)</span>
-                        </div>
-                    </li>
-                </ul>
+                <div class="cv-section">
+                    <h3>Qualifications</h3>
+                    <ul>
+                        <li>
+                            <img
+                                src="extras/IOD.svg"
+                                alt="Institute of Data"
+                                class="uni-logo"
+                            />
+                            <div class="degree-info">
+                                <strong>Software Engineering Certificate</strong>
+                                <span>Institute of Data & University of Canterbury (April 2025 – July 2025)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img
+                                src="extras/uc.svg"
+                                alt="University of Canterbury"
+                                class="uni-logo"
+                            />
+                            <div class="degree-info">
+                                <strong>Master of Applied Data Science</strong>
+                                <span>University of Canterbury (2021–2024)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img
+                                src="extras/vuw.svg"
+                                alt="Victoria University of Wellington"
+                                class="uni-logo"
+                            />
+                            <div class="degree-info">
+                                <strong
+                                    >BSc in Actuarial Science and Economics</strong
+                                >
+                                <span>Victoria University (2017–2020)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section class="cv-section">
@@ -310,13 +730,20 @@
                     Python, R, SQL
                 </p>
                 <p>
-                    <i class="fa fa-laptop-code" style="color: #28a745"></i>
-                    CSS, HTML, JavaScript
+                    <i class="fa fa-globe" style="color: #007bff"></i>
+                    Bootstrap, CSS, Express.js, Figma, HTML, JavaScript, JSX, React, Swagger.
+                </p>
+                <p>
+                    <i class="fa fa-rocket" style="color: #007bff"></i>
+                    AWS EC2, AWS Elastic Beanstalk, CI/CD, Docker, GitHub Actions.
                 </p>
                 <p>
                     <i class="fa fa-cogs" style="color: #ffc107"></i>
-                    Anaconda, Bash, GitHub, Jupyter, MySQL, Power BI,
-                    PostgreSQL, RStudio, Tableau
+                    Anaconda, Bash, GitHub, Jupyter, MongoDB, MySQL, Power BI, PostgreSQL, Redis, RStudio, Tableau
+                </p>
+                <p>
+                    <i class="fa fa-drafting-compass" style="color: #007bff"></i>
+                    Agile, Model-View-Controller (MVC), Test Driven Development, Version Control (Git).
                 </p>
                 <p>
                     <i class="fa fa-tools" style="color: #6c757d"></i>
@@ -573,6 +1000,66 @@
                     ><br />
                     <span>Daily workouts.</span>
                 </p>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="contact-intro">
+                        I'm always open to discussing new opportunities,
+                        collaborations, or just having a chat about data science
+                        and technology.
+                    </p>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Email</h4>
+                                <a href="mailto:samuelwelove@icloud.com"
+                                    >samuelwelove@icloud.com</a
+                                >
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Phone</h4>
+                                <a href="tel:+64273533452">+64 27 353 3452</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>LinkedIn</h4>
+                                <a
+                                    href="https://www.linkedin.com/in/samuel-love-profile"
+                                    target="_blank"
+                                    >Connect with me</a
+                                >
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>GitHub</h4>
+                                <a
+                                    href="https://github.com/tatoslover"
+                                    target="_blank"
+                                    >View my code</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
