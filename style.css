@@ -376,6 +376,27 @@
     gap: 0;
 }
 
+/* Override for MADS coursework section to stack year sections vertically */
+#mads-coursework .project-grid-content.expanded {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+/* Override for IOD section to stack projects vertically */
+#iod .project-grid-content.expanded {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+/* Override for Personal/Misc section to stack projects vertically */
+#personal .project-grid-content.expanded {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+}
+
 .project-card {
     background-color: var(--bg);
     border-radius: 12px;
