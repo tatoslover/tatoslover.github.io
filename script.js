@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Close mobile menu when clicking on a nav link
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    }));
+    document.querySelectorAll(".nav-link").forEach((n) =>
+      n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }),
+    );
   }
 
   // Collapsible project sections
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.addEventListener("click", function () {
       const isExpanded = content.classList.contains("expanded");
-      
+
       if (isExpanded) {
         content.classList.remove("expanded");
         label.textContent = "Expand";
@@ -41,39 +43,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
-        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+        const offsetTop = target.offsetTop - 120; // Account for fixed header and navbar
         window.scrollTo({
           top: offsetTop,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     });
   });
 
-  // Add scroll effect to navbar
-  window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navLogo = document.querySelector('.nav-logo span');
-    const bars = document.querySelectorAll('.bar');
-    
+  // Add scroll effect to header and navbar
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".main-header");
+    const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const portfolioTitle = document.querySelector(".portfolio-title");
+    const bars = document.querySelectorAll(".bar");
+
     if (window.scrollY > 100) {
       // Scrolled - orange/copper background
-      navbar.style.background = 'rgba(204, 102, 51, 0.95)';
-      navLinks.forEach(link => link.style.color = 'white');
-      if (navLogo) navLogo.style.color = 'white';
-      bars.forEach(bar => bar.style.backgroundColor = 'white');
+      if (header) header.style.background = "rgba(204, 102, 51, 0.95)";
+      if (navbar) navbar.style.background = "rgba(204, 102, 51, 0.95)";
+      navLinks.forEach((link) => (link.style.color = "white"));
+      if (portfolioTitle) portfolioTitle.style.color = "white";
+      bars.forEach((bar) => (bar.style.backgroundColor = "white"));
     } else {
       // Top - navy background
-      navbar.style.background = 'rgba(51, 102, 153, 0.95)';
-      navLinks.forEach(link => link.style.color = 'white');
-      if (navLogo) navLogo.style.color = 'white';
-      bars.forEach(bar => bar.style.backgroundColor = 'white');
+      if (header) header.style.background = "rgba(51, 102, 153, 0.95)";
+      if (navbar) navbar.style.background = "rgba(51, 102, 153, 0.95)";
+      navLinks.forEach((link) => (link.style.color = "white"));
+      if (portfolioTitle) portfolioTitle.style.color = "white";
+      bars.forEach((bar) => (bar.style.backgroundColor = "white"));
     }
   });
 });

@@ -1,12 +1,33 @@
-/* === Navigation === */
-.navbar {
+/* === Header === */
+.main-header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: rgba(51, 102, 153, 0.95);
     backdrop-filter: blur(10px);
+    z-index: 1001;
+    padding: 1rem 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* === Navigation === */
+.navbar {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    background-color: rgba(51, 102, 153, 0.95);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav-container {
@@ -16,13 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
-}
-
-.nav-logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    height: 60px;
 }
 
 .nav-menu {
@@ -31,6 +46,8 @@
     margin: 0;
     padding: 0;
     gap: 2rem;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-link {
@@ -80,7 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 2rem 2rem;
+    padding: 140px 2rem 2rem;
     background: linear-gradient(135deg, var(--bg) 0%, var(--card-bg) 100%);
 }
 
@@ -1120,10 +1137,14 @@ button:hover {
 
 /* === Responsive Design === */
 @media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 1.5rem;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 120px;
         flex-direction: column;
         background-color: var(--card-bg);
         width: 100%;
@@ -1131,6 +1152,7 @@ button:hover {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        justify-content: flex-start;
     }
 
     .nav-menu.active {
@@ -1161,6 +1183,10 @@ button:hover {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+
+    .hero-section {
+        padding: 160px 2rem 2rem;
     }
 
     .hero-text h1 {
