@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 4 Lab Portfolio - Advanced Frontend Development</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/module4.css" />
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+        <script
+            src="https://kit.fontawesome.com/a076d05399.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG3HuBlAUw3Wu-46hoogyANMHo1VC-tKnE1Q&s"
+                        alt="IOD Logo"
+                        class="header-logo"
+                    />Module 4 Lab Portfolio
+                </h1>
+                <p>
+                    Advanced Frontend Development: UX/UI Design, Modern Web
+                    Technologies & API Integration
+                </p>
+            </div>
+
+            <!-- README Overview Section -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📚 Module 4 Lab Overview</h2>
+                    <span class="toggle-icon rotated">▼</span>
+                </div>
+                <div class="lab-content active">
+                    <div class="lab-description">
+                        <strong>Advanced Frontend Development Journey:</strong>
+                        From UX/UI design prototyping to complex data
+                        visualization and API integration
+                    </div>
+                    <p>
+                        This portfolio showcases the Module 4 lab exercises,
+                        covering advanced frontend development concepts
+                        including UX/UI design with Figma, responsive Bootstrap
+                        layouts, dynamic DOM manipulation, API integration,
+                        modern JavaScript date/time handling, CSS animations,
+                        and data visualization with ECharts. The progression
+                        demonstrates mastery of modern web development practices
+                        and tools.
+                    </p>
+
+                    <div class="lab-description no-border">
+                        <h4>🌟 Complete Source Code & Documentation</h4>
+                        <p class="margin-10">The GitHub repository contains:</p>
+                        <ul class="margin-10">
+                            <li>
+                                <strong>Full Source Code:</strong> All 10
+                                exercises with working implementations
+                            </li>
+                            <li>
+                                <strong>Complete README:</strong> Detailed
+                                instructions and learning objectives
+                            </li>
+                            <li>
+                                <strong>Project Files:</strong> Tests,
+                                configurations, and documentation
+                            </li>
+                            <li>
+                                <strong>Professional Setup:</strong> .gitignore,
+                                package.json, and best practices
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Tools Comprehensive Section -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🛠️ Skills Developed & Tools Mastered</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="grid-layout">
+                        <div class="lab-description no-border">
+                            <h4>🎨 UX/UI Design</h4>
+                            <ul>
+                                <li>
+                                    <strong>Figma Prototyping:</strong>
+                                    Complete user interface design workflow
+                                </li>
+                                <li>
+                                    <strong>User Research:</strong>
+                                    Target audience analysis and personas
+                                </li>
+                                <li>
+                                    <strong>Design Systems:</strong>
+                                    Color palettes, typography, mobile-first
+                                </li>
+                                <li>
+                                    <strong>Wireframing:</strong>
+                                    Paper mockups to digital prototypes
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>🌐 Modern Web Technologies</h4>
+                            <ul>
+                                <li>
+                                    <strong>Bootstrap 5:</strong>
+                                    Grid system, responsive components
+                                </li>
+                                <li>
+                                    <strong>Advanced CSS:</strong>
+                                    Animations, transitions, keyframes
+                                </li>
+                                <li>
+                                    <strong>DOM Manipulation:</strong>
+                                    Template cloning, event delegation
+                                </li>
+                                <li>
+                                    <strong>ES6+ JavaScript:</strong>
+                                    Modules, async/await, destructuring
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>📊 Data & Visualization</h4>
+                            <ul>
+                                <li>
+                                    <strong>ECharts Library:</strong>
+                                    Interactive charts and visualizations
+                                </li>
+                                <li>
+                                    <strong>API Integration:</strong>
+                                    Fetch, JSON processing, error handling
+                                </li>
+                                <li>
+                                    <strong>Date/Time Libraries:</strong>
+                                    Luxon, Moment.js, timezone handling
+                                </li>
+                                <li>
+                                    <strong>Real-time Updates:</strong>
+                                    Dynamic content, auto-refresh systems
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>🔧 Development Tools</h4>
+                            <ul>
+                                <li>
+                                    <strong>Modern JavaScript:</strong>
+                                    ES6 modules, destructuring, template
+                                    literals
+                                </li>
+                                <li>
+                                    <strong>Form Handling:</strong>
+                                    Validation, submission, data processing
+                                </li>
+                                <li>
+                                    <strong>Interactive UI:</strong>
+                                    Lightbox modals, dynamic card systems
+                                </li>
+                                <li>
+                                    <strong>Performance:</strong>
+                                    Efficient DOM updates, lazy loading
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>🚀 Professional Skills</h4>
+                            <ul>
+                                <li>
+                                    <strong>Problem Solving:</strong>
+                                    Complex algorithm implementation
+                                </li>
+                                <li>
+                                    <strong>Code Organization:</strong>
+                                    Clean architecture, modular design
+                                </li>
+                                <li>
+                                    <strong>User Experience:</strong>
+                                    Responsive design, accessibility
+                                </li>
+                                <li>
+                                    <strong>Project Management:</strong>
+                                    Planning, documentation, implementation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 1: Figma UX/UI Design -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎨 Lab 1: Figma UX/UI Design Process</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Complete UX/UI design process
+                        for a Christchurch tattoo community social media app
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab1-iframe', 'lab1-source')"
+                        >
+                            Toggle Figma Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab1-source', 'lab1-iframe')"
+                        >
+                            Documentation
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab1-iframe"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fc6QkoL0oX2oXVsJ04vBwJ9%2FTat%25C5%25ABTahi%3Fnode-id%3D0-1%26t%3DgkcBLv6QWsSvAmOD-1"
+                        class="figma-embed hidden"
+                        allowfullscreen
+                    >
+                    </iframe>
+
+                    <div id="lab1-source" class="markdown-content hidden">
+                        <h1>
+                            Christchurch Tattoo Social App – Planning Document
+                        </h1>
+
+                        <h2>Project Brief</h2>
+                        <p>
+                            Create a Figma prototype for a social media
+                            application, where you can post your content and
+                            posts from other users are visible. Don't just jump
+                            into Figma, try to follow the design procedure by
+                            first clarifying the requirements, understanding the
+                            application flow, and sketching a quick paper
+                            mockup.
+                        </p>
+
+                        <h2>Project Overview</h2>
+                        <p>
+                            This app is designed for the Christchurch tattoo
+                            community. Local artists and tattoo enthusiasts can
+                            connect, share their work, and get inspired. Users
+                            can post photos, follow artists, discover studios on
+                            a map, and even book consultations.
+                        </p>
+
+                        <h2>Goals</h2>
+                        <ul>
+                            <li>
+                                Build a space for people to share and explore
+                                tattoo art in Christchurch
+                            </li>
+                            <li>
+                                Give local artists and studios better visibility
+                            </li>
+                            <li>
+                                Help users find inspiration and trustworthy
+                                artists nearby
+                            </li>
+                        </ul>
+
+                        <h2>Target Users</h2>
+                        <ul>
+                            <li>Local tattoo clients or prospective clients</li>
+                            <li>
+                                Local tattoo artists and studios looking to
+                                reach new clients
+                            </li>
+                            <li>
+                                Visitors to Christchurch trying to find quality
+                                tattoo work or studios
+                            </li>
+                        </ul>
+
+                        <h2>Design Notes</h2>
+                        <ul>
+                            <li>
+                                Dark theme: black and grey base, with accent
+                                color jade green
+                            </li>
+                            <li>Use tattoo-style fonts</li>
+                            <li>Incorporate Christchurch imagery</li>
+                            <li>Designed mobile-first</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 2: Calculator -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🧮 Lab 2: Calculator Application</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Status:</strong> Documentation file exists but
+                        is empty - likely integrated into other labs or
+                        portfolio demos
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab2-demo', 'lab2-source')"
+                        >
+                            Toggle Calculator Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab2-source', 'lab2-demo')"
+                        >
+                            Documentation
+                        </button>
+                    </div>
+
+                    <div
+                        id="lab2-demo"
+                        class="lab-description no-border hidden"
+                    >
+                        <h4>🧮 Calculator Demo</h4>
+                        <div class="calculator-demo">
+                            <input
+                                type="text"
+                                id="calc-display"
+                                class="calculator-display"
+                                readonly
+                            />
+                            <br />
+                            <div class="calculator-grid">
+                                <button
+                                    onclick="clearCalculator()"
+                                    class="calculator-button"
+                                >
+                                    C
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('/')"
+                                    class="calculator-button"
+                                >
+                                    ÷
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('*')"
+                                    class="calculator-button"
+                                >
+                                    ×
+                                </button>
+                                <button
+                                    onclick="deleteLast()"
+                                    class="calculator-button"
+                                >
+                                    ⌫
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('7')"
+                                    class="calculator-button"
+                                >
+                                    7
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('8')"
+                                    class="calculator-button"
+                                >
+                                    8
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('9')"
+                                    class="calculator-button"
+                                >
+                                    9
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('-')"
+                                    class="calculator-button"
+                                >
+                                    -
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('4')"
+                                    class="calculator-button"
+                                >
+                                    4
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('5')"
+                                    class="calculator-button"
+                                >
+                                    5
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('6')"
+                                    class="calculator-button"
+                                >
+                                    6
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('+')"
+                                    class="calculator-button"
+                                >
+                                    +
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('1')"
+                                    class="calculator-button"
+                                >
+                                    1
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('2')"
+                                    class="calculator-button"
+                                >
+                                    2
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('3')"
+                                    class="calculator-button"
+                                >
+                                    3
+                                </button>
+                                <button
+                                    onclick="calculateResult()"
+                                    class="calculator-button primary"
+                                >
+                                    =
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('0')"
+                                    class="calculator-button wide"
+                                >
+                                    0
+                                </button>
+                                <button
+                                    onclick="appendToDisplay('.')"
+                                    class="calculator-button"
+                                >
+                                    .
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        id="lab2-source"
+                        class="lab-description no-border hidden"
+                    >
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Create a calculator
+                            application that takes 2 numbers and supports 4
+                            operations (+, -, ×, ÷). You need to press the
+                            equals button to get the result displayed, and reset
+                            to clear it.
+                        </p>
+                        <p>
+                            <strong>Important:</strong> Do not use the eval()
+                            function - it is a security risk and bypasses custom
+                            logic.
+                        </p>
+                        <p>
+                            <em
+                                >Note: The Lab2.md file is empty, but calculator
+                                functionality may be implemented in other
+                                portfolio demonstrations.</em
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 3: Dynamic Card Templates -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🃏 Lab 3: Dynamic Card Templates</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Dynamic card generation with
+                        artist portfolio system and lightbox functionality
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab3-iframe', 'lab3-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab3-source', 'lab3-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab3-iframe"
+                        src="Notes/Module4/Lab3.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab3-source" class="source-code">
+                        Loading Lab3.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>
+                                Dynamic card generation from JavaScript arrays
+                            </li>
+                            <li>
+                                Artist portfolio system with multiple artworks
+                            </li>
+                            <li>Lightbox modal for image viewing</li>
+                            <li>CSS hover effects and animations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 4: Bootstrap Responsive Cards -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎯 Lab 4: Bootstrap Responsive Cards</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Mandarin numbers learning app
+                        with Bootstrap responsive design
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab4-iframe', 'lab4-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab4-source', 'lab4-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab4-iframe"
+                        src="Notes/Module4/Lab4.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab4-source" class="source-code">
+                        Loading Lab4.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>Bootstrap 5 responsive grid system</li>
+                            <li>Interactive card flip animations</li>
+                            <li>Mandarin number learning interface</li>
+                            <li>Mobile-first responsive design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 5: Dynamic News Feed -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📰 Lab 5: Dynamic News Feed</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Interactive news feed with
+                        form submission and dynamic content management
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab5-iframe', 'lab5-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab5-source', 'lab5-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab5-iframe"
+                        src="Notes/Module4/Lab5.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab5-source" class="source-code">
+                        Loading Lab5.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>Dynamic news item creation</li>
+                            <li>Form validation and submission</li>
+                            <li>Real-time content updates</li>
+                            <li>Interactive user interface</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 6: Bootstrap API Integration -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🌐 Lab 6: Bootstrap API Integration</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Dynamic content loading from
+                        external APIs with Bootstrap styling
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab6-iframe', 'lab6-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab6-source', 'lab6-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab6-iframe"
+                        src="Notes/Module4/Lab6.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab6-source" class="source-code">
+                        Loading Lab6.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>External API integration</li>
+                            <li>Bootstrap card components</li>
+                            <li>Asynchronous data loading</li>
+                            <li>Error handling and loading states</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 7: CSS Animations -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎭 Lab 7: CSS Animations</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Advanced CSS animations and
+                        transitions showcase
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab7-iframe', 'lab7-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab7-source', 'lab7-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab7-iframe"
+                        src="Notes/Module4/Lab7.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab7-source" class="source-code">
+                        Loading Lab7.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>CSS keyframe animations</li>
+                            <li>Transition effects</li>
+                            <li>Interactive hover states</li>
+                            <li>Performance-optimized animations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 8: Date/Time Libraries -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>⏰ Lab 8: Date/Time Libraries</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Modern date/time handling with
+                        Luxon and Moment.js libraries
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab8-source', 'lab8ext-source')"
+                        >
+                            Lab8.mjs Features
+                        </button>
+                        <button
+                            onclick="toggleView('lab8ext-source', 'lab8-source')"
+                        >
+                            Lab8Ext.mjs Features
+                        </button>
+                    </div>
+
+                    <div id="lab8-source" class="source-code">
+                        Loading Lab8.mjs source code...
+                    </div>
+
+                    <div id="lab8ext-source" class="source-code">
+                        Loading Lab8Ext.mjs source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>Luxon library integration</li>
+                            <li>Moment.js date manipulation</li>
+                            <li>ES6 module system</li>
+                            <li>Modern JavaScript date handling</li>
+                        </ul>
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <p>
+                            <em
+                                >Note: These are JavaScript modules (.mjs files)
+                                that can be run with Node.js or imported into
+                                other projects.</em
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 9: Data Visualization -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📊 Lab 9: Data Visualization with ECharts</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Interactive data visualization
+                        using ECharts library with Fake Store API
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab9-iframe', 'lab9-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab9-source', 'lab9-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab9-iframe"
+                        src="Notes/Module4/Lab9.html"
+                        class="lab-iframe hidden"
+                    ></iframe>
+
+                    <div id="lab9-source" class="source-code">
+                        Loading Lab9.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>ECharts library integration</li>
+                            <li>Real-time API data visualization</li>
+                            <li>Interactive bar charts</li>
+                            <li>Data processing and aggregation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 10: E-commerce Interface -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🛒 Lab 10: E-commerce Interface</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Complete e-commerce interface
+                        with filtering, sorting, and search functionality
+                    </div>
+
+                    <div class="lab-actions">
+                        <button
+                            onclick="toggleView('lab10-iframe', 'lab10-source')"
+                        >
+                            Toggle Live Demo
+                        </button>
+                        <button
+                            onclick="toggleView('lab10-source', 'lab10-iframe')"
+                        >
+                            Code Features
+                        </button>
+                    </div>
+
+                    <iframe
+                        id="lab10-iframe"
+                        src="Notes/Module4/Lab10.html"
+                        class="lab-iframe tall hidden"
+                    ></iframe>
+
+                    <div id="lab10-source" class="source-code">
+                        Loading Lab10.html source code...
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>🔧 Key Features</h4>
+                        <ul>
+                            <li>Complete e-commerce product grid</li>
+                            <li>Advanced filtering and sorting</li>
+                            <li>Search functionality</li>
+                            <li>Fake Store API integration</li>
+                            <li>Responsive Bootstrap design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>
+                    2025 Samuel Love <br />
+                    Web Development Portfolio
+                </p>
+                <a
+                    href="https://github.com/tatoslover/IOD"
+                    class="github-link"
+                    target="_blank"
+                >
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Include the main JavaScript library -->
+        <script src="js/main.js"></script>
+
+        <!-- Include Module 4 specific functions -->
+        <script src="js/module4.js"></script>
+    </body>
+</html>

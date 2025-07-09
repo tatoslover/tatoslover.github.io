@@ -1,0 +1,331 @@
+/* Module 5 Specific Styles */
+/* Enhanced styling for backend development portfolio */
+
+.module5-section {
+    margin-bottom: 2rem;
+}
+
+.module5-section h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.module5-section h4:first-of-type {
+    margin-top: 1rem;
+}
+
+.module5-section .lab-description {
+    margin-bottom: 1.5rem;
+}
+
+.module5-section .lab-description.no-border {
+    margin-bottom: 2rem;
+}
+
+.module5-section ul {
+    margin-bottom: 1.5rem;
+}
+
+/* Exercise specific styling */
+.exercise-overview {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.exercise-overview p {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.exercise-details {
+    padding: 1rem 0;
+}
+
+.exercise-details h4 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1em;
+}
+
+.exercise-details ul {
+    margin-left: 1rem;
+}
+
+.exercise-details li {
+    margin-bottom: 0.5rem;
+}
+
+.exercise-details code {
+    background: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Tech stack enhancements */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+}
+
+/* Technology highlights grid */
+.tech-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tech-category {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.tech-category:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f3f4;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.tech-category li:last-child {
+    border-bottom: none;
+}
+
+.tech-category li:before {
+    content: "▶";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+}
+
+/* Learning outcomes styling */
+.learning-outcomes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.outcome-category {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.outcome-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2em;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.8rem;
+}
+
+.outcome-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.outcome-category li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #d1d5db;
+    position: relative;
+    padding-left: 2rem;
+    transition: background-color 0.2s ease;
+}
+
+.outcome-category li:last-child {
+    border-bottom: none;
+}
+
+.outcome-category li:hover {
+    background-color: rgba(210, 105, 30, 0.1);
+    border-radius: 5px;
+}
+
+.outcome-category li:before {
+    content: "✓";
+    color: var(--success-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* External links styling */
+.external-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-github, .btn-live-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-github {
+    background: #24292e;
+    color: white;
+}
+
+.btn-github:hover {
+    background: #1a1e22;
+    transform: translateY(-2px);
+}
+
+.btn-live-demo {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+}
+
+.btn-live-demo:hover {
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+/* API endpoints styling */
+.api-endpoints {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--info-color);
+}
+
+.api-endpoints h4 {
+    color: var(--info-color);
+    margin-bottom: 1rem;
+}
+
+.api-endpoints ul {
+    list-style: none;
+    padding: 0;
+}
+
+.api-endpoints li {
+    padding: 0.5rem 0;
+    font-family: 'Courier New', monospace;
+    background: #ffffff;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.api-endpoints li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tech-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-outcomes {
+        grid-template-columns: 1fr;
+    }
+
+    .external-links {
+        flex-direction: column;
+    }
+
+    .tech-category {
+        padding: 1rem;
+    }
+
+    .outcome-category {
+        padding: 1.5rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .tech-category {
+        background: #2c3e50;
+        color: #ecf0f1;
+        border-color: #34495e;
+    }
+
+    .exercise-overview {
+        background: #34495e;
+        color: #ecf0f1;
+    }
+
+    .outcome-category {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ecf0f1;
+    }
+
+    .api-endpoints {
+        background: #34495e;
+        color: #ecf0f1;
+    }
+
+    .api-endpoints li {
+        background: #2c3e50;
+        color: #ecf0f1;
+        border-color: #34495e;
+    }
+}
