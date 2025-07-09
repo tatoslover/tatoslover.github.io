@@ -138,6 +138,7 @@
     margin-bottom: 2rem;
     color: var(--text);
     opacity: 0.9;
+    text-align: justify;
 }
 
 .hero-buttons {
@@ -215,7 +216,7 @@
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-align: justify;
 }
 
 /* === Header Section (Legacy) === */
@@ -319,6 +320,7 @@
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
 .project-category h3 {
@@ -358,98 +360,134 @@
     font-weight: 500;
 }
 
-.project-grid-content {
+.card-grid {
     display: none;
     margin-top: 2rem;
 }
 
-.project-grid-content.expanded {
+/* Default grid layout for responsive sections */
+.card-grid.expanded {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Sections that need vertical stacking */
+#mads .card-grid.expanded,
+#mads-coursework .card-grid.expanded,
+#iod .card-grid.expanded,
+#personal .card-grid.expanded,
+#capstone .card-grid.expanded {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
-/* Override for MADS section to stack year sections vertically */
-#mads .project-grid-content.expanded {
-    display: block;
-    grid-template-columns: none;
-    gap: 0;
+/* Course sections use 3-column grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
 }
 
-/* Override for MADS coursework section to stack year sections vertically */
-#mads-coursework .project-grid-content.expanded {
-    display: block;
-    grid-template-columns: none;
-    gap: 0;
-}
-
-/* Override for IOD section to stack projects vertically */
-#iod .project-grid-content.expanded {
-    display: block;
-    grid-template-columns: none;
-    gap: 0;
-}
-
-/* Override for Personal/Misc section to stack projects vertically */
-#personal .project-grid-content.expanded {
-    display: block;
-    grid-template-columns: none;
-    gap: 0;
-}
-
-.project-card {
-    background-color: var(--bg);
+.card {
+    background-color: var(--card-bg);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.project-card:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.project-header h4 {
-    color: var(--header);
+.card-header h4 {
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
-.project-header h5 {
+.card-header h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card-header h6 {
     font-size: 1.1rem;
     color: var(--text);
     margin-bottom: 1.5rem;
     font-weight: 400;
     opacity: 0.8;
+    text-align: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-.project-image {
+.project-description {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.project-thumbnail {
-    height: 120px;
-    width: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .project-description p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: justify;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.card-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .tech-stack {
@@ -457,6 +495,7 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 1rem 0;
+    justify-content: center;
 }
 
 .tech-tag {
@@ -468,11 +507,13 @@
     font-weight: 500;
 }
 
-.project-links {
+.card-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin-top: 1.5rem;
+    margin-top: auto;
+    justify-content: center;
+    padding-top: 1.5rem;
 }
 
 .coming-soon {
@@ -580,17 +621,41 @@
     border-radius: 8px;
     margin: 1rem 0;
     border-left: 4px solid var(--accent);
+    text-align: center;
+}
+
+.project-highlights p strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 .project-highlights ul {
     margin: 0.5rem 0;
-    padding-left: 1.2rem;
+    padding-left: 0;
+    list-style: none;
+    display: inline-block;
+    text-align: left;
 }
 
 .project-highlights li {
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
     line-height: 1.4;
+    text-align: justify;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.project-highlights li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* === Course Grid Layout === */
@@ -613,43 +678,16 @@
 
 /* Bootstrap row handles the grid layout now */
 
-.course-card {
+/* Course cards use navy background for contrast */
+.courses-grid .card {
     background-color: var(--bg);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
-.course-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.course-header h5 {
-    font-size: 1.1rem;
-    color: var(--header);
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-}
-
-.course-header h6 {
-    font-size: 1rem;
-    color: var(--text);
-    margin-bottom: 1rem;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-.course-description {
+.card-description {
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: justify;
     color: var(--text);
     flex-grow: 1;
 }
@@ -666,11 +704,63 @@
     background-color: var(--bg);
     border: 2px solid var(--accent);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .capstone-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.iod-card {
+    background-color: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.iod-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.course-card {
+    background-color: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Override for coursework sections - 3 column grid */
+.courses-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem;
+    margin-bottom: 0;
+}
+
+/* Responsive grid for smaller screens */
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 .year-section {
@@ -710,17 +800,19 @@
     background: linear-gradient(90deg, transparent, var(--header), transparent);
 }
 
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 0;
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 0.25rem;
+    }
 }
 
 @media (max-width: 480px) {
     .courses-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        padding: 0;
     }
 
     .year-header {
@@ -817,6 +909,36 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.cv-section ul {
+    text-align: center;
+}
+
+.cv-section li {
+    text-align: center;
+}
+
+.cv-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    line-height: 1.6;
+}
+
+/* About Me section specific styling */
+#about-me p {
+    text-align: justify;
+}
+
+.cv-section p i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.cv-section p strong {
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 .cv-section h3 {
@@ -1054,8 +1176,14 @@ button:hover {
         font-size: 2rem;
     }
 
-    .project-grid-content {
+    .card-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-category {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .contact-grid {
