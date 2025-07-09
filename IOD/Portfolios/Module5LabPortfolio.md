@@ -1,32 +1,32 @@
-# Express Labs - Full-Stack Backend Development Portfolio
+# Express Labs - Introduction to Backend Development Portfolio
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Module5Lab-blue?logo=github)](https://github.com/tatoslover/Module5Lab)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-brightgreen)](https://module5labportfolio.netlify.app)
 
-This comprehensive portfolio demonstrates modern backend development practices, API design, MVC architecture, testing strategies, and full-stack application development across multiple exercises and technologies.
+This comprehensive portfolio demonstrates introduction to backend development practices, web services with JavaScript applications, MVC architecture development, backend service design, object-oriented development, and Swagger documentation across multiple exercises and technologies.
 
 ## Project Overview
 
-A complete collection of backend development exercises showcasing:
-- **MVC Architecture** (Calculator application with progressive enhancement)
-- **API Design & Development** (RESTful endpoints with proper HTTP methods)
-- **Database Integration** (Friends API with advanced routing)
-- **Testing Implementation** (Unit and integration tests)
-- **Professional Documentation** (Swagger/OpenAPI integration)
-- **Real-time Features** (WebSocket communication)
+A complete collection of introduction to backend development exercises showcasing:
+- **Web Services & JavaScript Applications** (Server-side JavaScript implementation)
+- **MVC Structure Development** (Model-View-Controller architecture patterns)
+- **Backend Service Design** (RESTful API design and implementation)
+- **Object-Oriented Development** (OOP principles in backend development)
+- **Swagger Documentation** (API documentation and testing)
+- **Professional Development Practices** (Testing, logging, and deployment)
 
 ## Technology Stack
 
 | Exercise | Technology Stack | Key Features |
 |----------|------------------|--------------|
-| **Multiple Servers** | Node.js, Express | Multiple port handling, Basic routing |
-| **Calculator API** | Node.js, Express | Query parameters, Mathematical operations |
-| **Portfolio Interface** | HTML5, CSS3, JavaScript | Frontend-backend integration |
-| **Friends API** | Node.js, Express | Advanced routing, Filtering, CRUD operations |
-| **MVC Architecture** | Node.js, Express | Model-View-Controller pattern |
-| **Unit Testing** | Jest, Supertest | Test-driven development |
-| **Enhanced Libraries** | Custom libraries | Logging, ID generation, Security |
-| **eCommerce API** | Swagger, OpenAPI | API documentation, Professional endpoints |
+| **Web Services** | Node.js, Express | Multiple server handling, Service architecture |
+| **JavaScript Applications** | Node.js, Express | Server-side JavaScript, API endpoints |
+| **MVC Structure** | Node.js, Express | Model-View-Controller development |
+| **Backend Service Design** | Node.js, Express | RESTful design patterns, Service architecture |
+| **Object-Oriented Development** | Node.js, Express, Classes | OOP principles, Class-based design |
+| **Swagger Integration** | Swagger, OpenAPI | API documentation, Professional endpoints |
+| **Testing & Validation** | Jest, Supertest | Backend testing strategies |
+| **Enhanced Development** | Custom libraries | Logging, Security, Best practices |
 
 ## Project Structure
 

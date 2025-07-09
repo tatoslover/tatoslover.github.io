@@ -1,49 +1,40 @@
-# React Labs - Module 6 Exercises
+# React Labs - Web Design with React I
+
+This comprehensive portfolio demonstrates Web Design with React I fundamentals, covering JSX syntax, components and props, thinking in React development patterns, and code splitting techniques across multiple exercises and interactive applications.
+
+## Project Overview
+
+A complete collection of Web Design with React I exercises showcasing:
+- **JSX Syntax** (JavaScript XML for React component development)
+- **Components and Props** (Component architecture and data flow)
+- **Thinking in React** (React development paradigms and patterns)
+- **Code Splitting** (Performance optimization and component organization)
+- **Interactive Applications** (State management and user interactions)
+- **Modern React Practices** (Hooks, functional components, and best practices)
+
+## Technology Stack
+
+| Exercise | React Concepts | Key Features |
+|----------|----------------|--------------|
+| **Greeting Component** | JSX, Props | Basic component structure, Props handling |
+| **Big Cats Display** | Components, Props | Component composition, Data rendering |
+| **Emoji Mood Switcher** | State, Events | Interactive state management, Event handling |
+| **Big Cats Extended** | Advanced Props | Complex data flow, Component interaction |
+| **Big Cats Custom** | Forms, CRUD | Form handling, Data manipulation |
+| **Calculator** | Complex State | Advanced state management, Mathematical operations |
 
 ## Table of Contents
 
 - [Project Structure](#project-structure)
 - [Setup](#setup)
 - [Development Commands](#development-commands)
-- [Technologies Used](#technologies-used)
-- [Exercise 1: Greeting Component](#exercise-1-greeting-component)
-  - [Running Exercise 1](#running-exercise-1)
-  - [Component Features](#component-features)
-  - [Usage Examples](#usage-examples)
-  - [Testing](#testing)
-- [Exercise 2: Big Cats Display](#exercise-2-big-cats-display)
-  - [Running Exercise 2](#running-exercise-2)
-  - [Component Architecture](#component-architecture)
-  - [Features Implemented](#features-implemented)
-  - [Cat Data Structure](#cat-data-structure)
-  - [Styling](#styling)
-- [Exercise 3: Emoji Mood Switcher](#exercise-3-emoji-mood-switcher)
-  - [Running Exercise 3](#running-exercise-3)
-  - [Component Features](#component-features)
-  - [State Management](#state-management)
-  - [Interactive Features](#interactive-features)
-  - [Styling and Animation](#styling-and-animation)
-- [Exercise 4: Big Cats Extended](#exercise-4-big-cats-extended)
-  - [Running Exercise 4](#running-exercise-4)
-  - [Extended Features](#extended-features)
-  - [Control Functions](#control-functions)
-  - [State Management](#state-management)
-  - [User Interface](#user-interface)
-  - [Component Architecture](#component-architecture)
-- [Exercise 5: Big Cats Custom](#exercise-5-big-cats-custom)
-  - [Running Exercise 5](#running-exercise-5)
-  - [Custom Features](#custom-features)
-  - [Form Management](#form-management)
-  - [CRUD Operations](#crud-operations)
-  - [Component Architecture](#component-architecture)
-  - [Data Flow](#data-flow)
-- [Exercise 6: Calculator](#exercise-6-calculator)
-  - [Running Exercise 6](#running-exercise-6)
-  - [Calculator Features](#calculator-features)
-  - [User Interface](#user-interface)
-  - [Error Handling](#error-handling)
-  - [Validation Logic](#validation-logic)
-  - [Mathematical Operations](#mathematical-operations)
+- [React I Concepts Covered](#react-i-concepts-covered)
+- [Exercise 1: JSX and Basic Components](#exercise-1-jsx-and-basic-components)
+- [Exercise 2: Components and Props](#exercise-2-components-and-props)
+- [Exercise 3: Thinking in React - State Management](#exercise-3-thinking-in-react---state-management)
+- [Exercise 4: Advanced Component Patterns](#exercise-4-advanced-component-patterns)
+- [Exercise 5: Code Splitting and Organization](#exercise-5-code-splitting-and-organization)
+- [Exercise 6: Complex React Application](#exercise-6-complex-react-application)
 
 ---
 

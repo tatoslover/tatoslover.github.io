@@ -1,22 +1,30 @@
-# 🐕 Barkend
+# 🐕 Barkend - Mini-project 3
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/tatoslover/Mini-Project-3)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-brightgreen?logo=netlify)](https://barkend.netlify.app)
 
-A comprehensive backend-driven application demonstrating advanced server-side architecture, API design, and database management through dog breed exploration.
+**Module 9: API Development - Mini-project 3**
 
-## 🚀 **Key Technologies**
+A comprehensive backend-driven application demonstrating advanced server-side architecture, API design, and database management through dog breed exploration. This full-stack application showcases API Development concepts through REST APIs, sockets, and Model View Controller patterns applied to real-world backend service development.
+
+## 🚀 **Key Technologies & API Development Concepts**
 - 🚀 **Backend**: Netlify Functions with scalable cloud deployment
 - 🗄️ **Database**: MongoDB Atlas cloud database with intelligent caching
 - 🔧 **External APIs**: Dog CEO API with sophisticated caching strategies
 - 📡 **API Design**: Simplified, focused endpoints with comprehensive documentation
 - 🛡️ **Production Features**: Error handling, analytics, health monitoring, and interactive API docs
 
-## 🎯 **Core Features**
+## 🎯 **Core Features & API Development Implementation**
 - **Dog Breed Explorer**: Comprehensive breed database with search and filtering capabilities
 - **Random Dog Generator**: On-demand random dog images with breed-specific filtering
 - **CRUD Operations**: Full Create, Read, Update, Delete functionality for dog records
 - **API Analytics**: Real-time usage tracking, health monitoring, and performance metrics
 - **Interactive Documentation**: Swagger UI with live API testing and examples
+
+### **API Development Concepts Applied**
+- **REST APIs**: RESTful endpoint design, HTTP methods, and status codes
+- **Sockets**: Real-time communication and WebSocket implementation
+- **Model View Controller**: MVC architecture patterns and separation of concerns
+- **Database Integration**: MongoDB operations, data modeling, and query optimization
 
 ## 🚀 **Getting Started**
 

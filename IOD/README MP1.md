@@ -1,20 +1,29 @@
-# 🏀 NBA 2K Stat Attack
+# 🏀 NBA 2K Stat Attack - Mini-project 1
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/tatoslover/Mini-Project-1)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-brightgreen?logo=netlify)](https://nbaadvancedstatattack.netlify.app)
 
-Explore, filter, and compare NBA player stats with dynamic charts and team-themed visuals.
+**Module 3: JavaScript Programming Fundamentals - Mini-project 1**
 
-## 🚀 **Key Technologies**
+Explore, filter, and compare NBA player stats with dynamic charts and team-themed visuals. This comprehensive web application demonstrates JavaScript Programming Fundamentals through intermediate and advanced JavaScript concepts applied to real-world data visualization and interactive user experiences.
+
+## 🚀 **Key Technologies & JavaScript Fundamentals**
 - 🧠 **Data Source**: [NBA REST API](https://www.nba.com/stats/api) (~500 players)
 - 📊 **Frontend**: Bootstrap 5, Chart.js, Vanilla JavaScript
-- ⚡ **Features**: Fast, responsive, animated interface
+- ⚡ **JavaScript Concepts**: Advanced DOM manipulation, async/await, ES6+ features
+- 🎯 **Module 3 Focus**: Intermediate & Advanced JavaScript programming techniques
 
-## 🎯 **Core Features**
+## 🎯 **Core Features & JavaScript Programming Demonstration**
 - **Player Statistics Explorer**: Browse and filter 500+ NBA players by team, position, and performance metrics
 - **Interactive Data Visualization**: Dynamic Chart.js charts showing team performance, position distribution, and top performers
 - **Head-to-Head Arena**: Compare any two players with detailed statistical analysis
 - **Team-Themed Design**: Custom styling with authentic NBA team colors for all 30 teams
 - **Advanced Filtering**: Real-time search, multi-criteria filtering, and performance-based sorting
+
+### **JavaScript Programming Fundamentals Applied**
+- **Core JavaScript**: Functions, arrays, objects, and modern syntax
+- **Intermediate JavaScript**: Event handling, DOM manipulation, and data processing
+- **Advanced JavaScript**: Async programming, API integration, and complex state management
+- **ES6+ Features**: Arrow functions, destructuring, template literals, and modules
 
 ## 🚀 **Getting Started**
 

@@ -36,10 +36,16 @@ IOD/Portfolios/
 ## 🎯 What This Portfolio Demonstrates
 
 ### **Progressive Skill Development**
-- **Module 1**: Web development fundamentals (HTML, CSS, JavaScript basics)
-- **Module 2**: Advanced HTML5, CSS3, responsive design, and layout techniques
-- **Module 3**: Interactive JavaScript, DOM manipulation, and modern ES6+ features
-- **Module 4**: Advanced frontend development, API integration, and data visualization
+- **Module 1**: Software Development Principles, Basic Web Pages, Version Control, Requirements & Wireframes, Test Driven Development
+- **Module 2**: Introductory Front-End Development, Web Browsers and Internet, HTML, CSS, Fluid Layout
+- **Module 3**: JavaScript Programming Fundamentals, Intermediate & Advanced JavaScript, Mini-project 1
+- **Module 4**: More Front-End Development, JavaScript Frameworks, Figma, Bootstrap, Working with Data, App Enhancements
+- **Module 5**: Introduction to Backend Development, Web Services, MVC Structure, Backend Service Design, OOP, Swagger
+- **Module 6**: Web Design with React I - JSX, Components & Props, Thinking in React, Code Splitting
+- **Module 7**: Web Design with React II - Hooks, Routing, Integration with Libraries, Mini-project 2
+- **Module 8**: Databases - Database Design, MongoDB, MySQL, Redis
+- **Module 9**: API Development - REST APIs, Sockets, Model View Controller, Mini-project 3
+- **Module 10**: Software Deployment - Docker, CI/CD with GitHub Actions, EC2, Beanstalk
 
 ### **Professional Code Organization**
 - **Clean separation** of HTML structure, CSS styling, and JavaScript functionality
@@ -57,10 +63,16 @@ IOD/Portfolios/
 
 Each module portfolio is designed to be viewed directly in a web browser:
 
-- **Module 1**: `Module1LabPortfolio.html` - Web Development Foundations
-- **Module 2**: `Module2LabPortfolio.html` - HTML5 & CSS3 Mastery
-- **Module 3**: `Module3LabPortfolio.html` - Interactive JavaScript Applications
-- **Module 4**: `Module4LabPortfolio.html` - Advanced Frontend Development
+- **Module 1**: `Module1LabPortfolio.html` - Software Development Principles & Basic Web Development
+- **Module 2**: `Module2LabPortfolio.html` - Introductory Front-End Development
+- **Module 3**: `Module3LabPortfolio.html` - JavaScript Programming Fundamentals + **Mini-project 1**
+- **Module 4**: `Module4LabPortfolio.html` - More Front-End Development & Frameworks
+- **Module 5**: `Module5LabPortfolio.md` - Introduction to Backend Development
+- **Module 6**: `Module6LabPortfolio.md` - Web Design with React I
+- **Module 7**: Web Design with React II - Hooks, Routing, Libraries + **Mini-project 2**
+- **Module 8**: Databases - Database Design, MongoDB, MySQL, Redis
+- **Module 9**: API Development - REST APIs, Sockets, MVC + **Mini-project 3**
+- **Module 10**: Software Deployment - Docker, CI/CD, EC2, Beanstalk
 
 ## 🛠️ Technical Features
 
@@ -88,33 +100,68 @@ Each module portfolio is designed to be viewed directly in a web browser:
 
 ## 📚 Learning Objectives Covered
 
-### **Module 1: Web Development Fundamentals**
-- HTML structure and semantic markup
-- CSS styling and layout basics
-- JavaScript fundamentals and DOM manipulation
-- Form handling and validation
-- Basic responsive design principles
+### **Module 1: Software Development Principles**
+- Software development methodologies and best practices
+- Creating basic web pages with HTML structure
+- Version control systems and Git workflows
+- Requirements gathering and wireframe design
+- Test-driven development principles and implementation
 
-### **Module 2: Advanced Styling & Layout**
-- CSS Grid and Flexbox mastery
-- Advanced CSS selectors and pseudo-classes
-- CSS animations and transitions
-- Responsive design patterns
-- Modern CSS architecture
+### **Module 2: Introductory Front-End Development**
+- Understanding web browsers and internet architecture
+- HTML semantic markup and document structure
+- CSS styling and layout fundamentals
+- Fluid layout design and responsive principles
 
-### **Module 3: Interactive JavaScript**
-- ES6+ JavaScript features
-- Advanced DOM manipulation
-- Event handling and user interaction
-- Asynchronous JavaScript and promises
-- Modern JavaScript patterns and practices
+### **Module 3: JavaScript Programming Fundamentals**
+- Core JavaScript concepts and syntax
+- Intermediate JavaScript programming techniques
+- Advanced JavaScript features and ES6+
+- Mini-project 1 - Applied JavaScript development
 
-### **Module 4: Advanced Frontend Development**
-- API integration and data handling
-- Complex user interface development
-- Data visualization with charts
-- Modern development tools and workflows
-- Performance optimization techniques
+### **Module 4: More Front-End Development**
+- JavaScript frameworks and modern development
+- Design tools and Figma integration
+- Bootstrap framework for responsive design
+- Working with external data sources
+- Application enhancements and optimization
+
+### **Module 5: Introduction to Backend Development**
+- Web services and JavaScript server applications
+- Developing Model-View-Controller (MVC) architecture
+- Designing backend service architectures
+- Object-oriented development principles
+- API documentation with Swagger
+
+### **Module 6: Web Design with React I**
+- JSX syntax and component architecture
+- Components and Props management
+- Thinking in React development paradigms
+- Code splitting and performance optimization
+
+### **Module 7: Web Design with React II**
+- React Hooks for state and lifecycle management
+- React Router for navigation and routing
+- Integration with external libraries and APIs
+- Mini-project 2 - Advanced React application development
+
+### **Module 8: Databases**
+- Database design principles and normalization
+- MongoDB NoSQL database implementation
+- MySQL relational database management
+- Redis caching and in-memory data structures
+
+### **Module 9: API Development**
+- REST API design and implementation
+- Socket programming for real-time communication
+- Model View Controller architecture patterns
+- Mini-project 3 - Full-stack API development
+
+### **Module 10: Software Deployment**
+- Docker containerization and deployment
+- CI/CD pipelines with GitHub Actions
+- AWS EC2 cloud deployment
+- AWS Beanstalk application hosting
 
 ## 🎨 Design Philosophy
 
@@ -185,6 +232,26 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - Error handling and edge cases
 - User feedback and interaction design
 
+## 🎯 Mini-Projects Integration
+
+### **Mini-project 1: NBA 2K Stat Attack** (Module 3)
+- **Technology**: Vanilla JavaScript, Chart.js, Bootstrap
+- **Focus**: JavaScript Programming Fundamentals application
+- **Features**: NBA API integration, data visualization, interactive filtering
+- **Live Demo**: [NBA Advanced Stat Attack](https://nbaadvancedstatattack.netlify.app)
+
+### **Mini-project 2: BookTracker** (Module 7)
+- **Technology**: React 19, Material-UI, React Router
+- **Focus**: Advanced React development with hooks and routing
+- **Features**: Google Books API, progress tracking, theme switching
+- **Live Demo**: [BookTracker Demo](https://booktrackerdemo.netlify.app)
+
+### **Mini-project 3: Barkend** (Module 9)
+- **Technology**: Netlify Functions, MongoDB, REST APIs
+- **Focus**: Backend API development and deployment
+- **Features**: Dog breed database, CRUD operations, API analytics
+- **Live Demo**: [Barkend](https://barkend.netlify.app)
+
 ## 🎓 Educational Value
 
 This portfolio serves as both a **demonstration of skills** and a **learning resource** that shows:
@@ -194,6 +261,7 @@ This portfolio serves as both a **demonstration of skills** and a **learning res
 - **Professional code quality** and organization standards
 - **Modern web development** practices and patterns
 - **Complete project lifecycle** from concept to implementation
+- **Full-stack development** capabilities across frontend and backend
 
 ## 🔗 Integration with Main Repository
 
@@ -205,4 +273,4 @@ These portfolios complement the main IOD repository structure:
 
 ---
 
-**Note**: This portfolio collection represents comprehensive web development learning from foundational concepts through advanced application development, demonstrating both technical skills and professional development practices.
+**Note**: This portfolio collection represents comprehensive web development learning from foundational software development principles through advanced full-stack application development, demonstrating both technical skills and professional development practices. The progression covers all 10 modules of the IOD Software Engineering course, including 3 comprehensive mini-projects that showcase real-world application development skills.

@@ -1,20 +1,29 @@
-# 📚 BookTrackerDemo
+# 📚 BookTrackerDemo - Mini-project 2
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/tatoslover/Mini-Project-2)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-brightgreen?logo=netlify)](https://booktrackerdemo.netlify.app)
 
-Track your reading journey with progress monitoring, book discovery, and personalized statistics. This is a demo version showcasing the full functionality of the BookTracker application.
+**Module 7: Web Design with React II - Mini-project 2**
 
-## 🚀 **Key Technologies**
+Track your reading journey with progress monitoring, book discovery, and personalized statistics. This comprehensive React application demonstrates Web Design with React II through advanced hooks, routing, and library integration applied to a real-world book tracking system.
+
+## 🚀 **Key Technologies & React II Concepts**
 - 📖 **Data Source**: [Google Books API](https://developers.google.com/books) (~40M books)
 - 🎨 **Frontend**: React 19, Material-UI, React Router
-- ⚡ **Features**: Fast, responsive, animated interface with theme switching
+- ⚡ **React II Focus**: Hooks, routing, and library integration
+- 🎯 **Module 7 Demonstration**: Advanced React development patterns
 
-## 🎯 **Core Features**
+## 🎯 **Core Features & React II Implementation**
 - **Personal Reading Library**: Track books across Wishlist, Currently Reading, and Finished collections
 - **Progress Monitoring**: Visual progress bars and reading statistics with goal tracking
 - **Book Discovery**: Integrated Google Books API search with auto-fill functionality
 - **Interactive Dashboard**: Reading analytics, recently finished books, and motivational insights
 - **Theme Switching**: Light/Dark mode with system preference detection and persistence
+
+### **Web Design with React II Concepts Applied**
+- **Hooks**: useState, useEffect, useContext, and custom hooks for state management
+- **Routing**: React Router for navigation, nested routes, and route parameters
+- **Library Integration**: Material-UI components, Google Books API, and third-party libraries
+- **Advanced Patterns**: Context API, component composition, and performance optimization
 
 ## 🚀 **Getting Started**
 
