@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Examples - Portfolio Enhancement Ideas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #336699;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #336699;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #336699;
+        }
+
+        /* 1. Hero Section Animations */
+        .hero-example {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #fff;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards, float 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 2em;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.5s forwards,
+                       typing 3.5s steps(40, end) 0.5s,
+                       blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        .pulse-button {
+            background: #fff;
+            color: #764ba2;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 20px 10px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards, pulse 2s infinite 1.8s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* 2. Navigation Animations */
+        .nav-example {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: #336699;
+            font-weight: 500;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #336699;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            color: #764ba2;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Card Animations */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: #336699;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .tech-stack {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tech-badge {
+            background: #336699;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        /* 4. Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease;
+        }
+
+        .stagger-item.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* 5. Skill Bars */
+        .skill-item {
+            margin: 20px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0;
+            transition: width 1.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* 6. Loading Animation */
+        .loader {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #336699;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 7. Hamburger Menu Animation */
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #336699;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+        }
+
+        /* 8. Particles Background */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-particle 10s infinite linear;
+        }
+
+        @keyframes float-particle {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* 9. Tooltip */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            color: #336699;
+            font-weight: bold;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .tooltip-container:hover .tooltip {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
+
+        /* 10. Counter Animation */
+        .counter {
+            font-size: 3em;
+            font-weight: bold;
+            color: #336699;
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mt-30 { margin-top: 30px; }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Animation Examples</h1>
+
+        <!-- Hero Section Example -->
+        <div class="section">
+            <h2>1. Hero Section Animations</h2>
+            <div class="hero-example">
+                <div class="particles"></div>
+                <div class="profile-image"></div>
+                <h3 class="hero-title">Samuel Love</h3>
+                <p class="typewriter">Data Scientist & Software Engineer</p>
+                <div>
+                    <button class="pulse-button">View Projects</button>
+                    <button class="pulse-button">Contact Me</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Example -->
+        <div class="section">
+            <h2>2. Navigation Animations</h2>
+            <nav class="nav-example">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+            <div class="text-center mt-30">
+                <p>Hamburger Menu Animation (click to toggle):</p>
+                <div class="hamburger" onclick="this.classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Animations -->
+        <div class="section">
+            <h2>3. Project Card Animations</h2>
+            <div class="cards-container">
+                <div class="card scroll-reveal">
+                    <h3>🧙‍♂️ Planeswalker's Primer</h3>
+                    <p>Comprehensive Magic: The Gathering learning platform with real-time card search.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="card scroll-reveal">
+                    <h3>🏀 NBA Stat Attack</h3>
+                    <p>Interactive dashboard for exploring and comparing NBA player statistics.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Chart.js</span>
+                        <span class="tech-badge">API</span>
+                    </div>
+                </div>
+                <div class="card scroll-reveal">
+                    <h3>📚 BookTracker</h3>
+                    <p>Personal library management system with reading progress tracking.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Material-UI</span>
+                        <span class="tech-badge">Context API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Bars -->
+        <div class="section">
+            <h2>4. Animated Skill Bars</h2>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Python</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>React</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>SQL</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="75"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Animations -->
+        <div class="section">
+            <h2>5. Scroll-Triggered Animations</h2>
+            <p>Scroll down to see elements appear:</p>
+            <div class="demo-grid">
+                <div class="stagger-item">
+                    <i class="fas fa-code fa-3x" style="color: #667eea;"></i>
+                    <h4>Clean Code</h4>
+                    <p>Writing maintainable and efficient code</p>
+                </div>
+                <div class="stagger-item">
+                    <i class="fas fa-database fa-3x" style="color: #764ba2;"></i>
+                    <h4>Data Management</h4>
+                    <p>Expert in SQL and NoSQL databases</p>
+                </div>
+                <div class="stagger-item">
+                    <i class="fas fa-chart-line fa-3x" style="color: #667eea;"></i>
+                    <h4>Data Analysis</h4>
+                    <p>Statistical analysis and visualisation</p>
+                </div>
+                <div class="stagger-item">
+                    <i class="fas fa-cloud fa-3x" style="color: #764ba2;"></i>
+                    <h4>Cloud Services</h4>
+                    <p>AWS and deployment expertise</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Elements -->
+        <div class="section">
+            <h2>6. Interactive Elements</h2>
+            <div class="text-center">
+                <p>Loading Animation:</p>
+                <div class="loader"></div>
+
+                <p class="mt-30">Hover for Tooltip:</p>
+                <div class="tooltip-container">
+                    Hover over me!
+                    <span class="tooltip">This is a tooltip with useful information</span>
+                </div>
+
+                <p class="mt-30">Animated Counter:</p>
+                <div>
+                    <span class="counter" data-target="500">0</span>+ Projects Completed
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Particles Background
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            if (!particlesContainer) return;
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Scroll Reveal
+        function handleScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .stagger-item');
+
+            reveals.forEach((element, index) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    if (element.classList.contains('stagger-item')) {
+                        setTimeout(() => {
+                            element.classList.add('revealed');
+                        }, index * 100);
+                    } else {
+                        element.classList.add('revealed');
+                    }
+                }
+            });
+
+            // Trigger skill bars
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const barTop = bar.getBoundingClientRect().top;
+                if (barTop < window.innerHeight - 100 && bar.style.width === '') {
+                    bar.style.width = bar.getAttribute('data-width') + '%';
+                }
+            });
+        }
+
+        // Counter Animation
+        function animateCounter() {
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 100;
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                // Start animation when in view
+                const observerCallback = (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const observer = new IntersectionObserver(observerCallback);
+                observer.observe(counter);
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleScroll();
+            animateCounter();
+        });
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>
