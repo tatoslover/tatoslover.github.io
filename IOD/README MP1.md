@@ -4,7 +4,7 @@
 
 **Module 3: JavaScript Programming Fundamentals - Mini-project 1**
 
-Explore, filter, and compare NBA player stats with dynamic charts and team-themed visuals. This comprehensive web application demonstrates JavaScript Programming Fundamentals through intermediate and advanced JavaScript concepts applied to real-world data visualization and interactive user experiences.
+Explore, filter, and compare NBA player stats with dynamic charts and team-themed visuals. This comprehensive web application demonstrates JavaScript Programming Fundamentals through intermediate and advanced JavaScript concepts applied to real-world data visualisation and interactive user experiences.
 
 ## 🚀 **Key Technologies & JavaScript Fundamentals**
 - 🧠 **Data Source**: [NBA REST API](https://www.nba.com/stats/api) (~500 players)
@@ -14,9 +14,9 @@ Explore, filter, and compare NBA player stats with dynamic charts and team-theme
 
 ## 🎯 **Core Features & JavaScript Programming Demonstration**
 - **Player Statistics Explorer**: Browse and filter 500+ NBA players by team, position, and performance metrics
-- **Interactive Data Visualization**: Dynamic Chart.js charts showing team performance, position distribution, and top performers
+- **Interactive Data Visualisation**: Dynamic Chart.js charts showing team performance, position distribution, and top performers
 - **Head-to-Head Arena**: Compare any two players with detailed statistical analysis
-- **Team-Themed Design**: Custom styling with authentic NBA team colors for all 30 teams
+- **Team-Themed Design**: Custom styling with authentic NBA team colours for all 30 teams
 - **Advanced Filtering**: Real-time search, multi-criteria filtering, and performance-based sorting
 
 ### **JavaScript Programming Fundamentals Applied**
@@ -57,7 +57,7 @@ open index.html
   - Basketball loading animation (now slowed down to 2s cycles)
   - Responsive design with mobile-first approach
   - Advanced animations (glow effects, hover transitions, pulse effects)
-  - Team-specific color schemes for all 30 NBA teams
+  - Team-specific colour schemes for all 30 NBA teams
   - Chart styling and card enhancements
 </details>
 
@@ -72,7 +72,7 @@ open index.html
 
 `js/api.js` - Data Management Layer
 - `NBADataAPI` class - Simulates real API interactions
-- Caching system for performance optimization
+- Caching system for performance optimisation
 - Error handling with retry mechanisms and exponential backoff
 - Batch request processing
 - Progress tracking for large datasets
@@ -84,9 +84,9 @@ open index.html
 
 `js/utils.js` - Shared Utilities
 - Global state management (`allPlayers`, `teamNames`)
-- Position normalization functions
+- Position normalisation functions
 - Player placeholder image generation
-- Complete NBA team color mappings (30 teams)
+- Complete NBA team colour mappings (30 teams)
 - Stat label definitions and formatting
 
 `js/players.js` - Players Tab Functionality
@@ -163,7 +163,7 @@ open index.html
 </details>
 
 <details>
-<summary>📊 Data Visualization</summary>
+<summary>📊 Data Visualisation</summary>
 
 - Chart.js integration for interactive charts
 - Team performance analytics
@@ -177,7 +177,7 @@ open index.html
 - Mobile-responsive design with Bootstrap 5
 - Smooth animations and transitions
 - Real-time search and filtering
-- Team-themed color schemes
+- Team-themed colour schemes
 - Accessibility features (ARIA labels, keyboard navigation)
 </details>
 

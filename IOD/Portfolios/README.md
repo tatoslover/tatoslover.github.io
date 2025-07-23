@@ -47,7 +47,7 @@ IOD/Portfolios/
 - **Module 9**: API Development - REST APIs, Sockets, Model View Controller, Mini-project 3
 - **Module 10**: Software Deployment - Docker, CI/CD with GitHub Actions, EC2, Beanstalk
 
-### **Professional Code Organization**
+### **Professional Code Organisation**
 - **Clean separation** of HTML structure, CSS styling, and JavaScript functionality
 - **Modular architecture** with reusable components and utilities
 - **Responsive design** principles applied across all projects
@@ -82,7 +82,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - **JavaScript ES6+** with modern syntax and patterns
 - **Responsive Design** for mobile-first development
 - **API Integration** with fetch and async/await
-- **Data Visualization** with charts and interactive elements
+- **Data Visualisation** with charts and interactive elements
 
 ### **Development Best Practices**
 - **Semantic HTML** structure for accessibility
@@ -90,7 +90,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - **Progressive enhancement** for broader compatibility
 - **Clean code** architecture with proper separation of concerns
 - **Cross-browser** compatibility considerations
-- **Performance optimization** with efficient loading strategies
+- **Performance optimisation** with efficient loading strategies
 
 ### **Interactive Demonstrations**
 - **Live code examples** with syntax highlighting
@@ -124,7 +124,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - Design tools and Figma integration
 - Bootstrap framework for responsive design
 - Working with external data sources
-- Application enhancements and optimization
+- Application enhancements and optimisation
 
 ### **Module 5: Introduction to Backend Development**
 - Web services and JavaScript server applications
@@ -137,7 +137,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - JSX syntax and component architecture
 - Components and Props management
 - Thinking in React development paradigms
-- Code splitting and performance optimization
+- Code splitting and performance optimisation
 
 ### **Module 7: Web Design with React II**
 - React Hooks for state and lifecycle management
@@ -146,7 +146,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - Mini-project 2 - Advanced React application development
 
 ### **Module 8: Databases**
-- Database design principles and normalization
+- Database design principles and normalisation
 - MongoDB NoSQL database implementation
 - MySQL relational database management
 - Redis caching and in-memory data structures
@@ -175,27 +175,27 @@ Each module portfolio is designed to be viewed directly in a web browser:
 ### **Code Quality Standards**
 - **Clean, readable code** with proper commenting
 - **Modular architecture** for maintainability
-- **Consistent naming conventions** and organization
+- **Consistent naming conventions** and organisation
 - **Error handling** and graceful degradation
-- **Performance optimization** for fast loading
+- **Performance optimisation** for fast loading
 
 ## 🔧 Technical Architecture
 
 ### **CSS Architecture**
 - **Global styles** (`main.css`) for consistent theming
-- **Module-specific styles** for targeted customization
+- **Module-specific styles** for targeted customisation
 - **Component-based** styling approach
 - **CSS custom properties** for theme consistency
 - **Mobile-first** responsive breakpoints
 
 ### **JavaScript Architecture**
-- **Modular design** with namespace organization
+- **Modular design** with namespace organisation
 - **Event-driven** architecture for user interactions
 - **Utility functions** for code reusability
 - **Error handling** and validation
 - **Modern ES6+** syntax and patterns
 
-### **Content Organization**
+### **Content Organisation**
 - **Semantic HTML** structure for accessibility
 - **Progressive disclosure** for complex information
 - **Visual hierarchy** with proper heading structure
@@ -219,10 +219,10 @@ Each module portfolio is designed to be viewed directly in a web browser:
 - Modern web design trends
 
 ### **Development Practices**
-- Code organization and architecture
+- Code organisation and architecture
 - Version control and collaboration
 - Testing and validation
-- Performance optimization
+- Performance optimisation
 - Cross-browser compatibility
 
 ### **Problem Solving**
@@ -237,7 +237,7 @@ Each module portfolio is designed to be viewed directly in a web browser:
 ### **Mini-project 1: NBA 2K Stat Attack** (Module 3)
 - **Technology**: Vanilla JavaScript, Chart.js, Bootstrap
 - **Focus**: JavaScript Programming Fundamentals application
-- **Features**: NBA API integration, data visualization, interactive filtering
+- **Features**: NBA API integration, data visualisation, interactive filtering
 - **Live Demo**: [NBA Advanced Stat Attack](https://nbaadvancedstatattack.netlify.app)
 
 ### **Mini-project 2: BookTracker** (Module 7)
@@ -258,7 +258,7 @@ This portfolio serves as both a **demonstration of skills** and a **learning res
 
 - **Progressive skill development** from basic to advanced concepts
 - **Real-world application** of web development principles
-- **Professional code quality** and organization standards
+- **Professional code quality** and organisation standards
 - **Modern web development** practices and patterns
 - **Complete project lifecycle** from concept to implementation
 - **Full-stack development** capabilities across frontend and backend

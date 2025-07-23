@@ -10,6 +10,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
         <link rel="stylesheet" href="style.css" />
+        <script src="animations.js" defer></script>
     </head>
 
     <body>
@@ -27,6 +28,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
                     </li>
                     <li class="nav-item">
                         <a href="#projects" class="nav-link">Projects</a>
@@ -52,6 +56,7 @@
         <main>
             <!-- Hero Section -->
             <section id="home" class="hero-section">
+                <div class="particles"></div>
                 <div class="hero-content">
                     <div class="hero-image">
                         <img
@@ -62,15 +67,17 @@
                     </div>
                     <div class="hero-text">
                         <h1>Samuel Love</h1>
-                        <h2 class="hero-subtitle">
-                            Data Scientist & Software Engineer
-                        </h2>
+                        <h2 class="hero-subtitle typewriter"></h2>
 
                         <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary"
+                            <a
+                                href="#projects"
+                                class="btn btn-primary pulse-button"
                                 >View Projects</a
                             >
-                            <a href="#connect" class="btn btn-primary"
+                            <a
+                                href="#connect"
+                                class="btn btn-primary pulse-button"
                                 >Connect With Me</a
                             >
                         </div>
@@ -81,8 +88,8 @@
             <!-- About Section -->
             <section id="about" class="about-section">
                 <div class="container">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="about-content">
+                    <h2 class="section-title scroll-reveal">About Me</h2>
+                    <div class="about-content scroll-reveal">
                         <div class="about-text">
                             <p>
                                 Kia ora! I am Samuel Love. Welcome to my corner
@@ -106,6 +113,73 @@
                                 wellbeing) and help me bring clarity, focus, and
                                 consistency to my work.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">
+                        Skills & Technologies
+                    </h2>
+
+                    <div class="project-skills">
+                        <div class="project-skill-card stagger-item">
+                            <div class="project-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="project-name">Web Development</div>
+                            <ul class="project-tech-list">
+                                <li>React & Next.js</li>
+                                <li>Express.js & Node</li>
+                                <li>PostgreSQL & MongoDB</li>
+                                <li>REST & GraphQL APIs</li>
+                                <li>Jest & Testing Library</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-skill-card stagger-item">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="project-name">Data Analysis</div>
+                            <ul class="project-tech-list">
+                                <li>Python & Pandas</li>
+                                <li>SQL & Query Optimisation</li>
+                                <li>Statistical Analysis</li>
+                                <li>Jupyter Notebooks</li>
+                                <li>Data Visualisation</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-skill-card stagger-item">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="project-name">Machine Learning</div>
+                            <ul class="project-tech-list">
+                                <li>Scikit-learn</li>
+                                <li>TensorFlow & Keras</li>
+                                <li>Feature Engineering</li>
+                                <li>Model Deployment</li>
+                                <li>MLOps Practices</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-skill-card stagger-item">
+                            <div class="project-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="project-name">Cloud & DevOps</div>
+                            <ul class="project-tech-list">
+                                <li>AWS Services</li>
+                                <li>Docker Containers</li>
+                                <li>CI/CD Pipelines</li>
+                                <li>Infrastructure as Code</li>
+                                <li>Monitoring & Logging</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -145,7 +219,7 @@
             <!-- Projects Section -->
             <section id="projects" class="projects-section">
                 <div class="container">
-                    <h2 class="section-title">Projects</h2>
+                    <h2 class="section-title scroll-reveal">Projects</h2>
                     <div class="projects-container">
                         <!-- Master of Applied Data Science Capstone -->
                         <div class="project-category" id="capstone">
@@ -156,7 +230,7 @@
                                 </h3>
                             </button>
                             <div class="card-grid">
-                                <div class="card capstone-card">
+                                <div class="card capstone-card scroll-reveal">
                                     <div class="card-header">
                                         <h4>
                                             🧱 DATA601: From Bricks to Bucks
@@ -174,31 +248,45 @@
                                                 predict their secondary market
                                                 prices using machine learning.
                                                 It compared licensed vs.
-                                                original sets and analyzed
+                                                original sets and analysed
                                                 trends in quantity, complexity,
                                                 and price over time. Key steps
                                                 included time-series analysis,
                                                 clustering, and predictive
-                                                modeling using linear
+                                                modelling using linear
                                                 regression, elastic net, random
                                                 forest, and SVM algorithms.
                                             </p>
 
                                             <div class="tech-stack">
-                                                <span class="tech-tag">R</span>
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Statistical programming language"
+                                                    >R</span
+                                                >
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Data manipulation and visualization"
                                                     >tidyverse</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Interactive web applications"
                                                     >Shiny</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Predictive modelling"
                                                     >Machine Learning</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Temporal data analysis"
                                                     >Time Series</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Pattern recognition"
                                                     >Clustering</span
                                                 >
                                             </div>
@@ -263,7 +351,7 @@
                                 </h3>
                             </button>
                             <div class="card-grid">
-                                <div class="card iod-card">
+                                <div class="card iod-card scroll-reveal">
                                     <div class="card-header">
                                         <h4>🏀 NBA Advanced Stat Attack</h4>
                                         <h5>
@@ -285,19 +373,29 @@
                                                 data (~500 players).
                                             </p>
                                             <div class="tech-stack">
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Frontend programming"
                                                     >JavaScript</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Responsive UI framework"
                                                     >Bootstrap 5</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Data visualization library"
                                                     >Chart.js</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Real-time basketball data"
                                                     >NBA API</span
                                                 >
-                                                <span class="tech-tag"
+                                                <span
+                                                    class="tech-tag"
+                                                    data-tooltip="Version control system"
                                                     >Responsive Design</span
                                                 >
                                             </div>
@@ -330,7 +428,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="card iod-card">
+                                <div class="card iod-card scroll-reveal">
                                     <div class="card-header">
                                         <h4>📚 BookTrackerDemo</h4>
                                         <h5>
@@ -344,7 +442,7 @@
                                                 application for managing your
                                                 personal library with progress
                                                 monitoring, book discovery, and
-                                                personalized statistics.
+                                                personalised statistics.
                                                 Features Google Books API
                                                 integration, theme switching,
                                                 and responsive design built with
@@ -396,7 +494,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="card iod-card">
+                                <div class="card iod-card scroll-reveal">
                                     <div class="card-header">
                                         <h4>🐕 Barkend</h4>
                                         <h5>
@@ -464,37 +562,89 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="card iod-card">
+                                <div class="card iod-card scroll-reveal">
                                     <div class="card-header">
-                                        <h4>🎓 IOD Capstone Project</h4>
-                                        <h5>Software Engineering Capstone</h5>
+                                        <h4>🧙‍♂️ Planeswalker's Primer</h4>
+                                        <h5>
+                                            Comprehensive Magic: The Gathering
+                                            Learning Platform
+                                        </h5>
                                     </div>
                                     <div class="project-content">
                                         <div class="project-description">
                                             <p>
-                                                Capstone TBC covering the full
-                                                course curriculum and
-                                                demonstrating comprehensive
-                                                software engineering skills
-                                                learned throughout the Institute
-                                                of Data program.
+                                                A production-ready MTG
+                                                beginner's guide featuring
+                                                interactive learning modules,
+                                                real-time card search with
+                                                Scryfall API integration,
+                                                favourites management, and
+                                                performance monitoring. Built
+                                                with modern full-stack
+                                                architecture including 96
+                                                passing tests, perfect security
+                                                score (100/100), and
+                                                comprehensive documentation.
+                                                Features 273 mechanics database,
+                                                23 game formats, and
+                                                mobile-responsive design.
                                             </p>
                                             <div class="tech-stack">
                                                 <span class="tech-tag"
-                                                    >Full-Stack
-                                                    Development</span
+                                                    >Next.js 14</span
                                                 >
                                                 <span class="tech-tag"
-                                                    >Software Engineering</span
+                                                    >Express.js</span
                                                 >
                                                 <span class="tech-tag"
-                                                    >Course Integration</span
+                                                    >PostgreSQL</span
                                                 >
                                                 <span class="tech-tag"
-                                                    >Professional Practice</span
+                                                    >Scryfall API</span
+                                                >
+                                                <span class="tech-tag"
+                                                    >Railway/Vercel</span
                                                 >
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="card-links">
+                                        <a
+                                            href="https://capstone-rho-wheat.vercel.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Vercel"
+                                        >
+                                            <i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>
+                                            Live Demo
+                                        </a>
+                                        <a
+                                            href="IOD/Capstone_Document.pdf"
+                                            target="_blank"
+                                            class="btn-badge btn-document"
+                                            aria-label="View project documentation"
+                                        >
+                                            <i
+                                                class="fas fa-file-pdf"
+                                                aria-hidden="true"
+                                            ></i>
+                                            Documentation
+                                        </a>
+                                        <a
+                                            href="https://github.com/tatoslover/Capstone"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        >
+                                            <i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>
+                                            GitHub Repo
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +700,7 @@
                                                 Developed a visual tool to help
                                                 NZ residents understand
                                                 migration patterns to Australia.
-                                                Interactive dashboard analyzing
+                                                Interactive dashboard analysing
                                                 demographic trends and migration
                                                 flows.
                                             </p>
@@ -559,7 +709,7 @@
                                                     >Tableau</span
                                                 >
                                                 <span class="tech-tag"
-                                                    >Data Visualization</span
+                                                    >Data Visualisation</span
                                                 >
                                                 <span class="tech-tag"
                                                     >ABS Data</span
@@ -588,7 +738,7 @@
             </section>
 
             <!-- Coursework Section -->
-            <section id="coursework" class="projects-section">
+            <section id="coursework" class="coursework-section">
                 <div class="container">
                     <h2 class="section-title">Academic Coursework</h2>
                     <div class="projects-container">
@@ -617,7 +767,7 @@
                                                     programming using Python for
                                                     data science applications,
                                                     including data cleansing,
-                                                    analysis, and visualization
+                                                    analysis, and visualisation
                                                     through practical projects.
                                                 </p>
                                                 <div class="tech-stack">
@@ -767,9 +917,10 @@
                                                     Computer-aided discourse
                                                     analysis for digital
                                                     humanities. Covers corpus
-                                                    linguistics, topic modeling,
-                                                    and text classification
-                                                    while addressing ethical
+                                                    linguistics, topic
+                                                    modelling, and text
+                                                    classification while
+                                                    addressing ethical
                                                     dimensions and avoiding
                                                     uncritical 'text mining'
                                                     approaches.
@@ -1245,7 +1396,7 @@
                                                     management, thinking in
                                                     React development patterns,
                                                     and code splitting for
-                                                    performance optimization.
+                                                    performance optimisation.
                                                 </p>
                                                 <div class="tech-stack">
                                                     <span class="tech-tag"
@@ -1453,7 +1604,7 @@
 
             <!-- CV Section -->
             <section id="cv">
-                <div class="cv-header">
+                <div class="cv-header scroll-reveal">
                     <h2>Curriculum Vitae</h2>
                     <div class="buttons">
                         <a
@@ -1636,7 +1787,7 @@
                 </p>
 
                 <p>
-                    <i class="fa fa-check-circle" style="color: #6f42c1"></i>
+                    <i class="fa fa-cheque-circle" style="color: #6f42c1"></i>
                     <span><strong>Accountability</strong></span
                     ><br />
                     <span
@@ -1841,10 +1992,10 @@
             <!-- Connect Section -->
             <section id="connect" class="contact-section">
                 <div class="container">
-                    <h2 class="section-title">Connect With Me</h2>
+                    <h2 class="section-title scroll-reveal">Connect With Me</h2>
 
                     <div class="contact-grid">
-                        <div class="contact-card">
+                        <div class="contact-card scroll-reveal">
                             <div class="contact-icon">
                                 <i class="fa fa-envelope"></i>
                             </div>
@@ -1855,7 +2006,7 @@
                                 >
                             </div>
                         </div>
-                        <div class="contact-card">
+                        <div class="contact-card scroll-reveal">
                             <div class="contact-icon">
                                 <i class="fa fa-phone"></i>
                             </div>
@@ -1864,7 +2015,7 @@
                                 <a href="tel:+64273533452">+64 27 353 3452</a>
                             </div>
                         </div>
-                        <div class="contact-card">
+                        <div class="contact-card scroll-reveal">
                             <div class="contact-icon">
                                 <i class="fab fa-linkedin"></i>
                             </div>
@@ -1877,7 +2028,7 @@
                                 >
                             </div>
                         </div>
-                        <div class="contact-card">
+                        <div class="contact-card scroll-reveal">
                             <div class="contact-icon">
                                 <i class="fab fa-github"></i>
                             </div>

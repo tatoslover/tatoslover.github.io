@@ -285,7 +285,7 @@ const Module4 = {
   },
 
   /**
-   * Initialize Lab 5 news feed
+   * Initialise Lab 5 news feed
    */
   initializeLab5News: function () {
     const container = document.getElementById("news-demo-container");
@@ -321,12 +321,12 @@ const Module4 = {
   },
 
   /**
-   * Load chart data for ECharts visualization
+   * Load chart data for ECharts visualisation
    */
   loadChartData: function () {
     const container = document.getElementById("chart-container");
     container.innerHTML =
-      '<p style="text-align: center; padding: 50px;">Chart would load here with real API data showing product categories distribution.</p>';
+      '<p style="text-align: centre; padding: 50px;">Chart would load here with real API data showing product categories distribution.</p>';
   },
 
   /**
@@ -354,7 +354,7 @@ const Module4 = {
                     <div class="card-body">
                         <h5 class="card-title">Gold Necklace</h5>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            <i class="fa-solid fa-gem"></i> Jewelry
+                            <i class="fa-solid fa-gem"></i> Jewellery
                         </h6>
                         <p class="card-text">Beautiful gold necklace with elegant design...</p>
                         <div class="mt-auto">
@@ -499,28 +499,28 @@ const Module4 = {
   },
 
   /**
-   * Data visualization with charts
+   * Data visualisation with charts
    */
   demonstrateDataVisualization: function () {
-    console.log("Module 4: Data visualization with ECharts");
-    // Placeholder for future data visualization demonstrations
+    console.log("Module 4: Data visualisation with ECharts");
+    // Placeholder for future data visualisation demonstrations
   },
 
   // ========================================================================
-  // INITIALIZATION
+  // INITIALISATION
   // ========================================================================
 
   /**
-   * Initialize Module 4 specific functionality
+   * Initialise Module 4 specific functionality
    */
   init: function () {
     console.log("Module 4 specific functions loaded");
 
-    // Initialize demos when page loads
+    // Initialise demos when page loads
     document.addEventListener("DOMContentLoaded", function () {
-      // Small delay to ensure Portfolio is fully initialized
+      // Small delay to ensure Portfolio is fully initialised
       setTimeout(() => {
-        // Initialize proper icon rotation for active sections
+        // Initialise proper icon rotation for active sections
         const sections = document.querySelectorAll(".lab-content");
         const icons = document.querySelectorAll(".toggle-icon");
 
@@ -530,12 +530,12 @@ const Module4 = {
           }
         });
 
-        // Initialize Module 4 specific demos
+        // Initialise Module 4 specific demos
         Module4.updateDateTimeDemo();
         Module4.updateDateCalculations();
         Module4.generateArtistGallery();
 
-        // Initialize Lab 5 news feed with delay to ensure DOM is ready
+        // Initialise Lab 5 news feed with delay to ensure DOM is ready
         setTimeout(() => {
           Module4.initializeLab5News();
         }, 200);
@@ -717,13 +717,13 @@ artists.forEach((artist) => {
 // 🎨 CUSTOM CARD STYLING
 .card-symbol {
     font-size: 5rem;
-    text-align: center;
+    text-align: centre;
     padding: 2rem 0;
-    background-color: #e0e0e0;
+    background-colour: #e0e0e0;
 }
 
 .navbar-floating {
-    background-color: white;
+    background-colour: white;
     margin: 1rem auto;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
@@ -870,7 +870,7 @@ const interval = Interval.fromDateTimes(start, end);
 
 console.log(\`Days in 2024: \${interval.length("days")}\`);
 
-// Date formatting and localization
+// Date formatting and localisation
 const birthday = DateTime.fromISO("1996-09-15");
 console.log(\`Birthday: \${birthday.toFormat("MMMM dd, yyyy")}\`);
 console.log(\`French: \${birthday.setLocale("fr").toFormat("MMMM dd, yyyy")}\`);
@@ -883,8 +883,8 @@ console.log(\`Next week: \${nextWeek.toRelative()}\`);
 const duration = DateTime.now().diff(birthday);
 console.log(\`I've been alive for: \${duration.toFormat("y 'years,' M 'months'")}\`);`,
 
-    "lab9-source": `// 📊 ECHARTS DATA VISUALIZATION
-// Initialize chart
+    "lab9-source": `// 📊 ECHARTS DATA VISUALISATION
+// Initialise chart
 const myChart = echarts.init(document.getElementById("main"));
 
 // 🎨 CHART CONFIGURATION
@@ -1007,14 +1007,14 @@ function calculateResult() {
   }
 }
 
-// Let main.js handle all initialization
-// No need for custom initialization when using main.js toggleSection
+// Let main.js handle all initialisation
+// No need for custom initialisation when using main.js toggleSection
 
 // ============================================================================
-// AUTO-INITIALIZATION
+// AUTO-INITIALISATION
 // ============================================================================
 
-// Initialize Module 4 when loaded
+// Initialise Module 4 when loaded
 Module4.init();
 
 // Make globally available

@@ -181,7 +181,7 @@ const Module1 = {
         return;
       }
 
-      // Check if Portfolio library is available
+      // Cheque if Portfolio library is available
       if (typeof Portfolio === "undefined" || !Portfolio.calculator) {
         resultElement.innerHTML = "❌ Portfolio library not loaded!";
         return;
@@ -339,18 +339,18 @@ const Module1 = {
   },
 
   // ========================================================================
-  // INITIALIZATION
+  // INITIALISATION
   // ========================================================================
 
   /**
-   * Initialize Module 1 specific functionality
+   * Initialise Module 1 specific functionality
    */
   init: function () {
     console.log("Module 1 specific functions loaded");
 
-    // Initialize with first section open if needed
+    // Initialise with first section open if needed
     document.addEventListener("DOMContentLoaded", function () {
-      console.log("Module 1 portfolio initialized");
+      console.log("Module 1 portfolio initialised");
     });
   },
 };
@@ -394,10 +394,10 @@ function greetUser() {
 }
 
 // ============================================================================
-// AUTO-INITIALIZATION
+// AUTO-INITIALISATION
 // ============================================================================
 
-// Initialize Module 1 when loaded
+// Initialise Module 1 when loaded
 Module1.init();
 
 // Make globally available

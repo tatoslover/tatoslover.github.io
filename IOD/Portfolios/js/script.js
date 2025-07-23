@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
-                    behavior: 'smooth',
+                    behaviour: 'smooth',
                     block: 'start'
                 });
             }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         copyButton.addEventListener('click', function() {
             const text = block.textContent;
             navigator.clipboard.writeText(text).then(() => {
-                this.innerHTML = '<i class="fas fa-check"></i>';
+                this.innerHTML = '<i class="fas fa-cheque"></i>';
                 setTimeout(() => {
                     this.innerHTML = '<i class="fas fa-copy"></i>';
                 }, 2000);
@@ -175,7 +175,7 @@ function generateTableOfContents() {
     toc.appendChild(tocList);
 }
 
-// Initialize table of contents on page load
+// Initialise table of contents on page load
 document.addEventListener('DOMContentLoaded', generateTableOfContents);
 
 // Add animation on scroll
@@ -197,7 +197,7 @@ function animateOnScroll() {
     });
 }
 
-// Initialize animations on page load
+// Initialise animations on page load
 document.addEventListener('DOMContentLoaded', animateOnScroll);
 
 // Add print functionality
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behaviour: 'smooth'
         });
     });
 

@@ -4,7 +4,7 @@
 
 **Module 7: Web Design with React II - Mini-project 2**
 
-Track your reading journey with progress monitoring, book discovery, and personalized statistics. This comprehensive React application demonstrates Web Design with React II through advanced hooks, routing, and library integration applied to a real-world book tracking system.
+Track your reading journey with progress monitoring, book discovery, and personalised statistics. This comprehensive React application demonstrates Web Design with React II through advanced hooks, routing, and library integration applied to a real-world book tracking system.
 
 ## 🚀 **Key Technologies & React II Concepts**
 - 📖 **Data Source**: [Google Books API](https://developers.google.com/books) (~40M books)
@@ -23,7 +23,7 @@ Track your reading journey with progress monitoring, book discovery, and persona
 - **Hooks**: useState, useEffect, useContext, and custom hooks for state management
 - **Routing**: React Router for navigation, nested routes, and route parameters
 - **Library Integration**: Material-UI components, Google Books API, and third-party libraries
-- **Advanced Patterns**: Context API, component composition, and performance optimization
+- **Advanced Patterns**: Context API, component composition, and performance optimisation
 
 ## 🚀 **Getting Started**
 
@@ -91,7 +91,7 @@ npm run build
 - Responsive sidebar navigation with book counts
 - Animated book logo with page-turning effects
 - Theme toggle (Light/Dark mode)
-- Mobile-optimized drawer navigation
+- Mobile-optimised drawer navigation
 - Reading statistics in sidebar
 </details>
 
@@ -113,7 +113,7 @@ npm run build
 - Real-time filtering with 400+ books support
 
 `pages/WishlistPage.jsx` - Want to Read Collection
-- Books organized by categories and genres
+- Books organised by categories and genres
 - Reading challenge calculations
 - Estimated reading time analysis
 - Quick add workflow from search
@@ -149,7 +149,7 @@ npm run build
 - Forgot password functionality with reset codes
 - Session persistence and state management
 - User profile data and reading statistics
-- Demo book collection initialization
+- Demo book collection initialisation
 - Cross-component authentication state
 
 `contexts/ThemeContext.jsx` - Theme Management System
@@ -170,7 +170,7 @@ npm run build
 - Search result caching for performance
 
 `hooks/useLocalStorage.js` - Storage Utilities
-- Cross-tab synchronization with storage events
+- Cross-tab synchronisation with storage events
 - Data validation and migration support
 - Automatic cleanup and garbage collection
 - Conflict resolution for concurrent updates
@@ -184,8 +184,8 @@ npm run build
 <summary>⚡ Performance Optimizations</summary>
 
 - React.memo for expensive component re-renders
-- useCallback optimization for event handlers
-- Bundle optimization with Vite code splitting
+- useCallback optimisation for event handlers
+- Bundle optimisation with Vite code splitting
 - Lazy loading of book images and metadata
 - Efficient re-rendering with proper dependency arrays
 </details>
@@ -195,7 +195,7 @@ npm run build
 
 - Google Books API integration for book discovery
 - Local storage persistence across browser sessions
-- Cross-tab synchronization for multi-window support
+- Cross-tab synchronisation for multi-window support
 - Automatic data migration and schema evolution
 - Real-time search with instant results
 </details>
@@ -218,7 +218,7 @@ npm run build
 - Context API for global state management
 - React Router for client-side navigation
 - Material-UI component library with custom theming
-- Vite for fast development and optimized builds
+- Vite for fast development and optimised builds
 - ESLint for code quality and consistency
 </details>
 
@@ -229,7 +229,7 @@ npm run build
 - Custom hooks for reusable logic
 - Context providers for global state
 - Component composition patterns
-- Performance optimization techniques
+- Performance optimisation techniques
 - Error boundaries and graceful error handling
 </details>
 
@@ -244,7 +244,7 @@ npm run build
 - `useEffect` - Side effects and lifecycle management
 - `useReducer` - Complex state transitions in BookContext
 - `useContext` - Global state consumption
-- `useCallback` - Performance optimization for API calls
+- `useCallback` - Performance optimisation for API calls
 - `useMemo` - Expensive calculations (filtering, sorting)
 - Custom hooks (`useBookSearch`, `useLocalStorage`)
 </details>
@@ -255,7 +255,7 @@ npm run build
 - Multiple context providers (BookContext, ThemeContext)
 - Provider pattern for clean state separation
 - Cross-component communication
-- State persistence and synchronization
+- State persistence and synchronisation
 </details>
 
 <details>
@@ -311,7 +311,7 @@ The collection includes 14 books with embedded cover images from reliable CDN so
 **Non-Fiction:**
 - *Me Talk Pretty One Day* by David Sedaris
 
-### Book Organization Features
+### Book Organisation Features
 
 **Lord of the Rings Reading Journey:**
 The collection showcases a complete LOTR reading progression:
@@ -323,11 +323,11 @@ The collection showcases a complete LOTR reading progression:
 **Reading Status Distribution:**
 - **Wishlist**: Includes classics like *Moby Dick*, *Catch-22*, and contemporary hits
 - **Currently Reading**: Active progress tracking on *Good Omens* (45%), *Beach Read* (40%), and *The Importance of Being Earnest* (60%)
-- **Finished Books**: Organized by year with ratings and reviews, showcasing reading habits over time
+- **Finished Books**: Organised by year with ratings and reviews, showcasing reading habits over time
 
 **Cover Image Implementation:**
 - High-quality cover images from reliable CDN sources
 - Fallback to default placeholder for books without covers
-- Optimized loading and responsive display across devices
+- Optimised loading and responsive display across devices
 
 This diverse collection demonstrates the app's capability to handle various genres, track reading progress over multiple years, and provide rich visual representation of your personal library.

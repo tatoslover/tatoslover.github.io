@@ -13,7 +13,7 @@ Personal portfolio website featuring:
 ## 🚀 Featured Projects
 
 ### Data Science Capstone
-**LEGOscape: From Bricks to Bucks** - Interactive Shiny application analyzing LEGO datasets to explore sales patterns, price predictions, and market trends using R and advanced statistical modeling.
+**LEGOscape: From Bricks to Bucks** - Interactive Shiny application analysing LEGO datasets to explore sales patterns, price predictions, and market trends using R and advanced statistical modelling.
 
 ### Software Engineering Projects
 - **NBA 2K Stat Attack** - Interactive dashboard for NBA player statistics
