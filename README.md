@@ -8,7 +8,9 @@ Personal portfolio website featuring:
 - **Master of Applied Data Science** projects and coursework
 - **Institute of Data** software engineering training
 - Interactive web applications and data analysis projects
+- Skills organised by project type (Web Development, Data Analysis, Machine Learning, Cloud & DevOps)
 - Professional CV and contact information
+- Responsive design for all devices
 
 ## 🚀 Featured Projects
 
@@ -30,8 +32,9 @@ Personal portfolio website featuring:
 **Languages:** Python, R, JavaScript, HTML5, CSS3, SQL
 **Frameworks:** Shiny, React, Node.js, Express.js
 **Tools:** Pandas, NumPy, Matplotlib, Seaborn, Spark, Hadoop
-**Databases:** PostgreSQL, NoSQL, Snowflake
-**Cloud:** AWS, Google Cloud Platform
+**Databases:** PostgreSQL, MongoDB, NoSQL, Snowflake
+**Cloud:** AWS, Docker, CI/CD Pipelines
+**Testing:** Jest, Testing Library
 
 ## 📚 Academic Background
 
@@ -49,8 +52,13 @@ Personal portfolio website featuring:
 
 ```
 ├── index.html          # Main portfolio website
-├── style.css           # Styling and responsive design
-├── script.js           # Interactive functionality
+├── css/               # Organised stylesheets
+│   ├── style.css      # Core styles and layout
+│   ├── animations.css # Animation definitions
+│   └── mobile.css     # Responsive design
+├── scripts/           # JavaScript files
+│   ├── script.js      # Core functionality
+│   └── animations.js  # Animation logic
 ├── UCMADS/            # Academic coursework projects
 ├── IOD/               # Institute of Data lab portfolios
 └── extras/            # Additional projects and utilities
