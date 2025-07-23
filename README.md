@@ -1,6 +1,6 @@
 # Samuel Love - Portfolio Website
 
-A comprehensive portfolio showcasing my journey in data science, software engineering, and academic coursework. This website demonstrates practical skills through real-world projects and academic achievements.
+A modern, animated portfolio showcasing my journey in data science, software engineering, and academic coursework. This website demonstrates practical skills through real-world projects and academic achievements, featuring smooth animations and responsive design.
 
 ## 🎯 About
 
@@ -9,6 +9,9 @@ Personal portfolio website featuring:
 - **Institute of Data** software engineering training
 - Interactive web applications and data analysis projects
 - Professional CV and contact information
+- **Modern animations** including typewriter effects, scroll reveals, and particle backgrounds
+- **Responsive design** optimised for all devices
+- **Skills showcase** organised by project type (Web Development, Data Analysis, Machine Learning, Cloud & DevOps)
 
 ## 🚀 Featured Projects
 
@@ -30,8 +33,9 @@ Personal portfolio website featuring:
 **Languages:** Python, R, JavaScript, HTML5, CSS3, SQL
 **Frameworks:** Shiny, React, Node.js, Express.js
 **Tools:** Pandas, NumPy, Matplotlib, Seaborn, Spark, Hadoop
-**Databases:** PostgreSQL, NoSQL, Snowflake
-**Cloud:** AWS, Google Cloud Platform
+**Databases:** PostgreSQL, MongoDB, NoSQL, Snowflake
+**Cloud:** AWS, Docker, CI/CD Pipelines
+**Testing:** Jest, Testing Library
 
 ## 📚 Academic Background
 
@@ -49,8 +53,13 @@ Personal portfolio website featuring:
 
 ```
 ├── index.html          # Main portfolio website
-├── style.css           # Styling and responsive design
-├── script.js           # Interactive functionality
+├── css/               # Organised stylesheets
+│   ├── style.css      # Core styles and layout
+│   ├── animations.css # Animation definitions
+│   └── mobile.css     # Responsive design
+├── scripts/           # JavaScript files
+│   ├── script.js      # Core functionality
+│   └── animations.js  # Animation logic
 ├── UCMADS/            # Academic coursework projects
 ├── IOD/               # Institute of Data lab portfolios
 └── extras/            # Additional projects and utilities
@@ -59,6 +68,14 @@ Personal portfolio website featuring:
 ## 🌐 Live Demo
 
 Visit the portfolio: [tatoslover.github.io](https://tatoslover.github.io)
+
+## ✨ Recent Updates
+
+- **New Skills Section**: Interactive grid showcasing technologies grouped by project type
+- **Enhanced Animations**: Typewriter effect, particle backgrounds, scroll reveals, and smooth transitions
+- **Improved Mobile Experience**: Responsive navigation with hamburger menu, optimised layouts
+- **Better Organisation**: CSS and JavaScript files now organised in dedicated folders
+- **UK English**: Content uses UK English spelling throughout (except in code)
 
 ## 🤝 Connect
 
