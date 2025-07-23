@@ -549,7 +549,7 @@ const Module3 = {
     let testString = "hello world javascript";
     let result = `String Manipulation:\n\n`;
     result += `Original: "${testString}"\n`;
-    result += `Capitalized: "${ucFirstLetters(testString)}"`;
+    result += `Capitalised: "${ucFirstLetters(testString)}"`;
 
     output.textContent = result;
   },
@@ -928,7 +928,7 @@ const Module3 = {
 
     let result = `Delayed Messages:\n\n`;
     result += `Message "Hello after 3 seconds" will appear in console after 3 seconds.\n`;
-    result += `Check the browser console to see the delayed message.`;
+    result += `Cheque the browser console to see the delayed message.`;
 
     output.textContent = result;
   },
@@ -953,7 +953,7 @@ const Module3 = {
     let result = `Debouncing:\n\n`;
     result += `Created debounced function with 1 second delay.\n`;
     result += `Function will only execute after 1 second of inactivity.\n`;
-    result += `Check console for debounced messages.`;
+    result += `Cheque console for debounced messages.`;
 
     output.textContent = result;
   },
@@ -977,7 +977,7 @@ const Module3 = {
 
     let result = `Fibonacci Sequences:\n\n`;
     result += `Fibonacci sequence logged to console.\n`;
-    result += `Check the browser console to see the sequence.`;
+    result += `Cheque the browser console to see the sequence.`;
 
     printFibonacci();
     output.textContent = result;
@@ -1100,7 +1100,7 @@ const Module3 = {
 
     let result = `Promises:\n\n`;
     result += `Created promise with random delay (1-20ms).\n`;
-    result += `Check console for resolution message.\n`;
+    result += `Cheque console for resolution message.\n`;
     result += `Promise will resolve with the actual delay time.`;
 
     output.textContent = result;
@@ -1530,7 +1530,7 @@ const Module3 = {
   },
 
   // ========================================================================
-  // INITIALIZATION
+  // INITIALISATION
   // ========================================================================
 
   init: function () {
@@ -1689,10 +1689,10 @@ function runEcommerceExercise8() {
 const basketballGame = Module3.basketballGame;
 
 // ============================================================================
-// AUTO-INITIALIZATION
+// AUTO-INITIALISATION
 // ============================================================================
 
-// Initialize Module 3 when loaded
+// Initialise Module 3 when loaded
 Module3.init();
 
 // Make globally available

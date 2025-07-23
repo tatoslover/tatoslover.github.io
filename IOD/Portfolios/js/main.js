@@ -177,7 +177,7 @@ const Portfolio = {
    */
   strings: {
     /**
-     * Capitalize first letter of each word
+     * Capitalise first letter of each word
      */
     ucFirstLetters: function (str) {
       return str
@@ -209,7 +209,7 @@ const Portfolio = {
     },
 
     /**
-     * Check if string is empty or whitespace
+     * Cheque if string is empty or whitespace
      */
     isEmpty: function (str) {
       return !str || str.trim() === "";
@@ -289,7 +289,7 @@ const Portfolio = {
     },
 
     /**
-     * Check if object has property
+     * Cheque if object has property
      */
     hasProperty: function (obj, property) {
       return obj.hasOwnProperty(property);
@@ -496,11 +496,11 @@ const Portfolio = {
   },
 
   // ========================================================================
-  // INITIALIZATION
+  // INITIALISATION
   // ========================================================================
 
   /**
-   * Initialize portfolio functionality
+   * Initialise portfolio functionality
    */
   init: function () {
     // Add event listeners for common elements
@@ -524,15 +524,15 @@ const Portfolio = {
         }
       });
 
-      // Auto-initialize first section by default for all portfolios
+      // Auto-initialise first section by default for all portfolios
       this.initFirstSectionOpen();
 
-      console.log("Portfolio JavaScript library initialized");
+      console.log("Portfolio JavaScript library initialised");
     });
   },
 
   /**
-   * Initialize first section as open
+   * Initialise first section as open
    * @param {number} sectionIndex - Index of section to open (default: 0)
    */
   initFirstSectionOpen: function (sectionIndex = 0) {
@@ -546,7 +546,7 @@ const Portfolio = {
   },
 
   /**
-   * Initialize specific sections as open
+   * Initialise specific sections as open
    * @param {Array} sectionIndices - Array of section indices to open
    */
   initSectionsOpen: function (sectionIndices = [0]) {
@@ -606,10 +606,10 @@ function unique(arr) {
 }
 
 // ============================================================================
-// AUTO-INITIALIZATION
+// AUTO-INITIALISATION
 // ============================================================================
 
-// Initialize the library when loaded
+// Initialise the library when loaded
 Portfolio.init();
 
 // Export for module systems

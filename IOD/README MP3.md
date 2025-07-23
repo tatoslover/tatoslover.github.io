@@ -24,7 +24,7 @@ A comprehensive backend-driven application demonstrating advanced server-side ar
 - **REST APIs**: RESTful endpoint design, HTTP methods, and status codes
 - **Sockets**: Real-time communication and WebSocket implementation
 - **Model View Controller**: MVC architecture patterns and separation of concerns
-- **Database Integration**: MongoDB operations, data modeling, and query optimization
+- **Database Integration**: MongoDB operations, data modelling, and query optimisation
 
 ## 🚀 **Getting Started**
 
@@ -101,7 +101,7 @@ npm run deploy
 - `search.js` - Intelligent breed search with configurable result limits
 - `random.js` - Random dog image generation with breed filtering
 - `dogs.js` - Full CRUD operations for internal dog records
-- `health.js` - Comprehensive health monitoring with dependency status checks
+- `health.js` - Comprehensive health monitoring with dependency status cheques
 - `stats.js` - Real-time analytics and usage tracking
 - `cache-status.js` - Cache performance and storage metrics
 - `breed-analytics.js` - Advanced breed analytics and insights
@@ -132,7 +132,7 @@ npm run deploy
 
 - **RESTful API Design**: Clean API design with essential endpoints using proper HTTP methods and status codes
 - **Netlify Functions**: Auto-scaling serverless deployment with zero server maintenance
-- **MongoDB Atlas Integration**: Cloud database with Mongoose ODM for schema validation and data modeling
+- **MongoDB Atlas Integration**: Cloud database with Mongoose ODM for schema validation and data modelling
 - **OpenAPI Documentation**: Interactive Swagger UI with endpoint testing and examples
 - **Error Handling**: Structured error handling and analytics logging with request tracking
 
@@ -153,8 +153,8 @@ npm run deploy
 <summary>⚡ Security & Performance</summary>
 
 - **Input Validation**: Request validation, sanitization, and NoSQL injection prevention
-- **Database Optimization**: MongoDB compound indexes, aggregation pipelines, and connection pooling
-- **Performance Monitoring**: Real-time health checks and performance tracking
+- **Database Optimisation**: MongoDB compound indexes, aggregation pipelines, and connection pooling
+- **Performance Monitoring**: Real-time health cheques and performance tracking
 - **Scalable Architecture**: Auto-scaling functions and cloud database handle traffic variations
 
 </details>
@@ -166,11 +166,11 @@ npm run deploy
 - **Code Quality**: ESLint configuration and automated code formatting
 - **API Testing**: Interactive Swagger UI for endpoint testing and validation
 - **Production Deployment**: Seamless deployment to Netlify with environment configuration
-- **Monitoring**: Real-time health checks, analytics, and performance tracking
+- **Monitoring**: Real-time health cheques, analytics, and performance tracking
 
 </details>
 
-**This project demonstrates modern backend development practices**, showcasing serverless architecture, cloud database integration, API development, and external API caching strategies. The application serves as a practical example of backend development, from MongoDB Atlas integration and API design to serverless deployment and performance optimization.
+**This project demonstrates modern backend development practices**, showcasing serverless architecture, cloud database integration, API development, and external API caching strategies. The application serves as a practical example of backend development, from MongoDB Atlas integration and API design to serverless deployment and performance optimisation.
 
 ---
 
@@ -193,7 +193,7 @@ npm run deploy
 - `GET /random?breed=:breed` - Breed-specific random images
 
 #### 📊 Analytics & Monitoring Service
-- `GET /health` - Comprehensive health check with dependency status
+- `GET /health` - Comprehensive health cheque with dependency status
 - `GET /stats` - Real-time usage analytics and performance metrics
 - `GET /cache-status` - Cache performance and storage metrics
 
@@ -209,6 +209,6 @@ npm run deploy
 - **Error Handling**: Structured error responses with proper HTTP status codes
 - **Logging**: Structured logging with request tracking and analytics
 - **Caching**: MongoDB Atlas caching for external API data
-- **Database**: MongoDB Atlas cloud database with optimized queries
+- **Database**: MongoDB Atlas cloud database with optimised queries
 - **Security**: CORS configuration and input sanitization
 - **External API Integration**: Dog CEO API with caching strategies

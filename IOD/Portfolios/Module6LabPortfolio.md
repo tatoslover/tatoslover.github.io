@@ -8,7 +8,7 @@ A complete collection of Web Design with React I exercises showcasing:
 - **JSX Syntax** (JavaScript XML for React component development)
 - **Components and Props** (Component architecture and data flow)
 - **Thinking in React** (React development paradigms and patterns)
-- **Code Splitting** (Performance optimization and component organization)
+- **Code Splitting** (Performance optimisation and component organisation)
 - **Interactive Applications** (State management and user interactions)
 - **Modern React Practices** (Hooks, functional components, and best practices)
 
@@ -33,7 +33,7 @@ A complete collection of Web Design with React I exercises showcasing:
 - [Exercise 2: Components and Props](#exercise-2-components-and-props)
 - [Exercise 3: Thinking in React - State Management](#exercise-3-thinking-in-react---state-management)
 - [Exercise 4: Advanced Component Patterns](#exercise-4-advanced-component-patterns)
-- [Exercise 5: Code Splitting and Organization](#exercise-5-code-splitting-and-organization)
+- [Exercise 5: Code Splitting and Organisation](#exercise-5-code-splitting-and-organisation)
 - [Exercise 6: Complex React Application](#exercise-6-complex-react-application)
 
 ---
@@ -127,7 +127,7 @@ npm run eject
 - **Props** - Component data passing
 - **Children Props** - Content composition
 - **Array Mapping** - Dynamic list rendering
-- **Keys** - React reconciliation optimization
+- **Keys** - React reconciliation optimisation
 - **Component Composition** - Reusable component design
 - **Conditional Rendering** - Dynamic content display
 - **State Management** - useState hook for interactive components
@@ -212,7 +212,7 @@ The app demonstrates multiple usage patterns:
 ### Testing
 
 - Verify default "Hello World" message appears
-- Check that name prop correctly replaces "World"
+- Cheque that name prop correctly replaces "World"
 - Confirm children content displays properly
 - Test responsive styling on different screen sizes
 
@@ -287,12 +287,12 @@ const cats = [
 - **Card Design**: Modern card layout with shadows and borders
 - **Hover Effects**: Transform and scale animations
 - **Responsive Images**: `object-fit: cover` for consistent sizing
-- **Typography**: Clean hierarchy with proper color contrast
+- **Typography**: Clean hierarchy with proper colour contrast
 
 #### Visual Design Elements
 - **Card Shadows**: Subtle depth with hover enhancement
 - **Image Scaling**: Zoom effect on hover
-- **Color Scheme**: Professional blues and grays
+- **Colour Scheme**: Professional blues and grays
 - **Transitions**: Smooth 0.3s animations
 - **Border Radius**: Consistent 12px rounded corners
 
@@ -382,7 +382,7 @@ const Emoji = () => {
 ```
 
 #### Design Elements
-- **Card Layout**: Centered container with gradient background
+- **Card Layout**: Centred container with gradient background
 - **Circular Emoji Display**: White circular background for emoji
 - **Styled Button**: Modern button with hover and active states
 - **Responsive Design**: Works on all screen sizes
@@ -450,7 +450,7 @@ const filterPanthera = () => {
 
 #### Control Buttons
 - **Modern Design**: Gradient backgrounds with hover effects
-- **Visual Hierarchy**: Reset button has different color (red)
+- **Visual Hierarchy**: Reset button has different colour (red)
 - **Responsive Layout**: Flexbox with gap and wrap
 - **Accessibility**: Clear labels and visual feedback
 
@@ -506,7 +506,7 @@ The Big Cats Custom component runs automatically and appears in the fifth sectio
 - 🔄 **Auto-incrementing IDs**: Proper unique ID management
 - 💾 **State Persistence**: Maintains all cats in component state
 - 🎨 **Form Styling**: Beautiful gradient form design
-- ⚠️ **Confirmation Dialog**: Delete confirmation to prevent accidents
+- ⚠️ **Confirmation Dialogue**: Delete confirmation to prevent accidents
 
 ### Form Management
 
@@ -538,7 +538,7 @@ const handleInputChange = (e) => {
 
 #### Create (Add New Cat)
 1. **Form Input**: User fills in cat details
-2. **Validation**: Checks all fields are filled
+2. **Validation**: Cheques all fields are filled
 3. **ID Generation**: Auto-assigns next available ID
 4. **State Update**: Adds cat to both allCats and displayedCats
 5. **UI Update**: Cat appears immediately in grid
@@ -549,7 +549,7 @@ const handleInputChange = (e) => {
 - **Information Display**: Shows name and latin name
 
 #### Delete (Remove Cat)
-1. **Confirmation**: Shows "Are you sure?" dialog
+1. **Confirmation**: Shows "Are you sure?" dialogue
 2. **State Update**: Removes cat from allCats array
 3. **Filter Update**: Removes from displayedCats if currently shown
 4. **UI Update**: Cat disappears from grid immediately
@@ -648,7 +648,7 @@ The Calculator component runs automatically and appears in the sixth section of 
 
 ### Error Handling
 
-#### Validation Checks
+#### Validation Cheques
 1. **Empty Fields**: Ensures both numbers are entered
 2. **Valid Numbers**: Verifies inputs are numeric values
 3. **Division by Zero**: Prevents mathematical errors
@@ -672,7 +672,7 @@ if (number2 === 0 && operator === '/') {
 #### Input Processing
 - **parseFloat()**: Converts string inputs to numbers
 - **isNaN()**: Validates numeric input
-- **Real-time Validation**: Checks inputs before calculation
+- **Real-time Validation**: Cheques inputs before calculation
 - **User Feedback**: Clear error messages for invalid inputs
 
 #### State Management
@@ -706,7 +706,7 @@ switch (operator) {
 
 #### Result Display
 - **Formatted Equation**: Shows "5 + 3 = 8" format
-- **Highlighted Answer**: Result value emphasized with styling
+- **Highlighted Answer**: Result value emphasised with styling
 - **Clear Presentation**: Clean, readable number formatting
 
 ---

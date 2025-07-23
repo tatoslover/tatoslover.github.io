@@ -45,18 +45,18 @@ const Module2 = {
     },
 
     // ========================================================================
-    // INITIALIZATION
+    // INITIALISATION
     // ========================================================================
 
     /**
-     * Initialize Module 2 specific functionality
+     * Initialise Module 2 specific functionality
      */
     init: function() {
         console.log('Module 2 specific functions loaded');
 
-        // Module 2 specific initialization
+        // Module 2 specific initialisation
         document.addEventListener("DOMContentLoaded", function () {
-            console.log('Module 2 portfolio initialized');
+            console.log('Module 2 portfolio initialised');
 
             // Any Module 2 specific DOM manipulation can go here
         });
@@ -86,10 +86,10 @@ function demonstrateFlexbox() {
 }
 
 // ============================================================================
-// AUTO-INITIALIZATION
+// AUTO-INITIALISATION
 // ============================================================================
 
-// Initialize Module 2 when loaded
+// Initialise Module 2 when loaded
 Module2.init();
 
 // Make globally available

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const offsetTop = target.offsetTop - 120; // Account for fixed header and navbar
         window.scrollTo({
           top: offsetTop,
-          behavior: "smooth",
+          behaviour: "smooth",
         });
       }
     });
@@ -69,15 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
       // Scrolled - orange/copper background
       if (header) header.style.background = "rgba(204, 102, 51, 0.95)";
       if (navbar) navbar.style.background = "rgba(204, 102, 51, 0.95)";
-      navLinks.forEach((link) => (link.style.color = "white"));
-      if (portfolioTitle) portfolioTitle.style.color = "white";
+      navLinks.forEach((link) => (link.style.colour = "white"));
+      if (portfolioTitle) portfolioTitle.style.colour = "white";
       bars.forEach((bar) => (bar.style.backgroundColor = "white"));
     } else {
       // Top - navy background
       if (header) header.style.background = "rgba(51, 102, 153, 0.95)";
       if (navbar) navbar.style.background = "rgba(51, 102, 153, 0.95)";
-      navLinks.forEach((link) => (link.style.color = "white"));
-      if (portfolioTitle) portfolioTitle.style.color = "white";
+      navLinks.forEach((link) => (link.style.colour = "white"));
+      if (portfolioTitle) portfolioTitle.style.colour = "white";
       bars.forEach((bar) => (bar.style.backgroundColor = "white"));
     }
   });

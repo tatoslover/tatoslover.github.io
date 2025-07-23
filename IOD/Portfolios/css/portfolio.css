@@ -228,7 +228,7 @@ body {
 }
 
 /* Utility Classes */
-.text-center {
+.text-centre {
     text-align: center;
 }
 
@@ -289,7 +289,7 @@ body {
     margin: 5px 0;
 }
 
-.animation-center {
+.animation-centre {
     display: flex;
     justify-content: center;
     align-items: center;
