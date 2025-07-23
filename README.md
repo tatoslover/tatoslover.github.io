@@ -1,6 +1,6 @@
 # Samuel Love - Portfolio Website
 
-A modern, animated portfolio showcasing my journey in data science, software engineering, and academic coursework. This website demonstrates practical skills through real-world projects and academic achievements, featuring smooth animations and responsive design.
+A comprehensive portfolio showcasing my journey in data science, software engineering, and academic coursework. This website demonstrates practical skills through real-world projects and academic achievements.
 
 ## 🎯 About
 
@@ -8,10 +8,9 @@ Personal portfolio website featuring:
 - **Master of Applied Data Science** projects and coursework
 - **Institute of Data** software engineering training
 - Interactive web applications and data analysis projects
+- Skills organised by project type (Web Development, Data Analysis, Machine Learning, Cloud & DevOps)
 - Professional CV and contact information
-- **Modern animations** including typewriter effects, scroll reveals, and particle backgrounds
-- **Responsive design** optimised for all devices
-- **Skills showcase** organised by project type (Web Development, Data Analysis, Machine Learning, Cloud & DevOps)
+- Responsive design for all devices
 
 ## 🚀 Featured Projects
 
@@ -68,14 +67,6 @@ Personal portfolio website featuring:
 ## 🌐 Live Demo
 
 Visit the portfolio: [tatoslover.github.io](https://tatoslover.github.io)
-
-## ✨ Recent Updates
-
-- **New Skills Section**: Interactive grid showcasing technologies grouped by project type
-- **Enhanced Animations**: Typewriter effect, particle backgrounds, scroll reveals, and smooth transitions
-- **Improved Mobile Experience**: Responsive navigation with hamburger menu, optimised layouts
-- **Better Organisation**: CSS and JavaScript files now organised in dedicated folders
-- **UK English**: Content uses UK English spelling throughout (except in code)
 
 ## 🤝 Connect
 
