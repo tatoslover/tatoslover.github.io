@@ -1,0 +1,60 @@
+{
+    "name": "samuel-love-portfolio",
+    "version": "1.2.0",
+    "description": "Samuel Love's Portfolio Website - Optimized for Performance",
+    "main": "index.html",
+    "private": true,
+    "scripts": {
+        "build": "node scripts/optimize.js",
+        "optimize": "node scripts/optimize.js",
+        "dev": "python3 -m http.server 8000",
+        "serve": "python3 -m http.server 8000",
+        "serve-dist": "cd dist && python3 -m http.server 8000",
+        "test": "echo \"No tests specified\" && exit 0",
+        "lint": "echo \"No linting configured\" && exit 0",
+        "analyze": "echo \"Performance analysis not configured\" && exit 0",
+        "clean": "rm -rf dist",
+        "deploy": "npm run build && echo \"Build complete - ready for deployment\"",
+        "start": "npm run serve"
+    },
+    "keywords": [
+        "portfolio",
+        "software-engineer",
+        "data-scientist",
+        "web-development",
+        "personal-website",
+        "pwa"
+    ],
+    "author": {
+        "name": "Samuel Love",
+        "email": "contact@samuellove.dev",
+        "url": "https://tatoslover.github.io"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tatoslover/tatoslover.github.io.git"
+    },
+    "homepage": "https://tatoslover.github.io",
+    "bugs": {
+        "url": "https://github.com/tatoslover/tatoslover.github.io/issues"
+    },
+    "devDependencies": {},
+    "dependencies": {},
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ],
+    "config": {
+        "optimization": {
+            "minify": true,
+            "compress": true,
+            "stripComments": true
+        }
+    }
+}

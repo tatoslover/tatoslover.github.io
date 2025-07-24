@@ -1,0 +1,1391 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Samuel Love Portfolio</title><meta
+            name="description"
+            content="Samuel Love - Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies. View my portfolio and projects."
+        /><meta
+            name="keywords"
+            content="Samuel Love, Software Engineer, Data Scientist, Web Development, Machine Learning, Portfolio"
+        /><meta name="author" content="Samuel Love" /><meta property="og:type" content="website" /><meta property="og:url" content="https://tatoslover.github.io/" /><meta property="og:title" content="Samuel Love Portfolio" /><meta
+            property="og:description"
+            content="Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies."
+        /><meta
+            property="og:image"
+            content="https://tatoslover.github.io/extras/pp.png"
+        /><meta property="twitter:card" content="summary_large_image" /><meta property="twitter:url" content="https://tatoslover.github.io/" /><meta property="twitter:title" content="Samuel Love Portfolio" /><meta
+            property="twitter:description"
+            content="Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies."
+        /><meta
+            property="twitter:image"
+            content="https://tatoslover.github.io/extras/pp.png"
+        /><link rel="icon" type="image/png" href="extras/pp.png" /><link rel="apple-touch-icon" href="extras/pp.png" /><link rel="manifest" href="manifest.json" /><meta name="theme-color" content="#8b4513" /><meta name="msapplication-TileColor" content="#8b4513" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="default" /><meta name="apple-mobile-web-app-title" content="SL Portfolio" /><link rel="preload" href="extras/pp.png" as="image" type="image/png" /><link rel="dns-prefetch" href="//cdnjs.cloudflare.com" /><link
+            rel="preconnect"
+            href="https://cdnjs.cloudflare.com"
+            crossorigin
+        /><style>/* Critical CSS - Above-the-fold styles for fast initial render */
+
+            /* === CSS Variables === */
+            :root {
+                --header-height: 60px;
+                --navbar-height: 50px;
+                --theme-toggle-height: 40px;
+                --total-header-height: calc(
+                    var(--header-height) + var(--navbar-height) +
+                        var(--theme-toggle-height)
+                );
+
+                /* Light theme (default) */
+                --bg: #e6d2a6;
+                --text: #000000;
+                --accent: #8b4513;
+                --link: #a0522d;
+                --link-hover: #6b3410;
+                --button-bg: #dcc9a6;
+                --button-text: #000000;
+                --header: #8b4513;
+                --card-bg: #f0e6cc;
+                --nav-bg: rgba(139, 69, 19, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            /* Dark theme preference */
+            @media (prefers-color-scheme: dark) {
+                html:not(.manual-theme) :root {
+                    --bg: #1e1e2f;
+                    --text: #c0c0c0;
+                    --accent: #4682b4;
+                    --link: #99ccff;
+                    --link-hover: #cce6ff;
+                    --button-bg: #2c3e50;
+                    --button-text: silver;
+                    --header: #d2691e;
+                    --card-bg: #2a2a3d;
+                    --nav-bg: rgba(70, 130, 180, 0.95);
+                    --nav-text: #ffffff;
+                }
+            }
+
+            /* Manual theme overrides */
+            html.manual-theme body.light-theme {
+                --bg: #e6d2a6;
+                --text: #000000;
+                --accent: #8b4513;
+                --link: #a0522d;
+                --link-hover: #6b3410;
+                --button-bg: #dcc9a6;
+                --button-text: #000000;
+                --header: #8b4513;
+                --card-bg: #f0e6cc;
+                --nav-bg: rgba(139, 69, 19, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            html.manual-theme body.dark-theme {
+                --bg: #1e1e2f;
+                --text: #c0c0c0;
+                --accent: #4682b4;
+                --link: #99ccff;
+                --link-hover: #cce6ff;
+                --button-bg: #2c3e50;
+                --button-text: silver;
+                --header: #d2691e;
+                --card-bg: #2a2a3d;
+                --nav-bg: rgba(70, 130, 180, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            /* === Base Styles === */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                font-size: 16px;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--text);
+                background-color: var(--bg);
+                padding-top: var(--total-header-height);
+                min-height: 100vh;
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+            }
+
+            /* === Skip Link === */
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--accent);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 10000;
+                transition: top 0.3s;
+            }
+
+            .skip-link:focus {
+                top: 6px;
+            }
+
+            /* === Header === */
+            .main-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: var(--nav-bg);
+                z-index: 1000;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                backdrop-filter: blur(10px);
+                transition:
+                    backdrop-filter 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .main-header.scrolled {
+                backdrop-filter: blur(15px);
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            body.dark-theme .main-header.scrolled {
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .header-top,
+            .navbar,
+            .theme-toggle-section {
+                position: relative;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .header-top {
+                padding: 1rem 0 0.5rem 0;
+                text-align: center;
+            }
+
+            .main-header .portfolio-title {
+                font-size: 2rem;
+                font-weight: bold;
+                color: var(--nav-text);
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                background-color: transparent;
+            }
+
+            /* === Navigation === */
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80px;
+                position: relative;
+            }
+
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 2rem;
+                flex: 1;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: var(--nav-text);
+                font-weight: 500;
+                transition:
+                    color 0.3s ease,
+                    text-shadow 0.3s ease;
+                position: relative;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+            }
+
+            .nav-link:hover {
+                color: var(--nav-text);
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            }
+
+            /* === Theme Toggle === */
+            .theme-toggle-section {
+                display: flex;
+                justify-content: center;
+                padding: 0.5rem 0;
+            }
+
+            .theme-toggle {
+                background: var(--button-bg);
+                color: var(--button-text);
+                border: 2px solid var(--accent);
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .theme-toggle:hover {
+                background: var(--accent);
+                color: var(--nav-text);
+                transform: scale(1.05);
+            }
+
+            /* === Hero Section (Above the fold) === */
+            .hero-section {
+                min-height: 80vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                background: var(--bg);
+                padding: 2rem;
+                overflow: hidden;
+            }
+
+            .hero-content {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+                max-width: 1200px;
+                width: 100%;
+                z-index: 2;
+            }
+
+            .hero-image {
+                flex-shrink: 0;
+            }
+
+            .profile-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid var(--accent);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .profile-image:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .hero-text {
+                flex: 1;
+                text-align: left;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: var(--text);
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .hero-subtitle {
+                font-size: 1.8rem;
+                color: var(--accent);
+                margin-bottom: 2rem;
+                min-height: 2.2rem;
+                font-weight: 500;
+            }
+
+            .hero-buttons {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-align: center;
+                border: 2px solid transparent;
+            }
+
+            .btn-primary {
+                background: var(--button-bg);
+                color: var(--button-text);
+                border-color: var(--accent);
+            }
+
+            .btn-primary:hover {
+                background: var(--accent);
+                color: var(--nav-text);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            /* === Mobile Responsive === */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    position: fixed;
+                    left: -100%;
+                    top: var(--total-header-height);
+                    flex-direction: column;
+                    background-color: var(--nav-bg);
+                    width: 100%;
+                    text-align: center;
+                    transition: 0.3s;
+                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                    backdrop-filter: blur(10px);
+                    height: calc(100vh - var(--total-header-height));
+                    padding: 2rem 0;
+                    gap: 1rem;
+                }
+
+                .nav-menu.active {
+                    left: 0;
+                }
+
+                .hamburger {
+                    display: block;
+                }
+
+                .hero-content {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 2rem;
+                }
+
+                .hero-text h1 {
+                    font-size: 2.5rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.4rem;
+                }
+
+                .profile-image {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .hero-buttons {
+                    justify-content: center;
+                }
+            }
+
+            /* Hamburger menu styles */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                width: 25px;
+                height: 20px;
+                justify-content: space-between;
+                position: absolute;
+                right: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .bar {
+                height: 3px;
+                width: 100%;
+                background-color: var(--nav-text);
+                border-radius: 3px;
+                transition: 0.3s;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }</style><link
+            rel="preload"
+            href="css/style.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        /><link
+            rel="preload"
+            href="css/animations.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        /><link
+            rel="preload"
+            href="css/mobile.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        /><noscript><link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/animations.css" /><link rel="stylesheet" href="css/mobile.css" /></noscript><link
+            rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        /><noscript><link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            /></noscript><script src="scripts/css-loader.js" defer></script><script src="scripts/animations.js" defer></script><script src="scripts/script.js" defer></script><script src="scripts/performance.js" defer></script><script>// Register service worker for caching and offline support
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () =>{
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((registration) =>{
+                            console.log(
+                                "✅ Service Worker registered successfully:",
+                                registration.scope,
+                            );
+
+                            // Check for updates
+                            registration.addEventListener("updatefound", () =>{
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener(
+                                    "statechange",
+                                    () =>{
+                                        if (
+                                            newWorker.state === "installed" &&
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            console.log(
+                                                "🔄 New version available. Refresh to update.",
+                                            );
+                                            // Could show a toast notification here
+                                        }
+                                    },
+                                );
+                            });
+                        })
+                        .catch((error) =>{
+                            console.log(
+                                "❌ Service Worker registration failed:",
+                                error,
+                            );
+                        });
+                });
+            }</script><script type="application/ld+json">{
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Samuel Love",
+                "jobTitle": "Software Engineer & Data Scientist",
+                "url": "https://tatoslover.github.io",
+                "image": "https://tatoslover.github.io/extras/pp.png",
+                "sameAs": [
+                    "https://github.com/tatoslover",
+                    "https://www.linkedin.com/in/samuel-love-nz/"
+                ],
+                "alumniOf": [
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "University of Canterbury"
+                    },
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "Victoria University of Wellington"
+                    }
+                ],
+                "knowsAbout": [
+                    "Web Development",
+                    "Data Analysis",
+                    "Machine Learning",
+                    "Cloud Computing",
+                    "Software Engineering"
+                ]
+            }</script></head><body><a href="#main-content" class="skip-link">Skip to main content</a><header class="main-header"><div class="header-top"><h1 class="portfolio-title">Samuel Love's Portfolio</h1></div><nav class="navbar"><div class="nav-container"><ul class="nav-menu"><li class="nav-item"><a href="#home" class="nav-link">Home</a></li><li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li><li class="nav-item"><a href="#coursework" class="nav-link"
+                                >Coursework</a
+                            ></li><li class="nav-item"><a href="#qualifications" class="nav-link"
+                                >Qualifications</a
+                            ></li><li class="nav-item"><a href="#employment" class="nav-link"
+                                >Employment</a
+                            ></li><li class="nav-item"><a href="#certifications" class="nav-link"
+                                >Certifications</a
+                            ></li><li class="nav-item"><a href="#interests" class="nav-link">Interests</a></li><li class="nav-item"><a href="#connect" class="nav-link">Connect</a></li></ul><div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div></div></nav><div class="theme-toggle-section"><button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Toggle dark mode"
+                    title="Switch theme"
+                ><i class="fas fa-moon"></i><span class="theme-label">Theme</span></button></div></header><main id="main-content"><section id="home" class="hero-section"><div class="particles"></div><div class="hero-content"><div class="hero-image"><img
+                            src="extras/pp.png"
+                            alt="Samuel Love - Software Engineer & Data Scientist"
+                            class="profile-image"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                            width="300"
+                            height="300"
+                        /></div><div class="hero-text"><h1>Samuel Love</h1><h2 class="hero-subtitle typewriter"></h2><div class="hero-buttons"><a
+                                href="#projects"
+                                class="btn btn-primary pulse-button"
+                                >View Projects</a
+                            ><a
+                                href="#connect"
+                                class="btn btn-primary pulse-button"
+                                >Connect With Me</a
+                            ><a
+                                href="extras/Samuel_Love_CV.pdf"
+                                target="_blank"
+                                class="btn btn-primary pulse-button"
+                                >View CV</a
+                            ></div></div></div></section><section id="skills" class="skills-section"><div class="container"><h2 class="section-title scroll-reveal">Skills & Technologies</h2><div class="project-skills"><div class="project-skill-card stagger-item"><div class="project-icon"><i class="fas fa-globe"></i></div><div class="project-name">Web Development</div><ul class="project-tech-list"><li>React & Next.js</li><li>Express.js & Node</li><li>PostgreSQL & MongoDB</li><li>REST & GraphQL APIs</li><li>Jest & Testing Library</li></ul></div><div class="project-skill-card stagger-item"><div class="project-icon"><i class="fas fa-chart-line"></i></div><div class="project-name">Data Analysis</div><ul class="project-tech-list"><li>Python & Pandas</li><li>SQL & Query Optimisation</li><li>Statistical Analysis</li><li>Jupyter Notebooks</li><li>Data Visualisation</li></ul></div><div class="project-skill-card stagger-item"><div class="project-icon"><i class="fas fa-robot"></i></div><div class="project-name">Machine Learning</div><ul class="project-tech-list"><li>Scikit-learn</li><li>TensorFlow & Keras</li><li>Feature Engineering</li><li>Model Deployment</li><li>MLOps Practices</li></ul></div><div class="project-skill-card stagger-item"><div class="project-icon"><i class="fas fa-cloud"></i></div><div class="project-name">Cloud & DevOps</div><ul class="project-tech-list"><li>AWS Services</li><li>Docker Containers</li><li>CI/CD Pipelines</li><li>Infrastructure as Code</li><li>Monitoring & Logging</li></ul></div><div class="project-skill-card stagger-item"><div class="project-icon"><i class="fas fa-handshake"></i></div><div class="project-name">Transferable Skills</div><ul class="project-tech-list"><li>Attention to Detail</li><li>Customer Service</li><li>Empathy & Communication</li><li>Leadership & Accountability</li><li>Multilingual (NZSL, Te Reo)</li></ul></div></div></div></section><header class="header-flex" style="display: none"><img
+                    src="extras/pp.png"
+                    alt="Samuel Love - Profile Photo"
+                    class="header-image"
+                    loading="lazy"
+                    decoding="async"
+                    width="150"
+                    height="150"
+                /><div class="header-text"><h1>Portfolio</h1><p>Hello! I’m Samuel Love — welcome to my corner of the
+                        internet. Born in Australia and raised in New Zealand
+                        (I'm a dual citizen), I’m passionate about using my
+                        skills and dedication to create positive change.</p><p>I hold degrees in Actuarial Science and Data Science,
+                        and I’m currently training as a software engineer
+                        through the Institute of Data. I thrive on personal
+                        growth and overcoming challenges.</p><p>In my free time, I enjoy basketball, CrossFit,
+                        dog-walking, gardening, hiking, singing, swimming, and
+                        yoga.</p></div></header><section id="projects" class="projects-section"><div class="container"><h2 class="section-title scroll-reveal">Projects</h2><div class="projects-container"><div class="project-category" id="capstone"><button class="collapsible"><h3>Master of Applied Data Science Capstone<span class="toggle-label">Expand</span></h3></button><div class="card-grid"><div class="card capstone-card scroll-reveal"><div class="card-header"><h4>🧱 DATA601: From Bricks to Bucks</h4><h5>Exploring Influential Variables in
+                                            Sales Patterns of LEGO Bricks</h5></div><div class="project-content"><div class="project-description"><p>This capstone project examined
+                                                sales patterns of LEGO sets to
+                                                predict their secondary market
+                                                prices using machine learning.
+                                                It compared licensed vs.
+                                                original sets and analysed
+                                                trends in quantity, complexity,
+                                                and price over time. Key steps
+                                                included time-series analysis,
+                                                clustering, and predictive
+                                                modelling using linear
+                                                regression, elastic net, random
+                                                forest, and SVM algorithms.</p><div class="tech-stack"><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Statistical programming language"
+                                                    >R</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Data manipulation and visualization"
+                                                    >tidyverse</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Interactive web applications"
+                                                    >Shiny</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Predictive modelling"
+                                                    >Machine Learning</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Temporal data analysis"
+                                                    >Time Series</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Pattern recognition"
+                                                    >Clustering</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="extras/capstone/Project-Brief.pdf"
+                                            target="_blank"
+                                            class="btn-badge btn-document"
+                                        ><i
+                                                class="fas fa-file-pdf"
+                                                aria-hidden="true"
+                                            ></i>Project Brief</a><a
+                                            href="https://samsdata601.shinyapps.io/DATA601/"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>Shiny App</a><a
+                                            href="extras/capstone/Project-Report.pdf"
+                                            target="_blank"
+                                            class="btn-badge btn-document"
+                                        ><i
+                                                class="fas fa-file-pdf"
+                                                aria-hidden="true"
+                                            ></i>Report</a><a
+                                            href="https://github.com/tatoslover/UCMADS/tree/main/DATA601"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                        ><i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>GitHub</a></div></div></div></div><div class="project-category" id="iod"><button class="collapsible"><h3>Institute of Data Projects<span class="toggle-label">Expand</span></h3></button><div class="card-grid"><div class="card iod-card scroll-reveal"><div class="card-header"><h4>🏀 NBA Advanced Stat Attack</h4><h5>Interactive NBA Player Statistics
+                                            Dashboard</h5></div><div class="project-content"><div class="project-description"><p>A dynamic web application for
+                                                exploring, filtering, and
+                                                comparing NBA player statistics
+                                                with interactive charts and
+                                                team-themed visuals. Features
+                                                advanced filtering, real-time
+                                                search, and head-to-head player
+                                                comparisons powered by NBA API
+                                                data (~500 players).</p><div class="tech-stack"><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Frontend programming"
+                                                    >JavaScript</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Responsive UI framework"
+                                                    >Bootstrap 5</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Data visualization library"
+                                                    >Chart.js</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Real-time basketball data"
+                                                    >NBA API</span
+                                                ><span
+                                                    class="tech-tag"
+                                                    data-tooltip="Version control system"
+                                                    >Responsive Design</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="https://nbaadvancedstatattack.netlify.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Netlify"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>Live Demo</a><a
+                                            href="https://github.com/tatoslover/Mini-Project-1"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        ><i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>GitHub Repo</a></div></div><div class="card iod-card scroll-reveal"><div class="card-header"><h4>📚 BookTrackerDemo</h4><h5>Interactive Reading Progress Tracker</h5></div><div class="project-content"><div class="project-description"><p>A comprehensive reading tracker
+                                                application for managing your
+                                                personal library with progress
+                                                monitoring, book discovery, and
+                                                personalised statistics.
+                                                Features Google Books API
+                                                integration, theme switching,
+                                                and responsive design built with
+                                                React 19 and Material-UI.</p><div class="tech-stack"><span class="tech-tag"
+                                                    >React 19</span
+                                                ><span class="tech-tag"
+                                                    >Material-UI</span
+                                                ><span class="tech-tag"
+                                                    >React Router</span
+                                                ><span class="tech-tag"
+                                                    >Google Books API</span
+                                                ><span class="tech-tag"
+                                                    >Context API</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="https://booktrackerdemo.netlify.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Netlify"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>Live Demo</a><a
+                                            href="https://github.com/tatoslover/Mini-Project-2"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        ><i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>GitHub Repo</a></div></div><div class="card iod-card scroll-reveal"><div class="card-header"><h4>🐕 Barkend</h4><h5>Comprehensive Backend Architecture
+                                            with Dog Breed API</h5></div><div class="project-content"><div class="project-description"><p>A comprehensive backend-driven
+                                                application demonstrating
+                                                advanced server-side
+                                                architecture, API design, and
+                                                database management through dog
+                                                breed exploration. Features
+                                                serverless functions, MongoDB
+                                                Atlas integration, and
+                                                intelligent caching strategies
+                                                with 90% API call reduction.</p><div class="tech-stack"><span class="tech-tag"
+                                                    >Node.js</span
+                                                ><span class="tech-tag"
+                                                    >Netlify Functions</span
+                                                ><span class="tech-tag"
+                                                    >MongoDB Atlas</span
+                                                ><span class="tech-tag"
+                                                    >Dog CEO API</span
+                                                ><span class="tech-tag"
+                                                    >Swagger UI</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="https://barkend.netlify.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Netlify"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>Live Demo</a><a
+                                            href="https://github.com/tatoslover/Mini-Project-3"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        ><i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>GitHub Repo</a></div></div><div class="card iod-card scroll-reveal"><div class="card-header"><h4>🧙‍♂️ Planeswalker's Primer</h4><h5>Comprehensive Magic: The Gathering
+                                            Learning Platform</h5></div><div class="project-content"><div class="project-description"><p>A production-ready MTG
+                                                beginner's guide featuring
+                                                interactive learning modules,
+                                                real-time card search with
+                                                Scryfall API integration,
+                                                favourites management, and
+                                                performance monitoring. Built
+                                                with modern full-stack
+                                                architecture including 96
+                                                passing tests, perfect security
+                                                score (100/100), and
+                                                comprehensive documentation.
+                                                Features 273 mechanics database,
+                                                23 game formats, and
+                                                mobile-responsive design.</p><div class="tech-stack"><span class="tech-tag"
+                                                    >Next.js 14</span
+                                                ><span class="tech-tag"
+                                                    >Express.js</span
+                                                ><span class="tech-tag"
+                                                    >PostgreSQL</span
+                                                ><span class="tech-tag"
+                                                    >Scryfall API</span
+                                                ><span class="tech-tag"
+                                                    >Railway/Vercel</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="https://capstone-rho-wheat.vercel.app"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                            aria-label="View live demo on Vercel"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>Live Demo</a><a
+                                            href="IOD/Capstone_Document.pdf"
+                                            target="_blank"
+                                            class="btn-badge btn-document"
+                                            aria-label="View project documentation"
+                                        ><i
+                                                class="fas fa-file-pdf"
+                                                aria-hidden="true"
+                                            ></i>Documentation</a><a
+                                            href="https://github.com/tatoslover/Capstone"
+                                            target="_blank"
+                                            class="btn-badge btn-github"
+                                            aria-label="View source code on GitHub"
+                                        ><i
+                                                class="fab fa-github"
+                                                aria-hidden="true"
+                                            ></i>GitHub Repo</a></div></div></div></div><div class="project-category" id="personal"><button class="collapsible"><h3>Miscellaneous Projects<span class="toggle-label">Expand</span></h3></button><div class="card-grid"><div class="card iod-card"><div class="card-header"><h4>🎤 Automating Transcription</h4></div><div class="project-content"><div class="project-description"><p>Built a Python workflow to
+                                                automatically transcribe audio
+                                                using Whisper and clean text for
+                                                reports. Streamlined the
+                                                transcription process for
+                                                medical documentation.</p><div class="tech-stack"><span class="tech-tag"
+                                                    >Python</span
+                                                ><span class="tech-tag"
+                                                    >OpenAI Whisper</span
+                                                ><span class="tech-tag"
+                                                    >Bash</span
+                                                ></div></div></div><div class="card-links"></div></div><div class="card iod-card"><div class="card-header"><h4>🇦🇺 Australia Immigration Tool</h4></div><div class="project-content"><div class="project-description"><p>Developed a visual tool to help
+                                                NZ residents understand
+                                                migration patterns to Australia.
+                                                Interactive dashboard analysing
+                                                demographic trends and migration
+                                                flows.</p><div class="tech-stack"><span class="tech-tag"
+                                                    >Tableau</span
+                                                ><span class="tech-tag"
+                                                    >Data Visualisation</span
+                                                ><span class="tech-tag"
+                                                    >ABS Data</span
+                                                ></div></div></div><div class="card-links"><a
+                                            href="https://public.tableau.com/app/profile/samuel.love4547/viz/MovingDownUnderDataSchool/Main"
+                                            target="_blank"
+                                            class="btn-badge btn-live-demo"
+                                        ><i
+                                                class="fas fa-external-link-alt"
+                                                aria-hidden="true"
+                                            ></i>View Dashboard</a></div></div></div></div></div></div></section><section id="coursework" class="coursework-section"><div class="container"><h2 class="section-title">Academic Coursework</h2><div class="projects-container"><div class="project-category" id="mads-coursework"><button class="collapsible"><h3>Master of Applied Data Science Coursework<span class="toggle-label">Expand</span></h3></button><div class="card-grid"><div class="courses-grid"><div class="card course-card"><div class="card-header"><h5>COSC480</h5><h6>Computer Programming</h6></div><div class="project-content"><div class="project-description"><p>An accelerated course for
+                                                    graduate students without
+                                                    programming background.
+                                                    Covers imperative
+                                                    programming using Python for
+                                                    data science applications,
+                                                    including data cleansing,
+                                                    analysis, and visualisation
+                                                    through practical projects.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Python</span
+                                                    ><span class="tech-tag"
+                                                        >Algorithms</span
+                                                    ><span class="tech-tag"
+                                                        >Data Structures</span
+                                                    ><span class="tech-tag"
+                                                        >OOP</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>DATA420</h5><h6>Scalable Data Science</h6></div><div class="project-content"><div class="project-description"><p>Practical course focusing on
+                                                    distributed computing for
+                                                    big data. Students
+                                                    experiment with cloud-based
+                                                    clusters and large datasets,
+                                                    learning Hadoop, MapReduce,
+                                                    and Spark for real-world
+                                                    data science problems.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Cloud Computing</span
+                                                    ><span class="tech-tag"
+                                                        >MLOps</span
+                                                    ><span class="tech-tag"
+                                                        >Scalability</span
+                                                    ><span class="tech-tag"
+                                                        >Docker</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>DATA422</h5><h6>Data Wrangling for Data Science</h6></div><div class="project-content"><div class="project-description"><p>Comprehensive data wrangling
+                                                    course covering 80% of data
+                                                    scientist worktime. Handles
+                                                    various data formats (CSV,
+                                                    APIs, web pages) with
+                                                    emphasis on ethical data
+                                                    treatment and real-world
+                                                    applications using R.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Data Cleaning</span
+                                                    ><span class="tech-tag"
+                                                        >ETL</span
+                                                    ><span class="tech-tag"
+                                                        >Data Quality</span
+                                                    ><span class="tech-tag"
+                                                        >Pandas</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>DATA423</h5><h6>Data Science in Industry</h6></div><div class="project-content"><div class="project-description"><p>Practical course focusing on
+                                                    applied data science rather
+                                                    than theory. Covers best
+                                                    statistical practices,
+                                                    communication through Shiny
+                                                    visualizations, and
+                                                    real-world messy data
+                                                    challenges using R.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Business
+                                                        Analytics</span
+                                                    ><span class="tech-tag"
+                                                        >Industry
+                                                        Applications</span
+                                                    ><span class="tech-tag"
+                                                        >Project
+                                                        Management</span
+                                                    ><span class="tech-tag"
+                                                        >Communication</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>DIGI405</h5><h6>Texts, Discourses and Data</h6></div><div class="project-content"><div class="project-description"><p>Computer-aided discourse
+                                                    analysis for digital
+                                                    humanities. Covers corpus
+                                                    linguistics, topic
+                                                    modelling, and text
+                                                    classification while
+                                                    addressing ethical
+                                                    dimensions and avoiding
+                                                    uncritical 'text mining'
+                                                    approaches.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Text Mining</span
+                                                    ><span class="tech-tag"
+                                                        >NLP</span
+                                                    ><span class="tech-tag"
+                                                        >Digital
+                                                        Humanities</span
+                                                    ><span class="tech-tag"
+                                                        >Corpus Analysis</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>MBIS623</h5><h6>Data Management</h6></div><div class="project-content"><div class="project-description"><p>Comprehensive data
+                                                    management course aligned
+                                                    with ACS/IIT PNZ standards.
+                                                    Covers data governance,
+                                                    database design, Big Data
+                                                    technologies like Hadoop,
+                                                    cloud analytics, and
+                                                    Snowflake platform for
+                                                    enterprise systems.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Database Design</span
+                                                    ><span class="tech-tag"
+                                                        >Data Governance</span
+                                                    ><span class="tech-tag"
+                                                        >Big Data</span
+                                                    ><span class="tech-tag"
+                                                        >Cloud Analytics</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>STAT448</h5><h6>Big Data</h6></div><div class="project-content"><div class="project-description"><p>Introduction to big data
+                                                    concepts and statistical
+                                                    learning techniques. Covers
+                                                    linear regression, ridge
+                                                    regression, LASSO, and deep
+                                                    neural networks for
+                                                    high-dimensional data
+                                                    analysis and decision
+                                                    making.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Hadoop</span
+                                                    ><span class="tech-tag"
+                                                        >Spark</span
+                                                    ><span class="tech-tag"
+                                                        >Distributed
+                                                        Computing</span
+                                                    ><span class="tech-tag"
+                                                        >MapReduce</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>STAT455</h5><h6>Data Collection and Sampling</h6></div><div class="project-content"><div class="project-description"><p>Survey methods course
+                                                    focusing on sample designs
+                                                    and population estimation.
+                                                    Covers simple random
+                                                    sampling, stratified
+                                                    sampling, cluster sampling,
+                                                    and complex surveys with
+                                                    uncertainty measures using
+                                                    R.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Survey Design</span
+                                                    ><span class="tech-tag"
+                                                        >Sampling Theory</span
+                                                    ><span class="tech-tag"
+                                                        >Statistical
+                                                        Inference</span
+                                                    ><span class="tech-tag"
+                                                        >Bias Reduction</span
+                                                    ></div></div></div><div class="card-links"></div></div><div class="card course-card"><div class="card-header"><h5>STAT462</h5><h6>Data Mining</h6></div><div class="project-content"><div class="project-description"><p>Statistical learning and
+                                                    data mining course covering
+                                                    supervised and unsupervised
+                                                    learning. Includes decision
+                                                    trees, random forests,
+                                                    support vector machines,
+                                                    k-means clustering, and
+                                                    Apriori algorithm using R.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Clustering</span
+                                                    ><span class="tech-tag"
+                                                        >Classification</span
+                                                    ><span class="tech-tag"
+                                                        >Association Rules</span
+                                                    ><span class="tech-tag"
+                                                        >Pattern
+                                                        Recognition</span
+                                                    ></div></div></div><div class="card-links"></div></div></div></div></div><div class="project-category" id="iod-coursework"><button class="collapsible"><h3>Institute of Data Coursework<span class="toggle-label">Expand</span></h3></button><div class="card-grid"><div class="courses-grid"><div class="card course-card"><div class="card-header"><h5>📚 Module 1 Lab Portfolio</h5><h6>Software Development Principles</h6></div><div class="project-content"><div class="project-description"><p>Software development
+                                                    principles including
+                                                    creating basic web pages,
+                                                    version control systems,
+                                                    requirements gathering and
+                                                    wireframe design, and
+                                                    test-driven development
+                                                    methodologies.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Version Control</span
+                                                    ><span class="tech-tag"
+                                                        >Git</span
+                                                    ><span class="tech-tag"
+                                                        >TDD</span
+                                                    ><span class="tech-tag"
+                                                        >Wireframes</span
+                                                    ><span class="tech-tag"
+                                                        >Requirements</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="IOD/Portfolios/Module1LabPortfolio.html"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 1 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>🎨 Module 2 Lab Portfolio</h5><h6>Introductory Front-End
+                                                Development</h6></div><div class="project-content"><div class="project-description"><p>Introductory front-end
+                                                    development covering web
+                                                    browsers and internet
+                                                    architecture, HTML semantic
+                                                    markup, CSS styling
+                                                    fundamentals, and fluid
+                                                    layout design principles.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Web Browsers</span
+                                                    ><span class="tech-tag"
+                                                        >HTML</span
+                                                    ><span class="tech-tag"
+                                                        >CSS</span
+                                                    ><span class="tech-tag"
+                                                        >Fluid Layout</span
+                                                    ><span class="tech-tag"
+                                                        >Internet</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="IOD/Portfolios/Module2LabPortfolio.html"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 2 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>⚡ Module 3 Lab Portfolio</h5><h6>JavaScript Programming
+                                                Fundamentals</h6></div><div class="project-content"><div class="project-description"><p>JavaScript programming
+                                                    fundamentals covering core
+                                                    concepts, intermediate
+                                                    programming techniques, and
+                                                    advanced JavaScript features
+                                                    and ES6+ development
+                                                    patterns.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >JavaScript</span
+                                                    ><span class="tech-tag"
+                                                        >Intermediate JS</span
+                                                    ><span class="tech-tag"
+                                                        >Advanced JS</span
+                                                    ><span class="tech-tag"
+                                                        >ES6+</span
+                                                    ><span class="tech-tag"
+                                                        >DOM Manipulation</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="IOD/Portfolios/Module3LabPortfolio.html"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 3 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>🎯 Module 4 Lab Portfolio</h5><h6>More on Front-End Development</h6></div><div class="project-content"><div class="project-description"><p>More on front-end
+                                                    development including
+                                                    JavaScript frameworks, Figma
+                                                    design tools, Bootstrap
+                                                    framework implementation,
+                                                    working with data sources,
+                                                    and application
+                                                    enhancements.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >JS Frameworks</span
+                                                    ><span class="tech-tag"
+                                                        >Figma</span
+                                                    ><span class="tech-tag"
+                                                        >Bootstrap</span
+                                                    ><span class="tech-tag"
+                                                        >Data Sources</span
+                                                    ><span class="tech-tag"
+                                                        >App Enhancements</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="IOD/Portfolios/Module4LabPortfolio.html"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 4 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>🔧 Module 5 Lab Portfolio</h5><h6>Introduction to Backend
+                                                Development</h6></div><div class="project-content"><div class="project-description"><p>Introduction to backend
+                                                    development covering web
+                                                    services with JavaScript
+                                                    applications, developing MVC
+                                                    structure, designing backend
+                                                    services, object-oriented
+                                                    development, and Swagger
+                                                    documentation.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Web Services</span
+                                                    ><span class="tech-tag"
+                                                        >JS Applications</span
+                                                    ><span class="tech-tag"
+                                                        >MVC Structure</span
+                                                    ><span class="tech-tag"
+                                                        >OOP</span
+                                                    ><span class="tech-tag"
+                                                        >Swagger</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="https://module5labportfolio.netlify.app"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 5 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>⚛️ Module 6 Lab Portfolio</h5><h6>Web Design with React I</h6></div><div class="project-content"><div class="project-description"><p>Web design with React I
+                                                    covering JSX syntax,
+                                                    components and props
+                                                    management, thinking in
+                                                    React development patterns,
+                                                    and code splitting for
+                                                    performance optimisation.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >JSX</span
+                                                    ><span class="tech-tag"
+                                                        >Components</span
+                                                    ><span class="tech-tag"
+                                                        >Props</span
+                                                    ><span class="tech-tag"
+                                                        >Thinking in React</span
+                                                    ><span class="tech-tag"
+                                                        >Code Splitting</span
+                                                    ></div></div></div><div class="card-links"><a
+                                                href="https://module6labportfolio.netlify.app"
+                                                target="_blank"
+                                                class="btn-badge btn-live-demo"
+                                                aria-label="View Module 6 Lab Portfolio"
+                                            ><i
+                                                    class="fas fa-external-link-alt"
+                                                    aria-hidden="true"
+                                                ></i>View Portfolio</a></div></div><div class="card course-card"><div class="card-header"><h5>🔧 Module 7 Lab Portfolio</h5><h6>Web Design with React II</h6></div><div class="project-content"><div class="project-description"><p>Web design with React II
+                                                    covering hooks for state and
+                                                    lifecycle management,
+                                                    routing for navigation, and
+                                                    integration with external
+                                                    libraries and APIs.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Hooks</span
+                                                    ><span class="tech-tag"
+                                                        >Routing</span
+                                                    ><span class="tech-tag"
+                                                        >Libraries</span
+                                                    ><span class="tech-tag"
+                                                        >React Router</span
+                                                    ><span class="tech-tag"
+                                                        >State Management</span
+                                                    ></div></div></div><div class="card-links"><div class="coming-soon">Coming Soon</div></div></div><div class="card course-card"><div class="card-header"><h5>🗄️ Module 8 Lab Portfolio</h5><h6>Databases</h6></div><div class="project-content"><div class="project-description"><p>Database concepts covering
+                                                    database design principles,
+                                                    MongoDB NoSQL database
+                                                    implementation, MySQL
+                                                    relational database
+                                                    management, and Redis
+                                                    in-memory data structures.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Database Design</span
+                                                    ><span class="tech-tag"
+                                                        >MongoDB</span
+                                                    ><span class="tech-tag"
+                                                        >MySQL</span
+                                                    ><span class="tech-tag"
+                                                        >Redis</span
+                                                    ><span class="tech-tag"
+                                                        >Data Structures</span
+                                                    ></div></div></div><div class="card-links"><div class="coming-soon">Coming Soon</div></div></div><div class="card course-card"><div class="card-header"><h5>🔐 Module 9 Lab Portfolio</h5><h6>API Development</h6></div><div class="project-content"><div class="project-description"><p>API development covering
+                                                    REST API design and
+                                                    implementation, socket
+                                                    programming for real-time
+                                                    communication, and Model
+                                                    View Controller architecture
+                                                    patterns.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >REST APIs</span
+                                                    ><span class="tech-tag"
+                                                        >Sockets</span
+                                                    ><span class="tech-tag"
+                                                        >MVC</span
+                                                    ><span class="tech-tag"
+                                                        >Node.js</span
+                                                    ><span class="tech-tag"
+                                                        >Express</span
+                                                    ></div></div></div><div class="card-links"><div class="coming-soon">Coming Soon</div></div></div><div class="card course-card"><div class="card-header"><h5>🚀 Module 10 Lab Portfolio</h5><h6>Software Deployment</h6></div><div class="project-content"><div class="project-description"><p>Software deployment covering
+                                                    Docker containerization,
+                                                    CI/CD pipelines with GitHub
+                                                    Actions, AWS EC2 cloud
+                                                    deployment, and AWS
+                                                    Beanstalk application
+                                                    hosting.</p><div class="tech-stack"><span class="tech-tag"
+                                                        >Docker</span
+                                                    ><span class="tech-tag"
+                                                        >CI/CD</span
+                                                    ><span class="tech-tag"
+                                                        >GitHub Actions</span
+                                                    ><span class="tech-tag"
+                                                        >EC2</span
+                                                    ><span class="tech-tag"
+                                                        >Beanstalk</span
+                                                    ></div></div></div><div class="card-links"><div class="coming-soon">Coming Soon</div></div></div></div></div></div></div></div></section><section id="qualifications" class="about-section"><div class="container"><h2 class="section-title scroll-reveal">Qualifications</h2><div class="cv-section"><ul><li><img
+                                    src="extras/IOD.svg"
+                                    alt="Institute of Data"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                /><div class="degree-info"><strong
+                                        >Software Engineering
+                                        Certificate</strong
+                                    ><span
+                                        >Institute of Data & University of
+                                        Canterbury (April 2025 – July
+                                        2025)</span
+                                    ></div></li><li><img
+                                    src="extras/uc.svg"
+                                    alt="University of Canterbury"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                /><div class="degree-info"><strong
+                                        >Master of Applied Data Science</strong
+                                    ><span
+                                        >University of Canterbury
+                                        (2021–2024)</span
+                                    ></div><a
+                                    href="extras/UC_MADS.pdf"
+                                    target="_blank"
+                                    class="btn btn-secondary"
+                                    style="margin-left: auto; flex-shrink: 0"
+                                    >View</a
+                                ></li><li><img
+                                    src="extras/vuw.svg"
+                                    alt="Victoria University of Wellington"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                /><div class="degree-info"><strong
+                                        >BSc in Actuarial Science and
+                                        Economics</strong
+                                    ><span>Victoria University (2017–2020)</span></div><a
+                                    href="extras/VUW_BSc.pdf"
+                                    target="_blank"
+                                    class="btn btn-secondary"
+                                    style="margin-left: auto; flex-shrink: 0"
+                                    >View</a
+                                ></li></ul></div></div></section><section id="employment" class="projects-section"><div class="container"><h2 class="section-title scroll-reveal">Employment History</h2><div class="cv-section"><p><img
+                                src="extras/AOC.jpeg"
+                                alt="Aorangi Orthopaedic Centre"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span
+                                ><strong>Transcriptionist</strong>@ Aorangi
+                                Orthopaedic Centre</span
+                            ><br /><span>Palmerston North</span><br /><span>Nov 2021 – May 2024</span></p><p><img
+                                src="extras/nw.png"
+                                alt="New World"
+                                class="employer-logo"
+                                loading="lazy"
+                            /><span
+                                ><strong>Store Assistant</strong>@ Wanaka New
+                                World</span
+                            ><br /><span>Wanaka</span><br /><span>Summers 2017 – 2020</span></p><p><i
+                                class="fas fa-puzzle-piece employer-logo-icon"
+                            ></i><span
+                                ><strong>Caregiver</strong>@ Families of
+                                Special Needs Individuals</span
+                            ><br /><span>Palmerston North</span><br /><span>Holidays 2016 – 2024</span></p><p><img
+                                src="extras/AOC.jpeg"
+                                alt="Amesbury Orthopaedic Centre"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span
+                                ><strong>File Clerk</strong>@ Amesbury
+                                Orthopaedic Centre</span
+                            ><br /><span>Palmerston North</span><br /><span>Apr 2016 – Feb 2018</span></p></div></div></section><section id="certifications" class="about-section"><div class="container"><h2 class="section-title scroll-reveal">Certifications</h2><div class="cv-section"><p><img
+                                src="extras/DataCamp.jpg"
+                                alt="DataCamp"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span
+                                ><strong>DataCamp</strong><br />Data Literacy<br />AI Fundamentals<br />SQL Associate<br />Python Data Associate<br />Data Engineer Associate</span
+                            ><a
+                                href="https://www.datacamp.com/portfolio/samuelwelove"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p><p><img
+                                src="extras/dp.jpeg"
+                                alt="Digital Passport"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span
+                                ><strong>Digital Passport</strong><br />Digital Skills<br />Job-Ready Skills<br />AI Skills</span
+                            ><a
+                                href="extras/DigitalPassport.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p><p><img
+                                src="extras/merge.jpg"
+                                alt="Merge NZ"
+                                class="employer-logo merge-logo"
+                                loading="lazy"
+                            /><span
+                                ><strong>Merge NZ</strong><br />NZSL Beginner 1b<br />NZSL Beginner 1c<br />NZSL Beginner 1d<br />NZSL Beginner 1e<br />NZSL Beginner 2a<br /></span><a
+                                href="extras/NZSL.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p><p><img
+                                src="extras/doc.svg"
+                                alt="Department of Conservation"
+                                class="uni-logo"
+                                loading="lazy"
+                            /><span><strong>Department of Conservation</strong
+                                ><br />Te Ara Atawhai Volunteering Course<br />February-April 2025</span><a
+                                href="extras/DOC_WorkExp.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p><p><img
+                                src="extras/pts.png"
+                                alt="Pulse Training Systems"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span
+                                ><strong>Practical Training Solutions</strong
+                                ><br />Workplace First Aider</span
+                            ><a
+                                href="extras/PTS-FA.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p><p><img
+                                src="extras/twor.jpeg"
+                                alt="Te Wānanga o Raukawa"
+                                class="employer-logo"
+                                loading="lazy"
+                            /><span
+                                ><strong>Te Wānanga o Raukawa</strong><br />Poupou Huia Te Reo 1</span
+                            ><a
+                                href="extras/Poupou_Huia_Te_Reo_1.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            ></p></div></div></section><section id="interests" class="projects-section"><div class="container"><h2 class="section-title scroll-reveal">Interests</h2><div class="cv-section"><p><img
+                                src="extras/crossfit.jpg"
+                                alt="CrossFit"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            /><span><strong>CrossFit</strong></span
+                            ><br /><span>Individual & team competitions.</span></p><p><img
+                                src="extras/dog.png"
+                                alt="Dog Training"
+                                class="employer-logo merge-logo"
+                                loading="lazy"
+                            /><span><strong>Dog Training</strong></span
+                            ><br /><span
+                                >Canine Good Basics Certification.<br />Foundation Agility Certification.</span
+                            ></p><p><i class="fas fa-seedling employer-logo-icon"></i><span><strong>Gardening</strong></span
+                            ><br /><span
+                                >Growing fruit & vegetables using permaculture
+                                approach.</span
+                            ></p><p><img
+                                src="extras/vco.png"
+                                alt="Voices Co"
+                                class="employer-logo"
+                                loading="lazy"
+                            /><span><strong>Singing</strong></span
+                            ><br /><span>Voices Co 2023-Present.</span><br /><span>6 concerts.</span></p><p><img
+                                src="extras/SAC.png"
+                                alt="Swimming"
+                                class="employer-logo"
+                                loading="lazy"
+                            /><span><strong>Swimming</strong></span
+                            ><br /><span>Daily workouts.</span></p><p><i class="fas fa-tools employer-logo-icon"></i><span><strong>Workshops</strong></span
+                            ><br /><span
+                                >Bonsai, Cheese, Hydroponics, Kombucha,
+                                Painting, Permaculture, Pottery, Seed Raising, &
+                                Sourdough.</span
+                            ></p><p><i class="fas fa-om employer-logo-icon"></i><span><strong>Yoga</strong></span
+                            ><br /><span>Daily workouts.</span></p></div></div></section><section id="connect" class="contact-section"><div class="container"><h2 class="section-title scroll-reveal">Connect With Me</h2><div class="contact-grid"><div class="contact-card scroll-reveal"><div class="contact-icon"><i class="fa fa-envelope"></i></div><div class="contact-info"><h4>Email</h4><a href="mailto:samuelwelove@icloud.com"
+                                    >samuelwelove@icloud.com</a
+                                ></div></div><div class="contact-card scroll-reveal"><div class="contact-icon"><i class="fa fa-phone"></i></div><div class="contact-info"><h4>Phone</h4><a href="tel:+64273533452">+64 27 353 3452</a></div></div><div class="contact-card scroll-reveal"><div class="contact-icon"><i class="fab fa-linkedin"></i></div><div class="contact-info"><h4>LinkedIn</h4><a
+                                    href="https://www.linkedin.com/in/samuel-love-profile"
+                                    target="_blank"
+                                    >Connect with me</a
+                                ></div></div><div class="contact-card scroll-reveal"><div class="contact-icon"><i class="fab fa-github"></i></div><div class="contact-info"><h4>GitHub</h4><a
+                                    href="https://github.com/tatoslover"
+                                    target="_blank"
+                                    >View my code</a
+                                ></div></div></div></div></section></main><script src="scripts/script.js"></script></body></html>
