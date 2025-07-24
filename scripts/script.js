@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".main-header");
     const headerTop = document.querySelector(".header-top");
     const navbar = document.querySelector(".navbar");
-    const themeToggle = document.querySelector(".theme-toggle-section");
+    const themeToggleSection = document.querySelector(".theme-toggle-section");
     const body = document.body;
     const scrollPosition = window.scrollY;
     const threshold = 50; // Scroll threshold in pixels
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.backgroundColor = scrollColor;
       headerTop.style.backgroundColor = scrollColor;
       navbar.style.backgroundColor = scrollColor;
-      themeToggle.style.backgroundColor = scrollColor;
+      themeToggleSection.style.backgroundColor = scrollColor;
 
       header.classList.add("scrolled");
     } else {
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.backgroundColor = "";
       headerTop.style.backgroundColor = "";
       navbar.style.backgroundColor = "";
-      themeToggle.style.backgroundColor = "";
+      themeToggleSection.style.backgroundColor = "";
 
       header.classList.remove("scrolled");
     }
@@ -155,11 +155,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
+  console.log("Theme toggle element found:", themeToggle);
 
   if (themeToggle) {
     const body = document.body;
     const html = document.documentElement;
     const icon = themeToggle.querySelector("i");
+    console.log("Icon element found:", icon);
 
     // Enable manual theme control
     html.classList.add("manual-theme");
@@ -185,8 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Theme toggle event listener
-    themeToggle.addEventListener("click", function () {
-      console.log("Theme toggle clicked");
+    themeToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("Theme toggle clicked - event:", e);
+      console.log("Current body classes:", body.className);
 
       if (body.classList.contains("dark-theme")) {
         // Switch to light mode
@@ -212,5 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     console.error("Theme toggle button not found");
+    console.log(
+      "All elements with 'theme' in id or class:",
+      document.querySelectorAll('[id*="theme"], [class*="theme"]'),
+    );
   }
 });
