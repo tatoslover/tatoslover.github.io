@@ -106,13 +106,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // Header color change on scroll
   function handleHeaderScroll() {
     const header = document.querySelector(".main-header");
+    const headerTop = document.querySelector(".header-top");
+    const navbar = document.querySelector(".navbar");
+    const themeToggle = document.querySelector(".theme-toggle-section");
     const body = document.body;
     const scrollPosition = window.scrollY;
     const threshold = 50; // Scroll threshold in pixels
 
+    // Define colors
+    const lightThemeScrolled = "rgba(70, 130, 180, 0.95)"; // Blue
+    const darkThemeScrolled = "rgba(255, 140, 0, 0.95)"; // Orange
+    const originalColor = "var(--nav-bg)";
+
     if (scrollPosition > threshold) {
+      // Apply scrolled state
+      const scrollColor = body.classList.contains("dark-theme")
+        ? darkThemeScrolled
+        : lightThemeScrolled;
+
+      header.style.backgroundColor = scrollColor;
+      headerTop.style.backgroundColor = scrollColor;
+      navbar.style.backgroundColor = scrollColor;
+      themeToggle.style.backgroundColor = scrollColor;
+
       header.classList.add("scrolled");
     } else {
+      // Reset to original state
+      header.style.backgroundColor = "";
+      headerTop.style.backgroundColor = "";
+      navbar.style.backgroundColor = "";
+      themeToggle.style.backgroundColor = "";
+
       header.classList.remove("scrolled");
     }
   }
