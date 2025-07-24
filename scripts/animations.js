@@ -178,7 +178,7 @@ function enhanceNavigation() {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          const offset = 120; // Account for fixed header
+          const offset = 150; // Account for consolidated header
           const targetPosition = target.offsetTop - offset;
           window.scrollTo({
             top: targetPosition,

@@ -81,4 +81,86 @@ document.addEventListener("DOMContentLoaded", function () {
       bars.forEach((bar) => (bar.style.backgroundColor = "white"));
     }
   });
+
+  // Smooth scroll navigation with proper offset for consolidated header
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerHeight =
+            document.querySelector(".main-header").offsetHeight;
+          const offset = headerHeight + 20; // Add small buffer
+          const targetPosition = target.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
+
+  // Theme toggle functionality
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (themeToggle) {
+    const body = document.body;
+    const html = document.documentElement;
+    const icon = themeToggle.querySelector("i");
+
+    // Enable manual theme control
+    html.classList.add("manual-theme");
+
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem("theme") || "light";
+
+    // Apply initial theme
+    if (savedTheme === "dark") {
+      body.classList.add("dark-theme");
+      body.classList.remove("light-theme");
+      if (icon) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      }
+    } else {
+      body.classList.add("light-theme");
+      body.classList.remove("dark-theme");
+      if (icon) {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    }
+
+    // Theme toggle event listener
+    themeToggle.addEventListener("click", function () {
+      console.log("Theme toggle clicked");
+
+      if (body.classList.contains("dark-theme")) {
+        // Switch to light mode
+        console.log("Switching to light mode");
+        body.classList.remove("dark-theme");
+        body.classList.add("light-theme");
+        if (icon) {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+        localStorage.setItem("theme", "light");
+      } else {
+        // Switch to dark mode
+        console.log("Switching to dark mode");
+        body.classList.remove("light-theme");
+        body.classList.add("dark-theme");
+        if (icon) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        }
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  } else {
+    console.error("Theme toggle button not found");
+  }
 });
