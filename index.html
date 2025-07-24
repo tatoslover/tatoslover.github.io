@@ -422,7 +422,8 @@
                 }
 
                 .hamburger {
-                    display: block !important;
+                    display: flex !important;
+                    flex-direction: column !important;
                 }
 
                 .hero-content {
@@ -461,6 +462,10 @@
                 right: 2rem;
                 top: 50%;
                 transform: translateY(-50%);
+                z-index: 1001;
+                background: none;
+                border: none;
+                padding: 0.5rem;
             }
 
             .bar {
@@ -468,7 +473,8 @@
                 width: 100%;
                 background-color: var(--nav-text);
                 border-radius: 3px;
-                transition: 0.3s;
+                transition: all 0.3s ease;
+                display: block;
             }
 
             .hamburger.active .bar:nth-child(2) {
