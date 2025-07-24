@@ -155,13 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
-  console.log("Theme toggle element found:", themeToggle);
 
   if (themeToggle) {
     const body = document.body;
     const html = document.documentElement;
     const icon = themeToggle.querySelector("i");
-    console.log("Icon element found:", icon);
 
     // Enable manual theme control
     html.classList.add("manual-theme");
@@ -189,12 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Theme toggle event listener
     themeToggle.addEventListener("click", function (e) {
       e.preventDefault();
-      console.log("Theme toggle clicked - event:", e);
-      console.log("Current body classes:", body.className);
 
       if (body.classList.contains("dark-theme")) {
         // Switch to light mode
-        console.log("Switching to light mode");
         body.classList.remove("dark-theme");
         body.classList.add("light-theme");
         if (icon) {
@@ -204,7 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("theme", "light");
       } else {
         // Switch to dark mode
-        console.log("Switching to dark mode");
         body.classList.remove("light-theme");
         body.classList.add("dark-theme");
         if (icon) {
@@ -216,9 +210,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     console.error("Theme toggle button not found");
-    console.log(
-      "All elements with 'theme' in id or class:",
-      document.querySelectorAll('[id*="theme"], [class*="theme"]'),
-    );
   }
 });
