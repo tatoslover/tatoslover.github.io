@@ -482,34 +482,47 @@
             .hamburger.active .bar:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
             }
+
+            /* === Dark Theme Specific Rules === */
+            body.dark-theme .hero-section,
+            body.dark-theme .projects-section,
+            body.dark-theme #qualifications,
+            body.dark-theme #certifications,
+            body.dark-theme .contact-section {
+                background-color: #1e1e2f;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .about-section,
+            body.dark-theme .skills-section,
+            body.dark-theme .coursework-section,
+            body.dark-theme #employment,
+            body.dark-theme #interests {
+                background-color: #2a2a3d;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .nav-link:hover {
+                color: white;
+            }
+
+            body.dark-theme .contact-icon i {
+                color: #4682b4;
+            }
+
+            body.dark-theme .contact-info a {
+                color: #99ccff;
+            }
+
+            body.dark-theme .contact-info a:hover {
+                color: #cce6ff;
+            }
         </style>
 
-        <!-- Preload non-critical CSS -->
-        <link
-            rel="preload"
-            href="css/style.css"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        />
-        <link
-            rel="preload"
-            href="css/animations.css"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        />
-        <link
-            rel="preload"
-            href="css/mobile.css"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        />
-
-        <!-- Fallback for non-critical CSS -->
-        <noscript>
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/animations.css" />
-            <link rel="stylesheet" href="css/mobile.css" />
-        </noscript>
+        <!-- Load CSS synchronously for theme testing -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/animations.css" />
+        <link rel="stylesheet" href="css/mobile.css" />
 
         <!-- Defer FontAwesome -->
         <link
