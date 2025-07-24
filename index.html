@@ -519,10 +519,26 @@
             }
         </style>
 
-        <!-- Load CSS synchronously for theme testing -->
+        <!-- Load critical CSS first, then defer non-critical -->
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/animations.css" />
-        <link rel="stylesheet" href="css/mobile.css" />
+        <link
+            rel="preload"
+            href="css/animations.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <link
+            rel="preload"
+            href="css/mobile.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+
+        <!-- Fallback for non-critical CSS -->
+        <noscript>
+            <link rel="stylesheet" href="css/animations.css" />
+            <link rel="stylesheet" href="css/mobile.css" />
+        </noscript>
 
         <!-- Defer FontAwesome -->
         <link
@@ -544,46 +560,10 @@
         <script src="scripts/script.js" defer></script>
         <script src="scripts/performance.js" defer></script>
 
-        <!-- Service Worker Registration -->
+        <!-- Service Worker Registration - Temporarily Disabled -->
         <script>
-            // Register service worker for caching and offline support
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker
-                        .register("/sw.js")
-                        .then((registration) => {
-                            console.log(
-                                "✅ Service Worker registered successfully:",
-                                registration.scope,
-                            );
-
-                            // Check for updates
-                            registration.addEventListener("updatefound", () => {
-                                const newWorker = registration.installing;
-                                newWorker.addEventListener(
-                                    "statechange",
-                                    () => {
-                                        if (
-                                            newWorker.state === "installed" &&
-                                            navigator.serviceWorker.controller
-                                        ) {
-                                            console.log(
-                                                "🔄 New version available. Refresh to update.",
-                                            );
-                                            // Could show a toast notification here
-                                        }
-                                    },
-                                );
-                            });
-                        })
-                        .catch((error) => {
-                            console.log(
-                                "❌ Service Worker registration failed:",
-                                error,
-                            );
-                        });
-                });
-            }
+            // Service worker disabled for debugging theme toggle issues
+            console.log("Service worker registration disabled for debugging");
         </script>
 
         <!-- Structured Data for SEO -->
