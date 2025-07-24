@@ -436,12 +436,42 @@
 
             .hamburger.active .bar:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
-            }</style><link
-            rel="preload"
-            href="css/style.css"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        /><link
+            }
+
+            /* === Dark Theme Specific Rules === */
+            body.dark-theme .hero-section,
+            body.dark-theme .projects-section,
+            body.dark-theme #qualifications,
+            body.dark-theme #certifications,
+            body.dark-theme .contact-section {
+                background-color: #1e1e2f;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .about-section,
+            body.dark-theme .skills-section,
+            body.dark-theme .coursework-section,
+            body.dark-theme #employment,
+            body.dark-theme #interests {
+                background-color: #2a2a3d;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .nav-link:hover {
+                color: white;
+            }
+
+            body.dark-theme .contact-icon i {
+                color: #4682b4;
+            }
+
+            body.dark-theme .contact-info a {
+                color: #99ccff;
+            }
+
+            body.dark-theme .contact-info a:hover {
+                color: #cce6ff;
+            }</style><link rel="stylesheet" href="css/style.css" /><link
             rel="preload"
             href="css/animations.css"
             as="style"
@@ -451,7 +481,7 @@
             href="css/mobile.css"
             as="style"
             onload="this.onload=null;this.rel='stylesheet'"
-        /><noscript><link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/animations.css" /><link rel="stylesheet" href="css/mobile.css" /></noscript><link
+        /><noscript><link rel="stylesheet" href="css/animations.css" /><link rel="stylesheet" href="css/mobile.css" /></noscript><link
             rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             as="style"
@@ -1388,4 +1418,4 @@
                                     href="https://github.com/tatoslover"
                                     target="_blank"
                                     >View my code</a
-                                ></div></div></div></div></section></main><script src="scripts/script.js"></script></body></html>
+                                ></div></div></div></div></section></main></body></html>

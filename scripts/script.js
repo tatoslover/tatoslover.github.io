@@ -1,7 +1,4 @@
-console.log("Script.js loading...");
-
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded event fired");
   // Mobile navigation menu toggle
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -157,9 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
   handleHeaderScroll();
 
   // Theme toggle functionality
-  console.log("Starting theme toggle setup...");
   const themeToggle = document.getElementById("theme-toggle");
-  console.log("Theme toggle element:", themeToggle);
 
   if (themeToggle) {
     const body = document.body;
@@ -215,9 +210,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     console.error("Theme toggle button not found");
-    console.log("Available elements with theme-related IDs/classes:");
-    console.log(document.querySelectorAll('[id*="theme"], [class*="theme"]'));
   }
 });
-
-console.log("Script.js loaded successfully");

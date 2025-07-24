@@ -560,10 +560,46 @@
         <script src="scripts/script.js" defer></script>
         <script src="scripts/performance.js" defer></script>
 
-        <!-- Service Worker Registration - Temporarily Disabled -->
+        <!-- Service Worker Registration -->
         <script>
-            // Service worker disabled for debugging theme toggle issues
-            console.log("Service worker registration disabled for debugging");
+            // Register service worker for caching and offline support
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((registration) => {
+                            console.log(
+                                "✅ Service Worker registered successfully:",
+                                registration.scope,
+                            );
+
+                            // Check for updates
+                            registration.addEventListener("updatefound", () => {
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener(
+                                    "statechange",
+                                    () => {
+                                        if (
+                                            newWorker.state === "installed" &&
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            console.log(
+                                                "🔄 New version available. Refresh to update.",
+                                            );
+                                            // Could show a toast notification here
+                                        }
+                                    },
+                                );
+                            });
+                        })
+                        .catch((error) => {
+                            console.log(
+                                "❌ Service Worker registration failed:",
+                                error,
+                            );
+                        });
+                });
+            }
         </script>
 
         <!-- Structured Data for SEO -->
@@ -2644,7 +2680,5 @@
                 </div>
             </section>
         </main>
-
-        <script src="scripts/script.js"></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 Portfolio Optimization Report
-Generated: 2025-07-24T21:23:33.009Z
+Generated: 2025-07-24T21:36:49.408Z
 ============================
 
 css/style.css:
@@ -23,9 +23,9 @@ scripts/animations.js:
   Savings: 36.0%
 
 scripts/script.js:
-  Original: 7.54 KB
-  Optimized: 5.21 KB
-  Savings: 31.0%
+  Original: 7.09 KB
+  Optimized: 4.83 KB
+  Savings: 31.9%
 
 scripts/css-loader.js:
   Original: 5.08 KB
@@ -33,12 +33,12 @@ scripts/css-loader.js:
   Savings: 49.1%
 
 index.html:
-  Original: 134.72 KB
-  Optimized: 91.15 KB
-  Savings: 32.3%
+  Original: 135.56 KB
+  Optimized: 91.99 KB
+  Savings: 32.1%
 
 TOTAL OPTIMIZATION:
-  Original: 209.81 KB
-  Optimized: 140.11 KB
-  Total Savings: 33.2%
-  Size Reduction: 69.7 KB
+  Original: 210.2 KB
+  Optimized: 140.57 KB
+  Total Savings: 33.1%
+  Size Reduction: 69.63 KB
