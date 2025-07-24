@@ -8,7 +8,7 @@
     );
 }
 
-/* === Consolidated Header === */
+/* === Header === */
 .main-header {
     position: sticky;
     top: 0;
@@ -19,6 +19,28 @@
     box-shadow: none;
     margin: 0;
     padding: 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Header scroll effects - colors handled by JS */
+.main-header.scrolled {
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .main-header.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* === Header Sections === */
+.header-top,
+.navbar,
+.theme-toggle-section {
+    position: relative;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    margin: 0;
 }
 
 .header-top {
@@ -26,22 +48,17 @@
     text-align: center;
 }
 
-.portfolio-title {
+.main-header .portfolio-title {
     font-size: 2rem;
     font-weight: bold;
-    color: white;
+    color: silver;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: transparent;
 }
 
 /* === Navigation === */
 .navbar {
-    position: relative;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    margin: 0;
     padding: 0.5rem 0;
 }
 
@@ -75,11 +92,11 @@
 }
 
 .nav-link:hover {
-    color: var(--link-hover);
+    color: white;
 }
 
 body.dark-theme .nav-link:hover {
-    color: #cce6ff;
+    color: white;
 }
 
 .theme-toggle {
@@ -105,17 +122,11 @@ body.dark-theme .nav-link:hover {
     transform: scale(1.1);
 }
 
-/* Theme Toggle Section */
+/* === Theme Toggle === */
 .theme-toggle-section {
-    position: relative;
-    width: 100%;
-    background-color: transparent;
     padding: 0.5rem 0 1rem 0;
     display: flex;
     justify-content: center;
-    border: none;
-    margin: 0;
-    box-shadow: none;
 }
 
 .theme-toggle-section .theme-toggle {
@@ -123,7 +134,6 @@ body.dark-theme .nav-link:hover {
     right: auto;
     transform: none;
     background: var(--button-bg);
-    border: 2px solid var(--accent);
     border-radius: 25px;
     width: auto;
     height: auto;
@@ -187,7 +197,6 @@ body.dark-theme .nav-link:hover {
     justify-content: center;
     padding: 2rem;
     margin: 0;
-    background: linear-gradient(135deg, var(--bg) 0%, var(--card-bg) 100%);
 }
 
 .hero-content {
@@ -220,12 +229,12 @@ body.dark-theme .nav-link:hover {
 .hero-text h1 {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    color: var(--header);
+    color: silver;
 }
 
 .hero-subtitle {
     font-size: 1.8rem;
-    color: var(--text);
+    color: silver;
     margin-bottom: 2rem;
     font-weight: 300;
     min-height: 2.5rem;
@@ -291,7 +300,6 @@ body.dark-theme .nav-link:hover {
 /* === About Section === */
 .about-section {
     padding: 6rem 2rem;
-    background-color: var(--card-bg);
 }
 
 .container {
@@ -345,7 +353,6 @@ body.dark-theme .nav-link:hover {
 /* === Contact Section === */
 .contact-section {
     padding: 6rem 2rem;
-    background-color: var(--card-bg);
 }
 
 .contact-intro {
@@ -419,7 +426,6 @@ body.dark-theme .contact-info a:hover {
 /* === Projects Section === */
 .projects-section {
     padding: 6rem 2rem;
-    background-color: var(--card-bg);
 }
 
 .projects-container {
@@ -506,7 +512,6 @@ body.dark-theme .contact-info a:hover {
 }
 
 .card {
-    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -887,7 +892,6 @@ body.dark-theme .btn-document:hover {
 /* Coursework Section */
 .coursework-section {
     padding: 6rem 2rem;
-    background-color: var(--bg);
 }
 
 /* Override for coursework sections - 3 column grid */
@@ -987,16 +991,48 @@ body.dark-theme .btn-document:hover {
     max-width: 100%; /* Full width container */
     margin: 0 auto; /* Centres the section */
     width: 100%; /* Responsive width */
-    background-color: var(--card-bg);
 }
 
-/* Employment section override - darker background */
-#employment {
+/* === Efficient Alternating Background Pattern === */
+/* Light sections - Group A */
+.hero-section,
+.projects-section,
+#qualifications,
+#certifications,
+.contact-section {
     background-color: var(--bg);
 }
 
-/* Interests section override - darker background */
+/* Dark sections - Group B */
+.about-section,
+.skills-section,
+.coursework-section,
+#employment,
 #interests {
+    background-color: var(--card-bg);
+}
+
+/* Cards contrast with their section backgrounds */
+/* Cards in Group A sections (light bg) use dark cards */
+.hero-section .card,
+.projects-section .card,
+#qualifications .cv-section ul li,
+#qualifications .cv-section p,
+#certifications .cv-section ul li,
+#certifications .cv-section p,
+.contact-section .contact-card {
+    background-color: var(--card-bg);
+}
+
+/* Cards in Group B sections (dark bg) use light cards */
+.about-section .card,
+.skills-section .project-skill-card,
+.coursework-section .card,
+.coursework-section .project-category,
+#employment .cv-section ul li,
+#employment .cv-section p,
+#interests .cv-section ul li,
+#interests .cv-section p {
     background-color: var(--bg);
 }
 
@@ -1187,8 +1223,6 @@ details[open] summary {
     border: 3px solid;
     background-clip: padding-box;
     position: relative;
-    margin: 1rem auto;
-    transition: all 0.3s ease;
 }
 
 /* Hover effects for all CV cards */
@@ -1281,7 +1315,6 @@ details[open] summary {
     width: 4rem;
     flex-shrink: 0;
     object-fit: contain;
-    background-color: var(--card-bg);
     border-radius: 50%;
     padding: 0.5rem;
 }
@@ -1291,7 +1324,6 @@ details[open] summary {
     width: 4rem;
     flex-shrink: 0;
     object-fit: cover;
-    background-color: var(--card-bg);
     border-radius: 50%;
     padding: 0.5rem;
 }
@@ -1300,7 +1332,6 @@ details[open] summary {
     height: 4rem;
     width: 4rem;
     flex-shrink: 0;
-    background-color: var(--card-bg);
     border-radius: 50%;
     padding: 0.25rem;
     display: flex;
@@ -1308,6 +1339,27 @@ details[open] summary {
     justify-content: center;
     color: #ffb000;
     box-sizing: border-box;
+}
+
+/* Logo backgrounds match their card backgrounds */
+/* Group A sections (light bg) - logos match dark cards */
+#qualifications .employer-logo,
+#qualifications .employer-logo-cover,
+#qualifications .employer-logo-icon,
+#certifications .employer-logo,
+#certifications .employer-logo-cover,
+#certifications .employer-logo-icon {
+    background-color: var(--card-bg);
+}
+
+/* Group B sections (dark bg) - logos match light cards */
+#employment .employer-logo,
+#employment .employer-logo-cover,
+#employment .employer-logo-icon,
+#interests .employer-logo,
+#interests .employer-logo-cover,
+#interests .employer-logo-icon {
+    background-color: var(--bg);
 }
 
 .employer-logo-icon.fas.fa-puzzle-piece {
@@ -1385,14 +1437,30 @@ body {
     min-height: 100vh;
 }
 
-/* Force all three header sections to match */
-html.manual-theme body .main-header,
-html.manual-theme body .navbar,
-html.manual-theme body .theme-toggle-section {
-    background-color: var(--nav-bg) !important;
-    border: none !important;
-    margin: 0 !important;
-    box-shadow: none !important;
+/* === Header Utilities === */
+.header-section {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+.header-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-spaced {
+    padding: 0.5rem 0;
+}
+
+.header-text {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
 }
 
 /* FontAwesome icon size and color adjustments */
@@ -1516,11 +1584,23 @@ html.manual-theme body.dark-theme {
     --icon-warning: #ffa500;
 }
 
-/* Removed redundant dark theme overrides - CSS variables handle this now */
-
-body.dark-theme .about-section,
+/* === Dark Theme Efficient Pattern === */
+/* Dark theme Group A (light sections in light theme) */
+body.dark-theme .hero-section,
 body.dark-theme .projects-section,
+body.dark-theme #qualifications,
+body.dark-theme #certifications,
 body.dark-theme .contact-section {
+    background-color: #1e1e2f;
+    color: #c0c0c0;
+}
+
+/* Dark theme Group B (dark sections in light theme) */
+body.dark-theme .about-section,
+body.dark-theme .skills-section,
+body.dark-theme .coursework-section,
+body.dark-theme #employment,
+body.dark-theme #interests {
     background-color: #2a2a3d;
     color: #c0c0c0;
 }
@@ -1545,7 +1625,7 @@ body.dark-theme .nav-link {
 body.dark-theme .hero-text h1,
 body.dark-theme .hero-subtitle,
 body.dark-theme .hero-description {
-    color: #c0c0c0;
+    color: silver;
 }
 
 /* Debug: Light theme border */
@@ -1580,9 +1660,7 @@ html {
 }
 
 /* Clean header elements */
-.main-header *,
-.navbar *,
-.theme-toggle-section * {
+.main-header * {
     box-sizing: border-box;
 }
 
@@ -1612,7 +1690,6 @@ button:hover {
 /* === Skills Section === */
 .skills-section {
     padding: 6rem 2rem;
-    background-color: var(--bg);
     position: relative;
     overflow: hidden;
 }
@@ -1641,7 +1718,6 @@ button:hover {
 }
 
 .project-skill-card {
-    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(102, 126, 234, 0.3);
     border-radius: 16px;
     padding: 2.5rem 2rem;
