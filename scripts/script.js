@@ -103,6 +103,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Header color change on scroll
+  function handleHeaderScroll() {
+    const header = document.querySelector(".main-header");
+    const body = document.body;
+    const scrollPosition = window.scrollY;
+    const threshold = 50; // Scroll threshold in pixels
+
+    if (scrollPosition > threshold) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  // Add scroll event listener with throttling for performance
+  let headerScrollTimeout;
+  window.addEventListener("scroll", () => {
+    if (headerScrollTimeout) {
+      window.cancelAnimationFrame(headerScrollTimeout);
+    }
+    headerScrollTimeout = window.requestAnimationFrame(handleHeaderScroll);
+  });
+
+  // Initial call to set correct state
+  handleHeaderScroll();
+
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
 

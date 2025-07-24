@@ -19,11 +19,37 @@
     box-shadow: none;
     margin: 0;
     padding: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+/* Header color change on scroll */
+.main-header.scrolled {
+    background-color: rgba(
+        70,
+        130,
+        180,
+        0.95
+    ); /* Brown to blue for light theme */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .main-header.scrolled {
+    background-color: rgba(
+        255,
+        140,
+        0,
+        0.95
+    ); /* Blue to orange for dark theme */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-top {
     padding: 1rem 0 0.5rem 0;
     text-align: center;
+    background-color: transparent;
 }
 
 .portfolio-title {
@@ -31,7 +57,10 @@
     font-weight: bold;
     color: white;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 1 !important;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
 /* === Navigation === */
