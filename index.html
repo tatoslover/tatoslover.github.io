@@ -4,6 +4,46 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Samuel Love Portfolio</title>
+        <meta
+            name="description"
+            content="Samuel Love - Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies. View my portfolio and projects."
+        />
+        <meta
+            name="keywords"
+            content="Samuel Love, Software Engineer, Data Scientist, Web Development, Machine Learning, Portfolio"
+        />
+        <meta name="author" content="Samuel Love" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tatoslover.github.io/" />
+        <meta property="og:title" content="Samuel Love Portfolio" />
+        <meta
+            property="og:description"
+            content="Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies."
+        />
+        <meta
+            property="og:image"
+            content="https://tatoslover.github.io/extras/pp.png"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tatoslover.github.io/" />
+        <meta property="twitter:title" content="Samuel Love Portfolio" />
+        <meta
+            property="twitter:description"
+            content="Software Engineer & Data Scientist. Expertise in web development, machine learning, and cloud technologies."
+        />
+        <meta
+            property="twitter:image"
+            content="https://tatoslover.github.io/extras/pp.png"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="extras/pp.png" />
+        <link rel="apple-touch-icon" href="extras/pp.png" />
+
         <!-- Link to FontAwesome CDN for icons -->
         <link
             rel="stylesheet"
@@ -13,49 +53,113 @@
         <link rel="stylesheet" href="css/animations.css" />
         <link rel="stylesheet" href="css/mobile.css" />
         <script src="scripts/animations.js" defer></script>
+
+        <!-- Structured Data for SEO -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Samuel Love",
+                "jobTitle": "Software Engineer & Data Scientist",
+                "url": "https://tatoslover.github.io",
+                "image": "https://tatoslover.github.io/extras/pp.png",
+                "sameAs": [
+                    "https://github.com/tatoslover",
+                    "https://www.linkedin.com/in/samuel-love-nz/"
+                ],
+                "alumniOf": [
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "University of Canterbury"
+                    },
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "Victoria University of Wellington"
+                    }
+                ],
+                "knowsAbout": [
+                    "Web Development",
+                    "Data Analysis",
+                    "Machine Learning",
+                    "Cloud Computing",
+                    "Software Engineering"
+                ]
+            }
+        </script>
     </head>
 
     <body>
-        <!-- Header Section -->
+        <!-- Skip Navigation Link -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <!-- Consolidated Header -->
         <header class="main-header">
-            <h1 class="portfolio-title">Samuel Love Portfolio</h1>
+            <div class="header-top">
+                <h1 class="portfolio-title">Samuel Love Portfolio</h1>
+            </div>
+
+            <nav class="navbar">
+                <div class="nav-container">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#coursework" class="nav-link"
+                                >Coursework</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#qualifications" class="nav-link"
+                                >Qualifications</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#employment" class="nav-link"
+                                >Employment</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#certifications" class="nav-link"
+                                >Certifications</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#interests" class="nav-link">Interests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#connect" class="nav-link">Connect</a>
+                        </li>
+                    </ul>
+
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="theme-toggle-section">
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Toggle dark mode"
+                    title="Switch theme"
+                >
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-label">Theme</span>
+                </button>
+            </div>
         </header>
 
-        <!-- Navigation Menu -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#coursework" class="nav-link">Coursework</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#cv" class="nav-link">CV</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#connect" class="nav-link">Connect</a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-
-        <main>
+        <main id="main-content">
             <!-- Hero Section -->
             <section id="home" class="hero-section">
                 <div class="particles"></div>
@@ -65,6 +169,7 @@
                             src="extras/pp.png"
                             alt="Samuel Love"
                             class="profile-image"
+                            loading="lazy"
                         />
                     </div>
                     <div class="hero-text">
@@ -82,39 +187,12 @@
                                 class="btn btn-primary pulse-button"
                                 >Connect With Me</a
                             >
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="about-section">
-                <div class="container">
-                    <h2 class="section-title scroll-reveal">About Me</h2>
-                    <div class="about-content scroll-reveal">
-                        <div class="about-text">
-                            <p>
-                                Kia ora! I am Samuel Love. Welcome to my corner
-                                of the internet. I’m passionate about using
-                                technology, creativity, and discipline to drive
-                                positive change. I hold degrees in Actuarial
-                                Science and Applied Data Science, and I’m
-                                currently expanding my toolkit by studying
-                                Software Engineering through the Institute of
-                                Data.
-                            </p>
-
-                            <p>
-                                Curiosity and continuous growth shape everything
-                                I do. I thrive on solving challenges with new
-                                technologies and learning through action.
-                                Outside of work, I stay grounded and energised
-                                through CrossFit, dog agility, gardening,
-                                hiking, meditation, singing, swimming, and yoga.
-                                These activities support my hauora (holistic
-                                wellbeing) and help me bring clarity, focus, and
-                                consistency to my work.
-                            </p>
+                            <a
+                                href="extras/Samuel_Love_CV.pdf"
+                                target="_blank"
+                                class="btn btn-primary pulse-button"
+                                >View CV</a
+                            >
                         </div>
                     </div>
                 </div>
@@ -183,6 +261,20 @@
                                 <li>Monitoring & Logging</li>
                             </ul>
                         </div>
+
+                        <div class="project-skill-card stagger-item">
+                            <div class="project-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="project-name">Transferable Skills</div>
+                            <ul class="project-tech-list">
+                                <li>Attention to Detail</li>
+                                <li>Customer Service</li>
+                                <li>Empathy & Communication</li>
+                                <li>Leadership & Accountability</li>
+                                <li>Multilingual (NZSL, Te Reo)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -193,6 +285,7 @@
                     src="extras/pp.png"
                     alt="Samuel Love"
                     class="header-image"
+                    loading="lazy"
                 />
                 <div class="header-text">
                     <h1>Portfolio</h1>
@@ -1604,391 +1697,374 @@
                 </div>
             </section>
 
-            <!-- CV Section -->
-            <section id="cv">
-                <div class="cv-header scroll-reveal">
-                    <h2>Curriculum Vitae</h2>
-                    <div class="buttons">
-                        <a
-                            href="extras/Samuel-Love-CV-(Data-Science).pdf"
-                            target="_blank"
-                            >Data Science</a
-                        >
-                        <a
-                            href="extras/Samuel-Love-CV-(Software-Engineering).pdf"
-                            target="_blank"
-                            >Software Engineering</a
-                        >
+            <!-- Qualifications Section -->
+            <section id="qualifications" class="about-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">Qualifications</h2>
+                    <div class="cv-section">
+                        <ul>
+                            <li>
+                                <img
+                                    src="extras/IOD.svg"
+                                    alt="Institute of Data"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                />
+                                <div class="degree-info">
+                                    <strong
+                                        >Software Engineering
+                                        Certificate</strong
+                                    >
+                                    <span
+                                        >Institute of Data & University of
+                                        Canterbury (April 2025 – July
+                                        2025)</span
+                                    >
+                                </div>
+                            </li>
+                            <li>
+                                <img
+                                    src="extras/uc.svg"
+                                    alt="University of Canterbury"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                />
+                                <div class="degree-info">
+                                    <strong
+                                        >Master of Applied Data Science</strong
+                                    >
+                                    <span
+                                        >University of Canterbury
+                                        (2021–2024)</span
+                                    >
+                                </div>
+                                <a
+                                    href="extras/UC_MADS.pdf"
+                                    target="_blank"
+                                    class="btn btn-secondary"
+                                    style="margin-left: auto; flex-shrink: 0"
+                                    >View</a
+                                >
+                            </li>
+                            <li>
+                                <img
+                                    src="extras/vuw.svg"
+                                    alt="Victoria University of Wellington"
+                                    class="uni-logo"
+                                    loading="lazy"
+                                />
+                                <div class="degree-info">
+                                    <strong
+                                        >BSc in Actuarial Science and
+                                        Economics</strong
+                                    >
+                                    <span>Victoria University (2017–2020)</span>
+                                </div>
+                                <a
+                                    href="extras/VUW_BSc.pdf"
+                                    target="_blank"
+                                    class="btn btn-secondary"
+                                    style="margin-left: auto; flex-shrink: 0"
+                                    >View</a
+                                >
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="cv-section" id="about-me">
-                    <h3>About Me</h3>
-                    <p>
-                        I hold a Master of Applied Data Science from the
-                        University of Canterbury and am currently completing a
-                        Software Engineering Certificate to broaden my technical
-                        skillset. I bring a strong foundation in
-                        problem-solving, attention to detail, and process
-                        improvement, with experience in data workflows, client
-                        support, and practical communication. Through diverse
-                        roles in healthcare, retail, and caregiving, as well as
-                        high-level sports pursuits, I’ve developed the
-                        discipline, adaptability, and reliability needed to
-                        contribute effectively in a team or independently.
-                    </p>
+            <!-- Employment History Section -->
+            <section id="employment" class="projects-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">
+                        Employment History
+                    </h2>
+                    <div class="cv-section">
+                        <p>
+                            <img
+                                src="extras/AOC.jpeg"
+                                alt="Aorangi Orthopaedic Centre"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            />
+                            <span
+                                ><strong>Transcriptionist</strong> @ Aorangi
+                                Orthopaedic Centre</span
+                            ><br />
+                            <span>Palmerston North</span><br />
+                            <span>Nov 2021 – May 2024</span>
+                        </p>
+
+                        <p>
+                            <img
+                                src="extras/nw.png"
+                                alt="New World"
+                                class="employer-logo"
+                                loading="lazy"
+                            />
+                            <span
+                                ><strong>Store Assistant</strong> @ Wanaka New
+                                World</span
+                            ><br />
+                            <span>Wanaka</span><br />
+                            <span>Summers 2017 – 2020</span>
+                        </p>
+
+                        <p>
+                            <i
+                                class="fas fa-puzzle-piece employer-logo-icon"
+                            ></i>
+                            <span
+                                ><strong>Caregiver</strong> @ Families of
+                                Special Needs Individuals</span
+                            ><br />
+                            <span>Palmerston North</span><br />
+                            <span>Holidays 2016 – 2024</span>
+                        </p>
+
+                        <p>
+                            <img
+                                src="extras/AOC.jpeg"
+                                alt="Amesbury Orthopaedic Centre"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            />
+                            <span
+                                ><strong>File Clerk</strong> @ Amesbury
+                                Orthopaedic Centre</span
+                            ><br />
+                            <span>Palmerston North</span><br />
+                            <span>Apr 2016 – Feb 2018</span>
+                        </p>
+                    </div>
                 </div>
+            </section>
 
-                <div class="cv-section">
-                    <h3>Qualifications</h3>
-                    <ul>
-                        <li>
+            <!-- Certifications Section -->
+            <section id="certifications" class="about-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">Certifications</h2>
+                    <div class="cv-section">
+                        <p>
                             <img
-                                src="extras/IOD.svg"
-                                alt="Institute of Data"
-                                class="uni-logo"
+                                src="extras/DataCamp.jpg"
+                                alt="DataCamp"
+                                class="employer-logo-cover"
+                                loading="lazy"
                             />
-                            <div class="degree-info">
-                                <strong
-                                    >Software Engineering Certificate</strong
-                                >
-                                <span
-                                    >Institute of Data & University of
-                                    Canterbury (April 2025 – July 2025)</span
-                                >
-                            </div>
-                        </li>
-                        <li>
+                            <span
+                                ><strong>DataCamp</strong><br />
+                                Data Literacy <br />
+                                AI Fundamentals <br />
+                                SQL Associate <br />
+                                Python Data Associate <br />
+                                Data Engineer Associate</span
+                            >
+                            <a
+                                href="https://www.datacamp.com/portfolio/samuelwelove"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+
+                        <p>
                             <img
-                                src="extras/uc.svg"
-                                alt="University of Canterbury"
-                                class="uni-logo"
+                                src="extras/dp.jpeg"
+                                alt="Digital Passport"
+                                class="employer-logo-cover"
+                                loading="lazy"
                             />
-                            <div class="degree-info">
-                                <strong>Master of Applied Data Science</strong>
-                                <span
-                                    >University of Canterbury (2021–2024)</span
-                                >
-                            </div>
-                        </li>
-                        <li>
+                            <span
+                                ><strong>Digital Passport</strong><br />
+                                Digital Skills <br />
+                                Job-Ready Skills <br />
+                                AI Skills</span
+                            >
+                            <a
+                                href="extras/DigitalPassport.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+
+                        <p>
                             <img
-                                src="extras/vuw.svg"
-                                alt="Victoria University of Wellington"
-                                class="uni-logo"
+                                src="extras/merge.jpg"
+                                alt="Merge NZ"
+                                class="employer-logo merge-logo"
+                                loading="lazy"
                             />
-                            <div class="degree-info">
-                                <strong
-                                    >BSc in Actuarial Science and
-                                    Economics</strong
-                                >
-                                <span>Victoria University (2017–2020)</span>
-                            </div>
-                        </li>
-                    </ul>
+                            <span
+                                ><strong>Merge NZ</strong><br />
+                                NZSL Beginner 1b <br />
+                                NZSL Beginner 1c <br />
+                                NZSL Beginner 1d <br />
+                                NZSL Beginner 1e <br />
+                                NZSL Beginner 2a <br />
+                            </span>
+                            <a
+                                href="extras/NZSL.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+
+                        <p>
+                            <img
+                                src="extras/doc.svg"
+                                alt="Department of Conservation"
+                                class="uni-logo"
+                                loading="lazy"
+                            />
+                            <span>
+                                <strong>Department of Conservation</strong
+                                ><br />
+                                Te Ara Atawhai Volunteering course<br />
+                                February-April 2025
+                            </span>
+                            <a
+                                href="extras/DOC_WorkExp.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+
+                        <p>
+                            <img
+                                src="extras/pts.png"
+                                alt="Pulse Training Systems"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            />
+                            <span
+                                ><strong>Practical Training Solutions</strong
+                                ><br />
+                                Workplace First Aider</span
+                            >
+                            <a
+                                href="extras/PTS-FA.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+
+                        <p>
+                            <img
+                                src="extras/twor.jpeg"
+                                alt="Te Wānanga o Raukawa"
+                                class="employer-logo"
+                                loading="lazy"
+                            />
+                            <span
+                                ><strong>Te Wānanga o Raukawa</strong><br />
+                                Poupou Huia Te Reo 1</span
+                            >
+                            <a
+                                href="extras/Poupou_Huia_Te_Reo_1.pdf"
+                                target="_blank"
+                                class="btn btn-secondary"
+                                style="margin-left: auto; flex-shrink: 0"
+                                >View</a
+                            >
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            <section class="cv-section">
-                <h3>Technical Skills</h3>
-                <p>
-                    <i class="fa fa-code" style="color: #007bff"></i>
-                    Python, R, SQL
-                </p>
+            <!-- Interests Section -->
+            <section id="interests" class="projects-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">Interests</h2>
+                    <div class="cv-section">
+                        <p>
+                            <img
+                                src="extras/crossfit.jpg"
+                                alt="CrossFit"
+                                class="employer-logo-cover"
+                                loading="lazy"
+                            />
+                            <span><strong>CrossFit</strong></span
+                            ><br />
+                            <span>Individual & team competitions.</span>
+                        </p>
 
-                <p>
-                    <i class="fa fa-globe" style="color: #007bff"></i>
-                    Bootstrap, CSS, Express.js, Figma, HTML, JavaScript, JSX,
-                    React, Swagger.
-                </p>
+                        <p>
+                            <img
+                                src="extras/dog.png"
+                                alt="Dog Training"
+                                class="employer-logo merge-logo"
+                                loading="lazy"
+                            />
+                            <span><strong>Dog Training</strong></span
+                            ><br />
+                            <span>Canine Good Basics Certification.</span><br />
+                            <span>Foundation Agility Certification.</span>
+                        </p>
 
-                <p>
-                    <i class="fa fa-rocket" style="color: #007bff"></i>
-                    AWS EC2, AWS Elastic Beanstalk, CI/CD, Docker, GitHub
-                    Actions.
-                </p>
+                        <p>
+                            <i class="fas fa-seedling employer-logo-icon"></i>
+                            <span><strong>Gardening</strong></span
+                            ><br />
+                            <span
+                                >Growing fruit & vegetables using permaculture
+                                approach.</span
+                            >
+                        </p>
 
-                <p>
-                    <i class="fa fa-cogs" style="color: #ffc107"></i>
-                    Anaconda, Bash, GitHub, Jupyter, MongoDB, MySQL, Power BI,
-                    PostgreSQL, Redis, RStudio, Tableau
-                </p>
+                        <p>
+                            <img
+                                src="extras/vco.png"
+                                alt="Voices Co"
+                                class="employer-logo"
+                                loading="lazy"
+                            />
+                            <span><strong>Singing</strong></span
+                            ><br />
+                            <span>Voices Co 2023-Present.</span><br />
+                            <span>6 concerts.</span>
+                        </p>
 
-                <p>
-                    <i
-                        class="fa fa-drafting-compass"
-                        style="color: #007bff"
-                    ></i>
-                    Agile, Model-View-Controller (MVC), Test Driven Development,
-                    Version Control (Git).
-                </p>
+                        <p>
+                            <img
+                                src="extras/SAC.png"
+                                alt="Swimming"
+                                class="employer-logo"
+                                loading="lazy"
+                            />
+                            <span><strong>Swimming</strong></span
+                            ><br />
+                            <span>Daily workouts.</span>
+                        </p>
 
-                <p>
-                    <i class="fa fa-tools" style="color: #6c757d"></i>
-                    Excel, Incisive, Obsidian, PowerPoint, Quarto, Slack, Word,
-                    Zed, Zoom
-                </p>
+                        <p>
+                            <i class="fas fa-tools employer-logo-icon"></i>
+                            <span><strong>Workshops</strong></span
+                            ><br />
+                            <span
+                                >Bonsai, Cheese, Hydroponics, Kombucha,
+                                Painting, Permaculture, Pottery, Seed Raising, &
+                                Sourdough.</span
+                            >
+                        </p>
 
-                <p>
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                        alt="Python Logo"
-                        width="20"
-                        height="20"
-                        style="vertical-align: middle; margin-right: 8px"
-                        class="tech-icon"
-                    />
-                    BeautifulSoup, Matplotlib, NumPy, Pandas, Plotly,
-                    Scikit-learn
-                </p>
-
-                <p>
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg"
-                        alt="R Logo"
-                        width="20"
-                        height="20"
-                        style="vertical-align: middle; margin-right: 8px"
-                        class="tech-icon"
-                    />
-                    caret, e1071, glmnet, ggplot2, randomForest, shiny,
-                    tidyverse
-                </p>
-            </section>
-
-            <section class="cv-section">
-                <h3>Transferable Skills</h3>
-
-                <p>
-                    <i class="fa fa-search" style="color: #007bff"></i>
-                    <span><strong>Attention to Detail</strong></span
-                    ><br />
-                    <span
-                        >Accurately maintained databases as a Transcriptionist &
-                        File Clerk.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-users" style="color: #28a745"></i>
-                    <span><strong>Customer Service</strong></span
-                    ><br />
-                    <span
-                        >Resolved customer queries efficiently as a Store
-                        Assistant.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-heart" style="color: #dc3545"></i>
-                    <span><strong>Empathy</strong></span
-                    ><br />
-                    <span
-                        >Engaged compassionately with neurodiverse youths.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-cheque-circle" style="color: #6f42c1"></i>
-                    <span><strong>Accountability</strong></span
-                    ><br />
-                    <span
-                        >Worked independently and reliably for 1.5 years as a
-                        remote Transcriptionist.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-comments" style="color: #17a2b8"></i>
-                    <span><strong>Communication</strong></span
-                    ><br />
-                    <span
-                        >Studied NZSL and Te Reo Māori; currently learning
-                        Mandarin Chinese.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-chess-king" style="color: #ffc107"></i>
-                    <span><strong>Leadership</strong></span
-                    ><br />
-                    <span
-                        >Represented NZ in basketball & swimming; captained the
-                        WBHS swim team.</span
-                    >
-                </p>
-            </section>
-
-            <section class="cv-section">
-                <h3>Employment History</h3>
-
-                <p>
-                    <i class="fa fa-keyboard" style="color: #007bff"></i>
-                    <span
-                        ><strong>Transcriptionist</strong> @ Aorangi Orthopaedic
-                        Centre</span
-                    ><br />
-                    <span>Palmerston North</span><br />
-                    <span>Nov 2021 – May 2024</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-store" style="color: #28a745"></i>
-                    <span
-                        ><strong>Store Assistant</strong> @ Wanaka New
-                        World</span
-                    ><br />
-                    <span>Wanaka</span><br />
-                    <span>Summers 2017 – 2020</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-hands-helping" style="color: #dc3545"></i>
-                    <span
-                        ><strong>Caregiver</strong> @ Families of Special Needs
-                        Individuals</span
-                    ><br />
-                    <span>Palmerston North</span><br />
-                    <span>Holidays 2016 – 2024</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-folder-open" style="color: #6c757d"></i>
-                    <span
-                        ><strong>File Clerk</strong> @ Amesbury Orthopaedic
-                        Centre</span
-                    ><br />
-                    <span>Palmerston North</span><br />
-                    <span>Apr 2016 – Feb 2018</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-archive" style="color: #6c757d"></i>
-                    <span
-                        ><strong>File Clerk</strong> @ Alpha Business
-                        Solutions</span
-                    ><br />
-                    <span>Auckland</span><br />
-                    <span>Weekends 2014</span>
-                </p>
-            </section>
-
-            <section class="cv-section">
-                <h3>Certifications</h3>
-
-                <p>
-                    <i class="fa fa-certificate" style="color: #007bff"></i>
-                    <span
-                        ><strong>DataCamp</strong><br />
-                        Data Literacy, AI Fundamentals, SQL Associate, Python
-                        Data Associate, Data Engineer Associate</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-laptop" style="color: #28a745"></i>
-                    <span
-                        ><strong>Digital Passport</strong><br />
-                        Digital Skills, Job-Ready Skills, AI Skills</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-hands" style="color: #dc3545"></i>
-                    <span
-                        ><strong>Merge NZ</strong><br />
-                        NZSL Levels 1a–1e, 2a</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fas fa-leaf" style="color: #28a745"></i>
-                    <span>
-                        <strong>Te Ara Atawhai</strong><br />
-                        DOC Volunteering course<br />
-                        Feb–April 2025
-                    </span>
-                </p>
-
-                <p>
-                    <i
-                        class="fa fa-briefcase-medical"
-                        style="color: #ffc107"
-                    ></i>
-                    <span
-                        ><strong>First Aid (NZ)</strong><br />
-                        Basics – 21/3/25</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-language" style="color: #6f42c1"></i>
-                    <span
-                        ><strong>Te Wānanga o Raukawa</strong><br />
-                        Poupou Huia Te Reo 1</span
-                    >
-                </p>
-            </section>
-
-            <section class="cv-section">
-                <h3>Interests</h3>
-
-                <p>
-                    <i class="fa fa-dumbbell" style="color: #007bff"></i>
-                    <span><strong>CrossFit</strong></span
-                    ><br />
-                    <span>Individual & team competitions.</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-paw" style="color: #28a745"></i>
-                    <span><strong>Dog Training</strong></span
-                    ><br />
-                    <span>Canine Good Basics Certification.</span><br />
-                    <span>Foundation Agility Certification.</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-leaf" style="color: #dc3545"></i>
-                    <span><strong>Gardening</strong></span
-                    ><br />
-                    <span
-                        >Growing fruit & vegetables using permaculture
-                        approach.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-microphone-alt" style="color: #17a2b8"></i>
-                    <span><strong>Singing</strong></span
-                    ><br />
-                    <span>Voices Co 2023-Present.</span><br />
-                    <span>6 concerts.</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-swimmer" style="color: #ffc107"></i>
-                    <span><strong>Swimming</strong></span
-                    ><br />
-                    <span>Daily workouts.</span>
-                </p>
-
-                <p>
-                    <i class="fa fa-paint-brush" style="color: #6c757d"></i>
-                    <span><strong>Workshops</strong></span
-                    ><br />
-                    <span
-                        >Bonsai, Cheese, Hydroponics, Kombucha, Painting,
-                        Permaculture, Pottery, Seed Raising, & Sourdough.</span
-                    >
-                </p>
-
-                <p>
-                    <i class="fa fa-spa" style="color: #28a745"></i>
-                    <span><strong>Yoga</strong></span
-                    ><br />
-                    <span>Daily workouts.</span>
-                </p>
+                        <p>
+                            <i class="fas fa-om employer-logo-icon"></i>
+                            <span><strong>Yoga</strong></span
+                            ><br />
+                            <span>Daily workouts.</span>
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <!-- Connect Section -->

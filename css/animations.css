@@ -329,7 +329,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
-    color: white;
+    color: var(--button-text);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-size: 0.875rem;

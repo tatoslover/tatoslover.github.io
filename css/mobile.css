@@ -44,7 +44,7 @@
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 120px;
+        top: var(--total-header-height);
         flex-direction: column;
         background-color: rgba(51, 102, 153, 0.98);
         width: 100%;
@@ -54,6 +54,20 @@
         padding: 2rem 0;
         gap: 0;
         z-index: 999;
+    }
+
+    /* Theme toggle section mobile styles */
+    .theme-toggle-section {
+        padding: 0.5rem 0 1rem 0;
+    }
+
+    .theme-toggle-section .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .theme-label {
+        font-size: 0.8rem;
     }
 
     .nav-menu.active {
@@ -78,6 +92,17 @@
         z-index: 1000;
     }
 
+    /* CSS Variables for mobile */
+    :root {
+        --header-height: 50px;
+        --navbar-height: 45px;
+        --theme-toggle-height: 35px;
+        --total-header-height: calc(
+            var(--header-height) + var(--navbar-height) +
+                var(--theme-toggle-height)
+        );
+    }
+
     /* Hero section */
     .hero-content {
         flex-direction: column;
@@ -86,8 +111,12 @@
     }
 
     .hero-section {
-        padding: 140px 1rem 2rem;
-        min-height: auto;
+        padding: 1rem;
+        min-height: calc(100vh - var(--total-header-height));
+    }
+
+    .header-top {
+        padding: 0.8rem 0 0.4rem 0;
     }
 
     .hero-text h1 {
@@ -102,6 +131,7 @@
     .profile-image {
         width: 200px;
         height: 200px;
+        object-fit: cover;
     }
 
     /* Sections padding */
@@ -126,8 +156,20 @@
         padding: 2rem 1.5rem;
     }
 
+    /* Theme toggle mobile */
+    .theme-toggle {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+
     .project-icon {
-        font-size: 2.5rem;
+        font-size: 4rem;
+    }
+
+    .project-icon i {
+        font-size: 4rem;
     }
 
     .project-name {
@@ -259,27 +301,35 @@
         padding: 0 0.5rem;
     }
 
-    .navbar {
-        top: 50px;
+    /* CSS Variables for small mobile */
+    :root {
+        --header-height: 45px;
+        --navbar-height: 40px;
+        --theme-toggle-height: 30px;
+        --total-header-height: calc(
+            var(--header-height) + var(--navbar-height) +
+                var(--theme-toggle-height)
+        );
+    }
+
+    .header-top {
+        padding: 0.5rem 0 0.3rem 0;
     }
 
     .nav-menu {
-        top: 110px;
-    }
-
-    /* Main header adjustment */
-    .main-header {
-        padding: 0.5rem 0;
+        top: var(--total-header-height);
     }
 
     /* Hero section */
     .hero-section {
-        padding: 120px 0.5rem 2rem;
+        padding: 0.5rem;
+        min-height: calc(100vh - var(--total-header-height));
     }
 
     .profile-image {
         width: 150px;
         height: 150px;
+        object-fit: cover;
     }
 
     /* Sections */
@@ -302,8 +352,12 @@
     }
 
     .project-icon {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
+    }
+
+    .project-icon i {
+        font-size: 3rem;
     }
 
     .project-name {
@@ -424,8 +478,8 @@
 /* ============================= */
 @media (max-width: 768px) and (orientation: landscape) {
     .hero-section {
-        min-height: 100vh;
-        padding: 120px 2rem 2rem;
+        min-height: calc(100vh - var(--total-header-height));
+        padding: 1rem 2rem;
     }
 
     .hero-content {
@@ -437,6 +491,7 @@
     .profile-image {
         width: 150px;
         height: 150px;
+        object-fit: cover;
     }
 
     .nav-menu {
