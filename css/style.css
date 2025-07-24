@@ -1,8 +1,4 @@
-/* ========================================
-   HEADER SYSTEM - CONSOLIDATED APPROACH
-   ======================================== */
-
-/* CSS Variables for consistent header sizing */
+/* === CSS Variables === */
 :root {
     --header-height: 60px;
     --navbar-height: 50px;
@@ -12,8 +8,7 @@
     );
 }
 
-/* === Main Header Container === */
-/* All header components inherit from this base */
+/* === Header === */
 .main-header {
     position: sticky;
     top: 0;
@@ -51,14 +46,12 @@ body.dark-theme .main-header.scrolled {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* === Header Child Sections === */
-/* Shared base styles for all header children to eliminate redundancy */
+/* === Header Sections === */
 .header-top,
 .navbar,
 .theme-toggle-section {
     position: relative;
     width: 100%;
-    background-color: transparent;
     border: none;
     box-shadow: none;
     margin: 0;
@@ -72,7 +65,7 @@ body.dark-theme .main-header.scrolled {
 .portfolio-title {
     font-size: 2rem;
     font-weight: bold;
-    color: white;
+    color: silver;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     opacity: 1 !important;
@@ -80,7 +73,7 @@ body.dark-theme .main-header.scrolled {
     transition: all 0.3s ease;
 }
 
-/* === Navigation Section === */
+/* === Navigation === */
 .navbar {
     padding: 0.5rem 0;
 }
@@ -145,7 +138,7 @@ body.dark-theme .nav-link:hover {
     transform: scale(1.1);
 }
 
-/* === Theme Toggle Section === */
+/* === Theme Toggle === */
 .theme-toggle-section {
     padding: 0.5rem 0 1rem 0;
     display: flex;
@@ -1419,11 +1412,7 @@ body {
     min-height: 100vh;
 }
 
-/* ========================================
-   HEADER UTILITY CLASSES
-   ======================================== */
-
-/* Utility classes for consistent header styling patterns */
+/* === Header Utilities === */
 .header-section {
     position: relative;
     width: 100%;
@@ -1448,15 +1437,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
 }
-
-/* ========================================
-   HEADER CONSOLIDATION BENEFITS:
-   - Single source of truth for header styles
-   - Eliminates redundant CSS (reduced ~100 lines)
-   - Easier maintenance and updates
-   - Better performance with fewer selectors
-   - Reusable utility classes for consistency
-   ======================================== */
 
 /* FontAwesome icon size and color adjustments */
 i {
