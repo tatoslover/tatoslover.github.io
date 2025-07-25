@@ -85,23 +85,23 @@ body.dark-theme .main-header.scrolled {
 
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: silver;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: white;
+    color: silver;
 }
 
 body.dark-theme .nav-link:hover {
-    color: white;
+    color: silver;
 }
 
 .theme-toggle {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(192, 192, 192, 0.2);
+    border: 2px solid rgba(192, 192, 192, 0.3);
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
@@ -110,15 +110,15 @@ body.dark-theme .nav-link:hover {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: white;
+    color: silver;
     font-size: 0.9rem;
     position: absolute;
     right: 0;
 }
 
 .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(192, 192, 192, 0.3);
+    border-color: rgba(192, 192, 192, 0.5);
     transform: scale(1.1);
 }
 
@@ -170,7 +170,7 @@ body.dark-theme .nav-link:hover {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: silver;
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
@@ -271,7 +271,8 @@ body.dark-theme .nav-link:hover {
 
 .btn-primary {
     background-color: var(--accent);
-    color: white;
+    color: silver;
+    border: 1px solid var(--accent);
 }
 
 .btn-primary:hover {
@@ -288,7 +289,7 @@ body.dark-theme .nav-link:hover {
 
 .btn-secondary:hover {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     transform: translateY(-2px);
 }
 
@@ -355,6 +356,11 @@ body.dark-theme .nav-link:hover {
     padding: 6rem 2rem;
 }
 
+/* === Gallery Section === */
+#gallery {
+    padding: 6rem 2rem;
+}
+
 .contact-intro {
     text-align: center;
     font-size: 1.1rem;
@@ -372,7 +378,6 @@ body.dark-theme .nav-link:hover {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 16px;
     text-align: center;
@@ -380,6 +385,14 @@ body.dark-theme .nav-link:hover {
     border: 1px solid rgba(102, 126, 234, 0.3);
     position: relative;
     overflow: hidden;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact-card > * {
@@ -412,7 +425,7 @@ body.dark-theme .contact-icon i {
 }
 
 body.dark-theme .contact-info a {
-    color: #99ccff;
+    color: #a8d0ff;
 }
 
 .contact-info a:hover {
@@ -420,7 +433,7 @@ body.dark-theme .contact-info a {
 }
 
 body.dark-theme .contact-info a:hover {
-    color: #cce6ff;
+    color: #d9ecff;
 }
 
 /* === Projects Section === */
@@ -613,7 +626,7 @@ body.dark-theme .contact-info a:hover {
 
 .tech-tag {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.85rem;
@@ -668,7 +681,7 @@ body.dark-theme .contact-info a:hover {
 
 .btn-live-demo {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     border-color: var(--accent);
 }
 
@@ -680,7 +693,7 @@ body.dark-theme .btn-live-demo {
 .btn-live-demo:hover {
     background-color: var(--link-hover);
     border-color: var(--link-hover);
-    color: white;
+    color: silver;
     transform: translateY(-2px);
 }
 
@@ -692,7 +705,7 @@ body.dark-theme .btn-live-demo:hover {
 
 .btn-github {
     background-color: var(--button-bg);
-    color: white;
+    color: silver;
     border-color: var(--button-bg);
 }
 
@@ -704,7 +717,7 @@ body.dark-theme .btn-github {
 .btn-github:hover {
     background-color: var(--link-hover);
     border-color: var(--link-hover);
-    color: white;
+    color: silver;
     transform: translateY(-2px);
 }
 
@@ -716,7 +729,7 @@ body.dark-theme .btn-github:hover {
 
 .btn-document {
     background-color: var(--header);
-    color: white;
+    color: silver;
     border-color: var(--header);
 }
 
@@ -728,7 +741,7 @@ body.dark-theme .btn-document {
 .btn-document:hover {
     background-color: var(--link-hover);
     border-color: var(--link-hover);
-    color: white;
+    color: silver;
     transform: translateY(-2px);
 }
 
@@ -739,7 +752,7 @@ body.dark-theme .btn-document:hover {
 }
 
 .btn-badge i {
-    color: white !important;
+    color: silver !important;
     opacity: 1 !important;
 }
 
@@ -808,7 +821,7 @@ body.dark-theme .btn-document:hover {
 /* === Course Grid Layout === */
 .year-badge {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -999,7 +1012,7 @@ body.dark-theme .btn-document:hover {
 .projects-section,
 #qualifications,
 #certifications,
-.contact-section {
+#gallery {
     background-color: var(--bg);
 }
 
@@ -1008,7 +1021,8 @@ body.dark-theme .btn-document:hover {
 .skills-section,
 .coursework-section,
 #employment,
-#interests {
+#interests,
+.contact-section {
     background-color: var(--card-bg);
 }
 
@@ -1020,8 +1034,312 @@ body.dark-theme .btn-document:hover {
 #qualifications .cv-section p,
 #certifications .cv-section ul li,
 #certifications .cv-section p,
-.contact-section .contact-card {
+#gallery .gallery-item {
     background-color: var(--card-bg);
+}
+
+/* Cards in Group B sections (dark bg) use light cards */
+.contact-section .contact-card {
+    background-color: var(--bg);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    border: 3px solid silver;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-image.loading {
+    opacity: 0.7;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: silver;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-caption {
+    color: silver;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: silver;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+}
+
+.lightbox-nav:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: -60px;
+}
+
+.lightbox-next {
+    right: -60px;
+}
+
+@media (max-width: 768px) {
+    .lightbox-prev {
+        left: -30px;
+    }
+
+    .lightbox-next {
+        right: -30px;
+    }
+
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* Carousel Styles */
+.carousel-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--card-bg);
+    aspect-ratio: 16 / 9;
+}
+
+.carousel-slides {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: silver;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Carousel Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    color: silver;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(192, 192, 192, 0.5);
+    border: 2px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--accent);
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background-color: var(--accent);
+    transform: scale(1.2);
+}
+
+.indicator:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive Carousel */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        border-radius: 0.3rem;
+        aspect-ratio: 16/9;
+    }
+
+    .slide-caption {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-wrapper {
+        aspect-ratio: 4/3;
+    }
+
+    .slide-caption {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .carousel-control {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .carousel-indicators {
+        gap: 0.3rem;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 /* Cards in Group B sections (dark bg) use light cards */
@@ -1070,7 +1388,7 @@ body.dark-theme .btn-document:hover {
 
 .buttons a {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 6px;
@@ -1081,7 +1399,7 @@ body.dark-theme .btn-document:hover {
 
 body.dark-theme .buttons a {
     background-color: #4682b4;
-    color: #ffffff;
+    color: #c0c0c0;
 }
 
 .buttons a:hover {
@@ -1096,7 +1414,7 @@ body.dark-theme .buttons a:hover {
 
 .cv-download-btn {
     background-color: var(--accent);
-    color: white;
+    color: silver;
     text-decoration: none;
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
@@ -1106,7 +1424,7 @@ body.dark-theme .buttons a:hover {
 
 body.dark-theme .cv-download-btn {
     background-color: #4682b4;
-    color: #ffffff;
+    color: #c0c0c0;
 }
 
 .cv-download-btn:hover {
@@ -1382,7 +1700,7 @@ details[open] summary {
 }
 
 .merge-logo {
-    background-color: white !important;
+    background-color: silver !important;
     border: 1px solid #ddd;
     padding: 0.3rem !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -1580,7 +1898,7 @@ i {
     --card-bg: #f0e6cc;
     --nav-bg: rgba(210, 105, 30, 0.95);
     --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
-    --nav-text: #ffffff;
+    --nav-text: #c0c0c0;
     --icon-primary: var(--orange-primary);
     --icon-secondary: var(--orange-secondary);
     --icon-success: #228b22;
@@ -1603,7 +1921,7 @@ i {
         --card-bg: #2a2a3d;
         --nav-bg: rgba(30, 111, 210, 0.95);
         --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
-        --nav-text: #ffffff;
+        --nav-text: #c0c0c0;
         --icon-primary: var(--blue-primary);
         --icon-secondary: var(--blue-secondary);
         --icon-success: #90ee90;
@@ -1626,7 +1944,7 @@ html.manual-theme body.light-theme {
     --card-bg: #f0e6cc;
     --nav-bg: rgba(210, 105, 30, 0.95);
     --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
-    --nav-text: #ffffff;
+    --nav-text: #c0c0c0;
     --icon-primary: var(--orange-primary);
     --icon-secondary: var(--orange-secondary);
     --icon-success: #228b22;
@@ -1647,7 +1965,7 @@ html.manual-theme body.dark-theme {
     --card-bg: #2a2a3d;
     --nav-bg: rgba(30, 111, 210, 0.95);
     --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
-    --nav-text: #ffffff;
+    --nav-text: #c0c0c0;
     --icon-primary: var(--blue-primary);
     --icon-secondary: var(--blue-secondary);
     --icon-success: #90ee90;
@@ -1656,13 +1974,46 @@ html.manual-theme body.dark-theme {
 
 /* === Dark Theme Efficient Pattern === */
 /* Dark theme Group A (light sections in light theme) */
+/* Dark theme overrides */
 body.dark-theme .hero-section,
 body.dark-theme .projects-section,
 body.dark-theme #qualifications,
 body.dark-theme #certifications,
-body.dark-theme .contact-section {
+body.dark-theme #gallery {
     background-color: #1e1e2f;
     color: #c0c0c0;
+}
+
+body.dark-theme .contact-section {
+    background-color: #121225;
+    color: #c0c0c0;
+}
+
+body.dark-theme .contact-section .contact-card {
+    background-color: #1e1e2f;
+}
+
+/* Dark theme carousel */
+body.dark-theme .carousel-wrapper {
+    background-color: #121225;
+}
+
+body.dark-theme .carousel-control {
+    background: rgba(192, 192, 192, 0.15);
+}
+
+body.dark-theme .carousel-control:hover {
+    background: rgba(192, 192, 192, 0.25);
+}
+
+body.dark-theme .indicator {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #667eea;
+}
+
+body.dark-theme .indicator.active,
+body.dark-theme .indicator:hover {
+    background-color: #667eea;
 }
 
 /* Dark theme Group B (dark sections in light theme) */
@@ -1689,7 +2040,7 @@ body.dark-theme .section-title {
 }
 
 body.dark-theme .nav-link {
-    color: #ffffff !important;
+    color: #c0c0c0 !important;
 }
 
 body.dark-theme .hero-text h1,

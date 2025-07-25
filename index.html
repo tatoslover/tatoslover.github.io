@@ -513,8 +513,13 @@
             body.dark-theme .projects-section,
             body.dark-theme #qualifications,
             body.dark-theme #certifications,
-            body.dark-theme .contact-section {
+            body.dark-theme #gallery {
                 background-color: #1e1e2f;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .contact-section {
+                background-color: #121225;
                 color: #c0c0c0;
             }
 
@@ -725,6 +730,7 @@
         <script src="scripts/animations.js" defer></script>
         <script src="scripts/script.js" defer></script>
         <script src="scripts/performance.js" defer></script>
+        <script src="scripts/carousel.js" defer></script>
 
         <!-- Service Worker Registration -->
         <script>
@@ -852,6 +858,9 @@
                         </li>
                         <li class="nav-item">
                             <a href="#interests" class="nav-link">Interests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#gallery" class="nav-link">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a href="#connect" class="nav-link">Connect</a>
@@ -2795,6 +2804,153 @@
                                 Daily workouts</span
                             >
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="projects-section">
+                <div class="container">
+                    <h2 class="section-title scroll-reveal">Gallery</h2>
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active" id="slide-1">
+                                    <img
+                                        src="extras/Gallery/crossfit.jpeg"
+                                        alt="CrossFit Competition"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        CrossFit Competition
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-2">
+                                    <img
+                                        src="extras/Gallery/biking.jpeg"
+                                        alt="Mountain Biking Adventure"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Mountain Biking Adventure
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-3">
+                                    <img
+                                        src="extras/Gallery/goats.jpg"
+                                        alt="Goats at the Farm"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Goats at the Farm
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-4">
+                                    <img
+                                        src="extras/Gallery/kayak.jpg"
+                                        alt="Kayaking"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">Kayaking</div>
+                                </div>
+                                <div class="carousel-slide" id="slide-5">
+                                    <img
+                                        src="extras/Gallery/maple.jpg"
+                                        alt="Maple the Dog"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Maple the Dog
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-6">
+                                    <img
+                                        src="extras/Gallery/nursery.jpg"
+                                        alt="Plant Nursery"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Plant Nursery
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-7">
+                                    <img
+                                        src="extras/Gallery/permaculture.JPG"
+                                        alt="Permaculture Garden"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Permaculture Garden
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" id="slide-8">
+                                    <img
+                                        src="extras/Gallery/singing.jpg"
+                                        alt="Singing Performance"
+                                        loading="lazy"
+                                    />
+                                    <div class="slide-caption">
+                                        Singing Performance
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="carousel-control prev-btn"
+                                aria-label="Previous slide"
+                            >
+                                &#10094;
+                            </button>
+                            <button
+                                class="carousel-control next-btn"
+                                aria-label="Next slide"
+                            >
+                                &#10095;
+                            </button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <button
+                                class="indicator active"
+                                data-slide="1"
+                                aria-label="Go to slide 1"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="2"
+                                aria-label="Go to slide 2"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="3"
+                                aria-label="Go to slide 3"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="4"
+                                aria-label="Go to slide 4"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="5"
+                                aria-label="Go to slide 5"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="6"
+                                aria-label="Go to slide 6"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="7"
+                                aria-label="Go to slide 7"
+                            ></button>
+                            <button
+                                class="indicator"
+                                data-slide="8"
+                                aria-label="Go to slide 8"
+                            ></button>
+                        </div>
                     </div>
                 </div>
             </section>
