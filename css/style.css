@@ -1316,7 +1316,9 @@ details[open] summary {
     flex-shrink: 0;
     object-fit: contain;
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0.5rem;
 }
 
 .employer-logo-cover {
@@ -1325,7 +1327,9 @@ details[open] summary {
     flex-shrink: 0;
     object-fit: cover;
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0.5rem;
 }
 
 .employer-logo-icon {
@@ -1333,12 +1337,15 @@ details[open] summary {
     width: 4rem;
     flex-shrink: 0;
     border-radius: 50%;
-    padding: 0.25rem;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffb000;
     box-sizing: border-box;
+    margin: 0.5rem;
+    position: relative;
+    text-align: center;
 }
 
 /* Logo backgrounds match their card backgrounds */
@@ -1363,43 +1370,86 @@ details[open] summary {
 }
 
 .employer-logo-icon.fas.fa-puzzle-piece {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .employer-logo-icon.fas.fa-puzzle-piece::before {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .merge-logo {
-    background-color: white;
+    background-color: white !important;
+    border: 1px solid #ddd;
+    padding: 0.3rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling for interest icons */
 .employer-logo-icon.fas.fa-seedling {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #228b22;
 }
 
 .employer-logo-icon.fas.fa-seedling::before {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .employer-logo-icon.fas.fa-tools {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #8b4513;
 }
 
 .employer-logo-icon.fas.fa-tools::before {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .employer-logo-icon.fas.fa-om {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #20b2aa;
 }
 
 .employer-logo-icon.fas.fa-om::before {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add microphone icon styles for singing */
+.employer-logo-icon.fas.fa-microphone {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+.employer-logo-icon.fas.fa-microphone::before {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Ensure all FontAwesome icons are perfectly centered */
+.employer-logo-icon::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
 .degree-info {
@@ -1509,79 +1559,99 @@ i {
 }
 
 :root {
+    /* Global true complementary colors */
+    --orange-primary: #d2691e;
+    --orange-secondary: #cd853f;
+    --orange-dark: #b8621b;
+    --blue-primary: #1e6fd2;
+    --blue-secondary: #3f85cd;
+    --blue-light: #5b9bd8;
+
+    /* Light theme uses orange primary, blue accent */
     --bg: #e6d2a6;
     --text: #000000;
-    --accent: #8b4513;
-    --link: #a0522d;
-    --link-hover: #6b3410;
+    --accent: var(--orange-primary);
+    --accent-secondary: var(--blue-primary);
+    --link: var(--orange-secondary);
+    --link-hover: var(--orange-dark);
     --button-bg: #dcc9a6;
     --button-text: #000000;
-    --header: #8b4513;
+    --header: var(--orange-primary);
     --card-bg: #f0e6cc;
-    --nav-bg: rgba(139, 69, 19, 0.95);
+    --nav-bg: rgba(210, 105, 30, 0.95);
+    --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
     --nav-text: #ffffff;
-    --icon-primary: #8b4513;
-    --icon-secondary: #a0522d;
+    --icon-primary: var(--orange-primary);
+    --icon-secondary: var(--orange-secondary);
     --icon-success: #228b22;
-    --icon-warning: #d2691e;
+    --icon-warning: var(--orange-primary);
 }
 
 /* Disable automatic dark mode - let manual toggle control it */
 @media (prefers-color-scheme: dark) {
     html:not(.manual-theme) :root {
+        /* Dark theme uses blue primary, orange accent */
         --bg: #1e1e2f;
         --text: #c0c0c0;
-        --accent: #4682b4;
-        --link: #99ccff;
-        --link-hover: #cce6ff;
+        --accent: var(--blue-primary);
+        --accent-secondary: var(--orange-primary);
+        --link: var(--blue-secondary);
+        --link-hover: var(--blue-light);
         --button-bg: #2c3e50;
-        --button-text: silver;
-        --header: #d2691e;
+        --button-text: #c0c0c0;
+        --header: var(--blue-primary);
         --card-bg: #2a2a3d;
-        --nav-bg: rgba(70, 130, 180, 0.95);
+        --nav-bg: rgba(30, 111, 210, 0.95);
+        --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
         --nav-text: #ffffff;
-        --icon-primary: #4682b4;
-        --icon-secondary: #99ccff;
+        --icon-primary: var(--blue-primary);
+        --icon-secondary: var(--blue-secondary);
         --icon-success: #90ee90;
-        --icon-warning: #ffa500;
+        --icon-warning: var(--orange-primary);
     }
 }
 
 /* Manual theme overrides */
 html.manual-theme body.light-theme {
+    /* Light theme uses orange primary, blue accent */
     --bg: #e6d2a6;
     --text: #000000;
-    --accent: #8b4513;
-    --link: #a0522d;
-    --link-hover: #6b3410;
+    --accent: var(--orange-primary);
+    --accent-secondary: var(--blue-primary);
+    --link: var(--orange-secondary);
+    --link-hover: var(--orange-dark);
     --button-bg: #dcc9a6;
     --button-text: #000000;
-    --header: #8b4513;
+    --header: var(--orange-primary);
     --card-bg: #f0e6cc;
-    --nav-bg: rgba(139, 69, 19, 0.95);
+    --nav-bg: rgba(210, 105, 30, 0.95);
+    --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
     --nav-text: #ffffff;
-    --icon-primary: #8b4513;
-    --icon-secondary: #a0522d;
+    --icon-primary: var(--orange-primary);
+    --icon-secondary: var(--orange-secondary);
     --icon-success: #228b22;
-    --icon-warning: #d2691e;
+    --icon-warning: var(--orange-primary);
 }
 
 html.manual-theme body.dark-theme {
+    /* Dark theme uses blue primary, orange accent */
     --bg: #1e1e2f;
     --text: #c0c0c0;
-    --accent: #4682b4;
-    --link: #99ccff;
-    --link-hover: #cce6ff;
+    --accent: var(--blue-primary);
+    --accent-secondary: var(--orange-primary);
+    --link: var(--blue-secondary);
+    --link-hover: var(--blue-light);
     --button-bg: #2c3e50;
-    --button-text: silver;
-    --header: #d2691e;
+    --button-text: #c0c0c0;
+    --header: var(--blue-primary);
     --card-bg: #2a2a3d;
-    --nav-bg: rgba(70, 130, 180, 0.95);
+    --nav-bg: rgba(30, 111, 210, 0.95);
+    --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
     --nav-text: #ffffff;
-    --icon-primary: #4682b4;
-    --icon-secondary: #99ccff;
+    --icon-primary: var(--blue-primary);
+    --icon-secondary: var(--blue-secondary);
     --icon-success: #90ee90;
-    --icon-warning: #ffa500;
+    --icon-warning: var(--orange-primary);
 }
 
 /* === Dark Theme Efficient Pattern === */
@@ -1615,7 +1685,7 @@ body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
 body.dark-theme .section-title {
-    color: #d2691e;
+    color: var(--header);
 }
 
 body.dark-theme .nav-link {

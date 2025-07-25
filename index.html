@@ -44,15 +44,729 @@
         <link rel="icon" type="image/png" href="extras/pp.png" />
         <link rel="apple-touch-icon" href="extras/pp.png" />
 
-        <!-- Link to FontAwesome CDN for icons -->
+        <!-- Web App Manifest -->
+        <link rel="manifest" href="manifest.json" />
+        <meta name="theme-color" content="#8b4513" />
+        <meta name="msapplication-TileColor" content="#8b4513" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="SL Portfolio" />
+
+        <!-- Preload critical images -->
+        <link rel="preload" href="extras/pp.png" as="image" type="image/png" />
+
+        <!-- Resource hints for performance -->
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
         <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            rel="preconnect"
+            href="https://cdnjs.cloudflare.com"
+            crossorigin
         />
+
+        <!-- Critical CSS inlined for fast initial render -->
+        <style>
+            /* Critical CSS - Above-the-fold styles for fast initial render */
+
+            /* === CSS Variables === */
+            :root {
+                --header-height: 60px;
+                --navbar-height: 50px;
+                --theme-toggle-height: 40px;
+                --total-header-height: calc(
+                    var(--header-height) + var(--navbar-height) +
+                        var(--theme-toggle-height)
+                );
+
+                /* Global true complementary colors */
+                --orange-primary: #d2691e;
+                --orange-secondary: #cd853f;
+                --orange-dark: #b8621b;
+                --blue-primary: #1e6fd2;
+                --blue-secondary: #3f85cd;
+                --blue-light: #5b9bd8;
+
+                /* Light theme uses orange primary, blue accent */
+                --bg: #e6d2a6;
+                --text: #000000;
+                --accent: var(--orange-primary);
+                --accent-secondary: var(--blue-primary);
+                --link: var(--orange-secondary);
+                --link-hover: var(--orange-dark);
+                --button-bg: #dcc9a6;
+                --button-text: #000000;
+                --header: var(--orange-primary);
+                --card-bg: #f0e6cc;
+                --nav-bg: rgba(210, 105, 30, 0.95);
+                --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            /* Dark theme preference */
+            @media (prefers-color-scheme: dark) {
+                html:not(.manual-theme) :root {
+                    /* Dark theme uses blue primary, orange accent */
+                    --bg: #1e1e2f;
+                    --text: #c0c0c0;
+                    --accent: var(--blue-primary);
+                    --accent-secondary: var(--orange-primary);
+                    --link: var(--blue-secondary);
+                    --link-hover: var(--blue-light);
+                    --button-bg: #2c3e50;
+                    --button-text: #c0c0c0;
+                    --header: var(--blue-primary);
+                    --card-bg: #2a2a3d;
+                    --nav-bg: rgba(30, 111, 210, 0.95);
+                    --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
+                    --nav-text: #ffffff;
+                }
+            }
+
+            /* Manual theme overrides */
+            html.manual-theme body.light-theme {
+                /* Light theme uses orange primary, blue accent */
+                --bg: #e6d2a6;
+                --text: #000000;
+                --accent: var(--orange-primary);
+                --accent-secondary: var(--blue-primary);
+                --link: var(--orange-secondary);
+                --link-hover: var(--orange-dark);
+                --button-bg: #dcc9a6;
+                --button-text: #000000;
+                --header: var(--orange-primary);
+                --card-bg: #f0e6cc;
+                --nav-bg: rgba(210, 105, 30, 0.95);
+                --nav-bg-scrolled: rgba(30, 111, 210, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            html.manual-theme body.dark-theme {
+                /* Dark theme uses blue primary, orange accent */
+                --bg: #1e1e2f;
+                --text: #c0c0c0;
+                --accent: var(--blue-primary);
+                --accent-secondary: var(--orange-primary);
+                --link: var(--blue-secondary);
+                --link-hover: var(--blue-light);
+                --button-bg: #2c3e50;
+                --button-text: #c0c0c0;
+                --header: var(--blue-primary);
+                --card-bg: #2a2a3d;
+                --nav-bg: rgba(30, 111, 210, 0.95);
+                --nav-bg-scrolled: rgba(210, 105, 30, 0.95);
+                --nav-text: #ffffff;
+            }
+
+            /* === Base Styles === */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                font-size: 16px;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--text);
+                background-color: var(--bg);
+                padding-top: var(--total-header-height);
+                min-height: 100vh;
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+            }
+
+            /* === Skip Link === */
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--accent);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 10000;
+                transition: top 0.3s;
+            }
+
+            .skip-link:focus {
+                top: 6px;
+            }
+
+            /* === Header === */
+            .main-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: var(--nav-bg);
+                z-index: 1000;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                backdrop-filter: blur(10px);
+                transition:
+                    backdrop-filter 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .main-header.scrolled {
+                backdrop-filter: blur(15px);
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            body.dark-theme .main-header.scrolled {
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .header-top,
+            .navbar,
+            .theme-toggle-section {
+                position: relative;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .header-top {
+                padding: 1rem 0 0.5rem 0;
+                text-align: center;
+            }
+
+            .main-header .portfolio-title {
+                font-size: 2rem;
+                font-weight: bold;
+                color: var(--nav-text);
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                background-color: transparent;
+            }
+
+            /* === Navigation === */
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80px;
+                position: relative;
+            }
+
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 2rem;
+                flex: 1;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: var(--nav-text);
+                font-weight: 500;
+                transition:
+                    color 0.3s ease,
+                    text-shadow 0.3s ease;
+                position: relative;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+            }
+
+            .nav-link:hover {
+                color: var(--nav-text);
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            }
+
+            /* === Theme Toggle === */
+            .theme-toggle-section {
+                display: flex;
+                justify-content: center;
+                padding: 0.5rem 0;
+            }
+
+            .theme-toggle {
+                background: var(--button-bg);
+                color: var(--button-text);
+                border: 2px solid var(--accent);
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .theme-toggle:hover {
+                background: var(--accent);
+                color: var(--nav-text);
+                transform: scale(1.05);
+            }
+
+            /* === Hero Section (Above the fold) === */
+            .hero-section {
+                min-height: 80vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                background: var(--bg);
+                padding: 2rem;
+                overflow: hidden;
+            }
+
+            .hero-content {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+                max-width: 1200px;
+                width: 100%;
+                z-index: 2;
+            }
+
+            .hero-image {
+                flex-shrink: 0;
+            }
+
+            .profile-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid var(--accent);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .profile-image:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .hero-text {
+                flex: 1;
+                text-align: left;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: var(--text);
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .hero-subtitle {
+                font-size: 1.8rem;
+                color: var(--accent);
+                margin-bottom: 2rem;
+                min-height: 2.2rem;
+                font-weight: 500;
+            }
+
+            .hero-buttons {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-align: center;
+                border: 2px solid transparent;
+            }
+
+            .btn-primary {
+                background: var(--button-bg);
+                color: var(--button-text);
+                border-color: var(--accent);
+            }
+
+            .btn-primary:hover {
+                background: var(--accent);
+                color: var(--nav-text);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            /* === Mobile Responsive === */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    position: fixed;
+                    left: -100%;
+                    top: var(--total-header-height);
+                    flex-direction: column;
+                    background-color: var(--nav-bg);
+                    width: 100%;
+                    text-align: center;
+                    transition: 0.3s;
+                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                    backdrop-filter: blur(10px);
+                    height: calc(100vh - var(--total-header-height));
+                    padding: 2rem 0;
+                    gap: 1rem;
+                }
+
+                .nav-menu.active {
+                    left: 0;
+                }
+
+                .hamburger {
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+
+                .hero-content {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 2rem;
+                }
+
+                .hero-text h1 {
+                    font-size: 2.5rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.4rem;
+                }
+
+                .profile-image {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .hero-buttons {
+                    justify-content: center;
+                }
+            }
+
+            /* Hamburger menu styles */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                width: 25px;
+                height: 20px;
+                justify-content: space-between;
+                position: absolute;
+                right: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1001;
+                background: none;
+                border: none;
+                padding: 0.5rem;
+            }
+
+            .bar {
+                height: 3px;
+                width: 100%;
+                background-color: var(--nav-text);
+                border-radius: 3px;
+                transition: all 0.3s ease;
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* === Dark Theme Specific Rules === */
+            body.dark-theme .hero-section,
+            body.dark-theme .projects-section,
+            body.dark-theme #qualifications,
+            body.dark-theme #certifications,
+            body.dark-theme .contact-section {
+                background-color: #1e1e2f;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .about-section,
+            body.dark-theme .skills-section,
+            body.dark-theme .coursework-section,
+            body.dark-theme #employment,
+            body.dark-theme #interests {
+                background-color: #2a2a3d;
+                color: #c0c0c0;
+            }
+
+            body.dark-theme .nav-link:hover {
+                color: white;
+            }
+
+            body.dark-theme .contact-icon i {
+                color: #4682b4;
+            }
+
+            body.dark-theme .contact-info a {
+                color: #99ccff;
+            }
+
+            body.dark-theme .contact-info a:hover {
+                color: #cce6ff;
+            }
+
+            /* Critical Mobile Styles for Immediate Loading */
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: flex !important;
+                    flex-direction: column;
+                    cursor: pointer;
+                    z-index: 1001;
+                    padding: 0.8rem;
+                    border-radius: 6px;
+                    transition: background-color 0.2s ease;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    width: 60px;
+                    height: 50px;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                }
+
+                .hamburger:active {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .hamburger:hover {
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+
+                .bar {
+                    width: 25px;
+                    height: 3px;
+                    background-color: #ffffff;
+                    margin: 3px 0;
+                    transition: 0.3s;
+                    border-radius: 2px;
+                    display: block;
+                }
+
+                .hamburger.active .bar:nth-child(1) {
+                    transform: translateY(9px) rotate(45deg);
+                }
+
+                .hamburger.active .bar:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .hamburger.active .bar:nth-child(3) {
+                    transform: translateY(-9px) rotate(-45deg);
+                }
+
+                .main-header {
+                    transition: transform 0.3s ease-in-out;
+                    will-change: transform;
+                }
+
+                .nav-container {
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .nav-menu {
+                    position: fixed;
+                    left: -100%;
+                    top: var(--total-header-height);
+                    flex-direction: column;
+                    background-color: var(--nav-bg);
+                    width: 100%;
+                    text-align: center;
+                    transition: left 0.3s ease-in-out;
+                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+                    padding: 2rem 0;
+                    gap: 0;
+                    z-index: 999;
+                    backdrop-filter: blur(10px);
+                }
+
+                .nav-menu.active {
+                    left: 0;
+                }
+
+                .nav-menu li {
+                    margin: 1rem 0;
+                }
+
+                .nav-link {
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                    display: block;
+                }
+
+                .portfolio-title {
+                    font-size: 1.5rem;
+                }
+
+                .navbar {
+                    padding: 0.5rem 0;
+                }
+            }
+        </style>
+
+        <!-- Load critical CSS first, then defer non-critical -->
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/animations.css" />
         <link rel="stylesheet" href="css/mobile.css" />
+        <link
+            rel="preload"
+            href="css/animations.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+
+        <!-- Fallback for non-critical CSS -->
+        <noscript>
+            <link rel="stylesheet" href="css/animations.css" />
+        </noscript>
+
+        <!-- Defer FontAwesome -->
+        <link
+            rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            />
+        </noscript>
+
+        <!-- Inline Hamburger Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hamburger = document.querySelector(".hamburger");
+                const navMenu = document.querySelector(".nav-menu");
+
+                if (hamburger && navMenu) {
+                    hamburger.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        hamburger.classList.toggle("active");
+                        navMenu.classList.toggle("active");
+
+                        // Prevent body scroll when menu is open
+                        if (navMenu.classList.contains("active")) {
+                            document.body.style.overflow = "hidden";
+                        } else {
+                            document.body.style.overflow = "";
+                        }
+                    });
+
+                    // Close mobile menu when clicking on a nav link
+                    document.querySelectorAll(".nav-link").forEach((link) =>
+                        link.addEventListener("click", () => {
+                            hamburger.classList.remove("active");
+                            navMenu.classList.remove("active");
+                            document.body.style.overflow = "";
+                        }),
+                    );
+
+                    // Close menu when clicking outside
+                    document.addEventListener("click", function (e) {
+                        if (
+                            !hamburger.contains(e.target) &&
+                            !navMenu.contains(e.target)
+                        ) {
+                            hamburger.classList.remove("active");
+                            navMenu.classList.remove("active");
+                            document.body.style.overflow = "";
+                        }
+                    });
+                }
+            });
+        </script>
+
+        <!-- Scripts -->
+        <script src="scripts/css-loader.js" defer></script>
         <script src="scripts/animations.js" defer></script>
+        <script src="scripts/script.js" defer></script>
+        <script src="scripts/performance.js" defer></script>
+
+        <!-- Service Worker Registration -->
+        <script>
+            // Register service worker for caching and offline support
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((registration) => {
+                            console.log(
+                                "✅ Service Worker registered successfully:",
+                                registration.scope,
+                            );
+
+                            // Check for updates
+                            registration.addEventListener("updatefound", () => {
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener(
+                                    "statechange",
+                                    () => {
+                                        if (
+                                            newWorker.state === "installed" &&
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            console.log(
+                                                "🔄 New version available. Refresh to update.",
+                                            );
+                                            // Could show a toast notification here
+                                        }
+                                    },
+                                );
+                            });
+                        })
+                        .catch((error) => {
+                            console.log(
+                                "❌ Service Worker registration failed:",
+                                error,
+                            );
+                        });
+                });
+            }
+        </script>
 
         <!-- Structured Data for SEO -->
         <script type="application/ld+json">
@@ -100,6 +814,12 @@
 
             <nav class="navbar">
                 <div class="nav-container">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+
                     <ul class="nav-menu">
                         <li class="nav-item">
                             <a href="#home" class="nav-link">Home</a>
@@ -137,12 +857,6 @@
                             <a href="#connect" class="nav-link">Connect</a>
                         </li>
                     </ul>
-
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
                 </div>
             </nav>
 
@@ -167,9 +881,13 @@
                     <div class="hero-image">
                         <img
                             src="extras/pp.png"
-                            alt="Samuel Love"
+                            alt="Samuel Love - Software Engineer & Data Scientist"
                             class="profile-image"
-                            loading="lazy"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                            width="300"
+                            height="300"
                         />
                     </div>
                     <div class="hero-text">
@@ -283,9 +1001,12 @@
                 <!-- Consider different quality images for different sized screens. -->
                 <img
                     src="extras/pp.png"
-                    alt="Samuel Love"
+                    alt="Samuel Love - Profile Photo"
                     class="header-image"
                     loading="lazy"
+                    decoding="async"
+                    width="150"
+                    height="150"
                 />
                 <div class="header-text">
                     <h1>Portfolio</h1>
@@ -1788,11 +2509,11 @@
                                 loading="lazy"
                             />
                             <span
-                                ><strong>Transcriptionist</strong> @ Aorangi
-                                Orthopaedic Centre</span
-                            ><br />
-                            <span>Palmerston North</span><br />
-                            <span>Nov 2021 – May 2024</span>
+                                ><strong>Transcriptionist</strong> <br />
+                                Aorangi Orthopaedic Centre<br />
+                                Palmerston North<br />
+                                Nov 2021 – May 2024</span
+                            >
                         </p>
 
                         <p>
@@ -1803,11 +2524,11 @@
                                 loading="lazy"
                             />
                             <span
-                                ><strong>Store Assistant</strong> @ Wanaka New
-                                World</span
-                            ><br />
-                            <span>Wanaka</span><br />
-                            <span>Summers 2017 – 2020</span>
+                                ><strong>Store Assistant</strong> <br />
+                                Wanaka New World<br />
+                                Wanaka<br />
+                                Summers 2017 – 2020</span
+                            >
                         </p>
 
                         <p>
@@ -1815,11 +2536,11 @@
                                 class="fas fa-puzzle-piece employer-logo-icon"
                             ></i>
                             <span
-                                ><strong>Caregiver</strong> @ Families of
-                                Special Needs Individuals</span
-                            ><br />
-                            <span>Palmerston North</span><br />
-                            <span>Holidays 2016 – 2024</span>
+                                ><strong>Caregiver</strong> <br />
+                                Families of Special Needs Individuals<br />
+                                Palmerston North<br />
+                                Holidays 2016 – 2024</span
+                            >
                         </p>
 
                         <p>
@@ -1830,11 +2551,11 @@
                                 loading="lazy"
                             />
                             <span
-                                ><strong>File Clerk</strong> @ Amesbury
-                                Orthopaedic Centre</span
-                            ><br />
-                            <span>Palmerston North</span><br />
-                            <span>Apr 2016 – Feb 2018</span>
+                                ><strong>File Clerk</strong> <br />
+                                Amesbury Orthopaedic Centre<br />
+                                Palmerston North<br />
+                                Apr 2016 – Feb 2018</span
+                            >
                         </p>
                     </div>
                 </div>
@@ -1993,9 +2714,10 @@
                                 class="employer-logo-cover"
                                 loading="lazy"
                             />
-                            <span><strong>CrossFit</strong></span
-                            ><br />
-                            <span>Individual & team competitions.</span>
+                            <span
+                                ><strong>CrossFit</strong><br />
+                                Individual & Team Competitions</span
+                            >
                         </p>
 
                         <p>
@@ -2005,21 +2727,19 @@
                                 class="employer-logo merge-logo"
                                 loading="lazy"
                             />
-                            <span><strong>Dog Training</strong></span
-                            ><br />
                             <span
-                                >Canine Good Basics Certification.<br />
-                                Foundation Agility Certification.</span
+                                ><strong>Dog Training</strong><br />
+                                Canine Good Basics Certification<br />
+                                Foundation Agility Certification</span
                             >
                         </p>
 
                         <p>
                             <i class="fas fa-seedling employer-logo-icon"></i>
-                            <span><strong>Gardening</strong></span
-                            ><br />
                             <span
-                                >Growing fruit & vegetables using permaculture
-                                approach.</span
+                                ><strong>Gardening</strong><br />
+                                Grow Fruit & Veges Using Permaculture
+                                Approach</span
                             >
                         </p>
 
@@ -2030,10 +2750,12 @@
                                 class="employer-logo"
                                 loading="lazy"
                             />
-                            <span><strong>Singing</strong></span
-                            ><br />
-                            <span>Voices Co 2023-Present.</span><br />
-                            <span>6 concerts.</span>
+                            <span
+                                ><strong>Singing</strong><br />
+                                Voices Co<br />
+                                2023 - Present<br />
+                                7 Concerts</span
+                            >
                         </p>
 
                         <p>
@@ -2043,27 +2765,35 @@
                                 class="employer-logo"
                                 loading="lazy"
                             />
-                            <span><strong>Swimming</strong></span
-                            ><br />
-                            <span>Daily workouts.</span>
+                            <span
+                                ><strong>Swimming</strong><br />
+                                Competitive 2008-2012<br />
+                                Daily workouts</span
+                            >
                         </p>
 
                         <p>
                             <i class="fas fa-tools employer-logo-icon"></i>
-                            <span><strong>Workshops</strong></span
-                            ><br />
                             <span
-                                >Bonsai, Cheese, Hydroponics, Kombucha,
-                                Painting, Permaculture, Pottery, Seed Raising, &
-                                Sourdough.</span
+                                ><strong>Workshops</strong><br />
+                                Bonsai<br />
+                                Cheese<br />
+                                Hydroponics<br />
+                                Kombucha<br />
+                                Painting<br />
+                                Permaculture<br />
+                                Pottery<br />
+                                Seed Raising<br />
+                                Sourdough</span
                             >
                         </p>
 
                         <p>
                             <i class="fas fa-om employer-logo-icon"></i>
-                            <span><strong>Yoga</strong></span
-                            ><br />
-                            <span>Daily workouts.</span>
+                            <span
+                                ><strong>Yoga</strong><br />
+                                Daily workouts</span
+                            >
                         </p>
                     </div>
                 </div>
@@ -2125,7 +2855,5 @@
                 </div>
             </section>
         </main>
-
-        <script src="scripts/script.js"></script>
     </body>
 </html>

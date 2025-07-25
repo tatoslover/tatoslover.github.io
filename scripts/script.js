@@ -4,18 +4,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const navMenu = document.querySelector(".nav-menu");
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener("click", function () {
+    hamburger.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      console.log("Hamburger clicked"); // Debug log
       hamburger.classList.toggle("active");
       navMenu.classList.toggle("active");
+
+      // Prevent body scroll when menu is open
+      if (navMenu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
     });
 
     // Close mobile menu when clicking on a nav link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", () => {
+    document.querySelectorAll(".nav-link").forEach((link) =>
+      link.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
+        document.body.style.overflow = "";
       }),
     );
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  } else {
+    console.error("Hamburger or nav menu not found");
   }
 
   // Collapsible project sections
@@ -103,20 +126,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Header color change on scroll
+  // Header color change on scroll with mobile hide/show
   function handleHeaderScroll() {
     const header = document.querySelector(".main-header");
     const headerTop = document.querySelector(".header-top");
     const navbar = document.querySelector(".navbar");
-    const themeToggle = document.querySelector(".theme-toggle-section");
+    const themeToggleSection = document.querySelector(".theme-toggle-section");
     const body = document.body;
     const scrollPosition = window.scrollY;
     const threshold = 50; // Scroll threshold in pixels
+    const isMobile = window.innerWidth <= 768;
 
-    // Define colors
-    const lightThemeScrolled = "rgba(70, 130, 180, 0.95)"; // Blue
-    const darkThemeScrolled = "rgba(255, 140, 0, 0.95)"; // Orange
+    // Define colors using CSS variables for complementary scheme
+    const lightThemeScrolled = "var(--nav-bg-scrolled)"; // Blue accent for light theme
+    const darkThemeScrolled = "var(--nav-bg-scrolled)"; // Brown accent for dark theme
     const originalColor = "var(--nav-bg)";
+
+    // Mobile header hide/show logic
+    if (isMobile) {
+      const currentScrollPosition = window.scrollY;
+      const scrollingDown =
+        currentScrollPosition > (window.lastScrollPosition || 0);
+
+      if (scrollingDown && currentScrollPosition > 100) {
+        // Hide header when scrolling down
+        header.style.transform = "translateY(-100%)";
+        header.style.transition = "transform 0.3s ease-in-out";
+      } else {
+        // Show header when scrolling up
+        header.style.transform = "translateY(0)";
+        header.style.transition = "transform 0.3s ease-in-out";
+      }
+
+      window.lastScrollPosition = currentScrollPosition;
+    } else {
+      // Reset mobile transform for desktop
+      header.style.transform = "";
+      header.style.transition = "";
+    }
 
     if (scrollPosition > threshold) {
       // Apply scrolled state
@@ -127,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.backgroundColor = scrollColor;
       headerTop.style.backgroundColor = scrollColor;
       navbar.style.backgroundColor = scrollColor;
-      themeToggle.style.backgroundColor = scrollColor;
+      themeToggleSection.style.backgroundColor = scrollColor;
 
       header.classList.add("scrolled");
     } else {
@@ -135,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.backgroundColor = "";
       headerTop.style.backgroundColor = "";
       navbar.style.backgroundColor = "";
-      themeToggle.style.backgroundColor = "";
+      themeToggleSection.style.backgroundColor = "";
 
       header.classList.remove("scrolled");
     }
@@ -148,6 +195,11 @@ document.addEventListener("DOMContentLoaded", function () {
       window.cancelAnimationFrame(headerScrollTimeout);
     }
     headerScrollTimeout = window.requestAnimationFrame(handleHeaderScroll);
+  });
+
+  // Add resize event listener to handle mobile/desktop transitions
+  window.addEventListener("resize", () => {
+    handleHeaderScroll();
   });
 
   // Initial call to set correct state
@@ -185,12 +237,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Theme toggle event listener
-    themeToggle.addEventListener("click", function () {
-      console.log("Theme toggle clicked");
+    themeToggle.addEventListener("click", function (e) {
+      e.preventDefault();
 
       if (body.classList.contains("dark-theme")) {
         // Switch to light mode
-        console.log("Switching to light mode");
         body.classList.remove("dark-theme");
         body.classList.add("light-theme");
         if (icon) {
@@ -200,7 +251,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("theme", "light");
       } else {
         // Switch to dark mode
-        console.log("Switching to dark mode");
         body.classList.remove("light-theme");
         body.classList.add("dark-theme");
         if (icon) {
