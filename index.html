@@ -420,93 +420,30 @@
 
             /* === Mobile Responsive === */
             @media (max-width: 768px) {
-                .nav-menu {
-                    position: fixed;
-                    left: -100%;
-                    top: var(--total-header-height);
+                .hero-content {
                     flex-direction: column;
-                    background-color: var(--nav-bg);
-                    width: 100%;
-                    text-align: center;
-                    transition: 0.3s;
-                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                    backdrop-filter: blur(10px);
-                    height: calc(100vh - var(--total-header-height));
-                    padding: 2rem 0;
                     gap: 1rem;
                 }
 
-                .nav-menu.active {
-                    left: 0;
-                }
-
-                .hamburger {
-                    display: flex !important;
-                    flex-direction: column !important;
-                }
-
-                .hero-content {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 2rem;
-                }
-
                 .hero-text h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.2rem;
                 }
 
                 .hero-subtitle {
-                    font-size: 1.4rem;
+                    font-size: 1.3rem;
                 }
 
                 .profile-image {
-                    width: 250px;
-                    height: 250px;
+                    width: 180px;
+                    height: 180px;
                 }
 
                 .hero-buttons {
-                    justify-content: center;
+                    gap: 1rem;
                 }
             }
 
-            /* Hamburger menu styles */
-            .hamburger {
-                display: none;
-                flex-direction: column;
-                cursor: pointer;
-                width: 25px;
-                height: 20px;
-                justify-content: space-between;
-                position: absolute;
-                right: 2rem;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1001;
-                background: none;
-                border: none;
-                padding: 0.5rem;
-            }
-
-            .bar {
-                height: 3px;
-                width: 100%;
-                background-color: var(--nav-text);
-                border-radius: 3px;
-                transition: all 0.3s ease;
-                display: block;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+            /* Mobile optimizations */
 
             /* === Dark Theme Specific Rules === */
             body.dark-theme .hero-section,
@@ -550,102 +487,13 @@
 
             /* Critical Mobile Styles for Immediate Loading */
             @media (max-width: 768px) {
-                .hamburger {
-                    display: flex !important;
-                    flex-direction: column;
-                    cursor: pointer;
-                    z-index: 1001;
-                    padding: 0.8rem;
-                    border-radius: 6px;
-                    transition: background-color 0.2s ease;
-                    background-color: rgba(255, 255, 255, 0.1);
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    width: 60px;
-                    height: 50px;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0 auto;
-                }
-
-                .hamburger:active {
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
-
-                .hamburger:hover {
-                    background-color: rgba(255, 255, 255, 0.15);
-                }
-
-                .bar {
-                    width: 25px;
-                    height: 3px;
-                    background-color: #ffffff;
-                    margin: 3px 0;
-                    transition: 0.3s;
-                    border-radius: 2px;
-                    display: block;
-                }
-
-                .hamburger.active .bar:nth-child(1) {
-                    transform: translateY(9px) rotate(45deg);
-                }
-
-                .hamburger.active .bar:nth-child(2) {
-                    opacity: 0;
-                }
-
-                .hamburger.active .bar:nth-child(3) {
-                    transform: translateY(-9px) rotate(-45deg);
-                }
-
                 .main-header {
                     transition: transform 0.3s ease-in-out;
                     will-change: transform;
                 }
 
-                .nav-container {
-                    padding: 1rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                }
-
-                .nav-menu {
-                    position: fixed;
-                    left: -100%;
-                    top: var(--total-header-height);
-                    flex-direction: column;
-                    background-color: var(--nav-bg);
-                    width: 100%;
-                    text-align: center;
-                    transition: left 0.3s ease-in-out;
-                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
-                    padding: 2rem 0;
-                    gap: 0;
-                    z-index: 999;
-                    backdrop-filter: blur(10px);
-                }
-
-                .nav-menu.active {
-                    left: 0;
-                }
-
-                .nav-menu li {
-                    margin: 1rem 0;
-                }
-
-                .nav-link {
-                    font-size: 1.1rem;
-                    padding: 0.5rem 1rem;
-                    display: block;
-                }
-
                 .portfolio-title {
                     font-size: 1.5rem;
-                }
-
-                .navbar {
-                    padding: 0.5rem 0;
                 }
             }
         </style>
@@ -687,48 +535,17 @@
             />
         </noscript>
 
-        <!-- Inline Hamburger Script -->
+        <!-- Mobile Navigation Support Script -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const hamburger = document.querySelector(".hamburger");
                 const navMenu = document.querySelector(".nav-menu");
 
-                if (hamburger && navMenu) {
-                    hamburger.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        hamburger.classList.toggle("active");
-                        navMenu.classList.toggle("active");
-
-                        // Prevent body scroll when menu is open
-                        if (navMenu.classList.contains("active")) {
-                            document.body.style.overflow = "hidden";
-                        } else {
-                            document.body.style.overflow = "";
-                        }
-                    });
-
-                    // Close mobile menu when clicking on a nav link
+                if (navMenu) {
                     document.querySelectorAll(".nav-link").forEach((link) =>
                         link.addEventListener("click", () => {
-                            hamburger.classList.remove("active");
-                            navMenu.classList.remove("active");
-                            document.body.style.overflow = "";
+                            // Handle desktop navigation clicks
                         }),
                     );
-
-                    // Close menu when clicking outside
-                    document.addEventListener("click", function (e) {
-                        if (
-                            !hamburger.contains(e.target) &&
-                            !navMenu.contains(e.target)
-                        ) {
-                            hamburger.classList.remove("active");
-                            navMenu.classList.remove("active");
-                            document.body.style.overflow = "";
-                        }
-                    });
                 }
             });
         </script>
@@ -828,12 +645,6 @@
 
             <nav class="navbar">
                 <div class="nav-container">
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-
                     <ul class="nav-menu">
                         <li class="nav-item">
                             <a href="#home" class="nav-link">Home</a>

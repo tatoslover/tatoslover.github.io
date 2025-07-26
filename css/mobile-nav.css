@@ -4,8 +4,12 @@
 }
 
 @media (max-width: 768px) {
-    /* Hide the hamburger menu on mobile */
-    .hamburger, .nav-menu {
+    /* Hide the header navigation elements on mobile */
+    .hamburger,
+    .nav-menu,
+    .navbar,
+    .theme-toggle-section,
+    .nav-container {
         display: none !important;
     }
 
@@ -63,6 +67,18 @@
     /* Add padding to the bottom of the content to prevent overlap with the navbar */
     body {
         padding-bottom: 60px; /* Adjust based on your navbar height */
+    }
+
+    /* Header modifications for mobile */
+    .main-header {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    .header-top {
+        width: 100%;
+        text-align: center;
     }
 
     /* Mobile menu drawer for secondary navigation items */
@@ -142,6 +158,12 @@
     body.dark-theme .mobile-theme-toggle,
     body.dark-theme .drawer-close {
         color: var(--text-color-dark);
+    }
+
+    /* Additional spacing for cleaner mobile header */
+    .main-header .portfolio-title {
+        margin: 0.5rem 0;
+        font-size: 1.5rem;
     }
 
     body.dark-theme .mobile-nav {
