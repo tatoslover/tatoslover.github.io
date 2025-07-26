@@ -217,7 +217,9 @@
             .main-header {
                 position: fixed;
                 top: 0;
+                left: 0;
                 width: 100%;
+                z-index: 1000;
                 background-color: var(--nav-bg);
                 z-index: 1000;
                 border: none;
@@ -513,7 +515,9 @@
                 .main-header {
                     transition: transform 0.3s ease-in-out;
                     will-change: transform;
-                    position: relative;
+                    position: relative !important; /* Force relative positioning on mobile */
+                    box-shadow: none;
+                    top: 0;
                 }
 
                 .portfolio-title {
@@ -566,17 +570,24 @@
                 const header = document.querySelector(".main-header");
                 let lastScrollTop = 0;
 
-                // Handle scroll for desktop header visibility
+                // Handle scroll for desktop header visibility and style
                 function handleHeaderScroll() {
                     if (window.innerWidth >= 769) {
                         const currentScrollTop =
                             window.pageYOffset ||
                             document.documentElement.scrollTop;
 
+                        // Add scrolled class for styling when we scroll down
+                        if (currentScrollTop > 50) {
+                            header.classList.add("scrolled");
+                        } else {
+                            header.classList.remove("scrolled");
+                        }
+
                         // Hide header when scrolling down, show when scrolling up
                         if (
                             currentScrollTop > lastScrollTop &&
-                            currentScrollTop > 100
+                            currentScrollTop > 150
                         ) {
                             // Scrolling down & past the threshold
                             header.style.transform = "translateY(-100%)";
@@ -589,7 +600,29 @@
                     }
                 }
 
+                // Handle window resize events to ensure proper header behavior
+                function handleResize() {
+                    // Reset header position when switching between mobile and desktop
+                    if (window.innerWidth >= 769) {
+                        header.style.position = "fixed";
+                        header.style.transform = "translateY(0)";
+                        document.body.style.paddingTop =
+                            "var(--total-header-height)";
+                    } else {
+                        header.style.position = "relative";
+                        header.style.transform = "none";
+                        document.body.style.paddingTop = "0";
+                    }
+                    // Recalculate header state
+                    handleHeaderScroll();
+                }
+
+                // Initial call to set correct state
+                handleHeaderScroll();
+                handleResize();
+
                 window.addEventListener("scroll", handleHeaderScroll);
+                window.addEventListener("resize", handleResize);
 
                 if (navMenu) {
                     document.querySelectorAll(".nav-link").forEach((link) =>
