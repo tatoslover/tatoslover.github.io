@@ -163,34 +163,7 @@
     width: 100%;
 }
 
-/* Hamburger Animation */
-.hamburger {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-    transform-origin: center;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
+/* Mobile Menu Animations */
 
 /* Card Hover Animations */
 .card {
