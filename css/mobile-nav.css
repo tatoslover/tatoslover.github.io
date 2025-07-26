@@ -3,6 +3,15 @@
     display: none;
 }
 
+/* Prevent horizontal scrolling on all devices */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 100vw;
+}
+
 @media (max-width: 768px) {
     /* Hide the header navigation elements on mobile */
     .hamburger,
@@ -26,6 +35,7 @@
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 100vw;
     }
 
     .mobile-nav-items {
@@ -67,6 +77,63 @@
     /* Add padding to the bottom of the content to prevent overlap with the navbar */
     body {
         padding-bottom: 60px; /* Adjust based on your navbar height */
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    /* Adjust container padding for mobile */
+    .container,
+    section,
+    .section-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Ensure all content stays within viewport width */
+    img,
+    video,
+    iframe,
+    canvas,
+    svg,
+    table,
+    div,
+    section,
+    article,
+    aside,
+    header,
+    footer,
+    main,
+    .project-card,
+    .card-content {
+        max-width: 100% !important;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    /* Fix for flex containers that might cause overflow */
+    .hero-content,
+    .project-card,
+    .skills-container,
+    .container,
+    .projects-grid,
+    .card-grid,
+    .project-section,
+    .section-content,
+    .hero-section {
+        max-width: 100% !important;
+        flex-wrap: wrap;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     /* Header modifications for mobile */
@@ -93,13 +160,82 @@
         transition: transform 0.3s ease-in-out;
         max-height: 70vh;
         overflow-y: auto;
+        overflow-x: hidden;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        max-width: 100vw;
+        box-sizing: border-box;
     }
 
     .mobile-menu-drawer.active {
         transform: translateY(0);
+    }
+
+    /* Project cards and sections on mobile */
+    .project-card,
+    .card {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+        padding: 0.75rem !important;
+        box-sizing: border-box;
+        overflow: hidden;
+        max-width: calc(100vw - 2rem) !important;
+    }
+
+    .card-image,
+    .card-content,
+    .card-header,
+    .card-body,
+    .card-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .projects-section,
+    .skills-section,
+    .coursework-section,
+    .about-section,
+    .qualifications-section,
+    .certifications-section,
+    .contact-section,
+    .employment-section,
+    .interests-section,
+    .gallery-section,
+    .hero-section {
+        padding: 2rem 0.5rem !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    /* Fix for tables that cause horizontal scroll */
+    table {
+        display: block;
+        width: 100% !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Pre-formatted content and code blocks */
+    pre,
+    code {
+        white-space: pre-wrap;
+        word-break: break-word;
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 0.9rem;
+    }
+
+    /* Fix for buttons and links */
+    .btn,
+    .nav-link,
+    a {
+        max-width: 100%;
+        white-space: normal;
+        word-wrap: break-word;
     }
 
     .drawer-nav-list {
@@ -169,6 +305,33 @@
     body.dark-theme .mobile-nav {
         background-color: var(--nav-bg-dark);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
+        max-width: 100vw;
+    }
+
+    /* Additional fixes for specific sections */
+    .profile-image {
+        max-width: 200px !important;
+        max-height: 200px !important;
+    }
+
+    /* Fix for hero section buttons */
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Additional container fixes */
+    .container {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding: 0 1rem !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
 
     body.dark-theme .mobile-menu-drawer {

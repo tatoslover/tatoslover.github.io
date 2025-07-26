@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
         <title>Samuel Love Portfolio</title>
         <meta
             name="description"
@@ -65,6 +68,18 @@
 
         <!-- Critical CSS inlined for fast initial render -->
         <style>
+            /* Global fix for horizontal overflow */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                max-width: 100%;
+            }
+
+            html {
+                overflow-x: hidden;
+                width: 100%;
+            }
             /* Critical CSS - Above-the-fold styles for fast initial render */
 
             /* === CSS Variables === */
@@ -391,7 +406,10 @@
             .hero-buttons {
                 display: flex;
                 gap: 1rem;
+                margin-top: 1.5rem;
                 flex-wrap: wrap;
+                justify-content: center;
+                max-width: 100%;
             }
 
             .btn {
@@ -423,6 +441,11 @@
                 .hero-content {
                     flex-direction: column;
                     gap: 1rem;
+                    padding: 1rem;
+                    min-height: auto;
+                    width: 100%;
+                    overflow-x: hidden;
+                    margin: 0;
                 }
 
                 .hero-text h1 {
