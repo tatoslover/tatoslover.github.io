@@ -1,0 +1,161 @@
+/* Mobile Bottom Navigation Bar */
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Hide the hamburger menu on mobile */
+    .hamburger, .nav-menu {
+        display: none !important;
+    }
+
+    /* Show mobile bottom navigation */
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-items {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .mobile-nav-item {
+        flex: 1;
+        text-align: center;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 0;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.7rem;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:focus,
+    .mobile-nav-link.active {
+        color: var(--accent-color);
+    }
+
+    .mobile-nav-icon {
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+    }
+
+    /* Add padding to the bottom of the content to prevent overlap with the navbar */
+    body {
+        padding-bottom: 60px; /* Adjust based on your navbar height */
+    }
+
+    /* Mobile menu drawer for secondary navigation items */
+    .mobile-menu-drawer {
+        position: fixed;
+        bottom: 60px; /* Height of the bottom navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        z-index: 999;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+        max-height: 70vh;
+        overflow-y: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .mobile-menu-drawer.active {
+        transform: translateY(0);
+    }
+
+    .drawer-nav-list {
+        list-style: none;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .drawer-nav-item {
+        margin-bottom: 1rem;
+    }
+
+    .drawer-nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+    }
+
+    .drawer-nav-link:hover,
+    .drawer-nav-link:focus,
+    .drawer-nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--accent-color);
+    }
+
+    /* Theme toggle in mobile nav */
+    .mobile-theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    /* Close drawer button */
+    .drawer-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: none;
+        color: var(--text-color);
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    /* Ensure the theme toggle button is visible in dark mode */
+    body.dark-theme .mobile-theme-toggle,
+    body.dark-theme .drawer-close {
+        color: var(--text-color-dark);
+    }
+
+    body.dark-theme .mobile-nav {
+        background-color: var(--nav-bg-dark);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-theme .mobile-menu-drawer {
+        background-color: var(--nav-bg-dark);
+    }
+
+    body.dark-theme .drawer-nav-link:hover,
+    body.dark-theme .drawer-nav-link:focus,
+    body.dark-theme .drawer-nav-link.active {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}

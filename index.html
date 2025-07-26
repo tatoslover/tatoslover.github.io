@@ -652,7 +652,15 @@
 
         <!-- Load critical CSS first, then defer non-critical -->
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/mobile.css" />
+        <link rel="stylesheet" href="css/animations.css" />
+        <link rel="stylesheet" href="css/mobile-nav.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link
             rel="preload"
             href="css/animations.css"
@@ -3024,5 +3032,208 @@
                 </div>
             </section>
         </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-items">
+                <li class="mobile-nav-item">
+                    <a href="#home" class="mobile-nav-link">
+                        <i class="fas fa-home mobile-nav-icon"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#skills" class="mobile-nav-link">
+                        <i class="fas fa-code mobile-nav-icon"></i>
+                        <span>Skills</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#projects" class="mobile-nav-link">
+                        <i class="fas fa-project-diagram mobile-nav-icon"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" id="more-nav-toggle" class="mobile-nav-link">
+                        <i class="fas fa-ellipsis-h mobile-nav-icon"></i>
+                        <span>More</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <button
+                        id="mobile-theme-toggle"
+                        class="mobile-nav-link mobile-theme-toggle"
+                    >
+                        <i
+                            class="fas fa-moon mobile-nav-icon"
+                            id="mobile-theme-icon"
+                        ></i>
+                        <span>Theme</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu Drawer for Secondary Navigation -->
+        <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+            <button class="drawer-close" id="drawer-close">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="drawer-nav-list">
+                <li class="drawer-nav-item">
+                    <a href="#coursework" class="drawer-nav-link">
+                        <i class="fas fa-graduation-cap"></i> Coursework
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#qualifications" class="drawer-nav-link">
+                        <i class="fas fa-award"></i> Qualifications
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#employment" class="drawer-nav-link">
+                        <i class="fas fa-briefcase"></i> Employment
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#certifications" class="drawer-nav-link">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#interests" class="drawer-nav-link">
+                        <i class="fas fa-heart"></i> Interests
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#gallery" class="drawer-nav-link">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                </li>
+                <li class="drawer-nav-item">
+                    <a href="#connect" class="drawer-nav-link">
+                        <i class="fas fa-envelope"></i> Connect
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Mobile Navigation
+                const moreNavToggle =
+                    document.getElementById("more-nav-toggle");
+                const mobileMenuDrawer =
+                    document.getElementById("mobile-menu-drawer");
+                const drawerClose = document.getElementById("drawer-close");
+                const mobileThemeToggle = document.getElementById(
+                    "mobile-theme-toggle",
+                );
+                const mobileThemeIcon =
+                    document.getElementById("mobile-theme-icon");
+
+                // Toggle mobile drawer
+                if (moreNavToggle && mobileMenuDrawer) {
+                    moreNavToggle.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        mobileMenuDrawer.classList.toggle("active");
+                    });
+                }
+
+                // Close drawer
+                if (drawerClose && mobileMenuDrawer) {
+                    drawerClose.addEventListener("click", function () {
+                        mobileMenuDrawer.classList.remove("active");
+                    });
+                }
+
+                // Handle mobile theme toggle
+                if (mobileThemeToggle && mobileThemeIcon) {
+                    mobileThemeToggle.addEventListener("click", function () {
+                        const htmlElement = document.documentElement;
+                        const body = document.body;
+
+                        htmlElement.classList.add("manual-theme");
+
+                        if (body.classList.contains("dark-theme")) {
+                            body.classList.remove("dark-theme");
+                            body.classList.add("light-theme");
+                            mobileThemeIcon.classList.remove("fa-sun");
+                            mobileThemeIcon.classList.add("fa-moon");
+                            localStorage.setItem("theme", "light");
+                        } else {
+                            body.classList.remove("light-theme");
+                            body.classList.add("dark-theme");
+                            mobileThemeIcon.classList.remove("fa-moon");
+                            mobileThemeIcon.classList.add("fa-sun");
+                            localStorage.setItem("theme", "dark");
+                        }
+                    });
+
+                    // Set initial icon based on current theme
+                    if (document.body.classList.contains("dark-theme")) {
+                        mobileThemeIcon.classList.remove("fa-moon");
+                        mobileThemeIcon.classList.add("fa-sun");
+                    }
+                }
+
+                // Set active state for current section in mobile nav
+                const sections = document.querySelectorAll("section[id]");
+                const mobileNavLinks =
+                    document.querySelectorAll(".mobile-nav-link");
+                const drawerNavLinks =
+                    document.querySelectorAll(".drawer-nav-link");
+
+                function highlightNavLinks() {
+                    let scrollY = window.pageYOffset;
+
+                    sections.forEach((current) => {
+                        const sectionHeight = current.offsetHeight;
+                        const sectionTop = current.offsetTop - 100;
+                        const sectionId = current.getAttribute("id");
+
+                        if (
+                            scrollY > sectionTop &&
+                            scrollY <= sectionTop + sectionHeight
+                        ) {
+                            // Highlight mobile nav link
+                            mobileNavLinks.forEach((link) => {
+                                if (
+                                    link.getAttribute("href") ===
+                                    `#${sectionId}`
+                                ) {
+                                    link.classList.add("active");
+                                } else {
+                                    link.classList.remove("active");
+                                }
+                            });
+
+                            // Highlight drawer nav link
+                            drawerNavLinks.forEach((link) => {
+                                if (
+                                    link.getAttribute("href") ===
+                                    `#${sectionId}`
+                                ) {
+                                    link.classList.add("active");
+                                } else {
+                                    link.classList.remove("active");
+                                }
+                            });
+                        }
+                    });
+                }
+
+                window.addEventListener("scroll", highlightNavLinks);
+
+                // Close mobile drawer when clicking a link
+                drawerNavLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenuDrawer.classList.remove("active");
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
