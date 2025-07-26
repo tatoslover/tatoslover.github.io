@@ -110,7 +110,7 @@
     .bar {
         width: 25px;
         height: 3px;
-        background-color: #ffffff;
+        background-color: #c0c0c0;
         margin: 3px 0;
         transition: 0.3s;
         border-radius: 2px;
@@ -176,8 +176,21 @@
     .skills-section,
     .projects-section,
     .coursework-section,
-    .contact-section,
+    #gallery,
     #cv {
+        padding: 4rem 1rem;
+    }
+
+    /* Carousel mobile adjustments */
+    #gallery .carousel-container {
+        padding: 1rem 0;
+    }
+
+    #gallery .carousel-wrapper {
+        aspect-ratio: 16/9;
+    }
+
+    .contact-section {
         padding: 4rem 1rem;
     }
 
@@ -374,8 +387,32 @@
     .skills-section,
     .projects-section,
     .coursework-section,
-    .contact-section,
+    #gallery,
     #cv {
+        padding: 3rem 0.5rem;
+    }
+
+    /* Carousel mobile adjustments for small screens */
+    #gallery .carousel-container {
+        padding: 0.5rem 0;
+    }
+
+    #gallery .carousel-wrapper {
+        aspect-ratio: 4/3;
+    }
+
+    #gallery .slide-caption {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    #gallery .carousel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .contact-section {
         padding: 3rem 0.5rem;
     }
 
@@ -549,7 +586,16 @@
     .hamburger,
     .particles,
     .btn,
-    .contact-section {
+    .contact-section,
+    #gallery,
+    #interests {
+        display: none !important;
+    }
+
+    /* Ensure carousel is not printed */
+    .carousel-container,
+    .carousel-wrapper,
+    .carousel-slides {
         display: none !important;
     }
 
@@ -561,7 +607,7 @@
     .projects-section,
     .coursework-section,
     #cv {
-        background: white !important;
+        background: silver !important;
         color: black !important;
     }
 
