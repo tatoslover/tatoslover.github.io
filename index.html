@@ -513,6 +513,7 @@
                 .main-header {
                     transition: transform 0.3s ease-in-out;
                     will-change: transform;
+                    position: relative;
                 }
 
                 .portfolio-title {
@@ -558,10 +559,37 @@
             />
         </noscript>
 
-        <!-- Mobile Navigation Support Script -->
+        <!-- Navigation and Header Scroll Support Script -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const navMenu = document.querySelector(".nav-menu");
+                const header = document.querySelector(".main-header");
+                let lastScrollTop = 0;
+
+                // Handle scroll for desktop header visibility
+                function handleHeaderScroll() {
+                    if (window.innerWidth >= 769) {
+                        const currentScrollTop =
+                            window.pageYOffset ||
+                            document.documentElement.scrollTop;
+
+                        // Hide header when scrolling down, show when scrolling up
+                        if (
+                            currentScrollTop > lastScrollTop &&
+                            currentScrollTop > 100
+                        ) {
+                            // Scrolling down & past the threshold
+                            header.style.transform = "translateY(-100%)";
+                        } else {
+                            // Scrolling up or at top
+                            header.style.transform = "translateY(0)";
+                        }
+
+                        lastScrollTop = currentScrollTop;
+                    }
+                }
+
+                window.addEventListener("scroll", handleHeaderScroll);
 
                 if (navMenu) {
                     document.querySelectorAll(".nav-link").forEach((link) =>
