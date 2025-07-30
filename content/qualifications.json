@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": "academic-degrees",
+      "title": "Academic Degrees",
+      "qualifications": [
+        {
+          "title": "Master of Applied Data Science",
+          "institution": "University of Canterbury",
+          "date": "2021–2024",
+          "logo": "assets/logos/UC.svg",
+          "description": "Postgraduate degree specializing in advanced data science methodologies, statistical analysis, and machine learning applications across various domains.",
+          "documentLink": "assets/docs/UC_MADS.pdf"
+        },
+        {
+          "title": "BSc in Actuarial Science and Economics",
+          "institution": "Victoria University",
+          "date": "2017–2020",
+          "logo": "assets/logos/VUW.svg",
+          "description": "Undergraduate degree combining rigorous mathematical modeling with economic theory, focusing on risk assessment, statistical methods, and financial analysis.",
+          "documentLink": "assets/docs/VUW_BSc.pdf"
+        },
+        {
+          "title": "Software Engineering Certificate",
+          "institution": "Institute of Data & University of Canterbury",
+          "date": "April 2025 – July 2025",
+          "logo": "assets/logos/IOD.svg",
+          "description": "Intensive software engineering program covering modern development practices, full-stack web development, and industry-standard methodologies.",
+          "documentLink": "#",
+          "documentStatus": "Coming Soon"
+        }
+      ]
+    },
+    {
+      "id": "technical-certifications",
+      "title": "Technical Certifications",
+      "qualifications": [
+        {
+          "title": "DataCamp Certifications",
+          "institution": "DataCamp",
+          "date": "2024",
+          "logo": "assets/logos/Datacamp.jpg",
+          "description": "Series of industry-recognized data science certifications validating skills in data literacy, AI fundamentals, SQL, Python, and data engineering.",
+          "documentLink": "https://www.datacamp.com/portfolio/samuelwelove"
+        },
+        {
+          "title": "Digital Passport",
+          "institution": "Digital Skills Organization",
+          "date": "2024",
+          "logo": "assets/logos/DigitalPassport.jpeg",
+          "description": "Comprehensive digital skills certification covering essential workplace technology competencies, job-readiness, and artificial intelligence applications.",
+          "documentLink": "assets/docs/DigitalPassport.pdf"
+        }
+      ]
+    },
+    {
+      "id": "specialized-training",
+      "title": "Specialized Training",
+      "qualifications": [
+        {
+          "title": "New Zealand Sign Language",
+          "institution": "Merge NZ",
+          "date": "2022-2023",
+          "logo": "assets/logos/Merge.jpg",
+          "description": "Progressive NZSL training through multiple beginner levels, developing conversational signing abilities and cultural understanding of the Deaf community.",
+          "documentLink": "assets/docs/NZSL.pdf"
+        },
+        {
+          "title": "Te Ara Atawhai Volunteering Course",
+          "institution": "Department of Conservation",
+          "date": "February-April 2025",
+          "logo": "assets/logos/DOC.svg",
+          "description": "Specialized conservation volunteering training providing skills for environmental stewardship and sustainable practices in New Zealand's natural heritage areas.",
+          "documentLink": "assets/docs/TAA.pdf"
+        },
+        {
+          "title": "Workplace First Aider",
+          "institution": "Practical Training Solutions",
+          "date": "2025",
+          "logo": "assets/logos/PTS.png",
+          "description": "Comprehensive workplace first aid certification covering emergency response procedures, basic life support, and injury management in professional settings.",
+          "documentLink": "assets/docs/PTS-FA.pdf"
+        },
+        {
+          "title": "Poupou Huia Te Reo 1",
+          "institution": "Te Wānanga o Raukawa",
+          "date": "2024",
+          "logo": "assets/logos/TWR.jpeg",
+          "description": "Introductory te reo Māori language course focusing on basic vocabulary, pronunciation, and cultural contexts essential for communication in New Zealand.",
+          "documentLink": "assets/docs/Poupou_Huia_Te_Reo_1.pdf"
+        }
+      ]
+    }
+  ]
+}

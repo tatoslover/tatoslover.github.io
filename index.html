@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <meta
+            name="description"
+            content="My personal portfolio showcasing my skills, projects, and interests"
+        />
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <span class="toggle-icon light-icon">☀️</span>
+                    <span class="toggle-icon dark-icon">🌙</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#coursework">Coursework</a></li>
+                        <li><a href="#qualifications">Qualifications</a></li>
+                        <li><a href="#employment">Employment</a></li>
+                        <li><a href="#interests">Interests</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#connect">Connect</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Home Section -->
+            <section id="home">
+                <h1>Welcome to My Portfolio</h1>
+                <div class="typewriter-container">
+                    <span id="typewriter" class="typewriter-text"></span>
+                </div>
+                <div class="profile-image">
+                    <img src="assets/logos/profile.png" alt="Profile image" />
+                </div>
+                <p>
+                    I hold a Master of Applied Data Science from the University
+                    of Canterbury and have recently completed a Software
+                    Engineering Certification to broaden my technical skillset.
+                    My strengths lie in applying data-driven thinking, AI tools,
+                    and statistical analysis to solve real-world problems. With
+                    experience in healthcare data workflows and strong
+                    communication skills developed through diverse work and
+                    sporadic pursuits, I bring curiosity, discipline, and
+                    adaptability to every challenge.
+                </p>
+                <div class="cv-button-container">
+                    <a
+                        href="assets/docs/Samuel_Love_CV.pdf"
+                        target="_blank"
+                        class="cv-button"
+                    >
+                        <span class="cv-icon">📄</span> View CV
+                    </a>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="main-section">
+                <h2>Skills</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="skills.json"
+                >
+                    <div class="category-tabs" id="skills-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="skills-content">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="main-section">
+                <h2>Projects</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="projects.json"
+                >
+                    <div class="category-tabs" id="projects-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="projects-content">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coursework Section -->
+            <section id="coursework" class="main-section">
+                <h2>Coursework</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="coursework.json"
+                >
+                    <div class="category-tabs" id="coursework-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="coursework-content">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Qualifications Section -->
+            <section id="qualifications" class="main-section">
+                <h2>Qualifications</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="qualifications.json"
+                >
+                    <div class="category-tabs" id="qualifications-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="qualifications-content">
+                        <!-- Content will be dynamically generated -->
+                        <p class="info-text">
+                            Tip: Click on logos to view certificates
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Employment Section -->
+            <section id="employment" class="main-section">
+                <h2>Employment</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="employment.json"
+                >
+                    <div class="category-tabs" id="employment-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="employment-content">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests Section -->
+            <section id="interests" class="main-section">
+                <h2>Interests</h2>
+                <div
+                    class="expandable-sections"
+                    data-content-file="interests.json"
+                >
+                    <div class="category-tabs" id="interests-tabs">
+                        <!-- Tabs will be dynamically generated -->
+                    </div>
+                    <div class="content-container" id="interests-content">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" data-carousel-type="auto">
+                <h2>Gallery</h2>
+                <div class="gallery-container">
+                    <!-- Carousel will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- Connect Section -->
+            <section id="connect">
+                <h2>Connect With Me</h2>
+                <div class="connect-container">
+                    <a
+                        href="mailto:samuelwelove@icloud.com"
+                        class="connect-card"
+                    >
+                        <div class="connect-icon">
+                            <img
+                                src="assets/icons/email.svg"
+                                alt="Email icon"
+                            />
+                        </div>
+                        <h3>Email</h3>
+                        <p>samuelwelove@icloud.com</p>
+                    </a>
+
+                    <a href="tel:+64273533452" class="connect-card">
+                        <div class="connect-icon">
+                            <img
+                                src="assets/icons/phone.svg"
+                                alt="Phone icon"
+                            />
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+64 27 353 3452</p>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/samuel-love-profile/"
+                        target="_blank"
+                        class="connect-card"
+                    >
+                        <div class="connect-icon">
+                            <img
+                                src="assets/icons/linkedin.svg"
+                                alt="LinkedIn icon"
+                            />
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <span class="card-link-text">Connect with me</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/tatoslover"
+                        target="_blank"
+                        class="connect-card"
+                    >
+                        <div class="connect-icon">
+                            <img
+                                src="assets/icons/github.svg"
+                                alt="GitHub icon"
+                            />
+                        </div>
+                        <h3>GitHub</h3>
+                        <span class="card-link-text">View my code</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Designed and Coded by Samuel Love</p>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script src="js/content-loader.js"></script>
+        <script src="js/carousel.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Typewriter effect
+                const typewriterElement = document.getElementById("typewriter");
+                const phrases = [
+                    "Software Engineer",
+                    "Data Scientist",
+                    "Lifelong Learner",
+                ];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let isWaiting = false;
+
+                function typeEffect() {
+                    const currentPhrase = phrases[phraseIndex];
+
+                    // Set typing speed based on current action
+                    let typingSpeed = 100;
+                    if (isWaiting) {
+                        typingSpeed = 1000; // Pause at complete phrase
+                    } else if (isDeleting) {
+                        typingSpeed = 50; // Delete faster than typing
+                    }
+
+                    // Add or remove characters
+                    if (!isWaiting) {
+                        if (!isDeleting) {
+                            // Typing forward
+                            typewriterElement.textContent =
+                                currentPhrase.substring(0, charIndex + 1);
+                            charIndex++;
+
+                            // If completed typing the current phrase
+                            if (charIndex === currentPhrase.length) {
+                                isWaiting = true;
+                            }
+                        } else {
+                            // Deleting
+                            typewriterElement.textContent =
+                                currentPhrase.substring(0, charIndex);
+                            charIndex--;
+
+                            // If completed deleting
+                            if (charIndex === 0) {
+                                isDeleting = false;
+                                isWaiting = false;
+                                phraseIndex =
+                                    (phraseIndex + 1) % phrases.length;
+                            }
+                        }
+                    } else {
+                        // Start deleting after waiting
+                        isWaiting = false;
+                        isDeleting = true;
+                    }
+
+                    setTimeout(typeEffect, typingSpeed);
+                }
+
+                // Start the typewriter effect
+                typeEffect();
+            });
+        </script>
+    </body>
+</html>

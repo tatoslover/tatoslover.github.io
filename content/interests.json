@@ -1,0 +1,57 @@
+{
+  "categories": [
+    {
+      "id": "physical-activities",
+      "title": "Physical Activities",
+      "interests": [
+        {
+          "title": "CrossFit",
+          "description": "Individual & Team Competitions",
+          "logo": "assets/logos/Crossfit.jpg"
+        },
+        {
+          "title": "Swimming",
+          "description": "Competitive 2008-2012, daily workouts",
+          "logo": "assets/logos/Swimming.png"
+        },
+        {
+          "title": "Yoga",
+          "description": "Daily workouts",
+          "emoji": "🧘‍♀️"
+        }
+      ]
+    },
+    {
+      "id": "creative-pursuits",
+      "title": "Creative Pursuits",
+      "interests": [
+        {
+          "title": "Singing",
+          "description": "Voices Co (2023 - Present), 7 Concerts",
+          "logo": "assets/logos/Singing.png"
+        },
+        {
+          "title": "Gardening",
+          "description": "Grow Fruit & Veges Using Permaculture Approach",
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": "learning-workshops",
+      "title": "Workshops & Learning",
+      "interests": [
+        {
+          "title": "Dog Training",
+          "description": "Canine Good Basics Certification, Foundation Agility Certification",
+          "logo": "assets/logos/Dog.png"
+        },
+        {
+          "title": "Workshops",
+          "description": "Bonsai, Cheese, Hydroponics, Kombucha, Painting, Permaculture, Pottery, Seed Raising, Sourdough",
+          "emoji": "🔧"
+        }
+      ]
+    }
+  ]
+}

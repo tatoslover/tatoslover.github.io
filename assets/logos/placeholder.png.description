@@ -1,0 +1,10 @@
+Since you don't have direct image creation tools available, this file serves as a placeholder description.
+
+To create the actual placeholder.png image:
+1. Download a simple placeholder icon (circular with generic icon inside)
+2. Save it as placeholder.png in the test/assets/logos directory
+3. Make sure it's approximately 200x200 pixels with a transparent background
+4. The image should be consistent with the placeholder.svg we created
+
+Alternatively, you can convert the SVG to PNG using an online tool or with a command like:
+`convert placeholder.svg placeholder.png`

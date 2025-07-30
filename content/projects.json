@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "id": "mads-projects",
+      "title": "MADS",
+      "emoji": "🧠",
+      "projects": [
+        {
+          "title": "DATA601: From Bricks to Bucks",
+          "emoji": "🧱",
+          "description": "Exploring Influential Variables in Sales Patterns of LEGO Bricks. This capstone project examined sales patterns of LEGO sets to predict their secondary market prices using machine learning. It compared licensed vs. original sets and analysed trends in quantity, complexity, and price over time. Key steps included time-series analysis, clustering, and predictive modelling using linear regression, elastic net, random forest, and SVM algorithms.",
+          "liveDemo": "https://samsdata601.shinyapps.io/DATA601/",
+          "sourceCode": "",
+          "documents": [
+            {
+              "title": "Brief",
+              "link": "assets/docs/DATA601/Project-Brief.pdf"
+            },
+            {
+              "title": "Report",
+              "link": "assets/docs/DATA601/Project-Report.pdf"
+            },
+            {
+              "title": "Poster",
+              "link": "assets/docs/DATA601/Poster.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iod-projects",
+      "title": "IOD",
+      "emoji": "🔧",
+      "projects": [
+        {
+          "title": "NBA Advanced Stat Attack",
+          "emoji": "🏀",
+          "description": "Interactive NBA Player Statistics Dashboard. A dynamic web application for exploring, filtering, and comparing NBA player statistics with interactive charts and team-themed visuals. Features advanced filtering, real-time search, and head-to-head player comparisons powered by NBA API data (~500 players).",
+          "liveDemo": "https://nbaadvancedstatattack.netlify.app",
+          "sourceCode": "https://github.com/tatoslover/Mini-Project-1"
+        },
+        {
+          "title": "BookTrackerDemo",
+          "emoji": "📚",
+          "description": "Interactive Reading Progress Tracker. A comprehensive reading tracker application for managing your personal library with progress monitoring, book discovery, and personalised statistics. Features Google Books API integration, theme switching, and responsive design built with React 19 and Material-UI.",
+          "liveDemo": "https://booktrackerdemo.netlify.app",
+          "sourceCode": "https://github.com/tatoslover/Mini-Project-2"
+        },
+        {
+          "title": "Barkend",
+          "emoji": "🐕",
+          "description": "Comprehensive Backend Architecture with Dog Breed API. A comprehensive backend-driven application demonstrating advanced server-side architecture, API design, and database management through dog breed exploration. Features serverless functions, MongoDB Atlas integration, and intelligent caching strategies with 90% API call reduction.",
+          "liveDemo": "https://barkend.netlify.app",
+          "sourceCode": "https://github.com/tatoslover/Mini-Project-3"
+        },
+        {
+          "title": "Planeswalker's Primer",
+          "emoji": "🧙",
+          "description": "Comprehensive Magic: The Gathering Learning Platform. A production-ready MTG beginner's guide featuring interactive learning modules, real-time card search with Scryfall API integration, favourites management, and performance monitoring. Built with modern full-stack architecture including 96 passing tests, perfect security score (100/100), and comprehensive documentation. Features 273 mechanics database, 23 game formats, and mobile-responsive design.",
+          "liveDemo": "https://capstone-rho-wheat.vercel.app",
+          "sourceCode": "https://github.com/tatoslover/Capstone"
+        }
+      ]
+    },
+    {
+      "id": "misc-projects",
+      "title": "Misc",
+      "emoji": "🔍",
+      "projects": [
+        {
+          "title": "Automating Transcription",
+          "emoji": "🎙️",
+          "description": "Built a Python workflow to automatically transcribe audio using Whisper and clean text for reports. Streamlined the transcription process for medical documentation.",
+          "liveDemo": "#",
+          "sourceCode": "",
+          "documentStatus": "Coming Soon"
+        },
+        {
+          "title": "Australia Immigration Tool",
+          "emoji": "🇦🇺",
+          "description": "Developed a visual tool to help NZ residents understand migration patterns to Australia. Interactive dashboard analysing demographic trends and migration flows.",
+          "liveDemo": "https://public.tableau.com/app/profile/samuel.love4547/viz/MovingDownUnderDataSchool/Main",
+          "sourceCode": ""
+        }
+      ]
+    }
+  ]
+}

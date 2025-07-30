@@ -1,0 +1,80 @@
+{
+  "categories": [
+    {
+      "id": "transcriptionist",
+      "title": "Transcriptionist",
+      "jobs": [
+        {
+          "title": "Transcriptionist",
+          "company": "Aorangi Orthopaedic Centre",
+          "location": "Palmerston North",
+          "period": "Nov 2021 – May 2024",
+          "logo": "assets/logos/AOC.jpeg",
+          "responsibilities": [
+            "Transcribed medical records and reports with high accuracy and attention to detail",
+            "Managed confidential patient information while maintaining privacy standards",
+            "Coordinated with medical staff to ensure timely documentation processing",
+            "Implemented efficiency improvements to the transcription workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caregiver",
+      "title": "Caregiver",
+      "jobs": [
+        {
+          "title": "Caregiver",
+          "company": "Families of Special Needs Individuals",
+          "location": "Palmerston North",
+          "period": "Holidays 2016 – 2024",
+          "emoji": "🧩",
+          "responsibilities": [
+            "Provided compassionate care and support for individuals with special needs",
+            "Assisted with daily living activities and personal care",
+            "Implemented care plans and tracked progress",
+            "Maintained communication with families regarding care recipient's wellbeing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "store-assistant",
+      "title": "Store Assistant",
+      "jobs": [
+        {
+          "title": "Store Assistant",
+          "company": "Wanaka New World",
+          "location": "Wanaka",
+          "period": "Summers 2017 – 2020",
+          "logo": "assets/logos/NW.png",
+          "responsibilities": [
+            "Provided excellent customer service in a fast-paced retail environment",
+            "Managed inventory and stocking across multiple departments",
+            "Operated checkout systems and handled cash transactions",
+            "Collaborated with team members to maintain store presentation standards"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-clerk",
+      "title": "File Clerk",
+      "jobs": [
+        {
+          "title": "File Clerk",
+          "company": "Amesbury Orthopaedic Centre",
+          "location": "Palmerston North",
+          "period": "Apr 2016 – Feb 2018",
+          "logo": "assets/logos/AOC.jpeg",
+          "responsibilities": [
+            "Organized and maintained medical record filing systems",
+            "Processed patient documentation and ensured proper record keeping",
+            "Assisted administrative staff with office procedures",
+            "Handled confidential patient information with discretion and care"
+          ]
+        }
+      ]
+    }
+  ]
+}

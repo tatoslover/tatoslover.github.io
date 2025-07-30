@@ -1,0 +1,1750 @@
+/* ===== PORTFOLIO STYLESHEET ===== */
+/* Main CSS file with theme support (light/dark mode) */
+
+:root {
+    /* Light mode (default) variables */
+    --bg-primary: #e0ecff;
+    --bg-secondary: #faf3e5;
+    --text-primary: #0a192f;
+    --text-secondary: #112240;
+    --accent: #64ffda;
+    --accent-hover: #4cd3a9;
+    --border: #dddddd;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --header-footer: #4A1D82; /* Deep purple for header and footer */
+}
+
+/* Dark theme when 'data-theme="dark"' is set on html element */
+[data-theme="dark"] {
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --text-primary: #e6f1ff;
+    --text-secondary: #ccd6f6;
+    --accent: #64ffda;
+    --accent-hover: #4cd3a9;
+    --border: #1d304f;
+    --shadow: rgba(10, 25, 47, 0.6);
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --header-footer: #4A1D82; /* Deep purple for header and footer */
+}
+
+/* System preference fallback - only applies if no 'data-theme' is set */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-primary: #0a192f;
+        --bg-secondary: #112240;
+        --text-primary: #e6f1ff;
+        --text-secondary: #ccd6f6;
+        --accent: #64ffda;
+        --accent-hover: #4cd3a9;
+        --border: #1d304f;
+        --shadow: rgba(10, 25, 47, 0.6);
+        --text-black: #000000;
+        --text-white: #ffffff;
+        --header-footer: #4A1D82; /* Deep purple for header and footer */
+    }
+}
+
+/* Theme transition handling */
+html, body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-primary);
+}
+
+/* Apply transitions to specific elements */
+.main-item,
+.content-container,
+.tab-button,
+section,
+.content-link,
+nav a,
+h1, h2, h3, p, li {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* ===== BASE STYLES ===== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: all 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+ul {
+    list-style-type: none;
+}
+
+section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-footer);
+    box-shadow: 0 2px 10px var(--shadow);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: var(--text-white);
+}
+
+#theme-toggle {
+    background: transparent;
+    border: 2px solid var(--accent);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: var(--text-white);
+}
+
+/* Show/hide icons based on current theme */
+.light-icon {
+    display: none;
+}
+
+.dark-icon {
+    display: inline;
+}
+
+[data-theme="dark"] .light-icon {
+    display: inline;
+}
+
+[data-theme="dark"] .dark-icon {
+    display: none;
+}
+
+nav {
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 0.5rem;
+}
+
+nav a {
+    color: var(--text-white);
+    font-weight: 500;
+    padding: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* Add content-loading visibility control */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== HOME SECTION ===== */
+#home {
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.05);
+}
+
+#home p {
+    max-width: 800px;
+    margin: 2rem auto 1rem;
+    line-height: 1.6;
+}
+
+.cv-button-container {
+    margin: 2rem 0 3rem;
+}
+
+.cv-button {
+    font-size: 1.1rem;
+    padding: 0.8rem 2.5rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.cv-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Typewriter animation */
+.typewriter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.typewriter-text {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+    position: relative;
+    margin: 0 auto;
+    border-right: 0.15em solid var(--accent);
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent); }
+}
+
+.profile-image {
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Make sure typewriter content is visible */
+#home .typewriter-container {
+    min-width: 240px;
+    min-height: 30px;
+}
+
+/* Qualification documents link styling */
+.qualifications-document-link {
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.qualifications-document-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Section link container */
+.main-item div:last-child {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Add cursor style to clickable images */
+.section-image[style*="cursor: pointer"] img,
+.svg-shield {
+    cursor: pointer;
+}
+
+/* Add subtle indicator for clickable items */
+.section-image[style*="cursor: pointer"] img:hover,
+.svg-shield:hover {
+    box-shadow: 0 0 0 3px var(--accent), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#home a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#home a:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.expandable-sections {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px var(--shadow);
+    margin-bottom: 0.5rem;
+}
+
+/* Tab button styling */
+
+/* Tab button hover effect */
+.tab-button:hover {
+    background-color: var(--accent);
+    color: var(--text-black);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow);
+    border-color: transparent;
+}
+
+/* Tab button styling for even sections - offset pattern */
+section:nth-child(even) .tab-button {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+}
+
+/* Dark theme buttons for even sections */
+[data-theme="dark"] section:nth-child(even) .tab-button {
+    background-color: var(--bg-primary);
+    border-color: var(--border);
+}
+
+/* System preference fallback for dark mode buttons */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .tab-button {
+        background-color: var(--bg-primary);
+        border-color: var(--border);
+    }
+}
+
+/* Ensure hover effect applies to all tab buttons regardless of section */
+section:nth-child(even) .tab-button:hover {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border-color: transparent;
+}
+
+/* Active tab button styling - same for all sections */
+.tab-button.active {
+    background-color: var(--accent);
+    color: var(--text-black);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--shadow);
+    font-weight: 700;
+    border-color: transparent;
+}
+
+/* Ensure active styling is consistent across all sections */
+section:nth-child(even) .tab-button.active {
+    background-color: var(--accent);
+    color: var(--text-black);
+    border-color: transparent;
+}
+
+/* ===== MAIN SECTIONS STYLING ===== */
+/* Main content item - consistent styling */
+.main-item {
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                background-color 0.3s ease;
+    position: relative;
+    top: 0;
+    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 6px var(--shadow);
+    overflow: visible;
+}
+
+/* Ensure transition works for theme changes */
+.main-item.theme-transition {
+    transition: transform 0.3s ease,
+                background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Variant for content boxes in even sections - offset pattern */
+section:nth-child(even) .main-item {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* Dark variant for content boxes in even sections when in dark mode */
+[data-theme="dark"] section:nth-child(even) .main-item {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* System preference fallback for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .main-item {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        box-shadow: 0 2px 8px var(--shadow);
+    }
+}
+
+.main-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    z-index: 2;
+    border-color: var(--accent);
+    box-shadow: 0 12px 20px var(--shadow);
+    background-color: var(--bg-secondary);
+}
+
+/* Enhanced shadow for even sections */
+section:nth-child(even) .main-item:hover {
+    box-shadow: 0 12px 20px var(--shadow);
+    background-color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+/* Dark theme hover for even sections */
+[data-theme="dark"] section:nth-child(even) .main-item:hover {
+    box-shadow: 0 12px 20px var(--shadow);
+    background-color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+/* System preference fallback for dark mode hover */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .main-item:hover {
+        box-shadow: 0 12px 20px var(--shadow);
+        background-color: var(--bg-primary);
+        border-color: var(--accent);
+    }
+}
+
+.main-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Section headings */
+.main-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    max-width: 80%;
+    margin: 0 auto 0.75rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.main-item:hover h3 {
+    transform: scale(1.05);
+    color: var(--accent);
+    border-bottom-width: 3px;
+}
+
+/* Ensure heading text is properly visible in light mode for even sections */
+section:nth-child(even) .main-item h3 {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent);
+}
+
+/* Dark theme headings for even sections */
+[data-theme="dark"] section:nth-child(even) .main-item h3 {
+    color: var(--text-even);
+    border-bottom-color: var(--accent);
+}
+
+/* System preference fallback for dark mode headings */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .main-item h3 {
+        color: var(--text-even);
+        border-bottom-color: var(--accent);
+    }
+}
+
+/* Section text content */
+.main-details {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.main-description {
+    margin: 1rem auto;
+    max-width: 90%;
+}
+
+/* Responsibilities and lists */
+.main-responsibilities {
+    margin: 1.5rem auto 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 90%;
+    list-style-type: none;
+}
+
+.main-responsibilities li {
+    margin-bottom: 0.75rem;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0.5rem 0;
+}
+
+.main-responsibilities li:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== MAIN SECTION TAB STYLING ===== */
+.main-section .category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Tab layout in main sections */
+.category-tabs .tab-button {
+    flex: 0 0 auto;
+    min-width: 150px;
+    margin: 0 0.5rem;
+    white-space: nowrap;
+}
+
+/* Section images */
+.section-image {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+}
+
+/* Special styling for SVG shields in academic qualifications */
+.svg-shield {
+    border-radius: 0 !important;
+    object-fit: contain !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 5px;
+}
+
+.academic-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+}
+
+.section-image img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.svg-shield:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Emoji display */
+.emoji-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--accent);
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: default;
+    user-select: none;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: floatIn 0.5s ease-out;
+}
+
+/* Spacer for sections without images */
+.section-image-spacer {
+    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+}
+
+/* Additional styling for qualifications section */
+#academic-degrees .section-image {
+    margin-bottom: 1.5rem;
+}
+
+#academic-degrees .section-link,
+#technical-certifications .section-link,
+#specialized-training .section-link {
+    min-width: 180px;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    padding: 0.8rem 1.8rem;
+}
+
+/* Info text styling */
+.info-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Coming soon hover tooltip */
+[data-document-status="Coming Soon"] .section-image {
+    position: relative;
+}
+
+[data-document-status="Coming Soon"] .section-image::after {
+    content: "Certificate coming soon";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+[data-document-status="Coming Soon"] .section-image:hover::after {
+    opacity: 1;
+}
+
+/* Specific adjustments for coursework section */
+#coursework .main-item h3 {
+    margin-top: 1rem;
+}
+
+#bsc-courses .main-item,
+#mads-courses .main-item {
+    padding-top: 2.5rem;
+}
+
+#iod-courses .main-item {
+    padding-top: 1.5rem;
+}
+
+/* Adjustments for Employment and Interests sections (no buttons) */
+#employment .main-item,
+#interests .main-item {
+    padding-bottom: 2.5rem;
+}
+
+@keyframes floatIn {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+section:nth-child(even) .emoji-container {
+    background-color: var(--card-bg-even);
+    color: var(--accent);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+.emoji-container:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 10px 20px var(--shadow);
+    animation: pulse 1.5s infinite alternate;
+    border-width: 4px;
+    font-size: 3.5rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1.2) rotate(10deg); }
+}
+
+/* Content container and panel styling */
+.content-container {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow);
+    text-align: center;
+    transition: background-color 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: none;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    border: 1px solid var(--border);
+}
+
+/* Animation for content panels */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:nth-child(even) .content-container {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 4px 10px var(--shadow);
+    border-color: var(--border);
+    border-width: 1px;
+}
+
+/* Dark theme content containers for even sections */
+[data-theme="dark"] section:nth-child(even) .content-container {
+    background-color: var(--bg-primary);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* System preference fallback for dark mode content containers */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .content-container {
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 10px var(--shadow);
+    }
+}
+
+.content-panel {
+    border-radius: 6px;
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.content-panel.active {
+    display: block;
+    animation: fadeInUp 0.5s forwards;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform, opacity;
+}
+
+.content-panel.active .main-item {
+    animation: popIn 0.5s forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s);
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: transform, opacity;
+    transform-origin: center bottom;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.main-section .content-panel {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+/* Skills list styling */
+.main-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.main-item li {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-primary);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
+/* Style list items in even sections for light mode */
+section:nth-child(even) .main-item li {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
+/* Dark theme list items for even sections */
+[data-theme="dark"] section:nth-child(even) .main-item li {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* System preference fallback for dark mode list items */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .main-item li {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+}
+
+/* Add hover effect to list items */
+.main-item li:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 2px 4px var(--shadow);
+    color: var(--text-primary);
+    background-color: var(--accent);
+    opacity: 0.8;
+}
+
+.main-item:last-child {
+    margin-bottom: 0;
+}
+
+.main-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+/* Unified styling for all content box text */
+.main-item p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Coursework specific text adjustments */
+#coursework .main-item p {
+    margin-bottom: 1rem;
+}
+
+#bsc-courses .main-item p,
+#mads-courses .main-item p {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+/* Employment and Interests text adjustments */
+#employment .main-description,
+#interests .main-description {
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Removed duplicate styling as it's now handled by the global emoji-container styles */
+
+#employment .main-responsibilities {
+    margin-bottom: 0;
+}
+
+/* Ensure paragraph text is visible in light mode for even sections */
+section:nth-child(even) .main-item p {
+    color: var(--text-primary);
+    transition: color 0.5s ease;
+}
+
+/* Dark theme paragraph text for even sections */
+[data-theme="dark"] section:nth-child(even) .main-item p {
+    color: var(--text-even);
+}
+
+/* System preference fallback for dark mode paragraph text */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) section:nth-child(even) .main-item p {
+        color: var(--text-even);
+    }
+}
+
+.content-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* View Details button styling */
+.content-link {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow);
+    position: relative;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    min-width: 130px;
+    text-align: center;
+}
+
+.cv-button {
+    display: inline-block;
+    background-color: var(--header-footer);
+    color: var(--text-white);
+    text-decoration: none;
+    border: 2px solid var(--accent);
+}
+
+.content-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow);
+    background-color: var(--accent-hover);
+    color: var(--text-black);
+}
+
+.cv-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow);
+    background-color: var(--header-footer);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Ensures View Details button has consistent appearance in light and dark mode */
+[data-theme="light"] .main-item .content-link,
+:root:not([data-theme]) .main-item .content-link {
+    color: var(--bg-primary);
+    background-color: var(--accent);
+}
+
+[data-theme="dark"] .main-item .content-link {
+    color: var(--bg-primary);
+    background-color: var(--accent);
+}
+
+.content-link::before {
+    margin-right: 0.4rem;
+    font-size: 1em;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+}
+
+.content-link span {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.content-link:hover span {
+    color: var(--bg-primary);
+}
+
+/* Add specific icons for different content links */
+.content-link.demo-link:not(.disabled-link) {
+    background-color: #50d0c0;
+}
+.content-link.demo-link:not(.disabled-link):hover {
+    background-color: #3bb0a0;
+}
+.content-link.demo-link::before {
+    content: "🚀";
+    font-size: 1em;
+    position: relative;
+    top: -0.05em;
+}
+
+.content-link.code-link {
+    background-color: #5086d0;
+}
+.content-link.code-link:hover {
+    background-color: #3b70b0;
+}
+.content-link.code-link::before {
+    content: "💻";
+    font-size: 1em;
+}
+
+.content-link.doc-link {
+    background-color: #9070d0;
+}
+.content-link.doc-link:hover {
+    background-color: #7050b0;
+}
+.content-link.doc-link::before {
+    content: "📄";
+    font-size: 1em;
+    position: relative;
+    top: -0.05em;
+}
+
+.content-link.portfolio-link:not(.disabled-link) {
+    background-color: #d07050;
+}
+.content-link.portfolio-link:not(.disabled-link):hover {
+    background-color: #b05030;
+}
+.content-link.portfolio-link::before {
+    content: "📂";
+    font-size: 1em;
+}
+
+/* Section link buttons */
+.section-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px var(--shadow);
+    position: relative;
+}
+
+/* Special link states */
+.disabled-link {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    opacity: 0.7;
+}
+
+.disabled-link span {
+    color: #666666 !important;
+}
+
+/* Add tooltip for coming soon buttons */
+[data-document-status="Coming Soon"] .demo-link.disabled-link,
+[data-document-status="Coming Soon"] .portfolio-link.disabled-link {
+    position: relative;
+}
+
+[data-document-status="Coming Soon"] .demo-link.disabled-link::after,
+[data-document-status="Coming Soon"] .portfolio-link.disabled-link::after {
+    content: "Coming soon";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+[data-document-status="Coming Soon"] .demo-link.disabled-link:hover::after,
+[data-document-status="Coming Soon"] .portfolio-link.disabled-link:hover::after {
+    opacity: 1;
+}
+
+.disabled-link:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: #cccccc !important;
+}
+
+.disabled-link:hover span {
+    color: #666666 !important;
+}
+
+.external-link::before {
+    content: "🔗";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.section-link::before {
+    content: "📄";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+    position: relative;
+}
+
+.section-link span {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.section-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow);
+    background-color: var(--accent-hover);
+    color: var(--bg-primary) !important;
+}
+
+.section-link:hover span {
+    color: var(--bg-primary);
+}
+
+/* ===== GALLERY SECTION ===== */
+.gallery-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#gallery {
+    background-color: var(--bg-secondary);
+}
+
+#gallery h2 {
+    margin-bottom: 3rem;
+}
+
+#gallery h2::after {
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent), var(--accent-hover));
+}
+
+/* Auto Carousel Styles */
+.auto-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--shadow);
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+.carousel-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px var(--shadow);
+}
+
+.carousel-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    padding: 20px 15px 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.carousel-slide:hover .slide-caption {
+    transform: translateY(0);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    touch-action: manipulation;
+    backdrop-filter: blur(4px);
+}
+
+.carousel-control:hover {
+    background-color: var(--accent);
+    transform: translateY(-50%) scale(1.1);
+    border-color: white;
+    color: var(--bg-primary);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.indicator-dot.active {
+    background-color: var(--accent);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--accent);
+    border-color: white;
+}
+
+.indicator-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* ===== CONNECT SECTION ===== */
+#connect {
+    text-align: center;
+}
+
+#connect h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.connect-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.connect-card {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    cursor: pointer;
+    animation: fadeIn 0.8s ease-in-out forwards;
+    opacity: 0;
+}
+
+.connect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.connect-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(1858%) hue-rotate(198deg) brightness(95%) contrast(93%);
+}
+
+.connect-card h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.connect-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.connect-card:hover p {
+    color: var(--text-primary);
+}
+
+.card-link-text {
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.connect-card:hover .card-link-text {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Animation for connect cards */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply different animation delays to each card */
+.connect-container a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.connect-container a:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.connect-container a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.connect-container a:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+@media (max-width: 768px) {
+    .connect-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--header-footer);
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: var(--text-white);
+    box-shadow: 0 -2px 10px var(--shadow);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-white);
+    padding: 0 2rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    margin: 0 1rem 1rem;
+    color: var(--text-primary);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .content-link {
+        min-width: 130px;
+        padding: 0.6rem 1rem;
+    }
+
+    .main-item ul {
+        justify-content: center;
+    }
+
+    .main-item li {
+        margin-bottom: 0.5rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #theme-toggle {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .connect-container {
+        flex-direction: column;
+    }
+
+    .category-tabs {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .tab-button {
+        padding: 0.7rem 1.2rem;
+    }
+
+
+
+    .carousel-wrapper {
+        height: 450px;
+        border-radius: 8px;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    .content-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .content-link {
+        flex-basis: calc(50% - 0.8rem);
+        min-width: 0;
+        max-width: none;
+        margin: 0.25rem 0;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .content-link span {
+        font-size: 0.85rem;
+        letter-spacing: -0.02em;
+    }
+
+    .gallery-container {
+        width: 100%;
+    }
+
+    .carousel-wrapper {
+        height: 350px;
+        border-radius: 6px;
+    }
+
+    .carousel-control {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .carousel-control.prev {
+        left: 5px;
+    }
+
+    .carousel-control.next {
+        right: 5px;
+    }
+
+    .indicator-dot {
+        width: 8px;
+        height: 8px;
+    }

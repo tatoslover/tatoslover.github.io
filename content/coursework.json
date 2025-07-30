@@ -1,0 +1,236 @@
+{
+  "categories": [
+    {
+      "id": "bsc-courses",
+      "title": "BSc",
+      "courses": [
+        {
+          "title": "ACCY 111: Accounting",
+          "institution": "Victoria University of Wellington",
+          "description": "The preparation, use and analysis of internal and external accounting information."
+        },
+        {
+          "title": "ACTS 201: Financial Mathematics",
+          "institution": "Victoria University of Wellington",
+          "description": "Mathematical principles of compound interest, geometric series and annuities; valuation of loans; returns on financial transactions; duration and immunisation theory; term structure of interest rates; stochastic interest rates."
+        },
+        {
+          "title": "ACTS 301: Actuarial Science",
+          "institution": "Victoria University of Wellington",
+          "description": "This is a capstone course for the Actuarial Science major that brings together skills and knowledge from prior courses to develop an understanding of their practical application in the actuarial profession. It provides grounding in the mathematical techniques that can be used to model risks and contingencies."
+        },
+        {
+          "title": "ECON 130: Microeconomic Principles",
+          "institution": "Victoria University of Wellington",
+          "description": "An introduction to economic principles and their application to issues facing households, businesses and government in the New Zealand economy and the international economic environment."
+        },
+        {
+          "title": "ECON 141: Macroeconomic Principles",
+          "institution": "Victoria University of Wellington",
+          "description": "An introduction to macroeconomics, including fiscal and monetary policies, the international sector, and analysis of income-expenditure, IS-MPR and aggregate demand-aggregate supply models."
+        },
+        {
+          "title": "ECON 201: Intermediate Microeconomics",
+          "institution": "Victoria University of Wellington",
+          "description": "This course in intermediate microeconomic analysis includes demand theory and applications of consumer behaviour, analysis of market structures, strategic behaviour, introductory welfare economics and analysis of public goods and externalities."
+        },
+        {
+          "title": "ECON 202: Open-economy Macroeconomics",
+          "institution": "Victoria University of Wellington",
+          "description": "Applications of an open economy macroeconomic model to macroeconomic issues and policy, including the interdependence of macroeconomic activity and markets, the roles of expectations variables and other dynamic adjustment mechanisms, the significance of international events, exchange rate regimes, inflation, unemployment."
+        },
+        {
+          "title": "ECON 314: Game Theory",
+          "institution": "Victoria University of Wellington",
+          "description": "This course introduces and develops game theory and its applications."
+        },
+        {
+          "title": "ECON 333: Labour Economics",
+          "institution": "Victoria University of Wellington",
+          "description": "This course provides alternative theories of labour markets, models and approaches to supply, demand and pricing of different types of labour."
+        },
+        {
+          "title": "ECON 340: Environmental and Resource Economics",
+          "institution": "Victoria University of Wellington",
+          "description": "Topics include property rights and transactions costs; environmental externalities and associated missing markets; valuation of environmental resources; irreversibility and its economic implications under uncertainty; economics of pollution control; economics of natural resource use; decision-making under New Zealand's Resource Management Act."
+        },
+        {
+          "title": "FINA 201: Introduction to Corporate Finance",
+          "institution": "Victoria University of Wellington",
+          "description": "An introduction to the fundamental concepts in corporate finance. Topics include the net present value method, alternative investment rules, capital budgeting, and the theories of capital structure."
+        },
+        {
+          "title": "FINA 202: Introduction to Investments",
+          "institution": "Victoria University of Wellington",
+          "description": "An introduction to the institutions, markets and instruments of the financial system, as well as the theory and practice of asset valuation and portfolio selection."
+        },
+        {
+          "title": "FINA 303: Derivatives",
+          "institution": "Victoria University of Wellington",
+          "description": "An intensive examination of the pricing of options and option-like assets and their use in hedging financial risk. Topics include stochastic calculus, risk-neutral valuation, finite difference methods, Monte Carlo simulation, and fixed income derivatives."
+        },
+        {
+          "title": "MATH 151: Algebra",
+          "institution": "Victoria University of Wellington",
+          "description": "Linear algebra is central to mathematics, and essential in science and engineering. This course introduces linear algebra, motivated by some of these applications, and maintaining a practical approach using fundamental mathematical objects such as matrices and vectors. Methods to solve systems of linear equations using matrices are introduced, as are eigenvectors, which can be used to characterise matrices amongst many other applications. The concept of an algebraic structure is introduced, as are complex numbers, which allow the solution of many equations that did not previously have solutions."
+        },
+        {
+          "title": "MATH 177: Probability and Decision Modelling",
+          "institution": "Victoria University of Wellington",
+          "description": "Heads or tails? That's fair, right? Is the coin fair though - and how could you check? How might you choose in a more complicated situation? This course gives you an introduction to probability models in Statistics and their use in good decision making. Concepts you will study include probability, random variables and their distributions, decision theory, model estimation using sampled data, and tests for checking fitted models. Bad decisions follow from badly-fitting models. This course is needed for a mathematical pathway in Statistics, and for Actuarial Science. To make good decisions using probability, choose this course!"
+        },
+        {
+          "title": "MATH 277: Mathematical Statistics",
+          "institution": "Victoria University of Wellington",
+          "description": "How likely is a major disaster, and what would the costs be if one occurred? More generally, how can you correctly price insurance for different risks? How should government benefits be set to maximise the long-run wellbeing of a country? To answer these questions needs a good understanding of the probabilities of joint events and how to model them, plus how to predict events while incorporating uncertainty. Here we introduce basic concepts and techniques of probability and statistics, together with an explanation of the logical principles and mathematical tools on which they are based. We use the statistical software R."
+        },
+        {
+          "title": "PSYC 122: Introduction to Psychology 2",
+          "institution": "Victoria University of Wellington",
+          "description": "PSYC 122 introduces students to theory and research in the biological basis of behaviour, learning and memory, cognition and perception, and applied psychology in the context of Aotearoa. In the lab programme, students develop skills that form the foundation for subsequent psychology courses, such as analysing data, learning how to read journal articles and developing an understanding of how psychological researchers convey research findings through writing laboratory reports."
+        },
+        {
+          "title": "QUAN 201: Introduction to Econometrics",
+          "institution": "Victoria University of Wellington",
+          "description": "The course focuses on the estimation and interpretation of ordinary least squares (OLS) regression models. The OLS assumptions and their implications are discussed. The methods learned are applied to real data."
+        },
+        {
+          "title": "STAT 193: Statistics for the Natural and Social Sciences",
+          "institution": "Victoria University of Wellington",
+          "description": "An applied statistics course for students who will be advancing in other disciplines as well as those majoring in Statistics. It is particularly suitable if you are majoring in Biological Science, Geography, Health, Linguistics, Psychology, and Education, and if you are a BCom student. This course assumes no previous knowledge of statistics, but mathematics to Year 12 is preferred. Topics we will cover include data display and inference, estimation, confidence intervals and hypothesis testing, comparison of means, linear regression and correlation, and analysis of variance."
+        },
+        {
+          "title": "STAT 292: Applied Statistics 2A",
+          "institution": "Victoria University of Wellington",
+          "description": "Modern science is heavily data-driven, and statistical methods are instrumental in producing evidence-based conclusions. This course covers applied statistical methods that are widely used across the biological, social and physical sciences. You will examine chi-square tests, t-tests, analysis of variance and non-parametric tests as a means to assess the evidence for differences between groups; and you will fit linear regression, logistic regression, and loglinear models to explore relationships between variables. Relevant examples are used throughout to illustrate the statistical methods considered. The statistical computing package R is used and demonstrated, although no previous programming experience is required."
+        },
+        {
+          "title": "STAT 293: Applied Statistics 2B",
+          "institution": "Victoria University of Wellington",
+          "description": "What is the strongest predictor of a student’s exam performance? What does household medical expenditure depend on? Can we predict the number of bird or plant species on an island based on its environmental features? You can explore questions like these using the statistical modelling techniques in this course. With an emphasis on practical applications, we cover statistical model fitting methods, use of the R software for model fitting and the interpretation of results. Topics covered include randomised block and nested design ANOVA models, permutation testing, multiple linear regression, models for count data and models for multilevel data."
+        },
+        {
+          "title": "STAT 335: Statistical Models for Actuarial Science",
+          "institution": "Victoria University of Wellington",
+          "description": "This course introduces a range of models used in actuarial science, including Markov chains, Markov processes and transition, survival models and estimation with graduation methods and binomial models for mortality."
+        },
+        {
+          "title": "STAT 391: Mathematical Methods for Applied Statistics",
+          "institution": "Victoria University of Wellington",
+          "description": "How should we model data to ensure we have a good understanding of the world? Drawing correct conclusions from well-chosen statistical models needs a range of mathematical techniques. This course shows you the key methods used in the construction and maximisation of likelihoods, the analysis of experimental data and linear models, and an exploration of probability plus several probability distributions. Specific mathematical topics include matrices and their properties, differentiation and optimisation of functions, plus integral calculus. The statistical software R will be used."
+        },
+        {
+          "title": "STAT 393: Linear Models",
+          "institution": "Victoria University of Wellington",
+          "description": "This course will cover the theory and application of general linear models, including: maximum likelihood estimation, model selection, AIC, tests of hypotheses, confidence intervals, and residual diagnostics. It includes longitudinal analysis for continuous responses using fixed or random effects methods. The course covers the theory of generalised linear models and gives examples for binary and count data. The statistical software R will be used. "
+        }
+      ]
+    },
+    {
+      "id": "mads-courses",
+      "title": "MADS",
+      "courses": [
+        {
+          "title": "COSC480: Computer Programming",
+          "description": "An accelerated course for graduate students without programming background. Covers imperative programming using Python for data science applications, including data cleansing, analysis, and visualisation through practical projects."
+        },
+        {
+          "title": "DATA420: Scalable Data Science",
+          "description": "Practical course focusing on distributed computing for big data. Students experiment with cloud-based clusters and large datasets, learning Hadoop, MapReduce, and Spark for real-world data science problems."
+        },
+        {
+          "title": "DATA422: Data Wrangling for Data Science",
+          "description": "Comprehensive data wrangling course covering 80% of data scientist worktime. Handles various data formats (CSV, APIs, web pages) with emphasis on ethical data treatment and real-world applications using R."
+        },
+        {
+          "title": "DATA423: Data Science in Industry",
+          "description": "Practical course focusing on applied data science rather than theory. Covers best statistical practices, communication through Shiny visualizations, and real-world messy data challenges using R."
+        },
+        {
+          "title": "DATA601: Applied Data Science Project",
+          "description": "This project will give you the skills, and experience to work in a team to solve real world data science problems."
+        },
+        {
+          "title": "DIGI405: Texts, Discourses and Data",
+          "description": "Computer-aided discourse analysis for digital humanities. Covers corpus linguistics, topic modelling, and text classification while addressing ethical dimensions and avoiding uncritical 'text mining' approaches."
+        },
+        {
+          "title": "MBIS623: Data Management",
+          "description": "Comprehensive data management course aligned with ACS/IIT PNZ standards. Covers data governance, database design, Big Data technologies like Hadoop, cloud analytics, and Snowflake platform for enterprise systems."
+        },
+        {
+          "title": "STAT448: Big Data",
+          "description": "Introduction to big data concepts and statistical learning techniques. Covers linear regression, ridge regression, LASSO, and deep neural networks for high-dimensional data analysis and decision making."
+        },
+        {
+          "title": "STAT455: Data Collection and Sampling",
+          "description": "Survey methods course focusing on sample designs and population estimation. Covers simple random sampling, stratified sampling, cluster sampling, and complex surveys with uncertainty measures using R."
+        },
+        {
+          "title": "STAT462: Data Mining",
+          "description": "Statistical learning and data mining course covering supervised and unsupervised learning. Includes decision trees, random forests, support vector machines, k-means clustering, and Apriori algorithm using R."
+        }
+      ]
+    },
+    {
+      "id": "iod-courses",
+      "title": "IOD",
+      "courses": [
+        {
+          "title": "Module1: Software Development Principles",
+          "description": "Software development principles including creating basic web pages, version control systems, requirements gathering and wireframe design, and test-driven development methodologies.",
+          "portfolioLink": "https://module1labportfolio.netlify.app"
+        },
+        {
+          "title": "Module2: Introductory Front-End Development",
+          "description": "Introductory front-end development covering web browsers and internet architecture, HTML semantic markup, CSS styling fundamentals, and fluid layout design principles.",
+          "portfolioLink": "https://module2labportfolio.netlify.app"
+        },
+        {
+          "title": "Module3: JavaScript Programming Fundamentals",
+          "description": "JavaScript programming fundamentals covering core concepts, intermediate programming techniques, and advanced JavaScript features and ES6+ development patterns.",
+          "portfolioLink": "https://module3labportfolio.netlify.app"
+        },
+        {
+          "title": "Module4: More on Front-End Development",
+          "description": "More on front-end development including JavaScript frameworks, Figma design tools, Bootstrap framework implementation, working with data sources, and application enhancements.",
+          "portfolioLink": "https://module4labportfolio.netlify.app"
+        },
+        {
+          "title": "Module5: Introduction to Backend Development",
+          "description": "Introduction to backend development covering web services with JavaScript applications, developing MVC structure, designing backend services, object-oriented development, and Swagger documentation.",
+          "portfolioLink": "https://module5labportfolio.netlify.app"
+        },
+        {
+          "title": "Module6: Web Design with React I",
+          "description": "Web design with React I covering JSX syntax, components and props management, thinking in React development patterns, and code splitting for performance optimisation.",
+          "portfolioLink": "https://module6labportfolio.netlify.app"
+        },
+        {
+          "title": "Module7: Web Design with React II",
+          "description": "Web design with React II covering hooks for state and lifecycle management, routing for navigation, and integration with external libraries and APIs.",
+          "portfolioLink": "#",
+          "documentStatus": "Coming Soon"
+        },
+        {
+          "title": "Module8: Databases",
+          "description": "Database concepts covering database design principles, MongoDB NoSQL database implementation, MySQL relational database management, and Redis in-memory data structures.",
+          "portfolioLink": "#",
+          "documentStatus": "Coming Soon"
+        },
+        {
+          "title": "Module9: API Development",
+          "description": "API development covering REST API design and implementation, socket programming for real-time communication, and Model View Controller architecture patterns.",
+          "portfolioLink": "#",
+          "documentStatus": "Coming Soon"
+        },
+        {
+          "title": "Module10: Software Deployment",
+          "description": "Software deployment covering Docker containerization, CI/CD pipelines with GitHub Actions, AWS EC2 cloud deployment, and AWS Beanstalk application hosting.",
+          "portfolioLink": "#",
+          "documentStatus": "Coming Soon"
+        }
+      ]
+    }
+  ]
+}
