@@ -13,7 +13,7 @@
     --shadow: rgba(0, 0, 0, 0.1);
     --text-black: #000000;
     --text-white: #ffffff;
-    --header-footer: #4A1D82; /* Deep purple for header and footer */
+    --header-footer: #4A1D82;
 }
 
 /* Dark theme when 'data-theme="dark"' is set on html element */
@@ -28,7 +28,7 @@
     --shadow: rgba(10, 25, 47, 0.6);
     --text-black: #000000;
     --text-white: #ffffff;
-    --header-footer: #4A1D82; /* Deep purple for header and footer */
+    --header-footer: #4A1D82;
 }
 
 /* System preference fallback - only applies if no 'data-theme' is set */
