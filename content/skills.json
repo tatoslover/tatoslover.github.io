@@ -1,78 +1,90 @@
 {
   "categories": [
     {
-      "id": "programming-languages",
-      "title": "Programming Languages",
-      "emoji": "💻",
-      "skills": ["Python", "R", "SQL", "JavaScript", "HTML", "CSS"]
-    },
-    {
-      "id": "web-development",
-      "title": "Web Development",
-      "emoji": "🌐",
-      "skills": [
-        "React",
-        "JSX",
-        "Express.js",
-        "Bootstrap",
-        "Figma",
-        "HTML/CSS",
-        "Swagger"
+      "id": "software-engineering",
+      "title": "Software Engineering",
+      "subCategories": [
+        {
+          "id": "programming-languages",
+          "title": "Programming Languages",
+          "emoji": "💻",
+          "skills": ["Python", "R", "SQL", "JavaScript", "HTML", "CSS"]
+        },
+        {
+          "id": "web-development",
+          "title": "Web Development",
+          "emoji": "🌐",
+          "skills": [
+            "React",
+            "JSX",
+            "Express.js",
+            "Bootstrap",
+            "Figma",
+            "HTML/CSS",
+            "Swagger"
+          ]
+        },
+        {
+          "id": "devops-tools",
+          "title": "DevOps & Deployment",
+          "emoji": "🚀",
+          "skills": [
+            "AWS EC2",
+            "AWS Elastic Beanstalk",
+            "CI/CD",
+            "Docker",
+            "GitHub Actions",
+            "Git Version Control",
+            "Bash"
+          ]
+        },
+        {
+          "id": "development-practices",
+          "title": "Development Practices",
+          "emoji": "🔄",
+          "skills": [
+            "Agile Methodologies",
+            "Model-View-Controller (MVC)",
+            "Test Driven Development",
+            "GitHub Workflow",
+            "Collaborative Development"
+          ]
+        }
       ]
     },
     {
-      "id": "data-tools",
-      "title": "Data Science & Databases",
-      "emoji": "📊",
-      "skills": [
-        "MongoDB",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Power BI",
-        "Tableau",
-        "Jupyter",
-        "RStudio",
-        "Anaconda"
-      ]
-    },
-    {
-      "id": "devops-tools",
-      "title": "DevOps & Deployment",
-      "emoji": "🚀",
-      "skills": [
-        "AWS EC2",
-        "AWS Elastic Beanstalk",
-        "CI/CD",
-        "Docker",
-        "GitHub Actions",
-        "Git Version Control",
-        "Bash"
-      ]
-    },
-    {
-      "id": "development-practices",
-      "title": "Development Practices",
-      "emoji": "🔄",
-      "skills": [
-        "Agile Methodologies",
-        "Model-View-Controller (MVC)",
-        "Test Driven Development",
-        "GitHub Workflow",
-        "Collaborative Development"
-      ]
-    },
-    {
-      "id": "specialized-packages",
-      "title": "Specialized Packages",
-      "emoji": "📦",
-      "skills": [
-        "Python: NumPy, Pandas, Matplotlib",
-        "Python: Scikit-learn, BeautifulSoup, Plotly",
-        "R: tidyverse, ggplot2, shiny",
-        "R: caret, glmnet, randomForest, e1071",
-        "Excel, Word, PowerPoint",
-        "Obsidian, Incisive, Quarto, Zed"
+      "id": "data-science",
+      "title": "Data Science",
+      "subCategories": [
+        {
+          "id": "data-tools",
+          "title": "Data Science & Databases",
+          "emoji": "📊",
+          "skills": [
+            "MongoDB",
+            "MySQL",
+            "PostgreSQL",
+            "Redis",
+            "Power BI",
+            "Tableau",
+            "Jupyter",
+            "RStudio",
+            "Anaconda"
+          ]
+        },
+        {
+          "id": "specialized-packages",
+          "title": "Specialized Packages",
+          "emoji": "📦",
+          "skills": [
+            "Python: NumPy, Pandas, Matplotlib",
+            "Python: Scikit-learn, BeautifulSoup, Plotly",
+            "R: tidyverse, ggplot2, shiny",
+            "R: caret, glmnet, randomForest, e1071",
+            "Excel, Word, PowerPoint",
+            "Obsidian, Incisive, Quarto, Zed"
+          ]
+        }
       ]
     }
   ]
