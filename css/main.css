@@ -1536,9 +1536,10 @@ section:nth-child(even) .main-item p {
     overflow: hidden;
     will-change: transform, background-color, box-shadow;
     backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
-#connect .connect-card:hover {
+#connect .connect-card:hover:not(.js-hover-enabled) {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     background-color: var(--accent);
@@ -1582,7 +1583,8 @@ section:nth-child(even) .main-item p {
     transition: filter 0.3s ease;
 }
 
-#connect .connect-card:hover .connect-icon img {
+#connect .connect-card:hover:not(.js-hover-enabled) .connect-icon img,
+#connect .connect-card.tilt-active .connect-icon img {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
@@ -1599,8 +1601,10 @@ section:nth-child(even) .main-item p {
     transition: color 0.3s ease;
 }
 
-#connect .connect-card:hover p,
-#connect .connect-card:hover h3 {
+#connect .connect-card:hover:not(.js-hover-enabled) p,
+#connect .connect-card:hover:not(.js-hover-enabled) h3,
+#connect .connect-card.tilt-active p,
+#connect .connect-card.tilt-active h3 {
     color: var(--text-black);
 }
 
@@ -1611,7 +1615,8 @@ section:nth-child(even) .main-item p {
     transition: all 0.3s ease;
 }
 
-.connect-card:hover .card-link-text {
+#connect .connect-card:hover:not(.js-hover-enabled) .card-link-text,
+#connect .connect-card.tilt-active .card-link-text {
     color: var(--text-black);
     text-decoration: underline;
 }
