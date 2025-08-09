@@ -1520,11 +1520,6 @@ section:nth-child(even) .main-item p {
 
 /* Fix for Connect card animations */
 #connect .connect-card {
-    will-change: transform, background-color, box-shadow;
-    backface-visibility: hidden;
-}
-
-.connect-card {
     background-color: var(--bg-secondary);
     border-radius: 8px;
     padding: 2rem;
@@ -1537,55 +1532,75 @@ section:nth-child(even) .main-item p {
     cursor: pointer;
     animation: fadeIn 0.8s ease-in-out forwards;
     opacity: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, background-color, box-shadow;
+    backface-visibility: hidden;
 }
 
-.connect-card:hover {
+#connect .connect-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     background-color: var(--accent);
 }
 
-.connect-icon {
+#connect .connect-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#connect .connect-card:hover::before {
+    opacity: 1;
+}
+
+#connect .connect-icon {
     width: 60px;
     height: 60px;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.connect-card:hover .connect-icon {
+#connect .connect-card:hover .connect-icon {
     transform: scale(1.15);
 }
 
-.connect-icon img {
+#connect .connect-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(1858%) hue-rotate(198deg) brightness(95%) contrast(93%);
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
-.connect-card:hover .connect-icon img {
+#connect .connect-card:hover .connect-icon img {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-.connect-card h3 {
+#connect .connect-card h3 {
     color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.connect-card p {
+#connect .connect-card p {
     color: var(--text-secondary);
     margin-bottom: 0;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.connect-card:hover p,
-.connect-card:hover h3 {
+#connect .connect-card:hover p,
+#connect .connect-card:hover h3 {
     color: var(--text-black);
 }
 
@@ -1612,34 +1627,11 @@ section:nth-child(even) .main-item p {
 }
 
 /* Dedicated Connect Card animations with higher specificity */
-section#connect a.connect-card {
-    transform: translateY(0);
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-section#connect a.connect-card:hover {
-    transform: translateY(-10px);
-    background-color: var(--accent);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-section#connect a.connect-card:hover .connect-icon {
-    transform: scale(1.15);
-}
-
-section#connect a.connect-card:hover .connect-icon img {
-    filter: brightness(0) saturate(100%) invert(100%);
-}
-
-section#connect a.connect-card:hover h3,
-section#connect a.connect-card:hover p,
-section#connect a.connect-card:hover .card-link-text {
-    color: var(--text-black);
-}
+/* Consolidated with #connect .connect-card selectors above */
 
 /* Mobile animation adjustments */
 @media (max-width: 768px) {
-    section#connect a.connect-card:hover {
+    #connect .connect-card:hover {
         transform: translateY(-8px);
     }
 }
@@ -1761,11 +1753,6 @@ footer {
     .tab-spacing {
         padding-top: 5rem;
         margin-top: -2rem;
-    }
-
-    .connect-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
     .tab-button {
