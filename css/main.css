@@ -1525,17 +1525,36 @@ section:nth-child(even) .main-item p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     cursor: pointer;
     animation: fadeIn 0.8s ease-in-out forwards;
     opacity: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .connect-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent);
+}
+
+.connect-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.connect-card:hover::before {
+    opacity: 1;
 }
 
 .connect-icon {
@@ -1545,6 +1564,11 @@ section:nth-child(even) .main-item p {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.connect-card:hover .connect-icon {
+    transform: scale(1.15);
 }
 
 .connect-icon img {
@@ -1552,21 +1576,29 @@ section:nth-child(even) .main-item p {
     height: 100%;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(1858%) hue-rotate(198deg) brightness(95%) contrast(93%);
+    transition: filter 0.3s ease;
+}
+
+.connect-card:hover .connect-icon img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
 
 .connect-card h3 {
     color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+    transition: color 0.3s;
 }
 
 .connect-card p {
     color: var(--text-secondary);
     margin-bottom: 0;
+    transition: color 0.3s;
 }
 
-.connect-card:hover p {
-    color: var(--text-primary);
+.connect-card:hover p,
+.connect-card:hover h3 {
+    color: var(--text-black);
 }
 
 .card-link-text {
