@@ -1536,11 +1536,11 @@ section:nth-child(even) .main-item p {
     overflow: hidden;
     will-change: transform, background-color, box-shadow;
     backface-visibility: hidden;
-    transform-style: preserve-3d;
+    transform-origin: center bottom;
 }
 
 #connect .connect-card:hover:not(.js-hover-enabled) {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     background-color: var(--accent);
 }
@@ -1568,7 +1568,7 @@ section:nth-child(even) .main-item p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #connect .connect-card:hover .connect-icon {
@@ -1580,7 +1580,7 @@ section:nth-child(even) .main-item p {
     height: 100%;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(1858%) hue-rotate(198deg) brightness(95%) contrast(93%);
-    transition: filter 0.3s ease;
+    transition: filter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #connect .connect-card:hover:not(.js-hover-enabled) .connect-icon img,
@@ -1592,13 +1592,13 @@ section:nth-child(even) .main-item p {
     color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #connect .connect-card p {
     color: var(--text-secondary);
     margin-bottom: 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #connect .connect-card:hover:not(.js-hover-enabled) p,
@@ -1612,7 +1612,7 @@ section:nth-child(even) .main-item p {
     color: var(--accent);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #connect .connect-card:hover:not(.js-hover-enabled) .card-link-text,

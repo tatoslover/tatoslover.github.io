@@ -1,6 +1,6 @@
 /**
  * Connect Card Hover Effects
- * Adds subtle 3D tilt and interactive hover effects to Connect With Me cards
+ * Adds lifting animation to Connect With Me cards
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,68 +18,49 @@ function initConnectCardEffects() {
     // No cards found, exit early
     if (!connectCards.length) return;
 
-    initTiltEffect(connectCards);
+    initLiftEffect(connectCards);
   }, 100);
 }
 
 /**
- * Initializes the tilt effect for the provided cards
+ * Initializes the lift effect for the provided cards
  * @param {NodeList} connectCards - The cards to apply the effect to
  */
-function initTiltEffect(connectCards) {
-  // Configure tilt effect settings
+function initLiftEffect(connectCards) {
+  // Configure lift effect settings
   const settings = {
-    max: 10, // Maximum tilt rotation (degrees)
-    perspective: 1000, // Perspective value for 3D space
+    liftAmount: 15, // Pixels to lift on hover
     scale: 1.03, // Scale on hover
-    speed: 400, // Speed of the transition
-    easing: "cubic-bezier(.03,.98,.52,.99)", // Easing for smooth animation
+    speed: 300, // Speed of the transition in ms
+    easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Easing for smooth animation
   };
 
-  // Add a debugging console log to verify cards are found
-  console.log(`Applying tilt effect to ${connectCards.length} connect cards`);
+  console.log(`Applying lift effect to ${connectCards.length} connect cards`);
 
   // Apply effect to each card
   connectCards.forEach((card) => {
     // Disable existing CSS hover effects
     card.classList.add("js-hover-enabled");
 
-    // Add perspective to parent for 3D effect
-    card.style.transformStyle = "preserve-3d";
-
     // Variables to track card state
-    let isHovering = false;
     let timeout = null;
 
     // Add event listeners
     card.addEventListener("mouseenter", handleMouseEnter);
-    card.addEventListener("mousemove", handleMouseMove);
     card.addEventListener("mouseleave", handleMouseLeave);
-    card.addEventListener("click", handleClick);
 
-    // Apply initial transition styles - be specific about which properties to transition
+    // Apply initial transition styles
     card.style.transition = `transform ${settings.speed}ms ${settings.easing},
-                            background-color ${settings.speed}ms ease,
-                            box-shadow ${settings.speed}ms ease`;
-    card.style.willChange = "transform, background-color, box-shadow";
+                            box-shadow ${settings.speed}ms ${settings.easing}`;
+    card.style.willChange = "transform, box-shadow";
 
-    // Cache card dimensions for performance
-    let cardRect = card.getBoundingClientRect();
-
-    // Update card dimensions on window resize
-    window.addEventListener("resize", () => {
-      cardRect = card.getBoundingClientRect();
-    });
+    // Cache initial box-shadow for reference
+    const initialBoxShadow = window.getComputedStyle(card).boxShadow;
 
     /**
      * Handle mouse enter
      */
     function handleMouseEnter() {
-      isHovering = true;
-
-      // Update card dimensions in case they changed
-      cardRect = card.getBoundingClientRect();
-
       // Clear timeout if it exists
       if (timeout !== null) {
         clearTimeout(timeout);
@@ -87,150 +68,50 @@ function initTiltEffect(connectCards) {
       }
 
       // Add active class for CSS interactions
-      card.classList.add("tilt-active");
+      card.classList.add("lift-active");
 
-      // Force a card transform update based on current mouse position
-      const event = new MouseEvent("mousemove", {
-        clientX: cardRect.left + cardRect.width / 2,
-        clientY: cardRect.top + cardRect.height / 2,
-      });
-      card.dispatchEvent(event);
-    }
+      // Apply lifting transform
+      card.style.transform = `translateY(-${settings.liftAmount}px) scale(${settings.scale})`;
 
-    /**
-     * Handle mouse move to calculate tilt
-     * @param {MouseEvent} event - Mouse move event
-     */
-    function handleMouseMove(event) {
-      if (!isHovering) return;
-
-      // Get mouse position relative to card
-      const mouseX = event.clientX - cardRect.left;
-      const mouseY = event.clientY - cardRect.top;
-
-      // Calculate rotation based on mouse position
-      // When mouse is at center, tiltX and tiltY are 0
-      // When mouse is at edge, tilt reaches maximum value
-      // Invert tiltX so the card tilts toward the cursor
-      const tiltX = (
-        settings.max / 2 -
-        (mouseY / cardRect.height) * settings.max
-      ).toFixed(2);
-      const tiltY = (
-        (mouseX / cardRect.width) * settings.max -
-        settings.max / 2
-      ).toFixed(2);
-
-      // Apply transform to the card - override any existing transforms
-      // Use inline style for maximum specificity
-      card.style.transform = `
-        perspective(${settings.perspective}px)
-        rotateX(${tiltX}deg)
-        rotateY(${tiltY}deg)
-        scale(${settings.scale})
-        translateZ(0)
-      `;
-
-      // Also override the background-color to maintain the hover state
-      card.style.backgroundColor = "var(--accent)";
-
-      // Change text color to maintain visibility
-      const textElements = card.querySelectorAll("h3, p, .card-link-text");
-      textElements.forEach((el) => {
-        el.style.color = "var(--text-black)";
-      });
-
-      // Add a subtle shadow shift based on tilt
-      const shadowX = ((tiltY / settings.max) * 10).toFixed(2);
-      const shadowY = ((tiltX / settings.max) * 10).toFixed(2);
-      card.style.boxShadow = `
-        ${shadowX}px ${shadowY}px 20px rgba(0, 0, 0, 0.2)
-      `;
+      // Apply enhanced shadow
+      card.style.boxShadow = `0 ${settings.liftAmount}px 30px rgba(0, 0, 0, 0.2)`;
     }
 
     /**
      * Handle mouse leave
      */
     function handleMouseLeave() {
-      isHovering = false;
-      card.classList.remove("tilt-active");
+      card.classList.remove("lift-active");
 
       // Reset transform with a small delay to ensure smooth animation
       timeout = setTimeout(() => {
-        // Reset all style properties
+        // Reset transform and shadow to initial values
         card.style.transform = "";
-        card.style.boxShadow = "";
-        card.style.backgroundColor = "";
-
-        // Reset text colors
-        const textElements = card.querySelectorAll("h3, p, .card-link-text");
-        textElements.forEach((el) => {
-          el.style.color = "";
-        });
+        card.style.boxShadow = initialBoxShadow;
       }, 50);
-    }
-
-    /**
-     * Handle card click - add a ripple effect
-     * @param {MouseEvent} event - Click event
-     */
-    function handleClick(event) {
-      // Create ripple element
-      const ripple = document.createElement("div");
-      ripple.className = "card-ripple";
-
-      // Position ripple at click point
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      ripple.style.left = `${x}px`;
-      ripple.style.top = `${y}px`;
-
-      // Add ripple to card
-      card.appendChild(ripple);
-
-      // Remove ripple after animation
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
     }
   });
 
-  // Add ripple effect styles
+  // Add styles
   const style = document.createElement("style");
   style.textContent = `
-    #connect .connect-card {
-      overflow: hidden;
-    }
-    .card-ripple {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      transform: scale(0);
-      animation: ripple 0.6s linear;
-      pointer-events: none;
-    }
-    @keyframes ripple {
-      to {
-        transform: scale(30);
-        opacity: 0;
-      }
-    }
-    .tilt-active {
+    .lift-active {
       z-index: 10 !important;
     }
     /* Disable CSS hover effects when JS is active */
     #connect .js-hover-enabled:hover {
       transform: none !important;
-      background-color: transparent !important;
+      background-color: var(--accent) !important;
       box-shadow: none !important;
     }
-    /* Fix for icon image filter */
-    #connect .connect-card.tilt-active .connect-icon img {
-      filter: brightness(0) saturate(100%) invert(100%) !important;
+    /* Ensure text/icon colors change on hover with JS */
+    #connect .js-hover-enabled.lift-active h3,
+    #connect .js-hover-enabled.lift-active p,
+    #connect .js-hover-enabled.lift-active .card-link-text {
+      color: var(--text-black) !important;
+    }
+    #connect .js-hover-enabled.lift-active .connect-icon img {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
     }
   `;
   document.head.appendChild(style);
