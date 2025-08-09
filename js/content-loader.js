@@ -57,46 +57,69 @@ function renderContent(section, categories) {
   tabsContainer.innerHTML = "";
   contentContainer.innerHTML = "";
 
-  // Set initial state - content container is hidden
-  contentContainer.style.display = "none";
+  // Check if this is the skills section
+  const isSectionSkills = section.closest("#skills") !== null;
 
-  // Create tabs and content panels
-  categories.forEach((category, index) => {
-    // Create tab button
-    const button = document.createElement("button");
-    button.className = "tab-button";
-    button.setAttribute("data-category", category.id);
+  if (isSectionSkills) {
+    // For skills section, display all categories as cards in the content container
+    contentContainer.style.display = "block";
 
-    // Set tab button text (without emoji)
-    button.textContent = category.title;
+    // Hide tabs for skills section
+    tabsContainer.style.display = "none";
 
-    tabsContainer.appendChild(button);
-
-    // Create content panel
+    // Create a single panel to hold all skill cards
     const panel = document.createElement("div");
-    panel.className = "content-panel";
-    panel.id = category.id;
+    panel.className = "content-panel active";
 
-    // Fill panel with content based on what's available in the category
-    if (category.skills) {
-      renderSkills(panel, category);
-    } else if (category.projects) {
-      renderProjects(panel, category);
-    } else if (category.courses) {
-      renderCourses(panel, category);
-    } else if (category.qualifications) {
-      renderQualifications(panel, category);
-    } else if (category.jobs) {
-      renderJobs(panel, category);
-    } else if (category.interests) {
-      renderInterests(panel, category);
-    }
+    // Add all skill categories as stacked cards
+    categories.forEach((category, index) => {
+      renderSkills(panel, category, index);
+    });
 
     contentContainer.appendChild(panel);
-  });
+  } else {
+    // For other sections, use the tab navigation as before
+    // Set initial state - content container is hidden
+    contentContainer.style.display = "none";
 
-  // Add event listeners to tabs
-  addTabEventListeners(section);
+    // Create tabs and content panels
+    categories.forEach((category, index) => {
+      // Create tab button
+      const button = document.createElement("button");
+      button.className = "tab-button";
+      button.setAttribute("data-category", category.id);
+
+      // Set tab button text (without emoji)
+      button.textContent = category.title;
+
+      tabsContainer.appendChild(button);
+
+      // Create content panel
+      const panel = document.createElement("div");
+      panel.className = "content-panel";
+      panel.id = category.id;
+
+      // Fill panel with content based on what's available in the category
+      if (category.skills) {
+        renderSkills(panel, category, 0);
+      } else if (category.projects) {
+        renderProjects(panel, category);
+      } else if (category.courses) {
+        renderCourses(panel, category);
+      } else if (category.qualifications) {
+        renderQualifications(panel, category);
+      } else if (category.jobs) {
+        renderJobs(panel, category);
+      } else if (category.interests) {
+        renderInterests(panel, category);
+      }
+
+      contentContainer.appendChild(panel);
+    });
+
+    // Add event listeners to tabs
+    addTabEventListeners(section);
+  }
 }
 
 /**
@@ -244,10 +267,10 @@ function addTabEventListeners(section) {
  * @param {HTMLElement} panel - The panel to populate
  * @param {Object} category - The category data
  */
-function renderSkills(panel, category) {
-  const container = document.createElement("div");
+function renderSkills(panel, category, index) {
+  const container = document.createElement("article");
   container.className = "main-item";
-  container.style.setProperty("--item-index", 0);
+  container.style.setProperty("--item-index", index);
 
   // Add section image with emoji if available
   container.appendChild(
@@ -255,7 +278,7 @@ function renderSkills(panel, category) {
   );
 
   const title = document.createElement("h3");
-  title.textContent = `${category.title} Skills`;
+  title.textContent = `${category.title}`;
   container.appendChild(title);
 
   const skillsList = document.createElement("ul");
@@ -267,8 +290,7 @@ function renderSkills(panel, category) {
 
   container.appendChild(skillsList);
 
-  // Add link button
-  container.appendChild(createSectionLink());
+  // No "View Details" button for Skills section
 
   panel.appendChild(container);
 }
