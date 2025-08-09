@@ -107,7 +107,13 @@
             "randomForest",
             "e1071"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "general-skills",
+      "title": "General Skills",
+      "subCategories": [
         {
           "id": "productivity-tools",
           "title": "Productivity Tools",
