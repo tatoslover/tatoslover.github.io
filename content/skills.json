@@ -5,10 +5,10 @@
       "title": "Software Engineering",
       "subCategories": [
         {
-          "id": "programming-languages",
+          "id": "programming-languages-se",
           "title": "Programming Languages",
           "emoji": "💻",
-          "skills": ["Python", "R", "SQL", "JavaScript", "HTML", "CSS"]
+          "skills": ["JavaScript", "HTML", "CSS", "TypeScript"]
         },
         {
           "id": "web-development",
@@ -23,6 +23,12 @@
             "HTML/CSS",
             "Swagger"
           ]
+        },
+        {
+          "id": "web-databases",
+          "title": "Web & App Databases",
+          "emoji": "🗄️",
+          "skills": ["MongoDB", "Redis", "MySQL for Web Apps"]
         },
         {
           "id": "devops-tools",
@@ -57,32 +63,63 @@
       "title": "Data Science",
       "subCategories": [
         {
-          "id": "data-tools",
-          "title": "Data Science & Databases",
+          "id": "programming-languages-ds",
+          "title": "Data Programming Languages",
+          "emoji": "💻",
+          "skills": ["Python", "R", "SQL"]
+        },
+        {
+          "id": "data-analysis-tools",
+          "title": "Data Analysis & Visualization",
           "emoji": "📊",
           "skills": [
-            "MongoDB",
-            "MySQL",
-            "PostgreSQL",
-            "Redis",
+            "Jupyter Notebooks",
+            "RStudio",
             "Power BI",
             "Tableau",
-            "Jupyter",
-            "RStudio",
+            "PostgreSQL",
             "Anaconda"
           ]
         },
         {
-          "id": "specialized-packages",
-          "title": "Specialized Packages",
-          "emoji": "📦",
+          "id": "python-packages",
+          "title": "Python Data Packages",
+          "emoji": "🐍",
           "skills": [
-            "Python: NumPy, Pandas, Matplotlib",
-            "Python: Scikit-learn, BeautifulSoup, Plotly",
-            "R: tidyverse, ggplot2, shiny",
-            "R: caret, glmnet, randomForest, e1071",
-            "Excel, Word, PowerPoint",
-            "Obsidian, Incisive, Quarto, Zed"
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Scikit-learn",
+            "Plotly",
+            "BeautifulSoup for Data Collection"
+          ]
+        },
+        {
+          "id": "r-packages",
+          "title": "R Data Packages",
+          "emoji": "📈",
+          "skills": [
+            "tidyverse",
+            "ggplot2",
+            "shiny",
+            "caret",
+            "glmnet",
+            "randomForest",
+            "e1071"
+          ]
+        },
+        {
+          "id": "productivity-tools",
+          "title": "Productivity Tools",
+          "emoji": "🔧",
+          "skills": [
+            "Excel",
+            "Word",
+            "PowerPoint",
+            "Obsidian",
+            "Incisive",
+            "Quarto",
+            "Zed"
           ]
         }
       ]
