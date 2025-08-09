@@ -51,6 +51,10 @@ function loadContent(section, filename) {
 function renderContent(section, categories) {
   // Get the tab and content containers
   const tabsContainer = section.querySelector(".category-tabs");
+
+  // Add a special class for tab spacing
+  tabsContainer.classList.add("tab-spacing");
+
   const contentContainer = section.querySelector(".content-container");
 
   // Clear existing content

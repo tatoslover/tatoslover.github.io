@@ -108,7 +108,7 @@ h1 {
 h2 {
     font-size: 2rem;
     position: relative;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
     padding-bottom: 0.5rem;
 }
 
@@ -155,6 +155,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 section:nth-child(even) {
@@ -439,13 +440,22 @@ nav a:hover::after {
     position: relative;
 }
 
+/* Dedicated class for tab spacing */
+.tab-spacing {
+    padding-top: 5rem;
+    position: relative;
+    margin-top: -2rem;
+}
+
 .category-tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
-    margin-top: 1.5rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 .tab-button {
@@ -459,8 +469,10 @@ nav a:hover::after {
     letter-spacing: 0.5px;
     transition: all 0.3s;
     box-shadow: 0 2px 4px var(--shadow);
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+    position: relative;
+    z-index: 20;
+    transform: translateY(0);
+    margin: 0.75rem 0.5rem;
 }
 
 /* Tab button styling */
@@ -469,8 +481,8 @@ nav a:hover::after {
 .tab-button:hover {
     background-color: var(--accent);
     color: var(--text-black);
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px var(--shadow);
+    transform: translateY(-15px);
+    box-shadow: 0 6px 12px var(--shadow);
     border-color: transparent;
 }
 
@@ -1674,13 +1686,19 @@ footer {
     }
 
     .category-tabs {
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        justify-content: flex-start;
+        overflow-x: visible;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tab-spacing {
+        padding-top: 5rem;
+        margin-top: -2rem;
     }
 
     .tab-button {
         padding: 0.7rem 1.2rem;
+        margin: 0.75rem 0.5rem;
     }
 
 
