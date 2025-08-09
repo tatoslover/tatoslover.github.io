@@ -1,78 +1,133 @@
 {
   "categories": [
     {
-      "id": "programming-languages",
-      "title": "Programming Languages",
-      "emoji": "💻",
-      "skills": ["Python", "R", "SQL", "JavaScript", "HTML", "CSS"]
-    },
-    {
-      "id": "web-development",
-      "title": "Web Development",
-      "emoji": "🌐",
-      "skills": [
-        "React",
-        "JSX",
-        "Express.js",
-        "Bootstrap",
-        "Figma",
-        "HTML/CSS",
-        "Swagger"
+      "id": "software-engineering",
+      "title": "Software Engineering",
+      "subCategories": [
+        {
+          "id": "programming-languages-se",
+          "title": "Programming Languages",
+          "emoji": "💻",
+          "skills": ["JavaScript", "HTML", "CSS", "TypeScript"]
+        },
+        {
+          "id": "web-development",
+          "title": "Web Development",
+          "emoji": "🌐",
+          "skills": [
+            "React",
+            "JSX",
+            "Express.js",
+            "Bootstrap",
+            "Figma",
+            "HTML/CSS",
+            "Swagger"
+          ]
+        },
+        {
+          "id": "web-databases",
+          "title": "Web & App Databases",
+          "emoji": "🗄️",
+          "skills": ["MongoDB", "Redis", "MySQL for Web Apps"]
+        },
+        {
+          "id": "devops-tools",
+          "title": "DevOps & Deployment",
+          "emoji": "🚀",
+          "skills": [
+            "AWS EC2",
+            "AWS Elastic Beanstalk",
+            "CI/CD",
+            "Docker",
+            "GitHub Actions",
+            "Git Version Control",
+            "Bash"
+          ]
+        },
+        {
+          "id": "development-practices",
+          "title": "Development Practices",
+          "emoji": "🔄",
+          "skills": [
+            "Agile Methodologies",
+            "Model-View-Controller (MVC)",
+            "Test Driven Development",
+            "GitHub Workflow",
+            "Collaborative Development"
+          ]
+        }
       ]
     },
     {
-      "id": "data-tools",
-      "title": "Data Science & Databases",
-      "emoji": "📊",
-      "skills": [
-        "MongoDB",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Power BI",
-        "Tableau",
-        "Jupyter",
-        "RStudio",
-        "Anaconda"
+      "id": "data-science",
+      "title": "Data Science",
+      "subCategories": [
+        {
+          "id": "programming-languages-ds",
+          "title": "Data Programming Languages",
+          "emoji": "💻",
+          "skills": ["Python", "R", "SQL"]
+        },
+        {
+          "id": "data-analysis-tools",
+          "title": "Data Analysis & Visualization",
+          "emoji": "📊",
+          "skills": [
+            "Jupyter Notebooks",
+            "RStudio",
+            "Power BI",
+            "Tableau",
+            "PostgreSQL",
+            "Anaconda"
+          ]
+        },
+        {
+          "id": "python-packages",
+          "title": "Python Data Packages",
+          "emoji": "🐍",
+          "skills": [
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Scikit-learn",
+            "Plotly",
+            "BeautifulSoup for Data Collection"
+          ]
+        },
+        {
+          "id": "r-packages",
+          "title": "R Data Packages",
+          "emoji": "📈",
+          "skills": [
+            "tidyverse",
+            "ggplot2",
+            "shiny",
+            "caret",
+            "glmnet",
+            "randomForest",
+            "e1071"
+          ]
+        }
       ]
     },
     {
-      "id": "devops-tools",
-      "title": "DevOps & Deployment",
-      "emoji": "🚀",
-      "skills": [
-        "AWS EC2",
-        "AWS Elastic Beanstalk",
-        "CI/CD",
-        "Docker",
-        "GitHub Actions",
-        "Git Version Control",
-        "Bash"
-      ]
-    },
-    {
-      "id": "development-practices",
-      "title": "Development Practices",
-      "emoji": "🔄",
-      "skills": [
-        "Agile Methodologies",
-        "Model-View-Controller (MVC)",
-        "Test Driven Development",
-        "GitHub Workflow",
-        "Collaborative Development"
-      ]
-    },
-    {
-      "id": "specialized-packages",
-      "title": "Specialized Packages",
-      "emoji": "📦",
-      "skills": [
-        "Python: NumPy, Pandas, Matplotlib",
-        "Python: Scikit-learn, BeautifulSoup, Plotly",
-        "R: tidyverse, ggplot2, shiny",
-        "R: caret, glmnet, randomForest, e1071",
-        "Excel, Word, PowerPoint",
-        "Obsidian, Incisive, Quarto, Zed"
+      "id": "general-skills",
+      "title": "General Skills",
+      "subCategories": [
+        {
+          "id": "productivity-tools",
+          "title": "Productivity Tools",
+          "emoji": "🔧",
+          "skills": [
+            "Excel",
+            "Word",
+            "PowerPoint",
+            "Obsidian",
+            "Incisive",
+            "Quarto",
+            "Zed"
+          ]
+        }
       ]
     }
   ]

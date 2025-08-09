@@ -56,7 +56,6 @@ function renderContent(section, categories) {
   // Clear existing content
   tabsContainer.innerHTML = "";
   contentContainer.innerHTML = "";
-
   // Set initial state - content container is hidden
   contentContainer.style.display = "none";
 
@@ -77,9 +76,17 @@ function renderContent(section, categories) {
     panel.className = "content-panel";
     panel.id = category.id;
 
-    // Fill panel with content based on what's available in the category
-    if (category.skills) {
-      renderSkills(panel, category);
+    // Check if this is the skills section with subcategories
+    const isSectionSkills = section.closest("#skills") !== null;
+    if (isSectionSkills && category.subCategories) {
+      // Render all subcategories as stacked cards within this panel
+      category.subCategories.forEach((subCategory, subIndex) => {
+        renderSkills(panel, subCategory, subIndex);
+      });
+    }
+    // Handle normal categories
+    else if (category.skills) {
+      renderSkills(panel, category, 0);
     } else if (category.projects) {
       renderProjects(panel, category);
     } else if (category.courses) {
@@ -240,14 +247,15 @@ function addTabEventListeners(section) {
 }
 
 /**
- * Renders skills content
+ * Renders skills for a category
  * @param {HTMLElement} panel - The panel to populate
  * @param {Object} category - The category data
+ * @param {Number} index - The index for animation ordering
  */
-function renderSkills(panel, category) {
-  const container = document.createElement("div");
+function renderSkills(panel, category, index) {
+  const container = document.createElement("article");
   container.className = "main-item";
-  container.style.setProperty("--item-index", 0);
+  container.style.setProperty("--item-index", index);
 
   // Add section image with emoji if available
   container.appendChild(
@@ -255,7 +263,7 @@ function renderSkills(panel, category) {
   );
 
   const title = document.createElement("h3");
-  title.textContent = `${category.title} Skills`;
+  title.textContent = `${category.title}`;
   container.appendChild(title);
 
   const skillsList = document.createElement("ul");
@@ -267,8 +275,7 @@ function renderSkills(panel, category) {
 
   container.appendChild(skillsList);
 
-  // Add link button
-  container.appendChild(createSectionLink());
+  // No "View Details" button for Skills section
 
   panel.appendChild(container);
 }
