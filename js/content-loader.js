@@ -148,6 +148,24 @@ function createSectionImage(title, imageSrc = null, emoji = null) {
         title.includes("New Zealand Sign Language"))
     ) {
       image.classList.add("svg-shield");
+
+      // Add academic-logo class to university logos to prevent filtering in dark mode
+      if (
+        imageSrc &&
+        (imageSrc.includes("university") ||
+          imageSrc.includes("canterbury") ||
+          imageSrc.includes("massey") ||
+          imageSrc.includes("victoria") ||
+          imageSrc.includes("waikato") ||
+          imageSrc.includes("auckland") ||
+          imageSrc.includes("otago") ||
+          imageSrc.includes("lincoln") ||
+          title.includes("University") ||
+          title.includes("Master") ||
+          title.includes("Bachelor"))
+      ) {
+        image.classList.add("academic-logo");
+      }
     }
 
     imageContainer.appendChild(image);

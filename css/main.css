@@ -711,6 +711,11 @@ section:nth-child(even) .main-item h3 {
     text-align: center;
 }
 
+/* Academic logo styles */
+.academic-logo {
+    filter: none !important; /* Ensure academic logos always display with original colors */
+}
+
 .section-image img {
     width: 120px;
     height: 120px;
