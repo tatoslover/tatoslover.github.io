@@ -110,7 +110,7 @@ h2 {
     position: relative;
     margin-bottom: 3rem;
     padding-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 h2::after {
@@ -1505,9 +1505,21 @@ section:nth-child(even) .main-item p {
     text-align: center;
 }
 
-#connect h2 {
-    color: var(--text-primary);
+/* Force all h2 elements in connect section to use text-primary color */
+html body main section#connect.main-section h2 {
+    color: var(--text-primary) !important;
 }
+
+/* Override any other possible style source */
+#connect h2,
+section#connect h2,
+.main-section#connect h2,
+section.main-section#connect h2,
+body section#connect h2,
+main section#connect h2 {
+    color: var(--text-primary) !important;
+}
+
 
 
 
@@ -1632,9 +1644,6 @@ section:nth-child(even) .main-item p {
         transform: translateY(-10px);
     }
 }
-
-/* Dedicated Connect Card animations with higher specificity */
-/* Consolidated with #connect .connect-card selectors above */
 
 /* Mobile animation adjustments */
 @media (max-width: 768px) {
