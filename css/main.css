@@ -1504,9 +1504,7 @@ section:nth-child(even) .main-item p {
     text-align: center;
 }
 
-#connect h2 {
-    margin-bottom: 2rem;
-}
+
 
 .connect-container {
     display: grid;
