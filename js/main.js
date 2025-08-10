@@ -100,7 +100,9 @@ function updateThemeToggleIcon(theme) {
  * This function updates SVG shield colors to match the current theme
  */
 function updateSvgColors(theme) {
-  const svgShields = document.querySelectorAll(".svg-shield");
+  const svgShields = document.querySelectorAll(
+    ".svg-shield:not(.academic-logo)",
+  );
 
   svgShields.forEach((svg) => {
     if (theme === "dark") {
