@@ -4,8 +4,8 @@
 :root {
     /* Light mode (default) variables */
     /* Background colors */
-    --bg-primary: #e0ecff;  /* Light blue for odd sections */
-    --bg-secondary: #faf3e5; /* Light cream for even sections */
+    --bg-primary: #e0ecff;  /* Light blue for even sections */
+    --bg-secondary: #faf3e5; /* Light cream for odd sections */
 
     /* Text colors */
     --text-primary: #0a192f;
@@ -33,8 +33,8 @@
 /* Dark theme when 'data-theme="dark"' is set on html element */
 [data-theme="dark"] {
     /* Background colors */
-    --bg-primary: #0a192f;
-    --bg-secondary: #112240;
+    --bg-primary: #112240;    /* Darker blue for even sections in dark mode */
+    --bg-secondary: #0a192f;  /* Dark blue for odd sections in dark mode */
 
     /* Text colors */
     --text-primary: #e6f1ff;
@@ -63,8 +63,8 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
         /* Background colors */
-        --bg-primary: #0a192f;
-        --bg-secondary: #112240;
+        --bg-primary: #112240;    /* Darker blue for even sections in dark mode */
+        --bg-secondary: #0a192f;  /* Dark blue for odd sections in dark mode */
 
         /* Text colors */
         --text-primary: #e6f1ff;
@@ -200,11 +200,14 @@ section {
     align-items: center;
     text-align: center;
     position: relative;
-    background-color: var(--bg-primary);
+}
+
+section:nth-child(odd) {
+    background-color: var(--bg-secondary); /* Odd sections get secondary color (cream in light, dark blue in dark) */
 }
 
 section:nth-child(even) {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary); /* Even sections get primary color (blue in light, darker blue in dark) */
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -506,7 +509,7 @@ nav a:hover::after {
 /* Tab button styling */
 .tab-button {
     padding: 0.8rem 1.5rem;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     color: var(--text-primary);
     border: none;
     border-radius: 2rem;
@@ -535,7 +538,7 @@ nav a:hover::after {
 
 /* Tab button styling for even sections - offset pattern */
 section:nth-child(even) .tab-button {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     border: 1px solid var(--border);
 }
 
@@ -594,7 +597,7 @@ section:nth-child(even) .tab-button.active {
     position: relative;
     top: 0;
     border: 1px solid var(--border);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     box-shadow: 0 2px 6px var(--shadow);
     overflow: visible;
 }
@@ -610,7 +613,7 @@ section:nth-child(even) .tab-button.active {
 
 /* Variant for content boxes in even sections - offset pattern */
 section:nth-child(even) .main-item {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     color: var(--text-primary);
     box-shadow: 0 2px 8px var(--shadow);
     border: 1px solid var(--border);
@@ -618,7 +621,7 @@ section:nth-child(even) .main-item {
 
 /* Dark variant for content boxes in even sections when in dark mode */
 [data-theme="dark"] section:nth-child(even) .main-item {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     color: var(--text-primary);
     box-shadow: 0 2px 8px var(--shadow);
 }
@@ -626,7 +629,7 @@ section:nth-child(even) .main-item {
 /* System preference fallback for dark mode */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) section:nth-child(even) .main-item {
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
         color: var(--text-primary);
         box-shadow: 0 2px 8px var(--shadow);
     }
@@ -905,7 +908,7 @@ section:nth-child(even) .main-item h3 {
 }
 
 section:nth-child(even) .emoji-container {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Cream emoji container on blue background */
     color: var(--accent-primary);
     text-shadow: 0 2px 4px var(--overlay-medium);
     border-color: var(--accent-primary);
@@ -926,7 +929,7 @@ section:nth-child(even) .emoji-container {
 
 /* Content container and panel styling */
 .content-container {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow);
@@ -956,7 +959,7 @@ section:nth-child(even) .emoji-container {
 }
 
 section:nth-child(even) .content-container {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     box-shadow: 0 4px 10px var(--shadow);
     border-color: var(--border);
     border-width: 1px;
@@ -964,14 +967,14 @@ section:nth-child(even) .content-container {
 
 /* Dark theme content containers for even sections */
 [data-theme="dark"] section:nth-child(even) .content-container {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     box-shadow: 0 4px 10px var(--shadow);
 }
 
 /* System preference fallback for dark mode content containers */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) section:nth-child(even) .content-container {
-        background-color: var(--bg-primary);
+        background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
         box-shadow: 0 4px 10px var(--shadow);
     }
 }
