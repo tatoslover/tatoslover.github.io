@@ -13,10 +13,7 @@
     <body>
         <header>
             <div class="header-container">
-                <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                    <span class="toggle-icon light-icon">☀️</span>
-                    <span class="toggle-icon dark-icon">🌙</span>
-                </button>
+                <!-- Theme toggle removed - dark mode only -->
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -40,8 +37,22 @@
                 <div class="typewriter-container">
                     <span id="typewriter" class="typewriter-text"></span>
                 </div>
-                <div class="profile-image">
-                    <img src="assets/logos/profile.png" alt="Profile image" />
+                <div
+                    class="profile-image"
+                    style="
+                        animation: none !important;
+                        transform: none !important;
+                    "
+                >
+                    <img
+                        src="assets/logos/profile.png"
+                        alt="Profile image"
+                        style="
+                            transition: none !important;
+                            transform: none !important;
+                            animation: none !important;
+                        "
+                    />
                 </div>
                 <p>
                     I hold a Master of Applied Data Science from the University

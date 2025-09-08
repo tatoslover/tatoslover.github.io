@@ -10,20 +10,51 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 0);
 });
 
+// Disable profile image animations when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+  disableProfileImageAnimations();
+});
+
+/**
+ * Function to disable all profile image animations
+ */
+function disableProfileImageAnimations() {
+  const profileImage = document.querySelector(".profile-image");
+  const profileImageImg = document.querySelector(".profile-image img");
+
+  if (profileImage) {
+    // Stop any existing animations
+    profileImage.style.animation = "none";
+    profileImage.style.transform = "none";
+    profileImage.style.transition = "none";
+
+    // Prevent any future animations
+    profileImage.style.animationName = "none !important";
+    profileImage.style.animationDuration = "0s !important";
+    profileImage.style.transformStyle = "flat !important";
+  }
+
+  if (profileImageImg) {
+    // Stop any existing animations on the image
+    profileImageImg.style.animation = "none";
+    profileImageImg.style.transform = "none";
+    profileImageImg.style.transition = "none";
+
+    // Prevent any future animations
+    profileImageImg.style.animationName = "none !important";
+    profileImageImg.style.animationDuration = "0s !important";
+  }
+}
+
 /**
  * Initializes theme toggle functionality
  * Handles system preferences, user preferences, and toggle button interaction
  */
 function initThemeToggle() {
-  const themeToggle = document.getElementById("theme-toggle");
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  // Always use dark mode only
+  const currentTheme = "dark";
 
-  // Check for saved theme preference or use the system preference
-  const currentTheme =
-    localStorage.getItem("theme") ||
-    (prefersDarkScheme.matches ? "dark" : "light");
-
-  // Set initial theme without transition
+  // Apply dark theme immediately
   document.documentElement.setAttribute("data-theme", currentTheme);
 
   // Force reflow to apply theme immediately
@@ -32,86 +63,38 @@ function initThemeToggle() {
   // Add body class for theme transitions
   document.body.classList.add("theme-ready");
 
-  // Update button state based on current theme
-  updateThemeToggleIcon(currentTheme);
+  // Update SVG colors for dark mode
+  updateSvgColors();
 
-  // Update SVG colors based on current theme
-  updateSvgColors(currentTheme);
-
-  // Toggle theme when button is clicked
-  themeToggle.addEventListener("click", function () {
-    // Simple toggle without complex animations
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-
-    // Update the theme
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-
-    // Update button appearance - simplified
-    if (newTheme === "dark") {
-      document.querySelector(".light-icon").style.display = "inline";
-      document.querySelector(".dark-icon").style.display = "none";
-    } else {
-      document.querySelector(".light-icon").style.display = "none";
-      document.querySelector(".dark-icon").style.display = "inline";
-    }
-
-    // Update SVG colors based on new theme
-    updateSvgColors(newTheme);
-  });
-
-  // Listen for system preference changes
-  prefersDarkScheme.addEventListener("change", function (e) {
-    // Only update if the user hasn't manually set a preference
-    if (!localStorage.getItem("theme")) {
-      const newTheme = e.matches ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      updateThemeToggleIcon(newTheme);
-
-      // Update SVG colors for system preference changes
-      updateSvgColors(newTheme);
-    }
-  });
+  // Remove theme toggle button from DOM completely
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle && themeToggle.parentNode) {
+    themeToggle.parentNode.removeChild(themeToggle);
+  }
 }
 
 /**
- * Updates the theme toggle button icon based on current theme
- * @param {string} theme - The current theme ('light' or 'dark')
+ * This function has been removed as we no longer need theme toggle functionality
+ * The site now always uses dark mode
  */
-function updateThemeToggleIcon(theme) {
-  const lightIcon = document.querySelector(".light-icon");
-  const darkIcon = document.querySelector(".dark-icon");
-
-  // Simple display toggle without animations
-  if (theme === "dark") {
-    lightIcon.style.display = "inline";
-    darkIcon.style.display = "none";
-  } else {
-    lightIcon.style.display = "none";
-    darkIcon.style.display = "inline";
-  }
-}
 
 // End of theme toggle functionality
 
 /**
- * Adjusts SVG colors based on current theme
- * This function updates SVG shield colors to match the current theme
+ * Adjusts SVG colors for dark mode
+ * This function updates SVG shield colors to be visible on dark background
  */
-function updateSvgColors(theme) {
+function updateSvgColors() {
+  // Call function to disable profile image animations
+  disableProfileImageAnimations();
+
   const svgShields = document.querySelectorAll(
     ".svg-shield:not(.academic-logo)",
   );
 
   svgShields.forEach((svg) => {
-    if (theme === "dark") {
-      // Add a filter to make the SVGs more visible on dark background
-      svg.style.filter = "brightness(1.2) contrast(0.8) invert(0.2)";
-    } else {
-      // Reset filter for light mode
-      svg.style.filter = "none";
-    }
+    // Always apply dark mode filter
+    svg.style.filter = "brightness(1.2) contrast(0.8) invert(0.2)";
   });
 }
 

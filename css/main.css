@@ -2,49 +2,56 @@
 /* Main CSS file with theme support (light/dark mode) */
 
 :root {
-    /* Light mode (default) variables */
-    --bg-primary: #e0ecff;
-    --bg-secondary: #faf3e5;
-    --text-primary: #0a192f;
-    --text-secondary: #112240;
-    --accent: #64ffda;
-    --accent-hover: #4cd3a9;
-    --border: #dddddd;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --text-black: #000000;
-    --text-white: #ffffff;
-    --header-footer: #4A1D82;
-}
+    /* Dark mode (default) variables */
+    /* Background colors */
+    --bg-primary: #112240;    /* Darker blue for even sections in dark mode */
+    --bg-secondary: #0a192f;  /* Dark blue for odd sections in dark mode */
 
-/* Dark theme when 'data-theme="dark"' is set on html element */
-[data-theme="dark"] {
-    --bg-primary: #0a192f;
-    --bg-secondary: #112240;
+    /* Text colors */
     --text-primary: #e6f1ff;
     --text-secondary: #ccd6f6;
-    --accent: #64ffda;
-    --accent-hover: #4cd3a9;
-    --border: #1d304f;
-    --shadow: rgba(10, 25, 47, 0.6);
     --text-black: #000000;
     --text-white: #ffffff;
-    --header-footer: #4A1D82;
+
+    /* Accent colors */
+    --accent-primary: #06b6d4;    /* Primary cyan accent */
+    --accent-secondary: #3b82f6;  /* Blue accent for header/footer/hover states */
+    --accent-hover: #22d3ee;      /* Lighter cyan for hover state */
+
+    /* Utility colors */
+    --border: #1d304f;
+
+    /* Shadows and overlays */
+    --shadow: rgba(10, 25, 47, 0.6);
+    --overlay-light: rgba(0, 0, 0, 0.2);
+    --overlay-medium: rgba(0, 0, 0, 0.3);
+    --overlay-dark: rgba(0, 0, 0, 0.8);
+    --highlight-light: rgba(255, 255, 255, 0.5);
+    --highlight-medium: rgba(255, 255, 255, 0.8);
 }
 
-/* System preference fallback - only applies if no 'data-theme' is set */
-@media (prefers-color-scheme: dark) {
+/* No light theme - dark mode only */
+
+/* Force dark mode regardless of system preferences */
+@media (prefers-color-scheme: light) {
     :root:not([data-theme]) {
-        --bg-primary: #0a192f;
-        --bg-secondary: #112240;
+        /* Same as root dark theme variables */
+        --bg-primary: #112240;
+        --bg-secondary: #0a192f;
         --text-primary: #e6f1ff;
         --text-secondary: #ccd6f6;
-        --accent: #64ffda;
-        --accent-hover: #4cd3a9;
-        --border: #1d304f;
-        --shadow: rgba(10, 25, 47, 0.6);
         --text-black: #000000;
         --text-white: #ffffff;
-        --header-footer: #4A1D82; /* Deep purple for header and footer */
+        --accent-primary: #06b6d4;
+        --accent-secondary: #3b82f6;
+        --accent-hover: #22d3ee;
+        --border: #1d304f;
+        --shadow: rgba(10, 25, 47, 0.6);
+        --overlay-light: rgba(0, 0, 0, 0.2);
+        --overlay-medium: rgba(0, 0, 0, 0.3);
+        --overlay-dark: rgba(0, 0, 0, 0.8);
+        --highlight-light: rgba(255, 255, 255, 0.5);
+        --highlight-medium: rgba(255, 255, 255, 0.8);
     }
 }
 
@@ -120,7 +127,7 @@ h2::after {
     left: 50%;
     width: 100px;
     height: 3px;
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     transform: translateX(-50%);
 }
 
@@ -133,7 +140,7 @@ p {
 }
 
 a {
-    color: var(--accent);
+    color: var(--accent-primary);
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
@@ -149,7 +156,8 @@ ul {
 }
 
 section {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -159,8 +167,12 @@ section {
     position: relative;
 }
 
+section:nth-child(odd) {
+    background-color: var(--bg-secondary); /* Odd sections get secondary color (cream in light, dark blue in dark) */
+}
+
 section:nth-child(even) {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary); /* Even sections get primary color (blue in light, darker blue in dark) */
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -169,7 +181,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--header-footer);
+    background-color: var(--accent-secondary);
     box-shadow: 0 2px 10px var(--shadow);
     z-index: 1000;
     padding: 1rem 0;
@@ -187,7 +199,7 @@ header {
 
 #theme-toggle {
     background: transparent;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--accent-primary);
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -201,7 +213,7 @@ header {
 }
 
 #theme-toggle:hover {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--bg-primary);
 }
 
@@ -219,11 +231,12 @@ header {
     display: inline;
 }
 
-[data-theme="dark"] .light-icon {
+/* Always show light icon for dark theme */
+.light-icon {
     display: inline;
 }
 
-[data-theme="dark"] .dark-icon {
+.dark-icon {
     display: none;
 }
 
@@ -247,11 +260,11 @@ nav a {
     padding: 0.5rem;
     position: relative;
     transition: color 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px var(--overlay-light);
 }
 
 nav a:hover {
-    color: var(--accent);
+    color: var(--accent-primary);
     text-decoration: none;
 }
 
@@ -262,7 +275,7 @@ nav a::after {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     transition: all 0.3s;
     transform: translateX(-50%);
 }
@@ -298,6 +311,8 @@ nav a:hover::after {
     position: relative;
     background-color: var(--bg-secondary);
     box-shadow: 0 4px 8px var(--shadow);
+    animation: none !important;
+    transform: none !important;
 }
 
 .profile-image img {
@@ -305,11 +320,16 @@ nav a:hover::after {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s ease;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
 }
 
 .profile-image:hover img {
-    transform: scale(1.05);
+    /* Animation removed */
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 #home p {
@@ -350,23 +370,28 @@ nav a:hover::after {
     display: inline-block;
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--accent);
+    color: var(--accent-primary);
     white-space: nowrap;
     position: relative;
     margin: 0 auto;
-    border-right: 0.15em solid var(--accent);
+    border-right: 0.15em solid var(--accent-primary);
     animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: var(--accent); }
+    50% { border-color: var(--accent-primary); }
 }
 
+/* Completely remove profile image animation */
 .profile-image {
-    animation: floatAnimation 4s ease-in-out infinite;
+    /* Animation removed - no floating effect */
+    animation: none !important;
+    transform: none !important;
 }
 
+/* Completely remove animation keyframes */
+/*
 @keyframes floatAnimation {
     0% {
         transform: translateY(0px);
@@ -378,6 +403,7 @@ nav a:hover::after {
         transform: translateY(0px);
     }
 }
+*/
 
 /* Make sure typewriter content is visible */
 #home .typewriter-container {
@@ -387,7 +413,7 @@ nav a:hover::after {
 
 /* Qualification documents link styling */
 .qualifications-document-link {
-    color: var(--accent);
+    color: var(--accent-primary);
     text-decoration: underline;
     cursor: pointer;
     font-weight: 500;
@@ -413,14 +439,14 @@ nav a:hover::after {
 /* Add subtle indicator for clickable items */
 .section-image[style*="cursor: pointer"] img:hover,
 .svg-shield:hover {
-    box-shadow: 0 0 0 3px var(--accent), 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 3px var(--accent-primary), 0 4px 8px var(--overlay-medium);
 }
 
 #home a {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.8rem 2rem;
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--bg-primary);
     border-radius: 4px;
     font-weight: 600;
@@ -459,9 +485,10 @@ nav a:hover::after {
     z-index: 10;
 }
 
+/* Tab button styling */
 .tab-button {
     padding: 0.8rem 1.5rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     color: var(--text-primary);
     border: none;
     border-radius: 2rem;
@@ -470,17 +497,18 @@ nav a:hover::after {
     letter-spacing: 0.5px;
     transition: all 0.3s;
     box-shadow: 0 2px 4px var(--shadow);
+    min-width: 150px;
+    text-align: center;
+    margin: 0.5rem;
     position: relative;
-    z-index: 20;
-    transform: translateY(0);
-    margin: 0.75rem 0.5rem;
+    z-index: 1;
 }
 
 /* Tab button styling */
 
 /* Tab button hover effect */
 .tab-button:hover {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--text-black);
     transform: translateY(-15px);
     box-shadow: 0 6px 12px var(--shadow);
@@ -489,34 +517,26 @@ nav a:hover::after {
 
 /* Tab button styling for even sections - offset pattern */
 section:nth-child(even) .tab-button {
-    background-color: var(--card-bg);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     border: 1px solid var(--border);
 }
 
-/* Dark theme buttons for even sections */
-[data-theme="dark"] section:nth-child(even) .tab-button {
-    background-color: var(--bg-primary);
+/* Consistent styling for even sections */
+section:nth-child(even) .main-item h3 {
+    color: var(--text-primary);
     border-color: var(--border);
-}
-
-/* System preference fallback for dark mode buttons */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .tab-button {
-        background-color: var(--bg-primary);
-        border-color: var(--border);
-    }
 }
 
 /* Ensure hover effect applies to all tab buttons regardless of section */
 section:nth-child(even) .tab-button:hover {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--bg-primary);
     border-color: transparent;
 }
 
 /* Active tab button styling - same for all sections */
 .tab-button.active {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--text-black);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px var(--shadow);
@@ -526,7 +546,7 @@ section:nth-child(even) .tab-button:hover {
 
 /* Ensure active styling is consistent across all sections */
 section:nth-child(even) .tab-button.active {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--text-black);
     border-color: transparent;
 }
@@ -548,7 +568,7 @@ section:nth-child(even) .tab-button.active {
     position: relative;
     top: 0;
     border: 1px solid var(--border);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     box-shadow: 0 2px 6px var(--shadow);
     overflow: visible;
 }
@@ -564,57 +584,40 @@ section:nth-child(even) .tab-button.active {
 
 /* Variant for content boxes in even sections - offset pattern */
 section:nth-child(even) .main-item {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     color: var(--text-primary);
     box-shadow: 0 2px 8px var(--shadow);
     border: 1px solid var(--border);
 }
 
 /* Dark variant for content boxes in even sections when in dark mode */
-[data-theme="dark"] section:nth-child(even) .main-item {
-    background-color: var(--bg-primary);
+/* Even section styling */
+section:nth-child(even) .main-item {
+    background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     color: var(--text-primary);
     box-shadow: 0 2px 8px var(--shadow);
-}
-
-/* System preference fallback for dark mode */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item {
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-        box-shadow: 0 2px 8px var(--shadow);
-    }
 }
 
 .main-item:hover {
     transform: translateY(-10px) scale(1.02);
     z-index: 2;
-    border-color: var(--accent);
+    border-color: var(--accent-primary);
     box-shadow: 0 12px 20px var(--shadow);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 /* Enhanced shadow for even sections */
 section:nth-child(even) .main-item:hover {
     box-shadow: 0 12px 20px var(--shadow);
-    background-color: var(--bg-primary);
-    border-color: var(--accent);
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-primary);
 }
 
-/* Dark theme hover for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item:hover {
+/* Even section hover effect */
+section:nth-child(even) .main-item:hover {
     box-shadow: 0 12px 20px var(--shadow);
     background-color: var(--bg-primary);
-    border-color: var(--accent);
-}
-
-/* System preference fallback for dark mode hover */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item:hover {
-        box-shadow: 0 12px 20px var(--shadow);
-        background-color: var(--bg-primary);
-        border-color: var(--accent);
-    }
+    border-color: var(--accent-primary);
 }
 
 .main-item:last-child {
@@ -628,35 +631,28 @@ section:nth-child(even) .main-item:hover {
     padding-bottom: 0.5rem;
     max-width: 80%;
     margin: 0 auto 0.75rem;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent-primary);
     display: inline-block;
     transition: all 0.3s;
 }
 
 .main-item:hover h3 {
     transform: scale(1.05);
-    color: var(--accent);
+    color: var(--accent-primary);
     border-bottom-width: 3px;
 }
 
 /* Ensure heading text is properly visible in light mode for even sections */
 section:nth-child(even) .main-item h3 {
     color: var(--text-primary);
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--accent-primary);
 }
 
 /* Dark theme headings for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item h3 {
-    color: var(--text-even);
-    border-bottom-color: var(--accent);
-}
-
-/* System preference fallback for dark mode headings */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item h3 {
-        color: var(--text-even);
-        border-bottom-color: var(--accent);
-    }
+/* Consistent heading styling for even sections */
+section:nth-child(even) .main-item h3 {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent-primary);
 }
 
 /* Section text content */
@@ -724,7 +720,7 @@ section:nth-child(even) .main-item h3 {
     box-shadow: 0 4px 8px var(--shadow);
     transition: transform 0.3s;
     object-fit: cover;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--accent-primary);
 }
 
 /* Special styling for SVG shields in academic qualifications */
@@ -761,7 +757,7 @@ section:nth-child(even) .main-item h3 {
     border-radius: 50%;
     box-shadow: 0 4px 8px var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--accent-primary);
     background-color: var(--card-bg);
     display: flex;
     justify-content: center;
@@ -770,7 +766,7 @@ section:nth-child(even) .main-item h3 {
     cursor: default;
     user-select: none;
     line-height: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px var(--overlay-light);
     animation: floatIn 0.5s ease-out;
 }
 
@@ -817,7 +813,7 @@ section:nth-child(even) .main-item h3 {
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     color: var(--bg-primary);
     padding: 0.3rem 0.8rem;
     border-radius: 4px;
@@ -859,10 +855,10 @@ section:nth-child(even) .main-item h3 {
 }
 
 section:nth-child(even) .emoji-container {
-    background-color: var(--card-bg-even);
-    color: var(--accent);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-color: var(--accent);
+    background-color: var(--bg-secondary); /* Cream emoji container on blue background */
+    color: var(--accent-primary);
+    text-shadow: 0 2px 4px var(--overlay-medium);
+    border-color: var(--accent-primary);
 }
 
 .emoji-container:hover {
@@ -880,7 +876,7 @@ section:nth-child(even) .emoji-container {
 
 /* Content container and panel styling */
 .content-container {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary); /* Matching opposite section background color for contrast */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow);
@@ -910,24 +906,17 @@ section:nth-child(even) .emoji-container {
 }
 
 section:nth-child(even) .content-container {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Matching section background color for contrast */
     box-shadow: 0 4px 10px var(--shadow);
     border-color: var(--border);
     border-width: 1px;
 }
 
 /* Dark theme content containers for even sections */
-[data-theme="dark"] section:nth-child(even) .content-container {
-    background-color: var(--bg-primary);
+/* Consistent content container styling */
+section:nth-child(even) .content-container {
+    background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     box-shadow: 0 4px 10px var(--shadow);
-}
-
-/* System preference fallback for dark mode content containers */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .content-container {
-        background-color: var(--bg-primary);
-        box-shadow: 0 4px 10px var(--shadow);
-    }
 }
 
 .content-panel {
@@ -1009,27 +998,20 @@ section:nth-child(even) .main-item li {
     box-shadow: 0 1px 3px var(--shadow);
 }
 
-/* Dark theme list items for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item li {
+/* Consistent styling for tab buttons */
+section:nth-child(even) .tab-button {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-}
-
-/* System preference fallback for dark mode list items */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item li {
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-    }
+    border: 1px solid var(--border);
 }
 
 /* Add hover effect to list items */
 .main-item li:hover {
     transform: translateY(-2px);
-    border-color: var(--accent);
+    border-color: var(--accent-primary);
     box-shadow: 0 2px 4px var(--shadow);
     color: var(--text-primary);
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     opacity: 0.8;
 }
 
@@ -1084,15 +1066,9 @@ section:nth-child(even) .main-item p {
 }
 
 /* Dark theme paragraph text for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item p {
-    color: var(--text-even);
-}
-
-/* System preference fallback for dark mode paragraph text */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item p {
-        color: var(--text-even);
-    }
+/* Consistent paragraph styling */
+section:nth-child(even) .main-item p {
+    color: var(--text-primary);
 }
 
 .content-links {
@@ -1111,10 +1087,10 @@ section:nth-child(even) .main-item p {
 .content-link {
     display: inline-block;
     padding: 0.7rem 1.2rem;
-    background-color: var(--accent);
-    color: var(--text-primary);
+    background-color: var(--accent-primary);
+    color: var(--accent-secondary);
     border-radius: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow);
     position: relative;
@@ -1122,41 +1098,41 @@ section:nth-child(even) .main-item p {
     margin-top: 0.5rem;
     min-width: 130px;
     text-align: center;
+    border: 1px solid transparent;
 }
 
 .cv-button {
     display: inline-block;
-    background-color: var(--header-footer);
+    background-color: var(--accent-secondary);
     color: var(--text-white);
     text-decoration: none;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--accent-primary);
 }
 
 .content-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px var(--shadow);
-    background-color: var(--accent-hover);
-    color: var(--text-black);
+    background-color: var(--accent-primary);
+    filter: brightness(1.05);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    font-weight: 700;
 }
 
 .cv-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px var(--shadow);
-    background-color: var(--header-footer);
-    color: var(--accent);
-    border-color: var(--accent);
+    background-color: var(--accent-secondary);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
 }
 
-/* Ensures View Details button has consistent appearance in light and dark mode */
-[data-theme="light"] .main-item .content-link,
-:root:not([data-theme]) .main-item .content-link {
-    color: var(--bg-primary);
-    background-color: var(--accent);
-}
-
-[data-theme="dark"] .main-item .content-link {
-    color: var(--bg-primary);
-    background-color: var(--accent);
+/* Ensures all buttons have consistent appearance in light and dark mode */
+/* Content link styling for dark theme */
+.main-item .content-link {
+    color: var(--accent-secondary);
+    background-color: var(--accent-primary);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5); /* Better readability in dark mode */
 }
 
 .content-link::before {
@@ -1175,19 +1151,14 @@ section:nth-child(even) .main-item p {
     font-size: 0.95rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
+    font-weight: 700;
 }
 
 .content-link:hover span {
-    color: var(--bg-primary);
+    color: var(--accent-secondary);
 }
 
-/* Add specific icons for different content links */
-.content-link.demo-link:not(.disabled-link) {
-    background-color: #50d0c0;
-}
-.content-link.demo-link:not(.disabled-link):hover {
-    background-color: #3bb0a0;
-}
+/* Button icons for different link types */
 .content-link.demo-link::before {
     content: "🚀";
     font-size: 1em;
@@ -1195,23 +1166,11 @@ section:nth-child(even) .main-item p {
     top: -0.05em;
 }
 
-.content-link.code-link {
-    background-color: #5086d0;
-}
-.content-link.code-link:hover {
-    background-color: #3b70b0;
-}
 .content-link.code-link::before {
     content: "💻";
     font-size: 1em;
 }
 
-.content-link.doc-link {
-    background-color: #9070d0;
-}
-.content-link.doc-link:hover {
-    background-color: #7050b0;
-}
 .content-link.doc-link::before {
     content: "📄";
     font-size: 1em;
@@ -1219,12 +1178,6 @@ section:nth-child(even) .main-item p {
     top: -0.05em;
 }
 
-.content-link.portfolio-link:not(.disabled-link) {
-    background-color: #d07050;
-}
-.content-link.portfolio-link:not(.disabled-link):hover {
-    background-color: #b05030;
-}
 .content-link.portfolio-link::before {
     content: "📂";
     font-size: 1em;
@@ -1235,27 +1188,30 @@ section:nth-child(even) .main-item p {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: var(--accent);
-    color: var(--bg-primary);
+    background-color: var(--accent-primary);
+    color: var(--accent-secondary);
     border-radius: 2rem;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s;
     box-shadow: 0 4px 8px var(--shadow);
     position: relative;
+    border: 1px solid transparent;
 }
 
 /* Special link states */
 .disabled-link {
-    background-color: #cccccc !important;
-    color: #666666 !important;
+    background-color: var(--border) !important;
+    color: var(--text-secondary) !important;
     cursor: not-allowed !important;
     box-shadow: none !important;
     opacity: 0.7;
+    transform: none !important;
+    transition: none !important;
 }
 
 .disabled-link span {
-    color: #666666 !important;
+    color: var(--text-secondary) !important;
 }
 
 /* Add tooltip for coming soon buttons */
@@ -1271,16 +1227,16 @@ section:nth-child(even) .main-item p {
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--accent);
-    color: var(--bg-primary);
+    background-color: var(--accent-secondary);
+    color: var(--text-white);
     padding: 0.3rem 0.8rem;
     border-radius: 4px;
     font-size: 0.8rem;
-    opacity: 0;
-    transition: opacity 0.3s;
+    z-index: 1;
     pointer-events: none;
     white-space: nowrap;
-    z-index: 10;
+    transition: opacity 0.3s;
+    opacity: 0;
 }
 
 [data-document-status="Coming Soon"] .demo-link.disabled-link:hover::after,
@@ -1289,13 +1245,15 @@ section:nth-child(even) .main-item p {
 }
 
 .disabled-link:hover {
+    background-color: var(--border) !important;
     transform: none !important;
     box-shadow: none !important;
-    background-color: #cccccc !important;
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
 }
 
 .disabled-link:hover span {
-    color: #666666 !important;
+    color: var(--text-secondary) !important;
 }
 
 .external-link::before {
@@ -1324,12 +1282,16 @@ section:nth-child(even) .main-item p {
 .section-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px var(--shadow);
-    background-color: var(--accent-hover);
-    color: var(--bg-primary) !important;
+    background-color: var(--accent-primary);
+    filter: brightness(1.05);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary) !important;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .section-link:hover span {
-    color: var(--bg-primary);
+    color: var(--accent-secondary);
 }
 
 /* ===== GALLERY SECTION ===== */
@@ -1351,7 +1313,7 @@ section:nth-child(even) .main-item p {
 #gallery h2::after {
     width: 150px;
     height: 4px;
-    background: linear-gradient(to right, var(--accent), var(--accent-hover));
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
 }
 
 /* Auto Carousel Styles */
@@ -1412,7 +1374,7 @@ section:nth-child(even) .main-item p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, var(--overlay-dark), transparent);
     color: white;
     padding: 20px 15px 15px;
     text-align: center;
@@ -1433,9 +1395,9 @@ section:nth-child(even) .main-item p {
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--overlay-medium);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--highlight-light);
     border-radius: 50%;
     font-size: 24px;
     display: flex;
@@ -1449,7 +1411,7 @@ section:nth-child(even) .main-item p {
 }
 
 .carousel-control:hover {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     transform: translateY(-50%) scale(1.1);
     border-color: white;
     color: var(--bg-primary);
@@ -1479,8 +1441,8 @@ section:nth-child(even) .main-item p {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: var(--highlight-light);
+    border: 2px solid var(--overlay-light);
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 0 5px;
@@ -1489,14 +1451,14 @@ section:nth-child(even) .main-item p {
 }
 
 .indicator-dot.active {
-    background-color: var(--accent);
+    background-color: var(--accent-primary);
     transform: scale(1.2);
-    box-shadow: 0 0 10px var(--accent);
+    box-shadow: 0 0 10px var(--accent-primary);
     border-color: white;
 }
 
 .indicator-dot:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--highlight-medium);
     transform: scale(1.1);
 }
 
@@ -1541,7 +1503,7 @@ main section#connect h2 {
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     text-decoration: none;
     cursor: pointer;
     animation: fadeIn 0.8s ease-in-out forwards;
@@ -1555,8 +1517,8 @@ main section#connect h2 {
 
 #connect .connect-card:hover:not(.js-hover-enabled) {
     transform: translateY(-15px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background-color: var(--accent);
+    box-shadow: 0 15px 30px var(--overlay-light);
+    background-color: var(--accent-primary);
 }
 
 #connect .connect-card::before {
@@ -1566,7 +1528,7 @@ main section#connect h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(135deg, transparent 0%, var(--highlight-light) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1623,7 +1585,7 @@ main section#connect h2 {
 }
 
 .card-link-text {
-    color: var(--accent);
+    color: var(--accent-primary);
     font-weight: 500;
     font-size: 0.95rem;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1687,7 +1649,7 @@ main section#connect h2 {
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: var(--header-footer);
+    background-color: var(--accent-secondary);
     padding: 2rem 0;
     margin-top: 2rem;
     color: var(--text-white);
