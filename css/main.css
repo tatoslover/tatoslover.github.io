@@ -2,36 +2,7 @@
 /* Main CSS file with theme support (light/dark mode) */
 
 :root {
-    /* Light mode (default) variables */
-    /* Background colors */
-    --bg-primary: #e0ecff;  /* Light blue for even sections */
-    --bg-secondary: #faf3e5; /* Light cream for odd sections */
-
-    /* Text colors */
-    --text-primary: #0a192f;
-    --text-secondary: #112240;
-    --text-black: #000000;
-    --text-white: #ffffff;
-
-    /* Accent colors */
-    --accent-primary: #50d0c0;    /* Primary teal accent - matched from buttons */
-    --accent-secondary: #4A1D82;  /* Purple accent for header/footer/hover states */
-    --accent-hover: #4cd3a9;      /* Hover state for primary accent */
-
-    /* Utility colors */
-    --border: #dddddd;
-
-    /* Shadows and overlays */
-    --shadow: rgba(0, 0, 0, 0.1);
-    --overlay-light: rgba(0, 0, 0, 0.2);
-    --overlay-medium: rgba(0, 0, 0, 0.3);
-    --overlay-dark: rgba(0, 0, 0, 0.8);
-    --highlight-light: rgba(255, 255, 255, 0.5);
-    --highlight-medium: rgba(255, 255, 255, 0.8);
-}
-
-/* Dark theme when 'data-theme="dark"' is set on html element */
-[data-theme="dark"] {
+    /* Dark mode (default) variables */
     /* Background colors */
     --bg-primary: #112240;    /* Darker blue for even sections in dark mode */
     --bg-secondary: #0a192f;  /* Dark blue for odd sections in dark mode */
@@ -43,9 +14,9 @@
     --text-white: #ffffff;
 
     /* Accent colors */
-    --accent-primary: #50d0c0;    /* Primary teal accent - matched from buttons */
-    --accent-secondary: #4A1D82;  /* Purple accent for header/footer/hover states */
-    --accent-hover: #4cd3a9;      /* Hover state for primary accent */
+    --accent-primary: #06b6d4;    /* Primary cyan accent */
+    --accent-secondary: #3b82f6;  /* Blue accent for header/footer/hover states */
+    --accent-hover: #22d3ee;      /* Lighter cyan for hover state */
 
     /* Utility colors */
     --border: #1d304f;
@@ -59,28 +30,22 @@
     --highlight-medium: rgba(255, 255, 255, 0.8);
 }
 
-/* System preference fallback - only applies if no 'data-theme' is set */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-        /* Background colors */
-        --bg-primary: #112240;    /* Darker blue for even sections in dark mode */
-        --bg-secondary: #0a192f;  /* Dark blue for odd sections in dark mode */
+/* No light theme - dark mode only */
 
-        /* Text colors */
+/* Force dark mode regardless of system preferences */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        /* Same as root dark theme variables */
+        --bg-primary: #112240;
+        --bg-secondary: #0a192f;
         --text-primary: #e6f1ff;
         --text-secondary: #ccd6f6;
         --text-black: #000000;
         --text-white: #ffffff;
-
-        /* Accent colors */
-        --accent-primary: #50d0c0;    /* Primary teal accent - matched from buttons */
-        --accent-secondary: #4A1D82;  /* Purple accent for header/footer/hover states */
-        --accent-hover: #4cd3a9;      /* Hover state for primary accent */
-
-        /* Utility colors */
+        --accent-primary: #06b6d4;
+        --accent-secondary: #3b82f6;
+        --accent-hover: #22d3ee;
         --border: #1d304f;
-
-        /* Shadows and overlays */
         --shadow: rgba(10, 25, 47, 0.6);
         --overlay-light: rgba(0, 0, 0, 0.2);
         --overlay-medium: rgba(0, 0, 0, 0.3);
@@ -266,11 +231,12 @@ header {
     display: inline;
 }
 
-[data-theme="dark"] .light-icon {
+/* Always show light icon for dark theme */
+.light-icon {
     display: inline;
 }
 
-[data-theme="dark"] .dark-icon {
+.dark-icon {
     display: none;
 }
 
@@ -345,6 +311,8 @@ nav a:hover::after {
     position: relative;
     background-color: var(--bg-secondary);
     box-shadow: 0 4px 8px var(--shadow);
+    animation: none !important;
+    transform: none !important;
 }
 
 .profile-image img {
@@ -352,11 +320,16 @@ nav a:hover::after {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s ease;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
 }
 
 .profile-image:hover img {
-    transform: scale(1.05);
+    /* Animation removed */
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 #home p {
@@ -410,10 +383,15 @@ nav a:hover::after {
     50% { border-color: var(--accent-primary); }
 }
 
+/* Completely remove profile image animation */
 .profile-image {
-    animation: floatAnimation 4s ease-in-out infinite;
+    /* Animation removed - no floating effect */
+    animation: none !important;
+    transform: none !important;
 }
 
+/* Completely remove animation keyframes */
+/*
 @keyframes floatAnimation {
     0% {
         transform: translateY(0px);
@@ -425,6 +403,7 @@ nav a:hover::after {
         transform: translateY(0px);
     }
 }
+*/
 
 /* Make sure typewriter content is visible */
 #home .typewriter-container {
@@ -542,18 +521,10 @@ section:nth-child(even) .tab-button {
     border: 1px solid var(--border);
 }
 
-/* Dark theme buttons for even sections */
-[data-theme="dark"] section:nth-child(even) .tab-button {
-    background-color: var(--bg-primary);
+/* Consistent styling for even sections */
+section:nth-child(even) .main-item h3 {
+    color: var(--text-primary);
     border-color: var(--border);
-}
-
-/* System preference fallback for dark mode buttons */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .tab-button {
-        background-color: var(--bg-primary);
-        border-color: var(--border);
-    }
 }
 
 /* Ensure hover effect applies to all tab buttons regardless of section */
@@ -620,19 +591,11 @@ section:nth-child(even) .main-item {
 }
 
 /* Dark variant for content boxes in even sections when in dark mode */
-[data-theme="dark"] section:nth-child(even) .main-item {
+/* Even section styling */
+section:nth-child(even) .main-item {
     background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     color: var(--text-primary);
     box-shadow: 0 2px 8px var(--shadow);
-}
-
-/* System preference fallback for dark mode */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item {
-        background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
-        color: var(--text-primary);
-        box-shadow: 0 2px 8px var(--shadow);
-    }
 }
 
 .main-item:hover {
@@ -650,20 +613,11 @@ section:nth-child(even) .main-item:hover {
     border-color: var(--accent-primary);
 }
 
-/* Dark theme hover for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item:hover {
+/* Even section hover effect */
+section:nth-child(even) .main-item:hover {
     box-shadow: 0 12px 20px var(--shadow);
     background-color: var(--bg-primary);
     border-color: var(--accent-primary);
-}
-
-/* System preference fallback for dark mode hover */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item:hover {
-        box-shadow: 0 12px 20px var(--shadow);
-        background-color: var(--bg-primary);
-        border-color: var(--accent-primary);
-    }
 }
 
 .main-item:last-child {
@@ -695,17 +649,10 @@ section:nth-child(even) .main-item h3 {
 }
 
 /* Dark theme headings for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item h3 {
-    color: var(--text-even);
+/* Consistent heading styling for even sections */
+section:nth-child(even) .main-item h3 {
+    color: var(--text-primary);
     border-bottom-color: var(--accent-primary);
-}
-
-/* System preference fallback for dark mode headings */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item h3 {
-        color: var(--text-even);
-        border-bottom-color: var(--accent-primary);
-    }
 }
 
 /* Section text content */
@@ -966,17 +913,10 @@ section:nth-child(even) .content-container {
 }
 
 /* Dark theme content containers for even sections */
-[data-theme="dark"] section:nth-child(even) .content-container {
+/* Consistent content container styling */
+section:nth-child(even) .content-container {
     background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
     box-shadow: 0 4px 10px var(--shadow);
-}
-
-/* System preference fallback for dark mode content containers */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .content-container {
-        background-color: var(--bg-secondary); /* Keep consistent contrast pattern in dark mode */
-        box-shadow: 0 4px 10px var(--shadow);
-    }
 }
 
 .content-panel {
@@ -1058,18 +998,11 @@ section:nth-child(even) .main-item li {
     box-shadow: 0 1px 3px var(--shadow);
 }
 
-/* Dark theme list items for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item li {
+/* Consistent styling for tab buttons */
+section:nth-child(even) .tab-button {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-}
-
-/* System preference fallback for dark mode list items */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item li {
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-    }
+    border: 1px solid var(--border);
 }
 
 /* Add hover effect to list items */
@@ -1133,15 +1066,9 @@ section:nth-child(even) .main-item p {
 }
 
 /* Dark theme paragraph text for even sections */
-[data-theme="dark"] section:nth-child(even) .main-item p {
-    color: var(--text-even);
-}
-
-/* System preference fallback for dark mode paragraph text */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) section:nth-child(even) .main-item p {
-        color: var(--text-even);
-    }
+/* Consistent paragraph styling */
+section:nth-child(even) .main-item p {
+    color: var(--text-primary);
 }
 
 .content-links {
@@ -1201,13 +1128,8 @@ section:nth-child(even) .main-item p {
 }
 
 /* Ensures all buttons have consistent appearance in light and dark mode */
-[data-theme="light"] .main-item .content-link,
-:root:not([data-theme]) .main-item .content-link {
-    color: var(--accent-secondary);
-    background-color: var(--accent-primary);
-}
-
-[data-theme="dark"] .main-item .content-link {
+/* Content link styling for dark theme */
+.main-item .content-link {
     color: var(--accent-secondary);
     background-color: var(--accent-primary);
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5); /* Better readability in dark mode */
