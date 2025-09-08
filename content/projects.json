@@ -75,7 +75,14 @@
           "liveDemo": "#",
           "sourceCode": "",
           "documentStatus": "Coming Soon"
-        },
+        }
+      ]
+    },
+    {
+      "id": "dashboard-projects",
+      "title": "Dashboards",
+      "emoji": "📊",
+      "projects": [
         {
           "title": "Australia Immigration Tool",
           "emoji": "🇦🇺",
