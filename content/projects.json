@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": "mads-projects",
-      "title": "MADS",
+      "title": "Machine Learning",
       "emoji": "🧠",
       "projects": [
         {
@@ -30,7 +30,7 @@
     },
     {
       "id": "iod-projects",
-      "title": "IOD",
+      "title": "Software",
       "emoji": "🔧",
       "projects": [
         {
@@ -65,7 +65,7 @@
     },
     {
       "id": "misc-projects",
-      "title": "Misc",
+      "title": "AI",
       "emoji": "🔍",
       "projects": [
         {
@@ -75,7 +75,14 @@
           "liveDemo": "#",
           "sourceCode": "",
           "documentStatus": "Coming Soon"
-        },
+        }
+      ]
+    },
+    {
+      "id": "dashboard-projects",
+      "title": "Dashboards",
+      "emoji": "📊",
+      "projects": [
         {
           "title": "Australia Immigration Tool",
           "emoji": "🇦🇺",
