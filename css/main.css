@@ -1592,10 +1592,12 @@ footer {
         flex-direction: column;
     }
 
-    .category-tabs {
+    .category-tabs,
+    .main-section .category-tabs {
         overflow-x: visible;
-        justify-content: center;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .tab-spacing {
@@ -1603,9 +1605,14 @@ footer {
         margin-top: -2rem;
     }
 
+    .category-tabs .tab-button,
     .tab-button {
-        padding: 0.7rem 1.2rem;
-        margin: 0.75rem 0.5rem;
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        margin: 0.3rem 0;
+        padding: 0.8rem 1rem;
+        text-align: center;
     }
 
 
