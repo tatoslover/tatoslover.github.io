@@ -3,11 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Portfolio</title>
+        <title>Samuel Love | Portfolio</title>
         <link rel="stylesheet" href="css/main.css" />
+        <script>
+            // Prevent flash of wrong theme
+            (function () {
+                const t = localStorage.getItem("theme") || "dark";
+                document.documentElement.setAttribute("data-theme", t);
+            })();
+        </script>
         <meta
             name="description"
-            content="My personal portfolio showcasing my skills, projects, and interests"
+            content="Samuel Love — Data Scientist and Software Engineer specialising in machine learning, statistical analysis, and full-stack development."
         />
     </head>
     <body>
@@ -19,14 +26,12 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
-                        <li><a href="#coursework">Coursework</a></li>
-                        <li><a href="#qualifications">Qualifications</a></li>
-                        <li><a href="#employment">Employment</a></li>
-                        <li><a href="#interests">Interests</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#connect">Connect</a></li>
                     </ul>
                 </nav>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀</button>
             </div>
         </header>
 
@@ -37,22 +42,8 @@
                 <div class="typewriter-container">
                     <span id="typewriter" class="typewriter-text"></span>
                 </div>
-                <div
-                    class="profile-image"
-                    style="
-                        animation: none !important;
-                        transform: none !important;
-                    "
-                >
-                    <img
-                        src="assets/logos/profile.png"
-                        alt="Profile image"
-                        style="
-                            transition: none !important;
-                            transform: none !important;
-                            animation: none !important;
-                        "
-                    />
+                <div class="profile-image">
+                    <img src="assets/logos/profile.png" alt="Profile image" />
                 </div>
                 <p>
                     I hold a Master of Applied Data Science from the University
@@ -108,33 +99,17 @@
                 </div>
             </section>
 
-            <!-- Coursework Section -->
-            <section id="coursework" class="main-section">
-                <h2>Coursework</h2>
+            <!-- Experience Section -->
+            <section id="experience" class="main-section">
+                <h2>Experience</h2>
                 <div
                     class="expandable-sections"
-                    data-content-file="coursework.json"
+                    data-content-file="experience.json"
                 >
-                    <div class="category-tabs" id="coursework-tabs">
+                    <div class="category-tabs" id="experience-tabs">
                         <!-- Tabs will be dynamically generated -->
                     </div>
-                    <div class="content-container" id="coursework-content">
-                        <!-- Content will be dynamically generated -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Qualifications Section -->
-            <section id="qualifications" class="main-section">
-                <h2>Qualifications</h2>
-                <div
-                    class="expandable-sections"
-                    data-content-file="qualifications.json"
-                >
-                    <div class="category-tabs" id="qualifications-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
-                    <div class="content-container" id="qualifications-content">
+                    <div class="content-container" id="experience-content">
                         <!-- Content will be dynamically generated -->
                         <p class="info-text">
                             Tip: Click on logos to view certificates
@@ -143,41 +118,20 @@
                 </div>
             </section>
 
-            <!-- Employment Section -->
-            <section id="employment" class="main-section">
-                <h2>Employment</h2>
-                <div
-                    class="expandable-sections"
-                    data-content-file="employment.json"
-                >
-                    <div class="category-tabs" id="employment-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
-                    <div class="content-container" id="employment-content">
-                        <!-- Content will be dynamically generated -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Interests Section -->
-            <section id="interests" class="main-section">
-                <h2>Interests</h2>
+            <!-- About Section -->
+            <section id="about" class="main-section">
+                <h2>About</h2>
                 <div
                     class="expandable-sections"
                     data-content-file="interests.json"
                 >
-                    <div class="category-tabs" id="interests-tabs">
+                    <div class="category-tabs" id="about-tabs">
                         <!-- Tabs will be dynamically generated -->
                     </div>
-                    <div class="content-container" id="interests-content">
+                    <div class="content-container" id="about-content">
                         <!-- Content will be dynamically generated -->
                     </div>
                 </div>
-            </section>
-
-            <!-- Gallery Section -->
-            <section id="gallery" data-carousel-type="auto">
-                <h2>Gallery</h2>
                 <div class="gallery-container">
                     <!-- Carousel will be dynamically inserted here -->
                 </div>

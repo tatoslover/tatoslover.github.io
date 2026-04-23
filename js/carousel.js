@@ -249,50 +249,6 @@ function initAutoCarousel(targetContainer = null) {
   function resetAutoplay() {
     clearInterval(autoplayInterval);
     startAutoplay();
-
-    // Add loading animation CSS
-    const style = document.createElement("style");
-    style.textContent = `
-      .carousel-image {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        will-change: opacity;
-      }
-      .carousel-image.loaded {
-        opacity: 1;
-      }
-      .image-loader {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: var(--accent);
-        animation: spin 1s infinite linear;
-      }
-      @keyframes spin {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
-      }
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-    `;
-    document.head.appendChild(style);
   }
 
   // Start autoplay
