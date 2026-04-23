@@ -23,15 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param {string} filename - The JSON file to load
  */
 function loadContent(section, filename) {
+  const cacheKey = `content_${filename}`;
+  const cached = sessionStorage.getItem(cacheKey);
+
+  if (cached) {
+    renderContent(section, JSON.parse(cached).categories);
+    return;
+  }
+
   fetch(`content/${filename}`)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load ${filename}`);
-      }
+      if (!response.ok) throw new Error(`Failed to load ${filename}`);
       return response.json();
     })
     .then((data) => {
       if (data && data.categories) {
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
         renderContent(section, data.categories);
       } else {
         throw new Error("Invalid JSON structure");
@@ -134,6 +141,7 @@ function createSectionImage(title, imageSrc = null, emoji = null) {
     const image = document.createElement("img");
     image.src = imageSrc || "assets/logos/placeholder.svg";
     image.alt = `${title} Icon`;
+    image.loading = "lazy";
 
     // Check if this is an SVG file or specific images that should be treated as shields
     if (
