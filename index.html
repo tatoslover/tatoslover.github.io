@@ -43,14 +43,14 @@
         <main>
             <!-- Home Section -->
             <section id="home">
-                <h1>Welcome to My Portfolio</h1>
-                <div class="typewriter-container">
+                <h1 class="scroll-reveal">Welcome to My Portfolio</h1>
+                <div class="typewriter-container scroll-reveal">
                     <span id="typewriter" class="typewriter-text"></span>
                 </div>
-                <div class="profile-image">
+                <div class="profile-image scroll-reveal">
                     <img src="assets/logos/profile.png" alt="Profile image" />
                 </div>
-                <p>
+                <p class="scroll-reveal">
                     I hold a Master of Applied Data Science from the University
                     of Canterbury and have recently completed a Software
                     Engineering Certification to broaden my technical skillset.
@@ -61,7 +61,7 @@
                     sporting pursuits, I bring curiosity, discipline, and
                     adaptability to every challenge.
                 </p>
-                <div class="cv-button-container">
+                <div class="cv-button-container scroll-reveal">
                     <a
                         href="assets/docs/Samuel_Love_CV.pdf"
                         target="_blank"
@@ -74,48 +74,37 @@
 
             <!-- Skills Section -->
             <section id="skills" class="main-section">
-                <h2>Skills</h2>
+                <h2 class="scroll-reveal">Skills</h2>
                 <div
-                    class="expandable-sections"
+                    class="expandable-sections scroll-reveal"
                     data-content-file="skills.json"
                 >
-                    <div class="category-tabs" id="skills-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
-                    <div class="content-container" id="skills-content">
-                        <!-- Content will be dynamically generated -->
-                    </div>
+                    <div class="category-tabs" id="skills-tabs"></div>
+                    <div class="content-container" id="skills-content"></div>
                 </div>
             </section>
 
             <!-- Projects Section -->
             <section id="projects" class="main-section">
-                <h2>Projects</h2>
+                <h2 class="scroll-reveal">Projects</h2>
                 <div
-                    class="expandable-sections"
+                    class="expandable-sections scroll-reveal"
                     data-content-file="projects.json"
                 >
-                    <div class="category-tabs" id="projects-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
-                    <div class="content-container" id="projects-content">
-                        <!-- Content will be dynamically generated -->
-                    </div>
+                    <div class="category-tabs" id="projects-tabs"></div>
+                    <div class="content-container" id="projects-content"></div>
                 </div>
             </section>
 
             <!-- Experience Section -->
             <section id="experience" class="main-section">
-                <h2>Experience</h2>
+                <h2 class="scroll-reveal">Experience</h2>
                 <div
-                    class="expandable-sections"
+                    class="expandable-sections scroll-reveal"
                     data-content-file="experience.json"
                 >
-                    <div class="category-tabs" id="experience-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
+                    <div class="category-tabs" id="experience-tabs"></div>
                     <div class="content-container" id="experience-content">
-                        <!-- Content will be dynamically generated -->
                         <p class="info-text">
                             Tip: Click on logos to view certificates
                         </p>
@@ -125,28 +114,22 @@
 
             <!-- About Section -->
             <section id="about" class="main-section">
-                <h2>About</h2>
+                <h2 class="scroll-reveal">About</h2>
                 <div
-                    class="expandable-sections"
+                    class="expandable-sections scroll-reveal"
                     data-content-file="interests.json"
                 >
-                    <div class="category-tabs" id="about-tabs">
-                        <!-- Tabs will be dynamically generated -->
-                    </div>
-                    <div class="content-container" id="about-content">
-                        <!-- Content will be dynamically generated -->
-                    </div>
+                    <div class="category-tabs" id="about-tabs"></div>
+                    <div class="content-container" id="about-content"></div>
                 </div>
-                <div class="gallery-container">
+                <div class="gallery-container scroll-reveal">
                     <!-- Carousel will be dynamically inserted here -->
                 </div>
             </section>
 
             <!-- Connect Section -->
             <section id="connect" class="main-section">
-                <h2 style="color: var(--text-primary) !important">
-                    Connect With Me
-                </h2>
+                <h2 class="scroll-reveal">Connect With Me</h2>
                 <div class="connect-container">
                     <a
                         href="mailto:samuelwelove@icloud.com"
