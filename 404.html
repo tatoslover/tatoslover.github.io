@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404 — Samuel Love</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <script>
+            (function () {
+                const t = localStorage.getItem("theme") || "dark";
+                document.documentElement.setAttribute("data-theme", t);
+            })();
+        </script>
+        <style>
+            .not-found {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+            .not-found h1 {
+                font-size: 6rem;
+                font-weight: 700;
+                color: var(--accent-primary);
+                line-height: 1;
+                margin: 0;
+            }
+            .not-found h2 {
+                font-size: 1.5rem;
+                color: var(--text-primary);
+                margin: 0;
+            }
+            .not-found p {
+                color: var(--text-secondary);
+                max-width: 400px;
+                margin: 0;
+            }
+            .home-link {
+                display: inline-block;
+                margin-top: 0.5rem;
+                padding: 0.75rem 2rem;
+                background: var(--accent-primary);
+                color: var(--on-accent);
+                border-radius: 6px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: background 0.2s, transform 0.2s;
+            }
+            .home-link:hover {
+                background: var(--accent-hover);
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="not-found">
+            <h1>404</h1>
+            <h2>Page not found</h2>
+            <p>The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="home-link">Back to portfolio</a>
+        </div>
+    </body>
+</html>

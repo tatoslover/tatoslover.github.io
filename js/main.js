@@ -42,26 +42,50 @@ function updateSvgColors(theme) {
 function initHamburger() {
   const hamburger = document.getElementById("hamburger");
   const header = hamburger.closest("header");
+  const nav = document.getElementById("main-nav");
   const navLinks = document.querySelectorAll("#main-nav a");
+
+  function closeNav() {
+    header.classList.remove("nav-open");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
 
   hamburger.addEventListener("click", () => {
     const isOpen = header.classList.toggle("nav-open");
     hamburger.setAttribute("aria-expanded", isOpen);
+    if (isOpen) navLinks[0]?.focus();
   });
 
   // Close on nav link click
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      header.classList.remove("nav-open");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeNav);
   });
 
   // Close when clicking outside
   document.addEventListener("click", (e) => {
-    if (!header.contains(e.target)) {
-      header.classList.remove("nav-open");
-      hamburger.setAttribute("aria-expanded", "false");
+    if (!header.contains(e.target)) closeNav();
+  });
+
+  // Focus trap: keep Tab/Shift+Tab inside nav when open
+  nav.addEventListener("keydown", (e) => {
+    if (!header.classList.contains("nav-open") || e.key !== "Tab") return;
+    const focusable = [...nav.querySelectorAll("a")];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      hamburger.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      hamburger.focus();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && header.classList.contains("nav-open")) {
+      closeNav();
+      hamburger.focus();
     }
   });
 }

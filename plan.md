@@ -12,6 +12,11 @@
 - [x] Scroll-in animations — IntersectionObserver, respects prefers-reduced-motion
 - [x] Open Graph / Twitter Card meta tags
 - [x] Skill icons — Devicon CDN, icon classes in skills.json
+- [x] Skip-to-content link (accessibility)
+- [x] Focus trap in hamburger nav + Escape key close
+- [x] Preload profile image
+- [x] Custom 404 page
+- [x] Structured data (JSON-LD Person schema)
 
 ---
 
@@ -30,48 +35,4 @@
 
 ## Up next
 
-### 1. Skip-to-content link (accessibility)
-**Why:** Standard keyboard accessibility practice.
-**Plan:**
-- Visually hidden `<a href="#home">Skip to content</a>` at top of `<body>`
-- Becomes visible on keyboard focus
-- ~5 lines of CSS
-
-**Files:** `index.html`, `css/main.css`
-
----
-
-### 2. Focus trap in hamburger (accessibility)
-**Why:** Tab key currently escapes the open mobile nav into the page behind it.
-**Plan:**
-- When nav is open, constrain `Tab`/`Shift+Tab` to nav links and close button
-- Release trap on close
-
-**Files:** `js/main.js`
-
----
-
-### 3. Preload profile image
-**Why:** Reduces flash of empty profile circle on load.
-**Plan:**
-- Add `<link rel="preload" as="image" href="assets/logos/profile.png">` to `<head>`
-
-**Files:** `index.html`
-
----
-
-### 4. Custom 404 page
-**Why:** GitHub Pages shows a generic 404. A branded page that links home is more professional.
-**Plan:**
-- Create `404.html` matching site styles with a message and link back
-
-**Files:** `404.html` (new)
-
----
-
-### 5. Structured data (JSON-LD)
-**Why:** Person schema helps Google surface the portfolio in rich results.
-**Plan:**
-- Add a `<script type="application/ld+json">` block to `<head>` with name, job title, links
-
-**Files:** `index.html`
+Nothing pending — all planned items complete. Add new ideas here.
