@@ -299,7 +299,15 @@ function renderSkills(panel, category, index) {
   const skillsList = document.createElement("ul");
   category.skills.forEach((skill) => {
     const item = document.createElement("li");
-    item.textContent = skill;
+    const skillName = typeof skill === "string" ? skill : skill.name;
+    const skillIcon = typeof skill === "object" && skill.icon ? skill.icon : null;
+    if (skillIcon) {
+      const icon = document.createElement("i");
+      icon.className = `${skillIcon} skill-icon`;
+      icon.setAttribute("aria-hidden", "true");
+      item.appendChild(icon);
+    }
+    item.appendChild(document.createTextNode(skillName));
     skillsList.appendChild(item);
   });
 

@@ -89,6 +89,13 @@
           "description": "Developed a visual tool to help NZ residents understand migration patterns to Australia. Interactive dashboard analysing demographic trends and migration flows.",
           "liveDemo": "https://public.tableau.com/app/profile/samuel.love4547/viz/MovingDownUnderDataSchool/Main",
           "sourceCode": ""
+        },
+        {
+          "title": "NZ Natural Hazard Claims Explorer",
+          "emoji": "🌊",
+          "description": "Interactive Climate Risk Dashboard. Projects synthetic climate change impacts on NZ insurance claims through 2050, calibrated to ICNZ loss statistics and NIWA hazard data. Features interactive regional mapping, peril composition analysis, and scenario comparison across three warming pathways (1.5°C, 2.5°C, 4°C+).",
+          "liveDemo": "https://tatoslover.github.io/claims_forecast/",
+          "sourceCode": "https://github.com/tatoslover/claims_forecast"
         }
       ]
     }

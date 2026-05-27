@@ -8,40 +8,49 @@
           "id": "programming-languages-se",
           "title": "Programming Languages",
           "emoji": "💻",
-          "skills": ["JavaScript", "HTML", "CSS", "TypeScript"]
+          "skills": [
+            { "name": "JavaScript", "icon": "devicon-javascript-plain colored" },
+            { "name": "HTML", "icon": "devicon-html5-plain colored" },
+            { "name": "CSS", "icon": "devicon-css3-plain colored" },
+            { "name": "TypeScript", "icon": "devicon-typescript-plain colored" }
+          ]
         },
         {
           "id": "web-development",
           "title": "Web Development",
           "emoji": "🌐",
           "skills": [
-            "React",
-            "JSX",
-            "Express.js",
-            "Bootstrap",
-            "Figma",
-            "HTML/CSS",
-            "Swagger"
+            { "name": "React", "icon": "devicon-react-original colored" },
+            { "name": "JSX", "icon": "devicon-react-original colored" },
+            { "name": "Express.js", "icon": "devicon-express-original" },
+            { "name": "Bootstrap", "icon": "devicon-bootstrap-plain colored" },
+            { "name": "Figma", "icon": "devicon-figma-plain colored" },
+            { "name": "HTML/CSS", "icon": "devicon-html5-plain colored" },
+            { "name": "Swagger" }
           ]
         },
         {
           "id": "web-databases",
           "title": "Web & App Databases",
           "emoji": "🗄️",
-          "skills": ["MongoDB", "Redis", "MySQL for Web Apps"]
+          "skills": [
+            { "name": "MongoDB", "icon": "devicon-mongodb-plain colored" },
+            { "name": "Redis", "icon": "devicon-redis-plain colored" },
+            { "name": "MySQL for Web Apps", "icon": "devicon-mysql-plain colored" }
+          ]
         },
         {
           "id": "devops-tools",
           "title": "DevOps & Deployment",
           "emoji": "🚀",
           "skills": [
-            "AWS EC2",
-            "AWS Elastic Beanstalk",
-            "CI/CD",
-            "Docker",
-            "GitHub Actions",
-            "Git Version Control",
-            "Bash"
+            { "name": "AWS EC2", "icon": "devicon-amazonwebservices-plain-wordmark colored" },
+            { "name": "AWS Elastic Beanstalk", "icon": "devicon-amazonwebservices-plain-wordmark colored" },
+            { "name": "CI/CD" },
+            { "name": "Docker", "icon": "devicon-docker-plain colored" },
+            { "name": "GitHub Actions", "icon": "devicon-github-original" },
+            { "name": "Git Version Control", "icon": "devicon-git-plain colored" },
+            { "name": "Bash", "icon": "devicon-bash-plain" }
           ]
         },
         {
@@ -49,11 +58,11 @@
           "title": "Development Practices",
           "emoji": "🔄",
           "skills": [
-            "Agile Methodologies",
-            "Model-View-Controller (MVC)",
-            "Test Driven Development",
-            "GitHub Workflow",
-            "Collaborative Development"
+            { "name": "Agile Methodologies" },
+            { "name": "Model-View-Controller (MVC)" },
+            { "name": "Test Driven Development" },
+            { "name": "GitHub Workflow", "icon": "devicon-github-original" },
+            { "name": "Collaborative Development" }
           ]
         }
       ]
@@ -66,19 +75,23 @@
           "id": "programming-languages-ds",
           "title": "Data Programming Languages",
           "emoji": "💻",
-          "skills": ["Python", "R", "SQL"]
+          "skills": [
+            { "name": "Python", "icon": "devicon-python-plain colored" },
+            { "name": "R", "icon": "devicon-r-plain colored" },
+            { "name": "SQL" }
+          ]
         },
         {
           "id": "data-analysis-tools",
           "title": "Data Analysis & Visualization",
           "emoji": "📊",
           "skills": [
-            "Jupyter Notebooks",
-            "RStudio",
-            "Power BI",
-            "Tableau",
-            "PostgreSQL",
-            "Anaconda"
+            { "name": "Jupyter Notebooks", "icon": "devicon-jupyter-plain colored" },
+            { "name": "RStudio", "icon": "devicon-rstudio-plain colored" },
+            { "name": "Power BI" },
+            { "name": "Tableau" },
+            { "name": "PostgreSQL", "icon": "devicon-postgresql-plain colored" },
+            { "name": "Anaconda", "icon": "devicon-anaconda-original colored" }
           ]
         },
         {
@@ -86,12 +99,12 @@
           "title": "Python Data Packages",
           "emoji": "🐍",
           "skills": [
-            "NumPy",
-            "Pandas",
-            "Matplotlib",
-            "Scikit-learn",
-            "Plotly",
-            "BeautifulSoup for Data Collection"
+            { "name": "NumPy", "icon": "devicon-numpy-plain colored" },
+            { "name": "Pandas", "icon": "devicon-pandas-original colored" },
+            { "name": "Matplotlib" },
+            { "name": "Scikit-learn" },
+            { "name": "Plotly" },
+            { "name": "BeautifulSoup for Data Collection" }
           ]
         },
         {
@@ -99,13 +112,13 @@
           "title": "R Data Packages",
           "emoji": "📈",
           "skills": [
-            "tidyverse",
-            "ggplot2",
-            "shiny",
-            "caret",
-            "glmnet",
-            "randomForest",
-            "e1071"
+            { "name": "tidyverse" },
+            { "name": "ggplot2" },
+            { "name": "shiny" },
+            { "name": "caret" },
+            { "name": "glmnet" },
+            { "name": "randomForest" },
+            { "name": "e1071" }
           ]
         }
       ]
@@ -119,13 +132,13 @@
           "title": "Productivity Tools",
           "emoji": "🔧",
           "skills": [
-            "Excel",
-            "Word",
-            "PowerPoint",
-            "Obsidian",
-            "Incisive",
-            "Quarto",
-            "Zed"
+            { "name": "Excel" },
+            { "name": "Word" },
+            { "name": "PowerPoint" },
+            { "name": "Obsidian" },
+            { "name": "Incisive" },
+            { "name": "Quarto" },
+            { "name": "Zed" }
           ]
         }
       ]

@@ -922,6 +922,18 @@ header.nav-open .hamburger span:nth-child(3) {
     box-shadow: 0 1px 3px var(--shadow);
 }
 
+.skill-icon {
+    font-size: 1.1em;
+    vertical-align: middle;
+    margin-right: 0.35em;
+}
+
+[data-theme="dark"] .devicon-express-original.skill-icon,
+[data-theme="dark"] .devicon-github-original.skill-icon,
+[data-theme="dark"] .devicon-bash-plain.skill-icon {
+    filter: invert(1);
+}
+
 /* Add hover effect to list items */
 .main-item li:hover {
     transform: translateY(-2px);
