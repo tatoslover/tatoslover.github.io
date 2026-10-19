@@ -5,6 +5,17 @@
       "title": "Academic Degrees",
       "qualifications": [
         {
+          "title": "Software Engineering Certificate",
+          "institution": "Institute of Data & University of Canterbury",
+          "date": "April 2025 – July 2025",
+          "logo": "assets/logos/IOD.svg",
+          "description": "Intensive software engineering program covering modern development practices, full-stack web development, and industry-standard methodologies.",
+          "documentLinks": [
+            { "label": "Institute of Data Certificate", "link": "assets/docs/SoftwareEngineering_IOD.pdf" },
+            { "label": "University of Canterbury Certificate", "link": "assets/docs/SoftwareEngineering_UC.pdf" }
+          ]
+        },
+        {
           "title": "Master of Applied Data Science",
           "institution": "University of Canterbury",
           "date": "2021–2024",
@@ -19,15 +30,6 @@
           "logo": "assets/logos/VUW.svg",
           "description": "Undergraduate degree combining rigorous mathematical modeling with economic theory, focusing on risk assessment, statistical methods, and financial analysis.",
           "documentLink": "assets/docs/VUW_BSc.pdf"
-        },
-        {
-          "title": "Software Engineering Certificate",
-          "institution": "Institute of Data & University of Canterbury",
-          "date": "April 2025 – July 2025",
-          "logo": "assets/logos/IOD.svg",
-          "description": "Intensive software engineering program covering modern development practices, full-stack web development, and industry-standard methodologies.",
-          "documentLink": "#",
-          "documentStatus": "Coming Soon"
         }
       ]
     },
@@ -35,6 +37,22 @@
       "id": "technical-certifications",
       "title": "Technical Certifications",
       "qualifications": [
+        {
+          "title": "Xero Associate",
+          "institution": "Xero",
+          "date": "2025",
+          "logo": "assets/logos/Xero.webp",
+          "description": "Certification validating proficiency in core Xero cloud accounting workflows for small business bookkeeping.",
+          "documentLink": "assets/docs/Xero_Associate.pdf"
+        },
+        {
+          "title": "Xero Professional",
+          "institution": "Xero",
+          "date": "2025",
+          "logo": "assets/logos/Xero.webp",
+          "description": "Advanced certification demonstrating professional-level expertise in Xero workflows and small business advisory support.",
+          "documentLink": "assets/docs/Xero_Professional.pdf"
+        },
         {
           "title": "DataCamp Certifications",
           "institution": "DataCamp",
@@ -95,6 +113,18 @@
       "id": "work-history",
       "title": "Work History",
       "jobs": [
+        {
+          "title": "Specialist Claims Performance & Insight",
+          "company": "IAG",
+          "location": "Christchurch",
+          "period": "June 2026 – Present",
+          "logo": "assets/logos/IAG.png",
+          "responsibilities": [
+            "Build and maintain Tableau dashboards relied on by internal teams to monitor claims performance",
+            "Respond to ad-hoc data requests, writing SQL to extract and prepare data from Google Data Product",
+            "Turn data into clear, usable insights for non-technical stakeholders"
+          ]
+        },
         {
           "title": "Transcriptionist",
           "company": "Aorangi Orthopaedic Centre",

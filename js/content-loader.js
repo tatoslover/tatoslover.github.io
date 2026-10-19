@@ -544,8 +544,23 @@ function renderQualifications(panel, category) {
     description.className = "main-description";
     article.appendChild(description);
 
-    // Add link button with document link if available
-    if (qualification.documentLink) {
+    // Add link button(s) with document link if available
+    if (qualification.documentLinks && qualification.documentLinks.length > 0) {
+      // Multiple certificates for the same qualification
+      const linkContainer = document.createElement("div");
+      linkContainer.className = "section-link-group";
+
+      qualification.documentLinks.forEach((doc) => {
+        const link = document.createElement("a");
+        link.href = doc.link;
+        link.className = "section-link";
+        link.innerHTML = `<span>${doc.label}</span>`;
+        link.target = "_blank";
+        linkContainer.appendChild(link);
+      });
+
+      article.appendChild(linkContainer);
+    } else if (qualification.documentLink) {
       const linkContainer = document.createElement("div");
       const link = document.createElement("a");
 
@@ -587,12 +602,12 @@ function renderQualifications(panel, category) {
  * @param {Object} category - The category data
  */
 function renderJobs(panel, category) {
-  // Get the first job from the category since we're using categories as job titles
-  if (category.jobs && category.jobs.length > 0) {
-    const job = category.jobs[0]; // Each category has only one job
+  if (!category.jobs) return;
 
+  category.jobs.forEach((job, index) => {
     const article = document.createElement("article");
     article.className = "main-item";
+    article.style.setProperty("--item-index", index);
 
     // Store document status in dataset if available
     if (job.documentStatus) {
@@ -606,6 +621,14 @@ function renderJobs(panel, category) {
     const company = document.createElement("h3");
     company.textContent = job.company;
     article.appendChild(company);
+
+    // Job title, if provided
+    if (job.title) {
+      const title = document.createElement("p");
+      title.className = "main-details";
+      title.textContent = job.title;
+      article.appendChild(title);
+    }
 
     // Create combined details
     const jobDetails = document.createElement("p");
@@ -641,7 +664,7 @@ function renderJobs(panel, category) {
     // No link button for Employment section
 
     panel.appendChild(article);
-  }
+  });
 }
 
 /**
